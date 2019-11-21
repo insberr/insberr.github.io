@@ -3,34 +3,34 @@
     <a class="nav-link active" data-toggle="tab" href="#home">Home</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" data-toggle="tab" href="#todo">To Do</a>
+    <a class="nav-link" data-toggle="tab" href="#current">Current</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" data-toggle="tab" href="#updates">Updates</a>
+    <a class="nav-link" data-toggle="tab" href="#later">Later</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" data-toggle="tab" href="#links">Links</a>
   </li>
   <li class="nav-item">
-   <a class="nav-link" data-toggle="tab" href="#history">History</a>
+   <a class="nav-link" data-toggle="tab" href="#about">About</a>
  </li>
 </ul>
 <div id="myTabContent" class="tab-content">
   <div class="tab-pane fade active show" id="home">
     <p>Its yet another incremental game!
-      <br>Story: You are in the middle of space billions of miles away from your home planet, Anzy. All things in existance are fading and you are trying to get as far avay from the center of the universe. Anzy is located in the exact center of the universe at all times, so its good that you got billions of miles away from it.
-      <br>
+      <br>A little about me
+      <br>I enjoy programming
     </p>
   </div>
-  <div class="tab-pane fade" id="todo">
-    <p>To Do
-      <br>- Change UI and buttons
-      <br>- Add resources
-      <br>- Update this website
-      <br>- Name the game
-      <br>- Fix some broken things
+  <div class="tab-pane fade" id="current">
+    <p>Im currently
+      <br>- Working on a game (Link coming soon) my friend wants made
+      <br>- Working on this website
+      <br>- Learning HTML
+      <br>- 
+      <br>- 
       <br>
-      <br>This List Is {{ site.todobar }}% Complete
+      <br>I am {{ site.todobar }}% done with these tasks
       <br>
     </p>
       <div class="progress">
@@ -38,9 +38,10 @@
       </div>
     </div>
   </div>
-  <div class="tab-pane fade" id="updates">
-    <p>- Fixes
-    <br>- Minor changes
+  <div class="tab-pane fade" id="later">
+    <p>Things I plan on doing later
+    <br>- Making a website (Likely this one) from scratch on github (not likely to happen for a long time)
+      <br>-
     </p>
   </div>
   <div class="tab-pane fade" id="links">
@@ -48,9 +49,9 @@
       <br>- <a href="https://spidergamin.github.io/To-Be-Named/">To Be Named Game</a>
     </p>
   </div>
-  <div class="tab-pane fade" id="history">
-    <p>
-      <br>Nothing much here. :)
+  <div class="tab-pane fade" id="about">
+    <p>About me. You found it!
+      <br>Nothing much here right now, check back later to see more content. :)
       <br>
     </p>
   </div>
@@ -59,10 +60,13 @@
 <br>
 <br>
 <br>
-<hr size="50" noshade>
+<hr size="10" noshade>
 <br>
 <br>Thanks to you, I am not board anymore :)
-Text me=die?
+Text
 ```
 <p>text me=die?</p>
+<a href="https://spidergamin.github.io/GameWebsite">Game</a>
+<p>text, long text, scroll text, i text, you text, hi there, i know you, actually maybe not, but thats fine, maybe we can get ti know eachother, but later, im really busy, mostly trying to be less annoying, its annoying, this text, and if you read all of it, thanks, i feel better now, and now that i no longer exist, you can sit back and enjoy this video</p>
+//nope
 ```
