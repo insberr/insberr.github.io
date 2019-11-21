@@ -17,9 +17,8 @@
 </ul>
 <div id="myTabContent" class="tab-content">
   <div class="tab-pane fade active show" id="home">
-    <p>Its yet another incremental game!
-      <br>A little about me
-      <br>I enjoy programming
+    <p>No content here yet
+      <br>
     </p>
   </div>
   <div class="tab-pane fade" id="current">
