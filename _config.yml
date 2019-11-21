@@ -13,13 +13,13 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-siteversion: V 0.0.2 Complete
-todobar: 50
+siteversion: V 0.0.1 Beta
+todobar: 5
 autoseconds: 
 title: To Be Named Game
-email: ""
+email: "jaytaygame+personalweb@gmail.com"
 description: >- # this means to ignore newlines until "baseurl:"
-  Another Incremental Game
+  My personal website, for all the things i do, want to do, and am doing, + more.
 #baseurl: "" # the subpath of your site, e.g. /blog
 #url: "" # the base hostname & protocol for your site, e.g. http://example.com
 #twitter_username: jekyllrb
@@ -33,7 +33,7 @@ plugins:
 
 # A list of the pages to display in the navigation bar
 header_pages:
-  - History.html
+
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
