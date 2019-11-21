@@ -1,9 +1,3 @@
----
-pageversion: Page V 0.0.3
----
-Website {{ site.siteversion }}
-<br>{{ page.pageversion }}
-
 <ul class="nav nav-tabs">
   <li class="nav-item">
     <a class="nav-link active" data-toggle="tab" href="#home">Home</a>
@@ -23,8 +17,8 @@ Website {{ site.siteversion }}
 </ul>
 <div id="myTabContent" class="tab-content">
   <div class="tab-pane fade active show" id="home">
-    <p>Its yet another incremental game.
-      <br>You are in the middle of space billions of miles away from your home planet, Eart. All things in existance are fading
+    <p>Its yet another incremental game!
+      <br>Story: You are in the middle of space billions of miles away from your home planet, Anzy. All things in existance are fading and you are trying to get as far avay from the center of the universe. Anzy is located in the exact center of the universe at all times, so its good that you got billions of miles away from it.
       <br>
     </p>
   </div>
@@ -33,20 +27,20 @@ Website {{ site.siteversion }}
       <br>- Change UI and buttons
       <br>- Add resources
       <br>- Update this website
-      <br>- Find time to work on finding time to program this game
-      <br>* Name the game
-      <br>*Fully move all content to this website
+      <br>- Name the game
+      <br>- Fix some broken things
       <br>
-      <br>The To Do List Is {{ site.todobar }}% Complete
+      <br>This List Is {{ site.todobar }}% Complete
+      <br>
     </p>
       <div class="progress">
-    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: {{ site.todobar }}%">
+    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="{{ site.todobar }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ site.todobar }}%">
       </div>
     </div>
   </div>
   <div class="tab-pane fade" id="updates">
-    <p>Updates
-      <br>- None
+    <p>- Fixes
+    <br>- Minor changes
     </p>
   </div>
   <div class="tab-pane fade" id="links">
