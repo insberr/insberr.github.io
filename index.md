@@ -49,8 +49,8 @@
     </p>
   </div>
   <div class="tab-pane fade" id="history">
-    {{ include gamehistory.md }}
-    <p>Nothing much here. :)
+    <p>
+      <br>Nothing much here. :)
       <br>
     </p>
   </div>
