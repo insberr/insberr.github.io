@@ -1,8 +1,4 @@
-Hello! Welcome
-(this link was shared with
-- leon
-- hayden
-- davin (actually not, he doesnt care)
+Hello! Welcome. Im sad, as you are most likely only one of my friends here.
 <br>
 <ul class="nav nav-tabs">
   <li class="nav-item">
@@ -32,8 +28,8 @@ Hello! Welcome
       <br>- Working on a game (Link coming soon) my friend wants made
       <br>- Working on this website
       <br>- Learning HTML
-      <br>- 
-      <br>- 
+      <br>- School (I have to go)
+      <br>- Trying my hardest to not get depressed from my friends friend (its an ongoing task)
       <br>
       <br>I am {{ site.todobar }}% done with these tasks
       <br>
