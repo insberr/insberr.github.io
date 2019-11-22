@@ -1,3 +1,9 @@
+Hello! Welcome
+(this link was shared with
+- leon
+- hayden
+- davin (actually not, he doesnt care)
+<br>
 <ul class="nav nav-tabs">
   <li class="nav-item">
     <a class="nav-link active" data-toggle="tab" href="#home">Home</a>
