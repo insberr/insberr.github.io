@@ -65,4 +65,6 @@ Hello! Welcome. Im sad, as you are most likely only one of my friends here.
 <hr size="10" noshade>
 <br>
 <br>Thanks to you, I am not board anymore :)
-<img src="spidergaminfavicon.png" alt="Site favicon" width="100" height="100">
+<br><img src="spidergaminfavicon.png" alt="Site favicon" width="100" height="100">
+<br>
+<br><iframe src="iframe.htm" height="200" width="300"></iframe>
