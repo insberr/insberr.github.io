@@ -28,8 +28,8 @@ Hello! Welcome. Im sad, as you are most likely only one of my friends here.
       <br>- Working on a game (Link coming soon) my friend wants made
       <br>- Working on this website
       <br>- Learning HTML
-      <br>- School (I have to go)
-      <br>- Trying my hardest to not get depressed from my friends friend (its an ongoing task)
+      <br>- Moving files
+      <br>- 
       <br>
       <br>I am {{ site.todobar }}% done with these tasks
       <br>
@@ -64,10 +64,3 @@ Hello! Welcome. Im sad, as you are most likely only one of my friends here.
 <hr size="10" noshade>
 <br>
 <br>Thanks to you, I am not board anymore :)
-Text
-```
-<p>text me=die?</p>
-<a href="https://spidergamin.github.io/GameWebsite">Game</a>
-<p>text, long text, scroll text, i text, you text, hi there, i know you, actually maybe not, but thats fine, maybe we can get ti know eachother, but later, im really busy, mostly trying to be less annoying, its annoying, this text, and if you read all of it, thanks, i feel better now, and now that i no longer exist, you can sit back and enjoy this video</p>
-//nope
-```
