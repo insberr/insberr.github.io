@@ -14,7 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 siteversion: V 3
-todobar: 2.46297
+todobar: 13
 autoseconds: 
 title: SpiderGamin
 email: "jaytaygame@gmail.com"
