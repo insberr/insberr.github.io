@@ -13,11 +13,11 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-siteversion: V 2
+siteversion: V 3
 todobar: 2.46297
 autoseconds: 
 title: SpiderGamin
-email: "jaytaygame+personalweb@gmail.com"
+email: "jaytaygame@gmail.com"
 description: >- # this means to ignore newlines until "baseurl:"
   My personal website, for all the things i do, want to do, and am doing, + more.
 #baseurl: "" # the subpath of your site, e.g. /blog
@@ -32,7 +32,7 @@ plugins:
   - jekyll-sitemap
 
 # A list of the pages to display in the navigation bar
-header_pages:
+header_pages: posts
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
