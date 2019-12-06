@@ -2,7 +2,7 @@ Hello! Welcome. Im sad, as you are most likely only one of my friends here.
 <br>
 <ul class="nav nav-tabs">
   <li class="nav-item">
-    <a class="nav-link active" data-toggle="tab" href="home.html">Home</a>
+    <a class="nav-link active" data-toggle="tab" href="#home">Home</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" data-toggle="tab" href="#current">Current</a>
@@ -21,6 +21,7 @@ Hello! Welcome. Im sad, as you are most likely only one of my friends here.
   <div class="tab-pane fade active show" id="home">
     <p>No content here yet
       <br>
+      <iframe src="pages/home.html" style="border:none;"></iframe>
     </p>
   </div>
   <div class="tab-pane fade" id="current">
