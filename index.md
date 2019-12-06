@@ -14,7 +14,7 @@ Hello! Welcome. Im sad, as you are most likely only one of my friends here.
     <a class="nav-link" data-toggle="tab" href="#links">Links</a>
   </li>
   <li class="nav-item">
-   <a class="nav-link" data-toggle="tab" href="#about">posts.html</a>
+   <a class="nav-link" data-toggle="tab" href="layouts/page.html">About</a>
  </li>
 </ul>
 <div id="myTabContent" class="tab-content">
