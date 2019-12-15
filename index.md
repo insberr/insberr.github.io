@@ -21,7 +21,6 @@ Hello! Welcome. Im sad, as you are most likely only one of my friends here.
   <div class="tab-pane fade active show" id="home">
     <p>No content here yet
       <br>
-      <iframe src="pages/home.html" style="border:none;"></iframe>
     </p>
   </div>
   <div class="tab-pane fade" id="current">
@@ -67,5 +66,5 @@ Hello! Welcome. Im sad, as you are most likely only one of my friends here.
 <br>
 <br>Thanks to you, I am not board anymore :)
 <br><img src="spidergaminfavicon.png" alt="Site favicon" width="100" height="100">
-<br>
-<iframe src="home.html" height="200" width="300"></iframe>
+
+
