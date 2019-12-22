@@ -53,7 +53,7 @@ Hello! Welcome. Im sad, as you are most likely only one of my friends here.
       <br>- <a href="https://spidergamin.github.io/IncrementalUniverse/">Incremental Universe</a>
       <br>- <a href="https://spidergamin.github.io/HTMLtestingsite">HTML Testing Website</a>
       <br>- <a href="https:// ">Google Sites Website (Working progress)</a>
-      <br>- <font color="red"><a href="https:// ">YouTube Cannel</a></font>
+      <br>- <font color="red"><a href="https:// ">YouTube Channel</a></font>
     </p>
   </div>
   <div class="tab-pane fade" id="about">
