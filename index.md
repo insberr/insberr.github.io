@@ -67,5 +67,5 @@ Hello! Welcome. Im sad, as you are most likely only one of my friends here.
 <iframe src="https://docs.google.com/document/d/e/2PACX-1vSkgw_ZW8Gb8tjBWAwMMLnqt6Fr9Dk__FfAGoiRUjluqCGcir_mHzl511LGssVytPYwv4b0yhzH9Ja5/pub?embedded=true" width="650" height="500" frameborder="0" scrolling="auto"></iframe>
 <iframe src="https://www.netflix.com/browse"></iframe>
 <iframe width="425" height="315"
-src="https://www.youtube.com/embed/tgbNymZ7vqY?controlls=0">
+src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0">
 </iframe>
