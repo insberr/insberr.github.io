@@ -68,6 +68,7 @@ Hello! Welcome. Im sad, as you are most likely only one of my friends here.
       <source src="movie.ogg" type="video/ogg">
       Your browser does not support the video tag.
     </video>
+    <iframe src="https://drive.google.com/a/students.bethelsd.org/file/d/1I34vF8C9F7Rr-cjBEvkc--Vh4Fanuetb/view?usp=drivesdk" frameborder="0"  width="420" hight="315" </iframe>
   <!-- The end of the video pane -->
   </div>
 </div>
