@@ -15,7 +15,10 @@ Hello! Welcome. Im sad, as you are most likely only one of my friends here.
   </li>
   <li class="nav-item">
    <a class="nav-link" data-toggle="tab" href="#about">About</a>
- </li>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#video">Videos</a>
+  </li>
 </ul>
 <div id="myTabContent" class="tab-content">
   <div class="tab-pane fade active show" id="home">
@@ -57,7 +60,15 @@ Hello! Welcome. Im sad, as you are most likely only one of my friends here.
       <br>
     </p>
   </div>
- </div>
+  <div class="tab-pane fade" id="video">
+    <video width="320" height="240" controls>
+      <source src="movie.mp4" type="video/mp4">
+      <source src="movie.ogg" type="video/ogg">
+      Your browser does not support the video tag.
+    </video>
+  <!-- The end of the video pane -->
+  </div>
+</div>
 <br>
 <br>
 <br>
