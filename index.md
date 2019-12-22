@@ -52,6 +52,8 @@ Hello! Welcome. Im sad, as you are most likely only one of my friends here.
     <p>The only links, so sad
       <br>- <a href="https://spidergamin.github.io/IncrementalUniverse/">Incremental Universe</a>
       <br>- <a href="https://spidergamin.github.io/HTMLtestingsite">HTML Testing Website</a>
+      <br>- <a href="https:// ">Google Sites Website (Working progress)</a>
+      <br>- <a href="https:// ">YouTube Cannel</a>
     </p>
   </div>
   <div class="tab-pane fade" id="about">
