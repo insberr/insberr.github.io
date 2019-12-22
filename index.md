@@ -64,4 +64,4 @@ Hello! Welcome. Im sad, as you are most likely only one of my friends here.
 <br>
 <hr size="10" noshade>
 <br> Hello there, how are you? I guess you cant really answer me.
-<iframe src="https://docs.google.com/document/d/e/2PACX-1vSkgw_ZW8Gb8tjBWAwMMLnqt6Fr9Dk__FfAGoiRUjluqCGcir_mHzl511LGssVytPYwv4b0yhzH9Ja5/pub?embedded=true" width="600" height="500"></iframe>
+<iframe src="https://docs.google.com/document/d/e/2PACX-1vSkgw_ZW8Gb8tjBWAwMMLnqt6Fr9Dk__FfAGoiRUjluqCGcir_mHzl511LGssVytPYwv4b0yhzH9Ja5/pub?embedded=true" width="700" height="500"></iframe>
