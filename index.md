@@ -47,7 +47,7 @@ Hello! Welcome. Im sad, as you are most likely only one of my friends here.
   </div>
   <div class="tab-pane fade" id="links">
     <p>The only links, so sad
-      <br>- <a href="https://spidergamin.github.io/To-Be-Named/">Incremental Universe</a>
+      <br>- <a href="https://spidergamin.github.io/IncrementalUniverse/">Incremental Universe</a>
       <br>- <a href="https://spidergamin.github.io/HTMLtestingsite">HTML Testing Website</a>
     </p>
   </div>
