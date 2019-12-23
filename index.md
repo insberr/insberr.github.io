@@ -68,6 +68,11 @@ Hello! Welcome. Im sad, as you are most likely only one of my friends here.
       <source src="movie.ogg" type="video/ogg">
       Your browser does not support the video tag.
     </video>
+    <audio controls>
+  <source src=".ogg" type="audio/ogg">
+  <source src=" .mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
   <!-- The end of the video pane -->
   </div>
 </div>
