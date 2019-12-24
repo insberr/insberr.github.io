@@ -81,7 +81,7 @@ Hello! Welcome. Im sad, as you are most likely only one of my friends here.
     <br>
     <!-- Audio 1  Manual Play -->
     <audio controls>
-      <source src="Feel_It_Still.m4a" type="audio/mpeg">
+      <source src="Feel_It_Still.m4a" type="audio/mp4">
       <source src="Feel_It_Still.m4a" type="audio/mpeg">
       Your browser does not support the audio element.
     </audio>
