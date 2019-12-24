@@ -63,11 +63,9 @@
 </div>
 <br>
 <br>
-<br>
-<br>
 <hr size="10" noshade>
-<br> Hello there, how are you? I guess you cant really answer me.
-<iframe src="https://docs.google.com/document/d/e/2PACX-1vSkgw_ZW8Gb8tjBWAwMMLnqt6Fr9Dk__FfAGoiRUjluqCGcir_mHzl511LGssVytPYwv4b0yhzH9Ja5/pub?embedded=true" width="auto" height="auto" frameborder="0" scrolling="auto"></iframe>
+<br>
+<iframe src="https://docs.google.com/document/d/e/2PACX-1vSkgw_ZW8Gb8tjBWAwMMLnqt6Fr9Dk__FfAGoiRUjluqCGcir_mHzl511LGssVytPYwv4b0yhzH9Ja5/pub?embedded=true" width="660" height="100" frameborder="0" scrolling="auto"></iframe>
 <br> 
 <!-- Enbeded Youtube Video <iframe width="420" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0" frameborder="0"></iframe> -->
 <br> Questions? Email Me!
