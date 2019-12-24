@@ -17,7 +17,7 @@ Hello! Welcome. Im sad, as you are most likely only one of my friends here.
    <a class="nav-link" data-toggle="tab" href="#about">About</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" data-toggle="tab" href="#video">Media</a>
+    <a class="nav-link" data-toggle="tab" href="#media">Media</a>
   </li>
 </ul>
 <div id="myTabContent" class="tab-content">
@@ -62,30 +62,53 @@ Hello! Welcome. Im sad, as you are most likely only one of my friends here.
       <br>
     </p>
   </div>
-  <div class="tab-pane fade" id="video">
-    <!-- Video 1  Manual Play -->
-    <video width="320" height="240" controls>
-      <source src=" .mp4" type="video/mp4">
-      <source src=" .mp4" type="video/mp4">
-      Your browser does not want to support me : (
-    </video>
-    <br>
-    <!-- Video 2  Auto Play-->
-    <video controls autoplay>
-    <source src=" .mp4">
-    <source src=" .mp4">
-      Sasly, your browser hates this video : (
-    </video>
-    <br>
-    <!-- Audio 1  Manual Play -->
-    <audio controls>
-      <source src="Feel_It_Still.m4a" type="audio/mp4">
-      <source src="Feel_It_Still.m4a" type="audio/mp4">
-      Your browser does not support the audio element.
-    </audio>
-    <!-- The end of the video pane -->
+  <div class="tab-pane fade" id="media">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#video">Videos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#music">Music</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#pics">Pictures</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#na">Coming Soon</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#na">Coming Soon</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#na">Coming Soon</a>
+      </li>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+      <div class="tab-pane fade" id="video">
+        <!-- Video 1  Manual Play -->
+        <video width="320" height="240" controls>
+          <source src=" .mp4" type="video/mp4">
+          <source src=" .mp4" type="video/mp4">
+          Your browser does not want to support me : (
+        </video>
+        <br>
+        <!-- Video 2  Auto Play-->
+        <video controls autoplay>
+          <source src=" .mp4">
+          <source src=" .mp4">
+          Sadly, your browser hates this video : (
+        </video>
+        <br>
+        <!-- Audio 1  Manual Play -->
+        <audio controls>
+          <source src="Feel_It_Still.m4a" type="audio/mp4">
+          <source src="Feel_It_Still.m4a" type="audio/mp4">
+          Your browser does not support the audio element.
+        </audio>
+        <!-- The end of the video pane -->
+      </div>
+    </div>
   </div>
-</div>
 <br>
 <br>
 <br>
