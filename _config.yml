@@ -6,7 +6,7 @@
 todobar: 32
 autoseconds:
 title: SpiderGamin
-email: "jaytaygame@gmail.com"
+email: ""
 description: >- # this means to ignore newlines until "baseurl:"
   My personal website
 #baseurl: "" # the subpath of your site, e.g. /blog
@@ -14,7 +14,7 @@ description: >- # this means to ignore newlines until "baseurl:"
 #twitter_username: jekyllrb
 github_username:  SpiderGamin
 author: SpiderGamin
-repository: "nicolas-van/bootstrap-4-github-pages"
+#repository: "nicolas-van/bootstrap-4-github-pages"
 # Build settings
 plugins:
   - jekyll-feed
@@ -22,6 +22,8 @@ plugins:
 
 # A list of the pages to display in the navigation bar
 header_pages: 
+   - about.html
+   - secret.html
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
@@ -31,3 +33,4 @@ exclude:
   - Gemfile.lock
   - node_modules
   - update_boostrap.sh
+  - Feel_It_Still.m4a
