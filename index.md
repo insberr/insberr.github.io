@@ -72,13 +72,7 @@
         <a class="nav-link" data-toggle="tab" href="#pics">Pictures</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#na">Coming Soon</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#na">Coming Soon</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#na">Coming Soon</a>
+        <a class="nav-link" data-toggle="tab" href="#nicetry">Coming Soon</a>
       </li>
     </ul>
     <div id="myTabContent" class="tab-content">
