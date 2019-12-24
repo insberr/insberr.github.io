@@ -15,7 +15,7 @@
    <a class="nav-link" data-toggle="tab" href="#about">About</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" data-toggle="tab" href="Pages/Media">Media</a>
+    <a class="nav-link" data-toggle="tab" href="https://spidergamin.github.io/PersonalWebsite/media">Media</a>
   </li>
 </ul>
 <div id="myTabContent" class="tab-content">
@@ -63,7 +63,7 @@
 </div>
 <br>
 <br>
-<hr size="10" noshade>
+<hr size="100" noshade>
 <br>
 <iframe src="https://docs.google.com/document/d/e/2PACX-1vSkgw_ZW8Gb8tjBWAwMMLnqt6Fr9Dk__FfAGoiRUjluqCGcir_mHzl511LGssVytPYwv4b0yhzH9Ja5/pub?embedded=true" width="660" height="100" frameborder="0" scrolling="auto"></iframe>
 <br> 
