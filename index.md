@@ -89,7 +89,7 @@
         <br> Video Coming Soon
         <br>
         <!-- Video 2  Auto Play-->
-        <video width="1080" height="720" controls autoplay>
+        <video width="720" height="480" controls autoplay>
           <source src=" .mp4">
           <source src=" .mp4">
           Sadly, your browser hates this video : (
