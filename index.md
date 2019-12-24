@@ -15,7 +15,7 @@
    <a class="nav-link" data-toggle="tab" href="#about">About</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" data-toggle="tab" href="PersonalWebsite/Pages/Media">Media</a>
+    <a class="nav-link" data-toggle="tab" href="Pages/Media">Media</a>
   </li>
 </ul>
 <div id="myTabContent" class="tab-content">
@@ -60,62 +60,10 @@
       <br>
     </p>
   </div>
-  <div class="tab-pane fade" id="media">
-    <ul class="nav nav-tabs">
-      <li class="nav-item">
-        <a class="nav-link active" data-toggle="tab" href="#video">Videos</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#music">Music</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#pics">Pictures</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#nicetry">Coming Soon</a>
-      </li>
-    </ul>
-    <div id="myTabContent" class="tab-content">
-      <div class="tab-pane fade active show" id="video">
-        <!-- Video 1  Manual Play -->
-        <br> Video Coming Soon
-        <br>
-        <video width="320" height="240" controls>
-          <source src=" .mp4" type="video/mp4">
-          <source src=" .mp4" type="video/mp4">
-          Your browser does not want to support me : (
-        </video>
-        <br>
-        <br> Video Coming Soon
-        <br>
-        <!-- Video 2  Auto Play-->
-        <video width="720" height="480" controls autoplay>
-          <source src=" .mp4">
-          <source src=" .mp4">
-          Sadly, your browser hates this video : (
-        </video>
-        <br>
-      </div>
-      <div class="tab-pane fade" id="music">
-        <!-- Audio 1  Manual Play -->
-        <br>
-        <br> Feel It Still
-        <br>
-        <audio controls>
-          <source src="Feel_It_Still.m4a" type="audio/mp4">
-          <source src="Feel_It_Still.m4a" type="audio/mp4">
-          Your browser does not support the audio element.
-        </audio>
-      </div>
-      <div class="tab-pane fade" id="pics">
-        <br> Image Coming Soon! This area will be used for pictures of my dog, Thor.
-        <img src=" .jpg" alt="Image Coming Soon">
-      </div>
-    </div>
-  </div>
-  <br>
-  <br>
-  <br>
+</div>
+<br>
+<br>
+<br>
 <br>
 <hr size="10" noshade>
 <br> Hello there, how are you? I guess you cant really answer me.
