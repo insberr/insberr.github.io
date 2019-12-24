@@ -50,7 +50,7 @@
       <br>- <a href="https://spidergamin.github.io/IncrementalUniverse/" style="color:cyan" target="_blank">Incremental Universe</a> (Incremental Game)
       <br>- <a href="https://spidergamin.github.io/HTMLtestingsite">HTML Testing Website</a>
       <br>- <a href="https:// " target="_blank">Google Sites Website</a> (Working Progress and link coming Soon)
-      <br>- My <a href="https:// " style="color:orange" target="_blank">YouTube Channel</a> (Link Coming Soon)
+      <br>- My <a href="https:// " style="color:red" target="_blank">YouTube Channel</a> (Link Coming Soon)
     </p>
   </div>
   <div class="tab-pane fade" id="about">
@@ -78,14 +78,15 @@
     <div id="myTabContent" class="tab-content">
       <div class="tab-pane fade" id="video">
         <!-- Video 1  Manual Play -->
+        <br> Video Coming Soon
         <video width="320" height="240" controls>
           <source src=" .mp4" type="video/mp4">
           <source src=" .mp4" type="video/mp4">
           Your browser does not want to support me : (
         </video>
-        <br>
+        <br> Video Coming Soon
         <!-- Video 2  Auto Play-->
-        <video controls autoplay>
+        <video width="1080" height="720" controls autoplay>
           <source src=" .mp4">
           <source src=" .mp4">
           Sadly, your browser hates this video : (
@@ -94,12 +95,17 @@
       </div>
       <div class="tab-pane fade" id="music">
         <!-- Audio 1  Manual Play -->
+        <br>
+        <br> Feel It Still
         <audio controls>
           <source src="Feel_It_Still.m4a" type="audio/mp4">
           <source src="Feel_It_Still.m4a" type="audio/mp4">
           Your browser does not support the audio element.
         </audio>
-        <!-- The end of the video pane -->
+      </div>
+      <div class="tab-pane fade" id="pics">
+        <br> Image Coming Soon! This area will be used for pictures of my dog, Thor.
+        <img src=" .jpg" alt="Image Coming Soon">
       </div>
     </div>
   </div>
