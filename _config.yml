@@ -22,7 +22,7 @@ plugins:
 
 # A list of the pages to display in the navigation bar
 header_pages:
-   - about.html
+   - media.html
    - secret.html
 
 # Exclude from processing.
