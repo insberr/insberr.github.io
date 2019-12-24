@@ -22,7 +22,7 @@ Hello! Welcome. Im sad, as you are most likely only one of my friends here.
 </ul>
 <div id="myTabContent" class="tab-content">
   <div class="tab-pane fade active show" id="home">
-    <iframe src="https://docs.google.com/document/d/e/2PACX-1vSrYKIKuefPNQ3Pe8irJeO9swbjc6iDddFd0pSEe8BxBheXkgMnzw7-YVsNMHu8H4qvG4I_STj0mGCG/pub?embedded=true"></iframe>
+    <iframe width="660" hight="100" frameborder="0" scrolling="off" src="https://docs.google.com/document/d/e/2PACX-1vSrYKIKuefPNQ3Pe8irJeO9swbjc6iDddFd0pSEe8BxBheXkgMnzw7-YVsNMHu8H4qvG4I_STj0mGCG/pub?embedded=true"></iframe>
   </div>
   <div class="tab-pane fade" id="current">
     <p>Im currently
@@ -94,9 +94,5 @@ Hello! Welcome. Im sad, as you are most likely only one of my friends here.
 <br> Hello there, how are you? I guess you cant really answer me.
 <iframe src="https://docs.google.com/document/d/e/2PACX-1vSkgw_ZW8Gb8tjBWAwMMLnqt6Fr9Dk__FfAGoiRUjluqCGcir_mHzl511LGssVytPYwv4b0yhzH9Ja5/pub?embedded=true" width="655" height="500" frameborder="0" scrolling="auto"></iframe>
 <br> 
-<!-- Enbeded Youtube Video
-<iframe width="420" height="315"
-src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0" frameborder="0">
-</iframe>
--->
+<!-- Enbeded Youtube Video <iframe width="420" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0" frameborder="0"></iframe> -->
 <br> Questions? Email Me!
