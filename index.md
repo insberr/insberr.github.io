@@ -76,7 +76,7 @@
       </li>
     </ul>
     <div id="myTabContent" class="tab-content">
-      <div class="tab-pane fade" id="video">
+      <div class="tab-pane fade active show" id="video">
         <!-- Video 1  Manual Play -->
         <br> Video Coming Soon
         <video width="320" height="240" controls>
