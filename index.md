@@ -20,7 +20,7 @@
 </ul>
 <div id="myTabContent" class="tab-content">
   <div class="tab-pane fade active show" id="home">
-    <iframe width="660" hight="100" frameborder="0" scrolling="off" src="https://docs.google.com/document/d/e/2PACX-1vSrYKIKuefPNQ3Pe8irJeO9swbjc6iDddFd0pSEe8BxBheXkgMnzw7-YVsNMHu8H4qvG4I_STj0mGCG/pub?embedded=true"></iframe>
+    <iframe width="660" hight="200" frameborder="0" scrolling="off" src="https://docs.google.com/document/d/e/2PACX-1vSrYKIKuefPNQ3Pe8irJeO9swbjc6iDddFd0pSEe8BxBheXkgMnzw7-YVsNMHu8H4qvG4I_STj0mGCG/pub?embedded=true"></iframe>
   </div>
   <div class="tab-pane fade" id="current">
     <p>Im currently
@@ -61,8 +61,6 @@
     </p>
   </div>
 </div>
-<br>
-<br>
 <hr size="100" noshade>
 <br>
 <iframe src="https://docs.google.com/document/d/e/2PACX-1vSkgw_ZW8Gb8tjBWAwMMLnqt6Fr9Dk__FfAGoiRUjluqCGcir_mHzl511LGssVytPYwv4b0yhzH9Ja5/pub?embedded=true" width="660" height="100" frameborder="0" scrolling="auto"></iframe>
