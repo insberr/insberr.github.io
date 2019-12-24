@@ -15,7 +15,7 @@
    <a class="nav-link" data-toggle="tab" href="#about">About</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" data-toggle="link" href="https://spidergamin.github.io/PersonalWebsite/media">Media</a>
+    <a class="nav-link" data-toggle="link" href="media">Media</a>
   </li>
 </ul>
 <div id="myTabContent" class="tab-content">
