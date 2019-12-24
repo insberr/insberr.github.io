@@ -1,5 +1,3 @@
-Hello! Welcome. Im sad, as you are most likely only one of my friends here.
-<br>
 <ul class="nav nav-tabs">
   <li class="nav-item">
     <a class="nav-link active" data-toggle="tab" href="#home">Home</a>
@@ -99,6 +97,8 @@ Hello! Welcome. Im sad, as you are most likely only one of my friends here.
           Sadly, your browser hates this video : (
         </video>
         <br>
+      </div>
+      <div class="tab-pane fade" id="music">
         <!-- Audio 1  Manual Play -->
         <audio controls>
           <source src="Feel_It_Still.m4a" type="audio/mp4">
@@ -109,9 +109,9 @@ Hello! Welcome. Im sad, as you are most likely only one of my friends here.
       </div>
     </div>
   </div>
-<br>
-<br>
-<br>
+  <br>
+  <br>
+  <br>
 <br>
 <hr size="10" noshade>
 <br> Hello there, how are you? I guess you cant really answer me.
