@@ -28,7 +28,7 @@
       <br>- Working on this website
       <br>- Learning HTML
       <br>- Moving files
-      <br>- Helping Friends
+      <br>
       <br>- Trying to intergrate Google Docs into this so the things I edit are easier
       <br>
       <br>I am {{ site.todobar }}% done with these tasks
