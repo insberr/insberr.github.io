@@ -20,7 +20,7 @@
 </ul>
 <div id="myTabContent" class="tab-content">
   <div class="tab-pane fade active show" id="home">
-    <iframe width="660" hight="400" frameborder="0" scrolling="off" src="https://docs.google.com/document/d/e/2PACX-1vSrYKIKuefPNQ3Pe8irJeO9swbjc6iDddFd0pSEe8BxBheXkgMnzw7-YVsNMHu8H4qvG4I_STj0mGCG/pub?embedded=true"></iframe>
+    <iframe width="660" height="400" frameborder="0" scrolling="off" src="https://docs.google.com/document/d/e/2PACX-1vSrYKIKuefPNQ3Pe8irJeO9swbjc6iDddFd0pSEe8BxBheXkgMnzw7-YVsNMHu8H4qvG4I_STj0mGCG/pub?embedded=true"></iframe>
   </div>
   <div class="tab-pane fade" id="current">
     <p>Im currently
