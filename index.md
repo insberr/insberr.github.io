@@ -22,9 +22,7 @@ Hello! Welcome. Im sad, as you are most likely only one of my friends here.
 </ul>
 <div id="myTabContent" class="tab-content">
   <div class="tab-pane fade active show" id="home">
-    <p>No content here yet
-      <br>
-    </p>
+    <iframe src="https://docs.google.com/document/d/e/2PACX-1vSrYKIKuefPNQ3Pe8irJeO9swbjc6iDddFd0pSEe8BxBheXkgMnzw7-YVsNMHu8H4qvG4I_STj0mGCG/pub?embedded=true"></iframe>
   </div>
   <div class="tab-pane fade" id="current">
     <p>Im currently
