@@ -3,12 +3,12 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-todobar: 13
+todobar: 32
 autoseconds:
 title: SpiderGamin
 email: "jaytaygame@gmail.com"
 description: >- # this means to ignore newlines until "baseurl:"
-  My personal website, for all the things i do, want to do, and am doing, + more.
+  My personal website
 #baseurl: "" # the subpath of your site, e.g. /blog
 #url: "" # the base hostname & protocol for your site, e.g. http://example.com
 #twitter_username: jekyllrb
