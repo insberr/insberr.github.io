@@ -79,12 +79,15 @@
       <div class="tab-pane fade active show" id="video">
         <!-- Video 1  Manual Play -->
         <br> Video Coming Soon
+        <br>
         <video width="320" height="240" controls>
           <source src=" .mp4" type="video/mp4">
           <source src=" .mp4" type="video/mp4">
           Your browser does not want to support me : (
         </video>
+        <br>
         <br> Video Coming Soon
+        <br>
         <!-- Video 2  Auto Play-->
         <video width="1080" height="720" controls autoplay>
           <source src=" .mp4">
@@ -97,6 +100,7 @@
         <!-- Audio 1  Manual Play -->
         <br>
         <br> Feel It Still
+        <br>
         <audio controls>
           <source src="Feel_It_Still.m4a" type="audio/mp4">
           <source src="Feel_It_Still.m4a" type="audio/mp4">
