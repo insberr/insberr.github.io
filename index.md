@@ -51,10 +51,10 @@ Hello! Welcome. Im sad, as you are most likely only one of my friends here.
   </div>
   <div class="tab-pane fade" id="links">
     <p>Sadly, there are only some links
-      <br>- <a href="https://spidergamin.github.io/IncrementalUniverse/" style="color:cyan" target"_blank">Incremental Universe</a> (Incremental Game)
+      <br>- <a href="https://spidergamin.github.io/IncrementalUniverse/" style="color:cyan" target="_blank">Incremental Universe</a> (Incremental Game)
       <br>- <a href="https://spidergamin.github.io/HTMLtestingsite">HTML Testing Website</a>
-      <br>- <a href="https:// " target"_blank">Google Sites Website</a> (Working Progress and link coming Soon)
-      <br>- My <a href="https:// " style="color:orange" target"_blank">YouTube Channel</a> (Link Coming Soon)
+      <br>- <a href="https:// " target="_blank">Google Sites Website</a> (Working Progress and link coming Soon)
+      <br>- My <a href="https:// " style="color:orange" target="_blank">YouTube Channel</a> (Link Coming Soon)
     </p>
   </div>
   <div class="tab-pane fade" id="about">
@@ -82,7 +82,7 @@ Hello! Welcome. Im sad, as you are most likely only one of my friends here.
     <!-- Audio 1  Manual Play -->
     <audio controls>
       <source src="Feel_It_Still.m4a" type="audio/mp4">
-      <source src="Feel_It_Still.m4a" type="audio/mpeg">
+      <source src="Feel_It_Still.m4a" type="audio/mp4">
       Your browser does not support the audio element.
     </audio>
     <!-- The end of the video pane -->
