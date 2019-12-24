@@ -51,10 +51,10 @@ Hello! Welcome. Im sad, as you are most likely only one of my friends here.
   </div>
   <div class="tab-pane fade" id="links">
     <p>Sadly, there are only some links
-      <br>- <a href="https://spidergamin.github.io/IncrementalUniverse/" style="color:cyan">Incremental Universe</a> (Incremental Game)
+      <br>- <a href="https://spidergamin.github.io/IncrementalUniverse/" style="color:cyan" target"_blank">Incremental Universe</a> (Incremental Game)
       <br>- <a href="https://spidergamin.github.io/HTMLtestingsite">HTML Testing Website</a>
-      <br>- <a href="https:// ">Google Sites Website</a> (Working Progress and link coming Soon)
-      <br>- My <a href="https:// " style="color:orange">YouTube Channel</a> (Link Coming Soon)
+      <br>- <a href="https:// " target"_blank">Google Sites Website</a> (Working Progress and link coming Soon)
+      <br>- My <a href="https:// " style="color:orange" target"_blank">YouTube Channel</a> (Link Coming Soon)
     </p>
   </div>
   <div class="tab-pane fade" id="about">
