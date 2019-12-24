@@ -21,9 +21,7 @@ plugins:
   - jekyll-sitemap
 
 # A list of the pages to display in the navigation bar
-header_pages: 
-   - about.html
-   - secret.html
+header_pages: about.html secret.html
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
@@ -33,4 +31,3 @@ exclude:
   - Gemfile.lock
   - node_modules
   - update_boostrap.sh
-  - Feel_It_Still.m4a
