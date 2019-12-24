@@ -68,8 +68,14 @@ Hello! Welcome. Im sad, as you are most likely only one of my friends here.
       <source src="movie.ogg" type="video/ogg">
       Your browser does not support the video tag.
     </video>
+    <video width="320" height="240" controls>
+    <source src="1.mp4">
+    <source src="2.mp4">
+    <source src="3.mp4">
+    <source src="4.mp4">
+</video>
     <audio controls>
-  <source src="Beep Beep I'm a Sheep - FT. TomSka & BlackGryph0n - LilDeuceDeuce - ASDFM10.ogg" type="audio/ogg">
+  <source src="Beep Beep I'm a Sheep - FT. TomSka & BlackGryph0n - LilDeuceDeuce - ASDFM10.m4a" type="audio/mpeg">
   <source src="Beep Beep I'm a Sheep - FT. TomSka & BlackGryph0n - LilDeuceDeuce - ASDFM10.m4a" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio>
