@@ -1,8 +1,15 @@
+/* Page Top */
+
+/* Variables */
+:root {
+  --speacial-gray: #222222;
+}
+
 /* Body */
 body {
     font-family: "Nano Sans Mono";
     color: white;
-    background: #222222;
+    background: var(--speacial-gray);
     margin: 10px;
 }
 
@@ -14,7 +21,7 @@ body {
     color: black;
 }
 .color-grey {
-    color: #222222;
+    color: var(--speacial-gray);
 }
 
 /* ======== Links ======== */
@@ -56,6 +63,9 @@ ul {
   padding: 0;
   overflow: hidden;
   background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 li {
