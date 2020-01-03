@@ -91,7 +91,7 @@ li a:hover:not(.active) {
   background-color: #33ccff;
 }
 
-/* Pogress bar */
+/* ============ Pogress bar ============ */
 .w3-round-xlarge {
     border-radius:16px;
 }
@@ -107,4 +107,7 @@ li a:hover:not(.active) {
 .w3-light-grey,.w3-hover-light-grey:hover,.w3-light-gray,.w3-hover-light-gray:hover {
     color:#000!important;
     background-color:#f1f1f1!important
+}
+.w3-round,.w3-round-medium {
+    border-radius:4px
 }
