@@ -1,114 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
- <meta charset="utf-8">
-  <link rel="shortcut icon" href="SpiderGaminIcon.png" type="image/x-icon" />
-  <META HTTP-EQUIV="refresh" CONTENT="">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/assets/main.css">
-  <script src="/assets/javascript/bootstrap/jquery.min.js"></script>
-  <script src="/assets/javascript/bootstrap/bootstrap.bundle.min.js"></script>
-</head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <div class="container">
-    <a class="navbar-brand" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
-    {%- assign page_paths = site.header_pages -%}
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto">
-        {%- for path in page_paths -%}
-          {%- assign my_page = site.pages | where: "path", path | first -%}
-          {%- if my_page.title -%}
-          <li class="nav-item">
-            <a class="nav-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
-          </li>
-          {%- endif -%}
-        {% endfor -%}
-        <li class="nav-item">
-          <a class="nav-link" target="_blank" href="{{ site.github.repository_url }}">See The Code</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-    <div class="py-5">
-      <div class="container page-content">
-      </div>
-    </div>
-    <!--include footer.html-->
-<nav>
-  <li class="nav-item">
-    <a class="nav-link active" data-toggle="tab" href="#home">Home</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" data-toggle="tab" href="#current">Current</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" data-toggle="tab" href="#later">Later</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" data-toggle="tab" href="#links">Links</a>
-  </li>
-  <li class="nav-item">
-   <a class="nav-link" data-toggle="tab" href="#about">About</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" data-toggle="link" href="media">Media</a>
-  </li>
-</nav>
-<div id="myTabContent" class="tab-content">
-  <div class="tab-pane fade active show" id="home">
-    <iframe width="660" height="400" frameborder="0" scrolling="off" src="https://docs.google.com/document/d/e/2PACX-1vSrYKIKuefPNQ3Pe8irJeO9swbjc6iDddFd0pSEe8BxBheXkgMnzw7-YVsNMHu8H4qvG4I_STj0mGCG/pub?embedded=true"></iframe>
-  </div>
-  <div class="tab-pane fade" id="current">
-    <p>Im currently
-      <br>- Working on an incremental game (Link in the links tab)
-      <br>- Working on this website
-      <br>- Learning HTML
-      <br>- Moving files
-      <br>
-      <br>- Trying to intergrate Google Docs into this so the things I edit are easier
-      <br>
-      <br>I am {{ site.todobar }}% done with these tasks
-      <br>
-    </p>
-      <div class="progress">
-    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="{{ site.todobar }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ site.todobar }}%">
-      </div>
-    </div>
-  </div>
-  <div class="tab-pane fade" id="later">
-    <p>Things I plan on doing later
-      <br>- Making a website (Likely this one) from scratch on github (not likely to happen for a long time)
-      <br>- 
-    </p>
-  </div>
-  <div class="tab-pane fade" id="links">
-    <p>Sadly, there are only some links
-      <br>- <a href="https://spidergamin.github.io/IncrementalUniverse/" style="color:cyan" target="_blank">Incremental Universe</a> (Incremental Game)
-      <br>- <a href="https://spidergamin.github.io/HTMLtestingsite" target="_blank">HTML Testing Website</a>
-      <br>- <a href="https://sites.google.com/u/3/s/1BD0eT7CiUZ8dPx2xiJN-ZkaxjEIMOx8P/edit" target="_blank">Google Sites Website</a> (Working Progress And Now Has A link)
-      <br>- <a href="https://www.youtube.com/channel/UCO2rlcllQhQdPM8PZkqEAcA?view_as=subscriber" style="color:red" target="_blank">My YouTube Channel</a> (Now Has A Link)
-    </p>
-  </div>
-  <div class="tab-pane fade" id="about">
-    <p>About me. You found it!
-      <br>Here is where I'll put info about myself.
-      <br>Nothing much here right now, check back later to see more content. :)
-      <br>
-    </p>
-  </div>
-</div>
-<hr size="100" noshade>
-<br>
-<iframe src="https://docs.google.com/document/d/e/2PACX-1vSkgw_ZW8Gb8tjBWAwMMLnqt6Fr9Dk__FfAGoiRUjluqCGcir_mHzl511LGssVytPYwv4b0yhzH9Ja5/pub?embedded=true" width="660" height="100" frameborder="0" scrolling="auto"></iframe>
-<br> 
-<!-- Enbeded Youtube Video <iframe width="420" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0" frameborder="0"></iframe> -->
-<br> Questions? Email Me!
-</body>
-</html>
+<html>
+    <head>
+        <title>Personal Website | Gitlab</title>
+        <meta charset="utf-8">
+        <link rel="shortcut icon" href="SpiderGaminIcon.png" type="image/x-icon" />
+        <meta HTTP-EQUIV="refresh" content="5">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/assets/main.css">
+        <script src="/assets/javascript/bootstrap/jquery.min.js"></script>
+        <script src="/assets/javascript/bootstrap/bootstrap.bundle.min.js"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="https://github.com/spidergamin/PersonalWebsite">Personal Website | Github</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://spidergamin.gitlab.io/PersonalWebsite">Personal Website</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" target="_blank" href="https://gitlab.com/spidergamin/PersonalWebsite">See The Code</a>
+                        </li>
+                        </ul>
+                        </div>
+                        </div>
+                        </nav>
+                        <div class="py-5">
+                            <div class="container page-content">
+                                <nav>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" data-toggle="tab" href="#home">Home</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-toggle="tab" href="#current">Current</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" data-toggle="tab" href="#later">Later</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" data-toggle="tab" href="#links">Links</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" data-toggle="tab" href="#about">About</a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link" data-toggle="link" href="media">Media</a>
+                                                            </li>
+                                                            </nav>
+                                                            <div id="myTabContent" class="tab-content">
+                                                                <div class="tab-pane fade active show" id="home">
+                                                                    <iframe width="660" height="400" frameborder="0" scrolling="off" src="https://docs.google.com/document/d/e/2PACX-1vSrYKIKuefPNQ3Pe8irJeO9swbjc6iDddFd0pSEe8BxBheXkgMnzw7-YVsNMHu8H4qvG4I_STj0mGCG/pub?embedded=true"></iframe>
+                                                                    </div>
+                                                                    <div class="tab-pane fade" id="current">
+                                                                        <p>Im currently
+                                                                        <br>- Working on an incremental game (Link in the links tab)
+                                                                        <br>- Working on this website
+                                                                        <br>- Learning HTML
+                                                                        <br>- Moving files
+                                                                        <br>
+                                                                        <br>- Trying to intergrate Google Docs into this so the things I edit are easier
+                                                                        <br>
+                                                                        <br>I am {{ site.todobar }}% done with these tasks
+                                                                        <br>
+                                                                        </p>
+                                                                        <div class="progress">
+                                                                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20">
+                                                                                
+                                                                            </div>
+                                                                            </div>
+                                                                            </div>
+                                                                            <div class="tab-pane fade" id="later">
+                                                                                <p>Things I plan on doing later
+                                                                                <br>- Making a website (Likely this one) from scratch on github (not likely to happen for a long time)
+                                                                                <br>- 
+                                                                                </p>
+                                                                                </div>
+                                                                                <div class="tab-pane fade" id="links">
+                                                                                    <p>Sadly, there are only some links
+                                                                                    <br>- <a href="https://spidergamin.github.io/IncrementalUniverse/" style="color:cyan" target="_blank">Incremental Universe</a> (Incremental Game)
+                                                                                    <br>- <a href="https://spidergamin.github.io/HTMLtestingsite" target="_blank">HTML Testing Website</a>
+                                                                                    <br>- <a href="https://sites.google.com/u/3/s/1BD0eT7CiUZ8dPx2xiJN-ZkaxjEIMOx8P/edit" target="_blank">Google Sites Website</a> (Working Progress And Now Has A link)
+                                                                                    <br>- <a href="https://www.youtube.com/channel/UCO2rlcllQhQdPM8PZkqEAcA?view_as=subscriber" style="color:red" target="_blank">My YouTube Channel</a> (Now Has A Link)
+                                                                                    </p>
+                                                                                    </div>
+                                                                                    <div class="tab-pane fade" id="about">
+                                                                                        <p>About me. You found it!
+                                                                                        <br>Here is where I'll put info about myself.
+                                                                                        <br>Nothing much here right now, check back later to see more content. :)
+                                                                                        <br>
+                                                                                        </p>
+                                                                                        </div>
+                                                                                        </div>
+                                                                                        <hr size="5" noshade>
+                                                                                        <br>
+                                                                                        <iframe src="https://docs.google.com/document/d/e/2PACX-1vSkgw_ZW8Gb8tjBWAwMMLnqt6Fr9Dk__FfAGoiRUjluqCGcir_mHzl511LGssVytPYwv4b0yhzH9Ja5/pub?embedded=true" width="660" height="100" frameborder="0" scrolling="auto"></iframe>
+                                                                                        <br> 
+                                                                                        <!-- Enbeded Youtube Video <iframe width="420" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0" frameborder="0"></iframe> -->
+                                                                                        <br> Questions? Email Me!
+                                                                                        </div>
+                                                                                        </div>
+                                                                                        </body>
+                                                                                        </html>
