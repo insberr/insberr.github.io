@@ -96,5 +96,11 @@ li a:hover:not(.active) {
     border-radius:16px;
 }
 .w3-container:after,.w3-container:before {
-    content:"";display:table;clear:both
+    content:"";
+    display:table;
+    clear:both
+}
+.w3-blue,.w3-hover-blue:hover {
+    color:#fff!important;
+    background-color:#2196F3!important
 }
