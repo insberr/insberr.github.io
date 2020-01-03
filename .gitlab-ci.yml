@@ -11,12 +11,3 @@ pages:
       - public
   only:
     - master
-#baseurl: "" # the subpath of your site, e.g. /blog
-#url: "" # the base hostname & protocol for your site, e.g. http://example.com
-#twitter_username: jekyllrb
-#repository: "nicolas-van/bootstrap-4-github-pages"
-# Build settings
-# A list of the pages to display in the navigation bar
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
