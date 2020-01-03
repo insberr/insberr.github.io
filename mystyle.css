@@ -92,6 +92,9 @@ li a:hover:not(.active) {
 }
 
 /* Pogress bar */
-.w3-round-xlarge{
+.w3-round-xlarge {
     border-radius:16px;
+}
+.w3-container:after,.w3-container:before {
+    content:"";display:table;clear:both
 }
