@@ -14,7 +14,9 @@ body {
 }
 
 /* Div */
-
+div .fix {
+    margin-top: 5px;
+}
 
 /* Text color */
 .color-black {
