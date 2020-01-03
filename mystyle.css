@@ -1,0 +1,20 @@
+
+/* Body */
+body {
+    font-family: "Nano Sans Mono";
+    color: white;
+    background: #222222;
+}
+
+/* Div */
+div {
+    
+}
+
+/* Text color */
+.color-black {
+    color: black;
+}
+.color-grey {
+    color: #222222;
+}
