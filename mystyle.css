@@ -90,3 +90,8 @@ li a:hover:not(.active) {
 .active {
   background-color: #33ccff;
 }
+
+/* Pogress bar */
+.w3-round-xlarge{
+    border-radius:16px:
+}
