@@ -61,7 +61,8 @@ a:active {
 /* ============ Navigation Bar ============ */
 ul {
   list-style-type: none;
-  margin: -5px;
+  margin: 0;
+  margin-right: 10;
   padding: 0;
   overflow: hidden;
   background-color: #333;
@@ -87,5 +88,5 @@ li a:hover:not(.active) {
 }
 
 .active {
-  background-color: #4CAF50;
+  background-color: #33ccff;
 }
