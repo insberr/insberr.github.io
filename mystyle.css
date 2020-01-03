@@ -1,15 +1,13 @@
-
 /* Body */
 body {
     font-family: "Nano Sans Mono";
     color: white;
     background: #222222;
+    margin: 10px;
 }
 
 /* Div */
-div {
-    
-}
+
 
 /* Text color */
 .color-black {
@@ -18,3 +16,37 @@ div {
 .color-grey {
     color: #222222;
 }
+
+/* ======== Links ======== */
+/* ---- 
+a:link - a normal, unvisited link
+a:visited - a link the user has visited
+a:hover - a link when the user mouses over it
+a:active - a link the moment it is clicked 
+---- */
+
+/* ==== Normal Links ==== */
+a:link {
+    color: white;
+}
+a:visited {
+    color: white;
+}
+
+/* ==== Link Hover ==== */
+a:hover {
+    color: lightgray;
+}
+a:hover .cyan {
+    color: #00b3b3;
+}
+a:hover .red {
+    color: pink;
+}
+
+/* ==== Activated Links ==== */
+a:active {
+    color: darkgray;
+}
+
+
