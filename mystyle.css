@@ -15,7 +15,7 @@ body {
 
 /* Div */
 div .fix {
-    padding-top: 30px;
+    float: none;
 }
 
 /* Text color */
