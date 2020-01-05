@@ -35,10 +35,10 @@ a:link {
 a:visited {
     color: white;
 }
-.cyan a:link {
+a.cyan:link {
     color: #00b3b3;
 }
-.cyan a:visited {
+a:visited {
     color: #00b3b3;
 }
 /* ==== Link Hover ==== */
