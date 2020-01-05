@@ -10,12 +10,11 @@ body {
     font-family: "Nano Sans", sans-serif;
     color: white;
     background: var(--speacial-gray);
-    margin: 30px;
 }
 
 /* ============ Div ============ */
-div .fix {
-    float: none;
+div .not-list {
+    margin: 16px;
 }
 
 /* ============ Text color ============ */
@@ -69,7 +68,7 @@ ul {
   position: fixed;
   top: 0;
   width: 85%;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 li {
