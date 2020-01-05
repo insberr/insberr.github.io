@@ -14,9 +14,9 @@ body {
 
 /* ============ Div ============ */
 div .page-content {
-    margin-top: 50px;
-    margin-left: 16px;
-    margin-right: 16px;
+    margin-top: 55px;
+    margin-left: 20px;
+    margin-right: 20px;
     margin-bottom: 5px;
 }
 
@@ -64,7 +64,7 @@ a:active {
 ul {
   list-style-type: none;
   margin: 0;
-  margin-right: 10;
+  margin-right: 0;
   padding: 0;
   overflow: scroll;
   background-color: #333;
