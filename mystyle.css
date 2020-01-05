@@ -60,14 +60,14 @@ a:active {
 /* ============ Navigation Bar ============ */
 ul {
   list-style-type: none;
-  margin: 0;
+  margin: auto;
   margin-right: 20px;
   padding: 0;
   overflow: visible;
   background-color: #333;
   position: fixed;
   top: 0;
-  width: 99%;
+  width: auto;
   border-radius: 15px;
 }
 
