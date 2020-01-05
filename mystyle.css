@@ -64,7 +64,7 @@ a:active {
 ul {
   list-style-type: none;
   margin: 0;
-  margin-right: 0;
+  margin-right: 20px;
   padding: 0;
   overflow: visible;
   background-color: #333;
