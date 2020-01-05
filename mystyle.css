@@ -78,14 +78,14 @@ li .nav {
   float: left;
 }
 
-li a .nav {
+li .nav a .nav {
   display: block;
   color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
 }
-li a .first-nav-item {
+li .nav a .first-nav-item {
     display: block;
     color: white;
     text-align: center;
@@ -94,7 +94,7 @@ li a .first-nav-item {
     border-radius: 15px;
 }
 
-li a:hover:not(.active) .nav {
+li .nav a:hover:not(.active) .nav {
   background-color: #111;
 }
 
