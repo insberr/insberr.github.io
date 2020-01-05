@@ -86,6 +86,9 @@ li a {
 .item-one {
     border-radius: 15px 0 0 15px;
 }
+.item-last {
+    border-radius: 0 15px 15px 0;
+}
 
 li a:hover:not(.active) {
   background-color: #111;
