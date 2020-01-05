@@ -13,8 +13,11 @@ body {
 }
 
 /* ============ Div ============ */
-div .not-list {
-    margin: 16px;
+div .page-content {
+    margin-top: 10px;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-bottom: 5px;
 }
 
 /* ============ Text color ============ */
