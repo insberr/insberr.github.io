@@ -2,17 +2,17 @@
 
 
 .highlight {
+    color: #111;
+}
 
-  color: #111;
-
-  pre {
+pre {
     margin: 0;
     padding: 8px 12px;
     background: #eef;
     border: 1px solid #e8e8e8;
-  }
+}
 
-  .c     { color: #998; font-style: italic } // Comment
+  .c     { color: #998; font-style: italic } /* Comment */
   .err   { color: #a61717; background-color: #e3d2d2 } // Error
   .k     { font-weight: bold } // Keyword
   .o     { font-weight: bold } // Operator
