@@ -29,17 +29,17 @@ a:active - a link the moment it is clicked
 --------------- */
 
 /* ==== Normal Links ==== */
-a.url-link {
+a:link {
     color: white;
 }
-a.cyan {
+a:link.cyan {
     color: #00b3b3;
 }
 /* ==== Visited Links ==== */
 a:visited {
     color: white;
 }
-a.cyan:visited {
+a:visited.cyan {
     color: #00b3b3;
 }
 .red {
