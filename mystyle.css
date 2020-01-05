@@ -81,7 +81,10 @@ li a {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  border-radius: 15px 0 0 15px;
+}
+
+a .item-one {
+    border-radius: 15px 0 0 15px;
 }
 
 li a:hover:not(.active) {
