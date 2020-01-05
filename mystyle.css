@@ -61,7 +61,7 @@ a:active {
 }
 
 /* ============ Navigation Bar ============ */
-ul {
+ul .nav {
   list-style-type: none;
   margin: 0;
   margin-right: 20px;
@@ -74,20 +74,27 @@ ul {
   border-radius: 15px;
 }
 
-li {
+li .nav {
   float: left;
 }
 
-li a {
+li a .nav {
   display: block;
   color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  border-radius: 15px;
+}
+li a .first-nav-item {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    border-radius: 15px;
 }
 
-li a:hover:not(.active) {
+li a:hover:not(.active) .nav {
   background-color: #111;
 }
 
