@@ -84,10 +84,7 @@ li a {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-}
-
-.tab-one {
-    border-radius: 16px;
+  border-radius: 15px 0px 0px 15px;
 }
 
 li a:hover:not(.active) {
