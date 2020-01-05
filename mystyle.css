@@ -81,7 +81,7 @@ li a {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  border-radius: 15px 0px 0px 15px;
+  border-radius: 15px 0 0 15px;
 }
 
 li a:hover:not(.active) {
@@ -92,7 +92,8 @@ li a:hover:not(.active) {
   background-color: #33ccff;
 }
 
-/* ============ Pogress bar ============ */
+/* ============ Pogress bar ============
+From w3schools.com and modified by me    */
 .w3-round-xlarge {
     border-radius:16px;
 }
