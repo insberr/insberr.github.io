@@ -1,11 +1,11 @@
-/* Page Top */
+/* CSS Top */
 
-/* Variables */
+/* ============ Variables ============ */
 :root {
   --speacial-gray: #222222;
 }
 
-/* Body */
+/* ============ Body ============= */
 body {
     font-family: "Nano Sans", sans-serif;
     color: white;
@@ -13,12 +13,12 @@ body {
     margin: 30px;
 }
 
-/* Div */
+/* ============ Div ============ */
 div .fix {
     float: none;
 }
 
-/* Text color */
+/* ============ Text color ============ */
 .color-black {
     color: black;
 }
@@ -26,13 +26,13 @@ div .fix {
     color: var(--speacial-gray);
 }
 
-/* ======== Links ======== */
-/* ---- 
+/* ============ Links ============ */
+/* ------------ 
 a:link - a normal, unvisited link
 a:visited - a link the user has visited
 a:hover - a link when the user mouses over it
 a:active - a link the moment it is clicked 
----- */
+--------------- */
 
 /* ==== Normal Links ==== */
 a:link {
@@ -67,7 +67,7 @@ ul {
   overflow: scroll;
   background-color: #333;
   position: fixed;
-  top: 5;
+  top: 0;
   width: 85%;
   border-radius: 5px;
 }
