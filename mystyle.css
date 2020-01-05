@@ -74,27 +74,23 @@ ul .nav {
   border-radius: 15px;
 }
 
-li .nav {
+li {
   float: left;
 }
 
-li .nav a .nav {
+li a {
   display: block;
   color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
 }
-li .nav a .first-nav-item {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    border-radius: 15px;
+
+.tab-one {
+    border-radius: 16px;
 }
 
-li .nav a:hover:not(.active) .nav {
+li a:hover:not(.active) {
   background-color: #111;
 }
 
