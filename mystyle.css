@@ -35,17 +35,17 @@ a:link {
 a:visited {
     color: white;
 }
-a:link .cyan {
+.cyan a:link {
     color: #00b3b3;
 }
-a:visited .cyan {
+.cyan a:visited {
     color: #00b3b3;
 }
 /* ==== Link Hover ==== */
 a:hover {
     color: lightgray;
 }
-a:hover .cyan {
+.cyan a:hover {
     color: #00b3b3;
 }
 a:hover .red {
