@@ -55,10 +55,11 @@ a:active {
 }
 
 /* ============ Navigation Bar ============ */
+
 ul {
   list-style-type: none;
   margin: auto;
-  margin-right: 20px;
+  margin-right: 0;
   padding: 0;
   overflow: visible;
   background-color: #333;
@@ -87,7 +88,7 @@ li a {
     border-radius: 0 15px 15px 0;
 }
 .media-nav {
-    margin-left: 50px;
+    margin-left: 200px;
 }
 
 li a:hover:not(.active) {
