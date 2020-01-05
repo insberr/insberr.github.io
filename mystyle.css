@@ -35,7 +35,12 @@ a:link {
 a:visited {
     color: white;
 }
-
+a:link .cyan {
+    color: #00b3b3;
+}
+a:visited .cyan {
+    color: #00b3b3;
+}
 /* ==== Link Hover ==== */
 a:hover {
     color: lightgray;
