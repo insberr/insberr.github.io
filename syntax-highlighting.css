@@ -1,5 +1,4 @@
-// Syntax highlighting styles, can be modified to match the theme
-
+/* Syntax highlighting styles, can be modified to match the theme */
 
 .highlight {
     color: #111;
@@ -12,10 +11,10 @@ pre {
     border: 1px solid #e8e8e8;
 }
 
-  .c     { color: #998; font-style: italic } /* Comment */
-  .err   { color: #a61717; background-color: #e3d2d2 } // Error
-  .k     { font-weight: bold } // Keyword
-  .o     { font-weight: bold } // Operator
+.c     { color: #998; font-style: italic } /* Comment */
+.err   { color: #a61717; background-color: #e3d2d2 } // Error
+.k     { font-weight: bold } // Keyword
+.o     { font-weight: bold } // Operator
   .cm    { color: #998; font-style: italic } // Comment.Multiline
   .cp    { color: #999; font-weight: bold } // Comment.Preproc
   .c1    { color: #998; font-style: italic } // Comment.Single
@@ -71,4 +70,3 @@ pre {
   .vg    { color: #008080 } // Name.Variable.Global
   .vi    { color: #008080 } // Name.Variable.Instance
   .il    { color: #099 } // Literal.Number.Integer.Long
-}
