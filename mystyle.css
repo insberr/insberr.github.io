@@ -69,7 +69,7 @@ ul.nav {
   margin: auto;
   margin-right: 0;
   padding: 0;
-  overflow: visible;
+  overflow: scroll;
   background-color: #333;
   position: fixed;
   top: 0;
@@ -100,7 +100,7 @@ ul.media-nav {
     list-style-type: none;
     margin: auto;
     padding: 0;
-    overflow: visible;
+    overflow: scroll;
     background-color: #333;
     position: fixed;
     width: auto;
