@@ -64,7 +64,7 @@ a:active {
 
 /* ============ Navigation Bar ============ */
 
-ul {
+ul.nav {
   list-style-type: none;
   margin: auto;
   margin-right: 0;
@@ -96,8 +96,7 @@ li a {
 .item-end {
     border-radius: 0 15px 15px 0;
 }
-ul.media-nav {
-    all: unset;
+.media-nav {
     bottom: 0;
     margin-left: 550px;
 }
