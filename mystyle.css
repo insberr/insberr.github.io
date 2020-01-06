@@ -87,9 +87,7 @@ li a {
     border-radius: 0 15px 15px 0;
 }
 .media-nav {
-    margin-left: 600px;
-    bottom: 0;
-    top: 2000;
+    margin-left: 5500px;
 }
 
 li a:hover:not(.active) {
