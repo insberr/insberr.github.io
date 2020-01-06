@@ -89,7 +89,7 @@ li a {
 .media-nav {
     margin-left: 600px;
     bottom: 0;
-    position: fixed;
+    top: auto;
 }
 
 li a:hover:not(.active) {
