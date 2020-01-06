@@ -96,9 +96,18 @@ li a {
 .item-end {
     border-radius: 0 15px 15px 0;
 }
-.media-nav {
+ul.media-nav {
+    list-style-type: none;
+    margin: auto;
+    padding: 0;
+    overflow: visible;
+    background-color: #333;
+    position: fixed;
+    width: auto;
+    border-radius: 15px;
+    z-index: 10;
     bottom: 0;
-    margin-left: 550px;
+    margin-right: 0;
 }
 
 li a:hover:not(.active) {
