@@ -128,8 +128,8 @@ From w3schools.com and modified by me    */
 }
 
 .w3-blue,.w3-hover-blue:hover {
-    color:#fff!important;
-    background-color:#2196F3!important;
+    color: black!important;
+    background-color: #2196F3!important;
 }
 
 .w3-light-grey,.w3-hover-light-grey:hover,.w3-light-gray,.w3-hover-light-gray:hover {
