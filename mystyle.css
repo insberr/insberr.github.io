@@ -119,7 +119,7 @@ li a:hover:not(.active) {
 }
 
 .active {
-  background-color: green/*#33ccff*/;
+  background-color: red/*#33ccff*/;
 }
 
 /* ============ Pogress bar ============
