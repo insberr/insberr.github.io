@@ -76,7 +76,7 @@ ul.nav {
   overflow: scroll;
   background-color: #333;
   position: fixed;
-  top: 0;
+  top: .5px;
   width: auto;
   border-radius: 15px;
   z-index: 10;
@@ -103,7 +103,7 @@ li a {
 ul.media-nav {
     list-style-type: none;
     margin: auto;
-    padding: 0;
+    padding: .5px;
     overflow: scroll;
     background-color: #333;
     position: fixed;
