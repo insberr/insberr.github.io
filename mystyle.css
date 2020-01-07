@@ -115,11 +115,11 @@ ul.media-nav {
 }
 
 li a:hover:not(.active) {
-  background-color: #111;
+  background-color: orange/*#111*/;
 }
 
 .active {
-  background-color: brown/*#33ccff*/;
+  background-color: orange/*#33ccff*/;
 }
 
 /* ============ Pogress bar ============
