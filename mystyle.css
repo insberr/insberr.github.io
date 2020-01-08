@@ -72,6 +72,7 @@ ul.nav {
   list-style-type: none;
   margin: auto;
   margin-right: 0;
+  margin-left: 50px;
   padding: 0;
   overflow: scroll;
   background-color: #333;
@@ -115,11 +116,11 @@ ul.media-nav {
 }
 
 li a:hover:not(.active) {
-  background-color: orange/*#111*/;
+  background-color: grey/*#111*/;
 }
 
 .active {
-  background-color: orange/*#33ccff*/;
+  background-color: white/*#33ccff*/;
 }
 
 /* ============ Pogress bar ============
