@@ -91,5 +91,27 @@
             document.getElementById("demo").innerHTML = txt;
         }
         </script>
+        <br>
+        <br>
+        <br>
+        <p>Click the button to demonstrate the prompt box.</p>
+
+<button onclick="myFunction()">Try code on the page</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  var person = prompt("Enter The Code", "");
+  if (person != null) {
+    document.getElementById("demo").innerHTML =
+    person;
+  }
+}
+</script>
+<br>
+<br>
+<br>
+<br>
     </body>
 </html>
