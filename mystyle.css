@@ -11,13 +11,13 @@ body {
 
 @media (min-width: 1024px) {
 	.page-content {
-	    margin: 60px 5px 20px 20px;
+	    margin: 100px 5px 20px 20px;
 	}
 }
 	
 @media (min-width: 320px) {
     .page-content {
-        margin: 100px 5px 20px 20px;
+        margin: 60px 5px 20px 20px;
     }
 }
 
@@ -71,8 +71,7 @@ a:active {
 ul.nav {
   list-style-type: none;
   margin: auto;
-  margin-right: 100px;
-  margin-left: 100px;
+  margin-right: 0;
   padding: 0;
   overflow: scroll;
   background-color: #333;
