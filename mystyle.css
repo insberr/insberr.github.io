@@ -22,7 +22,12 @@ body {
     }
 }
 */
-
+@media screen and (max-width: 600px) {
+    .page-content {
+        margin: 100px 5px 5px 5px!inportant;
+        width: 400px!important;
+    }
+}
 .page-content {
     margin: 60px 5px 20px 20px;
 }
