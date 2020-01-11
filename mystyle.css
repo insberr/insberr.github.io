@@ -22,9 +22,9 @@ body {
     }
 }
 */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
     .page-content {
-        margin: 100px 5px 5px 5px!inportant;
+        margin: 100px 5px 5px 5pxinportant;
         width: 400px!important;
     }
 }
