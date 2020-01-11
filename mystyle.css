@@ -24,7 +24,7 @@ body {
 */
 @media screen and (max-width: 800px) {
     .page-content {
-        margin: 100px 5px 5px 5pxinportant;
+        margin: 100px 5px 5px 5px!important;
         width: 400px!important;
     }
 }
