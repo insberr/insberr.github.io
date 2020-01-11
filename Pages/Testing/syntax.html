@@ -78,33 +78,32 @@
         <br>.vi    { color: #008080 } // Name.Variable.Instance
         <br>.il    { color: #099 } // Literal.Number.Integer.Long
         </p>
-        <button onclick="myFunction()">Try it</button>
-        <p id="demo"></p>
+        <button onclick="ok()">Try it</button>
+        <p id="o"></p>
         <script>
-        function myFunction() {
+        function ok() {
             var txt;
             if (confirm("Press a button!")) {
                 txt = "You pressed OK!";
             } else {
                 txt = "You pressed Cancel!";
             }
-            document.getElementById("demo").innerHTML = txt;
+            document.getElementById("o").innerHTML = txt;
         }
         </script>
         <br>
         <br>
-        <br>
-        <p>Click the button to demonstrate the prompt box.</p>
+        <br>Click the button to test HTML, CSS, And JavaScript
 
-<button onclick="myFunction()">Try code on the page</button>
+<button onclick="tryCode()">Try code on the page</button>
 
-<p id="demo"></p>
+<div id="na"></div>
 
 <script>
-function myFunction() {
+function tryCode() {
   var person = prompt("Enter The Code", "");
   if (person != null) {
-    document.getElementById("demo").innerHTML =
+    document.getElementById("na").innerHTML =
     person;
   }
 }
