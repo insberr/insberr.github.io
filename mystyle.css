@@ -1,4 +1,9 @@
-/* CSS Top */
+/* JavaScript Tabs */
+
+
+
+
+/* My CSS*/
 
 /* ============ Body ============= */
 body {
@@ -7,21 +12,7 @@ body {
     background: #222222;
 }
 
-/* ============ Classes ============ */
-
-/*
-@media (min-width: 1024px) {
-	.page-content {
-	    margin: 100px 5px 20px 20px;
-	}
-}
-	
-@media (min-width: 320px) {
-    .page-content {
-        margin: 60px 5px 20px 20px;
-    }
-}
-*/
+/* ============ Screen Content ============ */
 @media screen and (max-width: 800px) {
     .page-content {
         margin: 110px 0 5px 5px!important;
@@ -38,13 +29,8 @@ body {
     }
 }
 
-
 .page-content {
     margin: 60px 0 20px 20px;
-}
-
-.page-content-nonav {
-    margin: 5px 5px 20px 2px;
 }
 
 /* ============ Text color ============ */
@@ -56,32 +42,18 @@ body {
 }
 
 /* ============ Links ============ */
-/* ------------ 
-a:link - a normal, unvisited link
-a:visited - a link the user has visited
-a:hover - a link when the user mouses over it
-a:active - a link the moment it is clicked 
---------------- */
-
-/* ==== Normal Links ==== */
 
 a:link {
     color: white;
 }
 
-/* ==== Visited Links ==== */
-
 a:visited {
     color: white;
 }
 
-/* ==== Link Hover ==== */
-
 a:hover {
     color: lightgray;
 }
-
-/* ==== Active Link ==== */
 
 a:active {
     color: darkgray;
@@ -116,12 +88,16 @@ li a {
   text-decoration: none;
 }
 
+
+/* ================================== Do Not Delete These!!!! ========================== */
 .item-one {
     border-radius: 15px 0 0 15px;
 }
 .item-end {
     border-radius: 0 15px 15px 0;
 }
+
+/* ======== Media NavBar ======== */
 ul.media-nav {
     list-style-type: none;
     margin: auto;
@@ -146,8 +122,7 @@ li a:hover:not(.active) {
   color: white;
 }
 
-/* ============ Pogress bar ============
-From w3schools.com and modified by me    */
+/* ============ Pogress bar ============ */
 
 .w3-round-xlarge {
     border-radius:16px;
