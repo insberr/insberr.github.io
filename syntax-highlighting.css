@@ -7,25 +7,32 @@
 pre {
     margin: 0;
     padding: 8px 12px;
-    background: #eef;
+    background: gray;
     border: 1px solid #e8e8e8;
 }
 
-.c     { color: #998; font-style: italic } /* Comment */
-.err   { color: #a61717; background-color: #e3d2d2 } // Error
-.k     { font-weight: bold } // Keyword
-.o     { font-weight: bold } // Operator
-  .cm    { color: #998; font-style: italic } // Comment.Multiline
-  .cp    { color: #999; font-weight: bold } // Comment.Preproc
-  .c1    { color: #998; font-style: italic } // Comment.Single
-  .cs    { color: #999; font-weight: bold; font-style: italic } // Comment.Special
-  .gd    { color: #000; background-color: #fdd } // Generic.Deleted
-  .gd .x { color: #000; background-color: #faa } // Generic.Deleted.Specific
-  .ge    { font-style: italic } // Generic.Emph
-  .gr    { color: #a00 } // Generic.Error
-  .gh    { color: #999 } // Generic.Heading
-  .gi    { color: #000; background-color: #dfd } // Generic.Inserted
-  .gi .x { color: #000; background-color: #afa } // Generic.Inserted.Specific
+.c {
+    color: #998; 
+    font-style: italic
+}
+
+.err {
+    color: #a61717; 
+    background-color: #e3d2d2 
+}
+.k     { font-weight: bold }
+.o     { font-weight: bold }
+  .cm    { color: #998; font-style: italic }
+  .cp    { color: #999; font-weight: bold }
+  .c1    { color: #998; font-style: italic }
+  .cs    { color: #999; font-weight: bold; font-style: italic }
+  .gd    { color: #000; background-color: #fdd }
+  .gd .x { color: #000; background-color: #faa }
+  .ge    { font-style: italic }
+  .gr    { color: #a00 }
+  .gh    { color: #999 }
+  .gi    { color: #000; background-color: #dfd }
+  .gi .x { color: #000; background-color: #afa }
   .go    { color: #888 } // Generic.Output
   .gp    { color: #555 } // Generic.Prompt
   .gs    { font-weight: bold } // Generic.Strong
