@@ -65,15 +65,13 @@
         
         </style>
     </head>
-    <body class="page-content-nonav">
-        <h3>Fade in tabs</h3>
-        <br>Soon to use JavaScript for the tabs to make things a little more simple.
-        <br>
-            <div class="tab">
-                <button id="activeonload" class="tablinks item-one" onclick="navtwotab(event, 'Working')">Working On</button>
-                <button class="tablinks" onclick="navtwotab(event, 'ToDo')">To Do</button>
-                <button class="tablinks item-end" onclick="navtwotab(event, 'Other')">Other</button>
-            </div>
+    <body>
+        <div class="tab">
+            <button id="activeonload" class="tablinks item-one" onclick="navtwotab(event, 'Working')">Working On</button>
+            <button class="tablinks" onclick="navtwotab(event, 'ToDo')">To Do</button>
+            <button class="tablinks item-end" onclick="navtwotab(event, 'Other')">Other</button>
+        </div>
+        <div class="page-content">
             <div id="Working" class="tabcontent">
                 <h3>Working</h3>
                 <p>What I'm currently working on for this page.
@@ -102,23 +100,24 @@
                 <br>
                 </p>
             </div>
-            <!-- JavaScript -->
-            <script>
-            function navtwotab(evt, navtwotab) {
-                var i, tabcontent, tablinks;
-                tabcontent = document.getElementsByClassName("tabcontent");
-                for (i = 0; i < tabcontent.length; i++) {
-                    tabcontent[i].style.display = "none";
-                }
-                tablinks = document.getElementsByClassName("tablinks");
-                for (i = 0; i < tablinks.length; i++) {
-                    tablinks[i].className = tablinks[i].className.replace(" active", "");
-                }
-                document.getElementById(navtwotab).style.display = "block";
-                evt.currentTarget.className += " active";
+        </div>
+        <!-- JavaScript -->
+        <script>
+        function navtwotab(evt, navtwotab) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
             }
-            // Get the element with id="defaultOpen" and click on it
-            document.getElementById("activeonload").click();
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(navtwotab).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("activeonload").click();
         </script>
     </body>
 </html> 
