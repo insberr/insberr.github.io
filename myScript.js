@@ -1,4 +1,5 @@
 document.getElementById("activeonload").click();
+document.title = ("Personal Website | Gitlab")
 
 function navtwotab(evt, navtwotab) {
     var i, tabcontent, tablinks;
@@ -12,5 +13,5 @@ function navtwotab(evt, navtwotab) {
     }
     document.getElementById(navtwotab).style.display = "block";
     evt.currentTarget.className += " active";
-    document.title = (navtwotab = "About");
+    document.title = (navtwotab);
 }
