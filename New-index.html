@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript Tabs</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="mystyle.css">
+        <link rel="shortcut icon" href="SpiderGaminIcon.png" type="image/x-icon" />
+    </head>
+    <body>
+        <div class="tab">
+            <button class="tablinks item-one" onclick="navtwotab(event, 'Home')" id="activeonload" title="Home Tab">Home</button>
+            <button class="tablinks" onclick="navtwotab(event, 'Current')" title="What I'm Doing">Current</button>
+            <button class="tablinks" onclick="navtwotab(event, 'Later')" title="What I Plan On Doing">Later</button>
+            <button class="tablinks" onclick="navtwotab(event, 'Links')" title="Links To The Things">Links</button>
+            <button class="tablinks" onclick="navtwotab(event, 'About')" title="About Me">About</button>
+            <button class="tablinks item-end" onclick="navtwotab(event, 'Media')" title="My Videos, Music, And Much More">Media</button>
+        </div>
+        <div class="page-content">
+            <div id="Home" class="tabcontent">
+                <p>I will soon move the Home tab content here
+                    <br>If the tabs border are red or orange they are being developed if there is no color then they are not 
+                </p>
+            </div>
+            <div id="Current" class="tabcontent">
+                <p>I will add the current tab info here later
+                </p> 
+            </div>
+            <div id="Later" class="tabcontent">
+                <p>I will add the Later tab content here later
+                </p>
+            </div>
+            <div id="Links" class="tabcontent">
+                <p>I will soon move the Links tab content here
+                </p>
+            </div>
+            <div id="About" class="tabcontent">
+                <p>I will soon move the About tab content here
+                </p>
+            </div>
+            <div id="Media" class="tabcontent">
+                <p>I will soon move the Media tab content here. it will be a while before i do as i will have to add tabs within this one...
+                </p>
+            </div>
+        </div>
+        <script src="myScript.js"></script>
+    </body>
+</html> 
