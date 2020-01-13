@@ -15,3 +15,5 @@ function navtwotab(evt, navtwotab) {
     evt.currentTarget.className += " active";
     document.title = (navtwotab);
 }
+
+document.getElementById("getname").innerHTML = localStorage.getItem("lastname");
