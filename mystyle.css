@@ -83,7 +83,7 @@ body {
 }
 
 .page-content {
-    margin: 60px 0 20px 20px;
+    margin: 70px 0 20px 20px;
 }
 
 /* ============ Other Classes ============ */
@@ -173,8 +173,19 @@ li a:hover:not(.active) {
 
 /* ============ Pogress bar ============ */
 
-.w3-round-xlarge {
-    border-radius:16px;
+.progress-one {
+    color: #000;
+    background-color: #f1f1f1;
+    border-radius: 16px;
+}
+
+.progress-two {
+    padding: 0.01em 16;
+    border-radius: 16px;
+    display: table;
+    clear: both;
+    color: #fff;
+    background-color: red/*#2196F3*/;
 }
 
 .w3-container {
@@ -188,18 +199,15 @@ li a:hover:not(.active) {
 .w3-blue {
     display:table;
     clear:both;
+    color: #fff;
+    background-color: red/*#2196F3*/;
 }
 
-.w3-blue,.w3-hover-blue:hover {
-    color: #fff!important;
-    background-color: red/*#2196F3*/!important;
+.w3-light-grey {
+    color:#000;
+    background-color:#f1f1f1;
 }
 
-.w3-light-grey,.w3-hover-light-grey:hover,.w3-light-gray,.w3-hover-light-gray:hover {
-    color:#000!important;
-    background-color:#f1f1f1!important;
-}
-
-.w3-round,.w3-round-medium {
+.w3-round {
     border-radius:16px;
 }
