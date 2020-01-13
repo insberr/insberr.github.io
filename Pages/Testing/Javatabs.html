@@ -5,111 +5,40 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../../mystyle.css">
         <link rel="shortcut icon" href="../../SpiderGaminIcon.png" type="image/x-icon" />
-        <style>
-        
-        body {
-            font-family: "Nano Sans", Arial;
-        }
-        
-        /* Style the tab */
-        .tab {
-            overflow: hidden;
-            background-color: #222222;
-            padding: 0;
-            width: auto;
-            border-radius: 15px;
-            position: fixed;
-            top: 0;
-            margin-left: 260px;
-            z-index: 10;
-        }
-        
-        /* Style the buttons inside the tab */
-        .tab button {
-            background-color: #505050;
-            float: left;
-            border: none;
-            outline: 0;
-            cursor: pointer;
-            transition: 0.3s;
-            font-size: 17px;
-            padding: 14px 16px;
-            color: white;
-            margin: auto;
-        }
-        
-        /* Change background color of buttons on hover */
-        .tab button:hover {
-            background-color: #33ccff;
-            color: white;
-        }
-        
-        /* Create an active/current tablink class */
-        .tab button.active {
-            background-color: orange;
-            color: white;
-        }
-        
-        /* Style the tab content */
-        .tabcontent {
-            display: none;
-            padding: 6px 12px;
-            -webkit-animation: fadeEffect 1s;
-            animation: fadeEffect 1s;
-        }
-        
-        /* Fade in tabs */
-        @-webkit-keyframes fadeEffect {
-            from {opacity: 0;}
-            to {opacity: 1;}
-        }
-        
-        @keyframes fadeEffect {
-            from {opacity: 0;}
-            to {opacity: 1;}
-        }
-        
-        </style>
     </head>
     <body>
         <div class="tab">
-            <button id="activeonload" class="tablinks item-one" onclick="navtwotab(event, 'Home')">Home</button>
-            <button class="tablinks" onclick="navtwotab(event, 'Current')">Current</button>
-            <button class="tablinks" onclick="navtwotab(event, 'Later')">Later</button>
-            <button class="tablinks" onclick="navtwotab(event, 'Links')">Links</button>
-            <button class="tablinks" onclick="navtwotab(event, 'About')">About</button>
-            <button class="tablinks item-end" onclick="navtwotab(event, 'Media')">Media</button>
+            <button class="tablinks item-one" onclick="navtwotab(event, 'Home')" id="activeonload" title="Home Tab">Home</button>
+            <button class="tablinks" onclick="navtwotab(event, 'Current')" title="What I'm Doing">Current</button>
+            <button class="tablinks" onclick="navtwotab(event, 'Later')" title="What I Plan On Doing">Later</button>
+            <button class="tablinks" onclick="navtwotab(event, 'Links')" title="Links To The Things">Links</button>
+            <button class="tablinks" onclick="navtwotab(event, 'About')" title="About Me">About</button>
+            <button class="tablinks item-end" onclick="navtwotab(event, 'Media')" title="My Videos, Music, And Much More">Media</button>
         </div>
         <div class="page-content">
             <div id="Home" class="tabcontent">
-                <h3>Home</h3>
                 <p>I will soon move the Home tab content here
                     <br>If the tabs border are red or orange they are being developed if there is no color then they are not 
                     <br>Im playing around with JavaScript to make tabs for the site content, but so all of the content is on the same file
                 </p>
             </div>
             <div id="Current" class="tabcontent">
-                <h3>Current</h3>
                 <p>I will add the current tab info here later
                 </p> 
             </div>
             <div id="Later" class="tabcontent">
-                <h3>Later</h3>
                 <p>I will add the Later tab content here later
                 </p>
             </div>
             <div id="Links" class="tabcontent">
-                <h3>Links</h3>
                 <p>I will soon move the Links tab content here
                 </p>
             </div>
             <div id="About" class="tabcontent">
-                <h3>About</h3>
                 <p>I will soon move the About tab content here
                 </p>
             </div>
             <div id="Media" class="tabcontent">
-                <h3>Media</h3>
                 <p>I will soon move the Media tab content here. it will be a while before i do as i will have to add tabs within this one...
                 </p>
             </div>
