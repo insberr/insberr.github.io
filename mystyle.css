@@ -20,7 +20,7 @@
     border: none;
     outline: 0;
     cursor: pointer;
-    transition: 0.5s;
+    transition: 1s;
     font-size: 17px;
     padding: 14px 16px;
     color: white;
@@ -35,7 +35,7 @@
         
 /* Create an active/current tablink class */
 .tab button.active {
-    background-color: lightblue;
+    background-color: red;
     color: white;
 }
         
@@ -175,7 +175,7 @@ li a:hover:not(.active) {
     display: table;
     clear: both;
     color: #fff;
-    background-color: red/*#2196F3*/;
+    background-color: lightblue/*#2196F3*/;
 }
 
 .w3-container {
@@ -192,7 +192,7 @@ li a:hover:not(.active) {
 
 .w3-blue,.w3-hover-blue:hover {
 	color: #fff!important;
-	background-color: red/*#2196F3*/!important;
+	background-color: skyblue/*#2196F3*/!important;
 }
 
 .w3-light-grey,.w3-hover-light-grey:hover,.w3-light-gray,.w3-hover-light-gray:hover {
