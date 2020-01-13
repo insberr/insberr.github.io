@@ -12,12 +12,5 @@ function navtwotab(evt, navtwotab) {
     }
     document.getElementById(navtwotab).style.display = "block";
     evt.currentTarget.className += " active";
-    if (i = Home) {
-        document.title = ("Personal Website | Gitlab");
-        //  block of code to be executed if the condition is true
-        }
-        else {
-        //  block of code to be executed if the condition is false
-        document.title = (navtwotab);
-    }
+    document.title = (navtwotab = About);
 }
