@@ -111,11 +111,17 @@
         </script>
         <br>
         <br>
-        <button>Add your name</button>
+        <button onclick="nameadd()">Add your name</button>
+        <button onclick="getname()">Get name</button>
+        <div id="result"></div>
         <script>
-            localStorage.setItem("lastname", "Smith");
-            // Retrieve
+        function nameadd() {
+            var triedName = prompt("Enter something", "");
+            localStorage.setItem("lastname", triedName);
+        }
+        function getname() {
             document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+        }
         </script>
         <p>Click the button to change the title of the document.</p>
         <button onclick="myFunction()">Try it</button>
