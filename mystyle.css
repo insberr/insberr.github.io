@@ -63,7 +63,7 @@ a:active {
 
 ul.nav {
   list-style-type: none;
-  /* margin: auto; */
+  margin: auto;
   margin-left: auto;
   margin-right: auto;
   padding: 0;
@@ -100,7 +100,7 @@ li a {
 /* ======== Media NavBar ======== */
 ul.media-nav {
     list-style-type: none;
-    /* margin: auto; */
+    margin: auto;
     padding: 0;
     overflow: hidden;
     background-color: #333;
@@ -119,7 +119,7 @@ li a:hover:not(.active) {
 }
 
 .active {
-  background-color: red/*#33ccff*/;
+  background-color: orange/*#33ccff*/;
   color: white;
 }
 
