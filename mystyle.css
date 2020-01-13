@@ -100,7 +100,7 @@ li a {
 /* ======== Media NavBar ======== */
 ul.media-nav {
     list-style-type: none;
-    margin: auto;
+    /* margin: auto; */
     padding: 0;
     overflow: hidden;
     background-color: #333;
@@ -109,7 +109,8 @@ ul.media-nav {
     border-radius: 15px;
     z-index: 10;
     bottom: 0;
-    margin-right: 0;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 li a:hover:not(.active) {
