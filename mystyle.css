@@ -77,7 +77,12 @@ body {
 }
 
 /* ============ Other Classes ============ */
-
+.warning {
+    background-color: red;
+    border-radius: 15px;
+    text-align: center;
+    padding: 15px 30px;
+}
 
 /* ============ Links ============ */
 
