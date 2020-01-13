@@ -20,6 +20,6 @@ document.getElementById("getname").innerHTML = localStorage.getItem("SpiderGamin
 
 function setname() {
     var setName = prompt("Enter Your Name", "");
-    localStorage.setItem("Name", setName);
+    localStorage.setItem("SpiderGaminName", setName);
     document.getElementById("getname").innerHTML = localStorage.getItem("SpiderGaminName");
 }
