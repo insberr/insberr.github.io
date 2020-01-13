@@ -16,4 +16,9 @@ function navtwotab(evt, navtwotab) {
     document.title = (navtwotab);
 }
 
-document.getElementById("getname").innerHTML = localStorage.getItem("lastname");
+document.getElementById("getname").innerHTML = localStorage.getItem("Name");
+
+function setname() {
+    var setName = prompt("Enter Your Name", "");
+    localStorage.setItem("Name", setName);
+}
