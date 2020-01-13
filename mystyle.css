@@ -63,9 +63,9 @@ a:active {
 
 ul.nav {
   list-style-type: none;
-  margin: auto;
-  margin-left: 300px;
-  margin-right: 0;
+  /* margin: auto; */
+  margin-left: auto;
+  margin-right: auto;
   padding: 0;
   overflow: hidden;
   background-color: #505050;
