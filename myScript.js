@@ -12,5 +12,5 @@ function navtwotab(evt, navtwotab) {
     }
     document.getElementById(navtwotab).style.display = "block";
     evt.currentTarget.className += " active";
-    document.title = (navtwotab = About);
+    document.title = (navtwotab = "About");
 }
