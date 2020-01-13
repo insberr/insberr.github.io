@@ -16,9 +16,10 @@ function navtwotab(evt, navtwotab) {
     document.title = (navtwotab);
 }
 
-document.getElementById("getname").innerHTML = localStorage.getItem("Name");
+document.getElementById("getname").innerHTML = localStorage.getItem("SpiderGaminName");
 
 function setname() {
     var setName = prompt("Enter Your Name", "");
     localStorage.setItem("Name", setName);
+    document.getElementById("getname").innerHTML = localStorage.getItem("SpiderGaminName");
 }
