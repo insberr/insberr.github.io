@@ -1,3 +1,5 @@
+document.getElementById("activeonload").click();
+
 function navtwotab(evt, navtwotab) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
@@ -11,5 +13,3 @@ function navtwotab(evt, navtwotab) {
     document.getElementById(navtwotab).style.display = "block";
     evt.currentTarget.className += " active";
 }
-// Get the element with id="activeonload" and click on it
-document.getElementById("activeonload").click();
