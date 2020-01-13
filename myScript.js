@@ -11,5 +11,5 @@ function navtwotab(evt, navtwotab) {
     document.getElementById(navtwotab).style.display = "block";
     evt.currentTarget.className += " active";
 }
-// Get the element with id="defaultOpen" and click on it
+// Get the element with id="activeonload" and click on it
 document.getElementById("activeonload").click();
