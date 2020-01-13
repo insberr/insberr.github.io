@@ -111,6 +111,12 @@
         </script>
         <br>
         <br>
+        <button>Add your name</button>
+        <script>
+            localStorage.setItem("lastname", "Smith");
+            // Retrieve
+            document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+        </script>
         <p>Click the button to change the title of the document.</p>
         <button onclick="myFunction()">Try it</button>
         <p id="demo"></p>
