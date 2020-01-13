@@ -186,18 +186,20 @@ li a:hover:not(.active) {
     content:"";
 }
 
-.w3-blue {
-    display:table;
-    clear:both;
-    color: #fff;
-    background-color: red/*#2196F3*/;
+.w3-round-xlarge {
+    border-radius:16px;
 }
 
-.w3-light-grey {
-    color:#000;
-    background-color:#f1f1f1;
+.w3-blue,.w3-hover-blue:hover {
+	color: #fff!important;
+	background-color: red/*#2196F3*/!important;
 }
 
-.w3-round {
+.w3-light-grey,.w3-hover-light-grey:hover,.w3-light-gray,.w3-hover-light-gray:hover {
+    color:#000!important;
+    background-color:#f1f1f1!important;
+}
+
+.w3-round,.w3-round-medium {
     border-radius:16px;
 }
