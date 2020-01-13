@@ -13,5 +13,5 @@ function navtwotab(evt, navtwotab) {
     document.getElementById(navtwotab).style.display = "block";
     evt.currentTarget.className += " active";
     
-    document.title = (navtwotab);
+    document.title = (navtwotab).click();
 }
