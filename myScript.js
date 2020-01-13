@@ -19,5 +19,5 @@ function navtwotab(evt, navtwotab) {
         else {
         //  block of code to be executed if the condition is false
         document.title = (navtwotab);
-        }
+    }
 }
