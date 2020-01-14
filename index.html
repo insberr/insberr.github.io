@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Personal Website | Gitlab</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="mystyle.css">
+        <link rel="shortcut icon" href="SpiderGaminIcon.png" type="image/x-icon" />
+    </head>
+    <body>
+        <div class="tab">
+            <button class="tablinks item-one" onclick="navtwotab(event, 'Home')" id="activeonload" title="Home Tab">Home</button>
+            <button class="tablinks" onclick="navtwotab(event, 'Current')" title="What I'm Doing">Current</button>
+            <button class="tablinks" onclick="navtwotab(event, 'Later')" title="What I Plan On Doing">Later</button>
+            <button class="tablinks" onclick="navtwotab(event, 'Links')" title="Links To The Things">Links</button>
+            <button class="tablinks" onclick="navtwotab(event, 'About')" title="About Me">About</button>
+            <button class="tablinks item-end" onclick="navtwotab(event, 'Media')" title="My Videos, Music, And Much More">Media</button>
+        </div>
+        <div onclick="setname()" style="position:fixed; top:0; background-color: #222222;">Welcome, <span id="getname">Change Name</span>!</div>
+        <div class="page-content">
+            <!-- Home Tab -->
+            <div id="Home" class="tabcontent">
+                <a href="https://gitlab.com/spidergamin/PersonalWebsite" target="_blank">See The Code</a>
+                <br>
+                <p>Hello! Welcome to my personal website! <b>This</b> will be where I post everything I can think of to post. This website is being worked on and does not have a lot of information yet. Check back once in a while to see new content.
+                </p>
+                <br>
+                <p>I am about 5% done working on this website. Go to the Current and Later tabs for more info</p>
+                <div class="progress-one">
+                    <div class="progress-two w3-container" style="width:5%">5%</div>
+                </div>
+                <br>There is a line, deal with it.
+                <hr size="1" noshade>
+            </div>
+            <!-- Current Tab -->
+            <div id="Current" class="tabcontent">
+                <p>Im currently
+                <br>- Working on an incremental game (Link in the links tab)
+                <br>- Working on this website
+                <br>- Working on my peronal website on github (Go to the links tab for more info)
+                <br>- Learning CSS, JavaScript, and HTML
+                <br>- Moving files (70% Done)
+                <br>
+                </p>
+                <div class="w3-light-grey w3-round-xlarge">
+                    <div class="w3-container w3-blue w3-round-xlarge" style="width:15%">15%</div>
+                </div>
+            </div>
+            <!-- Later Tab -->
+            <div id="Later" class="tabcontent">
+                <p>I will add the Later tab content here later
+                </p>
+            </div>
+            <!-- Links Tab -->
+            <div id="Links" class="tabcontent">
+                <p>I will soon move the Links tab content here
+                </p>
+            </div>
+            <!-- About Tab -->
+            <div id="About" class="tabcontent">
+                <p>I will soon move the About tab content here
+                </p>
+            </div>
+            <!-- Media Tab -->
+            <div id="Media" class="tabcontent">
+                <p>I will soon move the Media tab content here. it will be a while before i do as i will have to add tabs within this one...
+                </p>
+            </div>
+        </div>
+        <script src="myScript.js"></script>
+    </body>
+</html> 
