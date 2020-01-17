@@ -20,7 +20,7 @@
     border: none;
     outline: 0;
     cursor: pointer;
-    transition: 1s;
+    transition: .7s;
     font-size: 17px;
     padding: 14px 16px;
     color: white;
