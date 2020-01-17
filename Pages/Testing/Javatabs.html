@@ -9,13 +9,14 @@
     <body>
         <p id="size">not working</p>
         <script>
-        var number = 0
-        if (window.innerWidth < 1024) {
+        var x = 0;
+        if (window.innerWidth < 1000) {
             doSomething();
         }
-        function doSomething();
-        var number = number +1;
-        document.getElementById("size").innerHTML = number;
+        function doSomething() {
+            x = x + 1;
+            document.getElementById("size").innerHTML = x;
+        }
         </script>
         <!--<div class="tab">
             <button class="tablinks item-one" onclick="navtwotab(event, 'Home')" id="activeonload" title="Home Tab">Home</button>
