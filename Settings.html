@@ -6,14 +6,15 @@
     </head>
     <body>
         <p>Ah you found the settings page! These settings are experimental. Use with caution.</p>
-        <input type="text" id="myText" placeholder="Change Name">
+        <input type="text" id="setNameSettingsText" placeholder="Change Name">
+        <button class="settings-submit" onclick="setNamesettings">Submit</button>
         <script>
-            function myFunction() {
-                var x = document.getElementById("myText").value;
-                if (x === null) {
+            function setNamesettings() {
+                var nameSetSettings = document.getElementById("setNameSettingsText").value;
+                if (nameSetSettings === null) {
                     localStorage.removeItem("SpiderGaminName");
                 } else {
-                    localStorage.setItem("SpiderGaminName", x);
+                    localStorage.setItem("SpiderGaminName", nameSetSettings);
                 }
             }
         </script>
