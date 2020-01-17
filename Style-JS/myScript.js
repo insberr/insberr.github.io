@@ -17,7 +17,7 @@ function navtwotab(evt, navtwotab) {
     document.title = (navtwotab);
 }
 if (localStorage.getItem("SpiderGaminName") === null) {
-  document.getElementById("getname").innerHTML = name;
+  document.getElementById("getname").innerHTML = userName;
 } else {
     document.getElementById("getname").innerHTML = localStorage.getItem("SpiderGaminName");
 }
