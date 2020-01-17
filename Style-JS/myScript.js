@@ -29,5 +29,9 @@ function setname() {
     } else {
         localStorage.setItem("SpiderGaminName", setName);
     }
+    if (localStorage.getItem("SpiderGaminName") === null) {
+        document.getElementById("getname").innerHTML = userName;
+    } else {
     document.getElementById("getname").innerHTML = localStorage.getItem("SpiderGaminName");
+    }
 }
