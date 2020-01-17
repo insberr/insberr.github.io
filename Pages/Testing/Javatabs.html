@@ -10,11 +10,12 @@
         <p id="size">not working</p>
         <script>
         var x = 0;
+        document.getElementById("size").innerHTML = x;
         if (window.innerWidth < 1000) {
             doSomething();
         }
         function doSomething() {
-            x = x + 1;
+            var x = x + 1;
             document.getElementById("size").innerHTML = x;
         }
         </script>
