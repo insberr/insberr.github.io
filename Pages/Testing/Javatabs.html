@@ -7,6 +7,7 @@
         <link rel="shortcut icon" href="../../SpiderGaminIcon.png" type="image/x-icon" />
     </head>
     <body>
+        <button onclick="re()">refresh number</button>
         <p id="size">not working</p>
         <script>
         var x = 0;
@@ -16,6 +17,9 @@
         }
         function doSomething() {
             var x = x + 1;
+            document.getElementById("size").innerHTML = x;
+        }
+        function re() {
             document.getElementById("size").innerHTML = x;
         }
         </script>
