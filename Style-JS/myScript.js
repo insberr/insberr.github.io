@@ -1,5 +1,6 @@
 document.getElementById("activeonload").click();
 document.title = "Personal Website | Gitlab";
+var userName = "New User! Click here to change your username";
 
 function navtwotab(evt, navtwotab) {
     var i, tabcontent, tablinks;
@@ -15,11 +16,14 @@ function navtwotab(evt, navtwotab) {
     evt.currentTarget.className += " active";
     document.title = (navtwotab);
 }
-
-document.getElementById("getname").innerHTML = localStorage.getItem("SpiderGaminName");
+if (localStorage.getItem("SpiderGaminName") === null) {
+  document.getElementById("getname").innerHTML = name;
+} else {
+    document.getElementById("getname").innerHTML = localStorage.getItem("SpiderGaminName");
+}
 
 function setname() {
-    var setName = prompt("Enter Your Name", "");
+    var setName = prompt("Enter Your Name/Username", "");
     localStorage.setItem("SpiderGaminName", setName);
     document.getElementById("getname").innerHTML = localStorage.getItem("SpiderGaminName");
 }
