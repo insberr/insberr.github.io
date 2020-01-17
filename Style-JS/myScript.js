@@ -24,7 +24,7 @@ if (localStorage.getItem("SpiderGaminName") === null) {
 
 function setname() {
     var setName = prompt("Enter Your Name/Username", "");
-    if (setName === "null") {
+    if (setName === null) {
         localStorage.removeItem("SpiderGaminName");
     } else {
         localStorage.setItem("SpiderGaminName", setName);
