@@ -24,6 +24,10 @@ if (localStorage.getItem("SpiderGaminName") === null) {
 
 function setname() {
     var setName = prompt("Enter Your Name/Username", "");
-    localStorage.setItem("SpiderGaminName", setName);
+    if (setName === "null") {
+        localStorage.removeItem("SpiderGaminName");
+    } else {
+        localStorage.setItem("SpiderGaminName", setName);
+    }
     document.getElementById("getname").innerHTML = localStorage.getItem("SpiderGaminName");
 }
