@@ -8,6 +8,7 @@
         <p>Ah you found the settings page! These settings are experimental. Use with caution.</p>
         <input type="text" id="input" placeholder="Change Name">
         <button class="settings-submit" onclick="buttonName()">Submit</button>
+        <text id="namekkk"></text>
         <script>
             function buttonName() {
                 var nametwo = document.getElementById("input").value;
@@ -16,6 +17,7 @@
                 } else {
                     localStorage.setItem("SpiderGaminName", nametwo);
                 }
+                document.getElementById("namekkk").innerHTML = localStorage.getItem("SpiderGaminName")
             }
         </script>
         <br>
