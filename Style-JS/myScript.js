@@ -30,16 +30,3 @@ if (localStorage.getItem("SpiderGaminName") === null) {
     document.getElementById("getname").innerHTML = localStorage.getItem("SpiderGaminName");
 }
 
-//When the settings page loads it will set the text to the name
-document.getElementById("namekkk").innerHTML = localStorage.getItem("SpiderGaminName");
-
-//Settings Page: When the name change button is clicked 
-function buttonName() {
-    var nametwo = document.getElementById("input").value;
-    if (nametwo === "") {
-        localStorage.removeItem("SpiderGaminName");
-    } else {
-        localStorage.setItem("SpiderGaminName", "Welcome Back, " + nametwo + "!");
-    }
-    document.getElementById("namekkk").innerHTML = localStorage.getItem("SpiderGaminName");
-}
