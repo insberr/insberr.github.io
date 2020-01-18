@@ -31,9 +31,7 @@ if (localStorage.getItem("SpiderGaminName") === null) {
 }
 
 //When the settings page loads it will set the text to the name
-function settingsPageLoad() {
-    document.getElementById("namekkk").innerHTML = localStorage.getItem("SpiderGaminName");
-}
+document.getElementById("namekkk").innerHTML = localStorage.getItem("SpiderGaminName");
 
 //Settings Page: When the name change button is clicked 
 function buttonName() {
