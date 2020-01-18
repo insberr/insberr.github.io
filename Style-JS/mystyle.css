@@ -102,68 +102,12 @@ a:active {
     color: darkgray;
 }
 
-/* ============ Navigation Bar ============ */
-
-ul.nav {
-  list-style-type: none;
-  margin: auto;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0;
-  overflow: hidden;
-  background-color: #505050;
-  position: fixed;
-  top: 1px;
-  width: auto;
-  border-radius: 15px;
-  z-index: 10;
-}
-
-li {
-  float: left;
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-
-/* ================================== Do Not Delete These!!!! ========================== */
+/* Nav bar ends */
 .item-one {
     border-radius: 15px 0 0 15px;
 }
 .item-end {
     border-radius: 0 15px 15px 0;
-}
-
-/* ======== Media NavBar ======== */
-ul.media-nav {
-    list-style-type: none;
-    margin: auto;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-    position: fixed;
-    width: auto;
-    border-radius: 15px;
-    z-index: 10;
-    bottom: 0;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-li a:hover:not(.active) {
-  background-color: orange/*#111*/;
-  color: white;
-}
-
-.active {
-  background-color: orange/*#33ccff*/;
-  color: white;
 }
 
 /* ============ Pogress bar ============ */
@@ -180,7 +124,7 @@ li a:hover:not(.active) {
     display: table;
     clear: both;
     color: #fff;
-    background-color: lightblue/*#2196F3*/;
+    background-color: #2196F3;
 }
 
 .w3-container {
@@ -197,7 +141,7 @@ li a:hover:not(.active) {
 
 .w3-blue,.w3-hover-blue:hover {
 	color: #fff!important;
-	background-color: skyblue/*#2196F3*/!important;
+	background-color: #2196F3!important;
 }
 
 .w3-light-grey,.w3-hover-light-grey:hover,.w3-light-gray,.w3-hover-light-gray:hover {
