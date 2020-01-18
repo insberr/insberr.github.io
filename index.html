@@ -76,10 +76,10 @@
                 <p>Ah you found the settings page! These settings are experimental. Use with caution.</p>
                 <input style="color: red; background-color: orange; border-radius: 5px; border-color: yellow;" type="text" id="input" placeholder="Change Name">
                 <button class="settings-submit" onclick="buttonName()">Submit</button>
-                <text id="getname"></text>
+                <text id="getnametwo"></text>
                 <script>
                 //When the settings page loads it will set the text to the name
-                document.getElementById("getname").innerHTML = localStorage.getItem("SpiderGaminName");
+                document.getElementById("getnametwo").innerHTML = localStorage.getItem("SpiderGaminName");
                 
                 //Settings Page: When the name change button is clicked 
                 function buttonName() {
@@ -90,6 +90,7 @@
                         localStorage.setItem("SpiderGaminName", "Welcome Back, " + nametwo + "!");
                     }
                     document.getElementById("getname").innerHTML = localStorage.getItem("SpiderGaminName");
+                    document.getElementById("getnametwo").innerHTML = localStorage.getItem("SpiderGaminName");
                 }
                 </script>
             </div>
