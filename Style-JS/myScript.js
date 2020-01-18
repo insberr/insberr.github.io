@@ -1,6 +1,6 @@
 document.getElementById("activeonload").click();
 document.title = "Personal Website | Gitlab";
-var userName = "New User";
+var userName = "Welcome New User!";
 
 function navtwotab(evt, navtwotab) {
     var i, tabcontent, tablinks;
