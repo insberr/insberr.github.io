@@ -76,10 +76,10 @@
                 <p>Ah you found the settings page! These settings are experimental. Use with caution.</p>
                 <input type="text" id="input" placeholder="Change Name">
                 <button class="settings-submit" onclick="buttonName()">Submit</button>
-                <text id="namekkk"></text>
+                <text id="getname"></text>
                 <script>
                 //When the settings page loads it will set the text to the name
-                document.getElementById("namekkk").innerHTML = localStorage.getItem("SpiderGaminName");
+                document.getElementById("getname").innerHTML = localStorage.getItem("SpiderGaminName");
                 
                 //Settings Page: When the name change button is clicked 
                 function buttonName() {
@@ -89,7 +89,7 @@
                     } else {
                         localStorage.setItem("SpiderGaminName", "Welcome Back, " + nametwo + "!");
                     }
-                    document.getElementById("namekkk").innerHTML = localStorage.getItem("SpiderGaminName");
+                    document.getElementById("getname").innerHTML = localStorage.getItem("SpiderGaminName");
                 }
                 </script>
             </div>
