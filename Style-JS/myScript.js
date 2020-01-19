@@ -1,3 +1,19 @@
+function navtwotab(evt, navtwotab) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(navtwotab).style.display = "block";
+    evt.currentTarget.className += " active";
+    document.title = (navtwotab);
+    localStorage.setItem("SpiderGaminTab", navtwotab);
+}
+
 //This is the username variable for a new user
 var userName = "Welcome New User!";
 
@@ -20,18 +36,3 @@ if (localStorage.getItem("SpiderGaminTab") === null) {
 document.title = "Personal Website | Gitlab";
 
 //The navigation bar Script
-function navtwotab(evt, navtwotab) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(navtwotab).style.display = "block";
-    evt.currentTarget.className += " active";
-    document.title = (navtwotab);
-    localStorage.setItem("SpiderGaminTab", navtwotab);
-}
