@@ -14,7 +14,6 @@ if (tabonload === null) {
     document.getElementById("activeonload").click();
 } else {
     document.getElementById(tabonload).click();
-    navtwotab(event, tabonload);
 }
 
 //When the page is loaded it will set the title to this
