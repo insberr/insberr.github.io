@@ -10,7 +10,7 @@ if (localStorage.getItem("SpiderGaminName") === null) {
 
 //This selects the nav bar button with the "activeonload" id to be clicked
 var tabonload = localStorage.getItem("SpiderGaminTab");
-if (tabonload === null) {
+if (localStorage.getItem("SpiderGaminTab") === null) {
     document.getElementById("activeonload").click();
 } else {
     document.getElementById(tabonload).click();
