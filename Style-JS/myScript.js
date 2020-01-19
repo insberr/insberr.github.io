@@ -1,3 +1,13 @@
+//This selects the nav bar button with the "activeonload" id to be clicked
+document.getElementById("activeonload").click();
+
+//When the page is loaded it will set the title to this
+document.title = "Personal Website | Gitlab";
+
+//This is the username variable for a new user
+var userName = "Welcome New User!";
+
+//The navigation bar Script
 function navtwotab(evt, navtwotab) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
@@ -11,11 +21,7 @@ function navtwotab(evt, navtwotab) {
     document.getElementById(navtwotab).style.display = "block";
     evt.currentTarget.className += " active";
     document.title = (navtwotab);
-    localStorage.setItem("SpiderGaminTab", navtwotab);
 }
-
-//This is the username variable for a new user
-var userName = "Welcome New User!";
 
 //When the page loads it tests this to see if you are a new user or not
 if (localStorage.getItem("SpiderGaminName") === null) {
@@ -23,16 +29,3 @@ if (localStorage.getItem("SpiderGaminName") === null) {
 } else {
     document.getElementById("getname").innerHTML = localStorage.getItem("SpiderGaminName");
 }
-
-//This selects the nav bar button with the "activeonload" id to be clicked
-if (localStorage.getItem("SpiderGaminTab") === null) {
-    document.getElementById("Home").click();
-} else {
-    document.getElementById(localStorage.getItem("SpiderGaminTab")).click();
-    navtwotab(event, localStorage.getItem("SpiderGaminTab"))
-}
-
-//When the page is loaded it will set the title to this
-document.title = "Personal Website | Gitlab";
-
-//The navigation bar Script
