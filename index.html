@@ -74,10 +74,16 @@
             </div>
             <div id="Settings" class="tabcontent">
                 <p>Ah you found the settings page! These settings are experimental. Use with caution.</p>
-                <input style="background-coor: white; border: none; border-color: lightblue;" type="text" id="input" placeholder="Change Name">
-                <button class="settings-submit" onclick="buttonName()">Submit</button>
+                <input style="background-color: white; border-color: lightblue;" type="text" id="input" placeholder="Change Name">
+                <button class="settings-submit" id="namebutton" onclick="buttonName()">Submit</button>
                 <text id="getnametwo"></text>
                 <script>
+                input.addEventListener("keyup", function(event) {
+                    if (event.keyCode === 13) {
+                        event.preventDefault();
+                        document.getElementById("namebutton").click();
+                    }
+                });
                 //When the settings page loads it will set the text to the name
                 document.getElementById("getnametwo").innerHTML = localStorage.getItem("SpiderGaminName");
                 
