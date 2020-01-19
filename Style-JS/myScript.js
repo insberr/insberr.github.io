@@ -1,5 +1,10 @@
 //This selects the nav bar button with the "activeonload" id to be clicked
-document.getElementById("activeonload").click();
+var tabonload = localStorage.getItem("SpiderGaminTab");
+if (tabonload === null) {
+    document.getElementById("activeonload").click();
+} else {
+    navtwotab(event, tabonload)
+}
 
 //When the page is loaded it will set the title to this
 document.title = "Personal Website | Gitlab";
@@ -21,6 +26,7 @@ function navtwotab(evt, navtwotab) {
     document.getElementById(navtwotab).style.display = "block";
     evt.currentTarget.className += " active";
     document.title = (navtwotab);
+    localStorage.setItem("SpiderGaminTab", navtwotab);
 }
 
 //When the page loads it tests this to see if you are a new user or not
