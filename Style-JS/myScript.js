@@ -1,6 +1,13 @@
 //This is the username variable for a new user
 var userName = "Welcome New User!";
 
+//When the page loads it tests this to see if you are a new user or not
+if (localStorage.getItem("SpiderGaminName") === null) {
+  document.getElementById("getname").innerHTML = userName;
+} else {
+    document.getElementById("getname").innerHTML = localStorage.getItem("SpiderGaminName");
+}
+
 //This selects the nav bar button with the "activeonload" id to be clicked
 var tabonload = localStorage.getItem("SpiderGaminTab");
 if (tabonload === null) {
@@ -29,11 +36,3 @@ function navtwotab(evt, navtwotab) {
     document.title = (navtwotab);
     localStorage.setItem("SpiderGaminTab", navtwotab);
 }
-
-//When the page loads it tests this to see if you are a new user or not
-if (localStorage.getItem("SpiderGaminName") === null) {
-  document.getElementById("getname").innerHTML = userName;
-} else {
-    document.getElementById("getname").innerHTML = localStorage.getItem("SpiderGaminName");
-}
-
