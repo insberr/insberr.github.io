@@ -9,11 +9,11 @@ if (localStorage.getItem("SpiderGaminName") === null) {
 }
 
 //This selects the nav bar button with the "activeonload" id to be clicked
-var tabonload = localStorage.getItem("SpiderGaminTab");
 if (localStorage.getItem("SpiderGaminTab") === null) {
-    document.getElementById("activeonload").click();
+    document.getElementById("Home").click();
 } else {
-    document.getElementById(tabonload).click();
+    document.getElementById(localStorage.getItem("SpiderGaminTab")).click();
+    navtwotab(event, localStorage.getItem("SpiderGaminTab"))
 }
 
 //When the page is loaded it will set the title to this
