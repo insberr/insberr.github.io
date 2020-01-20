@@ -36,20 +36,20 @@
                 <p>Im currently
                 <br>- Working on an incremental game (Link in the links tab)
                 <br>- Working on this website
-                <br>- Learning CSS, JavaScript, and HTML
-                <br>- Moving files (70% Done)
+                <br>- Learning JavaScript, Python, Bootstrap, <s>CSS, and HTML</s>
+                <br>- <s>Moving Files</s> - Done!
                 <br>
                 </p>
                 <div class="w3-light-grey w3-round-xlarge">
-                    <div class="w3-container w3-blue w3-round-xlarge" style="width:42%">42% Done</div>
+                    <div class="w3-container w3-blue w3-round-xlarge" style="width:30%">30%</div>
                 </div>
             </div>
             <!-- Later Tab -->
             <div id="Later" class="tabcontent">
                 <p>Things I plan on doing later
-                <br>- Learning JavaScript
-                <br>- Use JavaScript to have all page content on the index.html file
-                <br>- 
+                <br>- (New Item)
+                <br><s>- Use JavaScript to have all page content on the index.html file</s> Done!
+                <br>- When you reload the page it will stay on the tab you had selected (mor info here)
                 <br>
                 <br>Thats the end of the list for now
                 </p>
@@ -58,25 +58,28 @@
             <div id="Links" class="tabcontent">
                 <p>Sadly, there are only some links
                 <br>- <a href="https://spidergamin.gitlab.io/IncrementalUniverse/" style="color:cyan" title="Incremental Universe, Its not much right now." target="_blank">Incremental Universe</a> (Incremental Game)
-                <br>- <a href="https://nolink" target="_blank" title="no title">No link</a> (Dont ask)
-                <br>- <a href="https://sites.google.com/u/3/s/1BD0eT7CiUZ8dPx2xiJN-ZkaxjEIMOx8P/edit" style="clor:#feb43f" target="_blank" title="Yeah, I know, I have a lot of websites.">Google Sites Website</a> (The site is a working progress)
+                <!--<br>- <a href="https://nolink" target="_blank" title="no title">No link</a> (Dont ask)-->
+                <br>- <a href="https://sites.google.com/u/3/s/1BD0eT7CiUZ8dPx2xiJN-ZkaxjEIMOx8P/edit" style="clor:yelloworange" target="_blank" title="Yeah, I know, I have a lot of websites.">Google Sites Website</a> (The site is a working progress)
                 <br>- <a href="https://www.youtube.com/channel/UCO2rlcllQhQdPM8PZkqEAcA?view_as=subscriber" style="color:red" target="_blank" title="Its my YouTube channel, cringy though!">My YouTube Channel</a> (YouTube!)
                 </p>
             </div>
             <!-- About Tab -->
             <div id="About" class="tabcontent">
-                
+                <p>Don't worry, this tab was never broken.
+                <br>This will be the about me page. I'll put info about myself here.
+                </p>
             </div>
             <!-- Media Tab -->
             <div id="Media" class="tabcontent">
-                <p>This one will be done when im done messing with code.
+                <p>This one will be done when I feel ready to do the work to add the content
                 </p>
             </div>
             <div id="Settings" class="tabcontent">
                 <p>Ah you found the settings page! These settings are experimental. Use with caution.</p>
-                <input style="background-color: white; border-color: lightblue;" type="text" id="input" placeholder="Change Name">
-                <button class="settings-submit" id="namebutton" onclick="buttonName()">Submit</button>
-                <text id="getnametwo"></text>
+                <br>Change your site name (The name that appears at the top left)
+                <br><input style="background-color: white; border-color: lightblue;" type="text" id="input" placeholder="Change Name">
+                <button class="settings-submit" id="namebutton" onclick="buttonName()">Change Site Name</button>
+                <text id="getnametwo">Not Working</text>
                 <script>
                 input.addEventListener("keyup", function(event) {
                     if (event.keyCode === 13) {
@@ -101,7 +104,7 @@
             </div>
         </div>
         <div style="position: fixed; bottom: 0; float: left;">
-            <a class="button-icon" title="Site Settings" onclick="navtwotab(event, 'Settings')">
+            <a class="button-icon" title="Site Settings (Experimental)" onclick="navtwotab(event, 'Settings')">
                 <svg class="bi bi-gear" width="25px" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M10.837 3.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 016.377 5.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 01-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 011.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 012.692 1.115l.094.319c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 012.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 011.115-2.693l.319-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 01-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159a1.873 1.873 0 01-2.693-1.115l-.094-.319zm-2.633-.283c.527-1.79 3.064-1.79 3.592 0l.094.319a.873.873 0 001.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 00.52 1.255l.319.094c1.79.527 1.79 3.064 0 3.592l-.319.094a.873.873 0 00-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 00-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 00-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 00-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 00.52-1.255l-.16-.292c-.892-1.64.901-3.433 2.541-2.54l.292.159a.873.873 0 001.255-.52l.094-.319z" clip-rule="evenodd"/>
                     <path fill-rule="evenodd" d="M10 7.754a2.246 2.246 0 100 4.492 2.246 2.246 0 000-4.492zM6.754 10a3.246 3.246 0 116.492 0 3.246 3.246 0 01-6.492 0z" clip-rule="evenodd"/>
