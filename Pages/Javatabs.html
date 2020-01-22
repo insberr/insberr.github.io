@@ -7,7 +7,11 @@
         <link rel="shortcut icon" href="../../SpiderGaminIcon.png" type="image/x-icon" />
     </head>
     <body>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        <p id="space">Not working</p>
+        <script>
+            document.getElementById("space").innerHTML = localStorage.getItem("save")
+        </script>
+        <!--<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
         <button onclick="re()">re number</button>
         <p id="size">not working</p>
         <script>
@@ -27,7 +31,7 @@
         function ok() {
             document.getElementById("size").innerHTML = x;
         }
-        </script>
+        </script>-->
         <!--<div class="tab">
             <button class="tablinks item-one" onclick="navtwotab(event, 'Home')" id="activeonload" title="Home Tab">Home</button>
             <button class="tablinks" onclick="navtwotab(event, 'Current')" title="What I'm Doing">Current</button>
