@@ -64,7 +64,11 @@
         margin: 110px 0 5px 5px!important;
     }
 }
-
+@media screen and (max-width: 700px) {
+    .tab {
+        margin-left: 80px;
+    }
+}
 .page-content {
     margin: 70px 0 20px 20px;
 }
