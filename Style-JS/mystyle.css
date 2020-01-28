@@ -59,11 +59,6 @@
 }
 
 /* ============ Screen Content ============ */
-@media screen and (max-width: 800px) {
-    .page-content {
-        margin: 110px 0 5px 5px!important;
-    }
-}
 @media screen and (max-width: 700px) {
     .tab {
         margin-left: 5px;
@@ -73,7 +68,12 @@
         padding: 12px 14px;
         font-size: 12px;
     }
+    
+    .page-content {
+        margin: 40px 0 5px 5px;
+    }
 }
+
 .page-content {
     margin: 70px 0 20px 20px;
 }
