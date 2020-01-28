@@ -66,7 +66,11 @@
 }
 @media screen and (max-width: 700px) {
     .tab {
-        margin-left: 50px;
+        margin-left: 5px;
+    }
+    
+    .tab button {
+        padding: 14px 16px;
     }
 }
 .page-content {
