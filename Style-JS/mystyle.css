@@ -20,7 +20,7 @@
     border: none;
     outline: 0;
     cursor: pointer;
-    transition: .7s;
+    transition: .5s;
     font-size: 17px;
     padding: 14px 16px;
     color: white;
@@ -29,7 +29,7 @@
         
 /* Change background color of buttons on hover */
 .tab button:hover {
-    background-color: lime;
+    background-color: red;
     color: white;
 }
         
@@ -43,8 +43,8 @@
 .tabcontent {
     display: none;
     padding: 6px 12px;
-    -webkit-animation: fadeEffect 1s;
-    animation: fadeEffect 1s;
+    -webkit-animation: fadeEffect 2s;
+    animation: fadeEffect 2s;
 }
         
 /* Fade in tabs */
@@ -78,14 +78,6 @@
     margin: 70px 0 20px 20px;
 }
 
-.item-one {
-    border-radius: 15px 0 0 15px;
-}
-	
-.item-end {
-    border-radius: 0 15px 15px 0;
-}
-	
 /* ============ Body ============= */
 	
 body {
@@ -103,8 +95,21 @@ body {
 }
 
 .settings-svg {
+    color: blue;
+}
+.settings-svg:hover {
+    color: blue;
+}
+.settings-svg:active {
     color: red;
 }
+
+.site-user-name {
+    position: fixed;
+    top: 5px;
+    background-color: rgb(34, 34, 34, 0.5);
+}
+
 /* ============ Links ============ */
 
 a:link {
