@@ -113,6 +113,10 @@ body {
     display: none;
 }
 
+.home-progress-bar::before {
+    content: "43";
+}
+
 .settings-svg {
     color: red;
 }
@@ -130,16 +134,11 @@ body {
     margin-left: 30px;
 }
 
-summary:focus {
-    outline: 0;
-    width: 150px;
-}
-
 .button-tran-red {
     color: red;
     font-size: 15px;
     background-color: none;
-    border-radius: 10px;
+    border-radius: 8px;
     border-color: red;
 }
 .button-tran-red:hover {
