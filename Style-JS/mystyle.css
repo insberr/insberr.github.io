@@ -105,7 +105,7 @@ body {
 }
 
 /* ============ Other Classes ============ */
-.warning::before {
+.warning {
     background-color: red;
     border-radius: 15px;
     text-align: center;
