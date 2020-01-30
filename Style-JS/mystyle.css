@@ -90,6 +90,13 @@
     .settings-svg {
         color: lightblue!important;
     }
+    
+    .screen-ipad {
+        display: none!important;
+    }
+    .screen-iphone {
+        display: inline!important;
+    }
 }
 
 .page-content {
@@ -154,6 +161,13 @@ hr {
 
 h3.red-or {
     color: #fc5203;
+}
+
+.screen-ipad {
+    display: inline;
+}
+.screen-iphone {
+    display: none;
 }
 
 /* ============ Links ============ */
