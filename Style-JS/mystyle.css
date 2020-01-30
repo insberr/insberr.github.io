@@ -110,7 +110,6 @@ body {
     border-radius: 15px;
     text-align: center;
     padding: 5px 15px;
-    content: "Warning... ";
     display: none;
 }
 
@@ -126,17 +125,27 @@ body {
 .site-user-name-bottom {
     display: none;
     position: fixed;
-    bottom: 5px;
+    bottom: 6px;
     background-color: rgb(34, 34, 34, 0.5);
-    margin-left: 20px;
+    margin-left: 30px;
 }
 
 summary:focus {
     outline: 1;
     outline-color: red;
     width: 35px;
-    -webkit-animation-: fadeEffect 1.5s;
-    animation: fadeEffect 1.5s;
+    transition: 1s;
+}
+details {
+    transition: 1s;
+}
+
+.button-set {
+    color: red;
+    background-color: transparent;
+    border-radius: 0;
+    border-color: red;
+    border: 1px;
 }
 
 /* ============ Links ============ */
