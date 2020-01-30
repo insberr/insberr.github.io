@@ -91,28 +91,29 @@
                 <p>Oh, you found the settings page. Im going to warn you, settings are <u>experimental</u>. Use with caution!</p>
                 <p>Change your site name (The name that appears at the top left (or under the navbar if mobile))</p>
                 <lable for="input">Change Name</lable>
-                <input style="background-color: white; border-radius: 15px;" type="text" id="input" placeholder="Change Name">
-                <button class="settings-submit" id="namebutton" onclick="buttonName()">Set</button>
+                <input style="background-color: white; border-radius: 15px; outline: 0;" type="text" id="setNameInput" placeholder="Change Name">
+                <button class="button-trans-red" id="setNameButton" onclick="setName()">Set</button>
                 <div id="afterNameSet">Reload to see changes</div>
                 <script>
                 input.addEventListener("keyup", function(event) {
                     if (event.keyCode === 13) {
                         event.preventDefault();
-                        document.getElementById("namebutton").click();
+                        document.getElementById("setNameButton").click();
                     }
                 });
                 //When the settings page loads it will set the text to the name
-                document.getElementById("getnametwo").innerHTML = localStorage.getItem("SpiderGaminName");
+                document.getElementById("afterNameSe").innerHTML = localStorage.getItem("SpiderGaminName");
                 
                 //Settings Page: When the name change button is clicked 
-                function buttonName() {
-                    var nametwo = document.getElementById("input").value;
-                    if (nametwo === "") {
+                function setName() {
+                    var inputName = document.getElementById("setNameInput").value;
+                    if (inputName === "") {
                         localStorage.removeItem("SpiderGaminName");
+                        document.getElementById("afterNameSet","getname","getnameTwo").innerHTML = localStorage.getItem("SpiderGaminName");
                     } else {
-                        localStorage.setItem("SpiderGaminName", "Welcome Back, " + nametwo + "!");
+                        localStorage.setItem("SpiderGaminName", "Welcome Back, " + inputName + "!");
+                        document.getElementById("afterNameSet","getname","getnameTwo").innerHTML = localStorage.getItem("SpiderGaminName");
                     }
-                    document.getElementById("getnametwo").innerHTML = localStorage.getItem("SpiderGaminName");
                 }
                 </script>
                 <br>
