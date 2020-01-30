@@ -131,6 +131,10 @@ body {
     margin-left: 5px;
 }
 
+summary:focus {
+    outline: 0;
+}
+
 /* ============ Links ============ */
 
 a:link {
