@@ -96,14 +96,14 @@
                 <button class="button-tran-red" id="setNameButton" onclick="setName()">Set</button>
                 <div id="afterNameSet">Reload to see changes</div>
                 <script>
-                input.addEventListener("keyup", function(event) {
+                setNameInput.addEventListener("keyup", function(event) {
                     if (event.keyCode === 13) {
                         event.preventDefault();
                         document.getElementById("setNameButton").click();
                     }
                 });
                 //When the settings page loads it will set the text to the name
-                document.getElementById("afterNameSe").innerHTML = localStorage.getItem("SpiderGaminName");
+                document.getElementById("afterNameSet").innerHTML = localStorage.getItem("SpiderGaminName");
                 
                 //Settings Page: When the name change button is clicked 
                 function setName() {
