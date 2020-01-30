@@ -133,7 +133,12 @@ body {
 
 summary:focus {
     outline: 0;
-    transition: .5s;
+    width: auto;
+}
+
+details {
+    -webkit-animation-: fadeEffect 1.5s;
+    animation: fadeEffect 1.5s;
 }
 
 /* ============ Links ============ */
