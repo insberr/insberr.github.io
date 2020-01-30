@@ -42,9 +42,8 @@
 /* Style the tab content */
 .tabcontent {
     display: none;
-    padding: 6px 6px;
-    -webkit-animation: fadeEffect 2s;
-    animation: fadeEffect 2s;
+    -webkit-animation: fadeEffect 1.5s;
+    animation: fadeEffect 1.5s;
 }
         
 /* Fade in tabs */
@@ -58,15 +57,20 @@
     to {opacity: 1;}
 }
 
+
 /* ============ Screen Content ============ */
+
+/* The default styles are for ipad */
+
+/* ==== Phone ==== */
 @media screen and (max-width: 700px) {
     .tab {
-        margin-left: 10px;
+        margin-left: 12px;
     }
     
     .tab button {
-        padding: 12px 14px;
-        font-size: 12px;
+        padding: 13px 15px;
+        font-size: 13px;
     }
     
     .page-content {
@@ -74,21 +78,12 @@
     }
     
     .site-user-name {
-        margin-top: 15px;
-        margin-left: 5px;
+        text-align: center;
+        margin-top: 20px;
     }
     
     .settings-svg {
-        color: green;
-    }
-    .settings-svg:active {
-        color:green;
-    }
-    .settings-svg:hover {
-        color: green;
-    }
-    .settings-svg:visited {
-        color:green;
+        color: green!important;
     }
 }
 
@@ -99,7 +94,7 @@
 /* ============ Body ============= */
 	
 body {
-    font-family: "Nano Sans", Arial, sans-serif;
+    font-family: Arial, sans-serif;
     color: white;
     background: #222222;
 }
@@ -115,15 +110,6 @@ body {
 .settings-svg {
     color: red;
 }
-.settings-svg:hover {
-    color: red;
-}
-.settings-svg:active {
-    color: red;
-}
-.settings-svg:visited {
-    color:red;
-}
 
 .site-user-name {
     position: fixed;
@@ -134,11 +120,11 @@ body {
 /* ============ Links ============ */
 
 a:link {
-    color: white;
+    color: gray;
 }
 
 a:visited {
-    color: white;
+    color: gray;
 }
 
 a:hover {
@@ -166,7 +152,7 @@ a:active {
 }
 
 .progress-two {
-    padding: 0.01em;
+    padding: 1px 5px;
     border-radius: 16px;
     display: table;
     clear: both;
@@ -175,7 +161,7 @@ a:active {
 }
 
 .w3-container {
-    padding:0.01em 16px;
+    padding: 1px 5px;
 }
 
 .w3-container:after,.w3-container:before {
