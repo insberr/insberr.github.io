@@ -96,7 +96,12 @@
 }
 
 /* ============ Body ============= */
-	
+
+@font-face {
+    font-family: "Handwriting1";
+    src: url("Handwriting1.ttf");
+}
+
 body {
     font-family: Arial, sans-serif;
     color: white;
