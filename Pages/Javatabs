@@ -7,6 +7,7 @@
         <link rel="shortcut icon" href="SpiderGaminIcon.png" type="image/x-icon" />
     </head>
     <body>
+        <hr1>
         <testoneoffive>Text</testoneoffive>
         <script src="../Style-JS/myScript.js"></script>
     </body>
