@@ -1,7 +1,4 @@
-@font-face {
-    font-family: Handwriting;
-    src: url("Handwriting1.ttf");
-}
+
 
 /* ================ JavaScript Tabs ============ */
 
@@ -86,10 +83,12 @@
     }
     
     .site-user-name {
+        all: initial;
         text-align: center!important;
         margin-left: 5px!important;
-        top: none!important;
         bottom: 0!important;
+        position: fixed;
+        background-color: rgb(34, 34, 34, 0.5);
     }
     
     .settings-svg {
@@ -104,7 +103,7 @@
 /* ============ Body ============= */
 
 body {
-    font-family: "Handwriting", Arial, sans-serif;
+    font-family: Arial, sans-serif;
     color: white;
     background: #222222;
 }
