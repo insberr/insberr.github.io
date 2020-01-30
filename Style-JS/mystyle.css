@@ -151,6 +151,11 @@ hr {
     border: 2px solid red;
     border-radius: 2px;
 }
+
+h3.red-or {
+    color: #fc5203;
+}
+
 /* ============ Links ============ */
 
 a:link {
