@@ -65,7 +65,7 @@
 /* ==== Phone ==== */
 @media screen and (max-width: 700px) {
     .tab {
-        margin-left: 9px!important;
+        margin-left: 8px!important;
     }
     
     .tab button {
@@ -77,7 +77,7 @@
         margin-top: 60px!important;
         margin-left: 1px!important;
         margin-right: 1px!important;
-        margin-bottom: 10px!important;
+        margin-bottom: 30px!important;
     }
     
     .site-user-name {
@@ -131,21 +131,22 @@ body {
 }
 
 summary:focus {
-    outline: 1;
-    outline-color: red;
-    width: 35px;
-    transition: 1s;
-}
-details {
-    transition: 1s;
+    outline: 0;
+    width: 45px;
 }
 
-.button-set {
+.button-tran-red {
     color: red;
-    background-color: transparent;
-    border-radius: 0;
+    background-color: none;
+    border-radius: 10px;
     border-color: red;
-    border: 1px;
+}
+.button-tran-red:active {
+    background-color: red;
+    color: white;
+}
+.button-tran-red:hover {
+    background-color: rgb(0, 0, 0, 0.2);
 }
 
 /* ============ Links ============ */
