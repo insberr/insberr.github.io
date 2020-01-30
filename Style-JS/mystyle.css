@@ -132,8 +132,9 @@ body {
 }
 
 summary:focus {
-    outline: 0;
-    width: auto;
+    outline: 1;
+    outline-color: red;
+    width: 35px;
     -webkit-animation-: fadeEffect 1.5s;
     animation: fadeEffect 1.5s;
 }
