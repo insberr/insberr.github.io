@@ -88,6 +88,7 @@
     .site-user-name {
         text-align: center!important;
         margin-left: 5px!important;
+        top: none!important;
         bottom: 0!important;
     }
     
