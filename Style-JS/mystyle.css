@@ -126,17 +126,14 @@ body {
 .site-user-name-bottom {
     display: none;
     position: fixed;
-    bottom: 3px;
+    bottom: 5px;
     background-color: rgb(34, 34, 34, 0.5);
-    margin-left: 15px;
+    margin-left: 20px;
 }
 
 summary:focus {
     outline: 0;
     width: auto;
-}
-
-details {
     -webkit-animation-: fadeEffect 1.5s;
     animation: fadeEffect 1.5s;
 }
