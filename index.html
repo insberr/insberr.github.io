@@ -36,17 +36,21 @@
             </div>
             <!-- ====== Current Tab ====== -->
             <div id="Current" class="tabcontent">
-                <p>Im currently working on these tasks: (Crossed out ones are done)</p>
-                <p>An incremental game (Link in the links tab)</p>
-                <p>Working on this website</p>
-                <p>Learning JavaScript, Python, Bootstrap, <s>CSS, and HTML</s></p>
-                <p><s>Moving Files</s></p>
+                <h2>Current</h2>
+                <p>Here is a list of the things i'm currently doing/ working on</p>
+                <ul>
+                    <li>An incremental game (Link in the links tab)</li>
+                    <li>Working on this website</li>
+                    <li>Learning JavaScript, Python, Bootstrap, <s>CSS, and HTML</s></li>
+                    <li><s>Moving Files</s></li>
+                </ul>
                 <div class="w3-light-grey w3-round-xlarge">
-                    <div class="w3-container w3-blue w3-round-xlarge" style="width:30%">30%</div>
+                    <div class="w3-container w3-blue w3-round-xlarge" style="width:23%">23%</div>
                 </div>
             </div>
             <!-- ====== Later Tab ====== -->
             <div id="Later" class="tabcontent">
+                <h2>Later</h2>
                 <p>Things I plan on doing later</p>
                 <h5>Plans For This Website</h5>
                 <p><s>Use JavaScript to have all page content on the index.html file</s> Done!</p>
@@ -85,7 +89,7 @@
             </div>
             <!-- ====== Media Tab ====== -->
             <div id="Media" class="tabcontent">
-                <h3>Media</h3>
+                <h2>Media</h2>
                 <p>This tab is where I will put videos, pictures, and audio along with some other things. I need to add some things so I can add the media.</p>
                 <br>
                 <hr size="2" noshade>
@@ -105,9 +109,9 @@
             </div>
             <!-- ====== The settings tab contenet ====== -->
             <div id="Settings" class="tabcontent">
-                <h3>Site Settings</h3>
+                <h2>Site Settings</h2>
                 <p>Oh, you found the settings page. Im going to warn you, settings are <u>experimental</u>. Use with caution!</p>
-                <p>Change your site name (The name that appears at the top left (or under the navbar if mobile))</p>
+                <p>Change the name that appeares at <span class="site-user-name">the top</span><span classv="site-user-name-bottom">bottom</span> of the page.
                 <lable for="input">Change Name</lable>
                 <input style="background-color: white; border-radius: 15px; outline: 0;" type="text" id="setNameInput" placeholder="Change Name">
                 <button class="button-tran-red" id="setNameButton" onclick="setName()">Set</button>
@@ -135,11 +139,11 @@
                 }
                 </script>
                 <br>
-                <hr size="1" noshade>
+                <hr>
                 <!-- === Change the background color === -->
                 <p>Change the background color. (Not added yet)<br>The page color is #222222</p>
                 <br>
-                <hr size="1" noshade>
+                <hr>
                 <!-- === See the code for this site on page === -->
                 <p>View the code (On site) (Not added yet)</p>
                 <br>
@@ -152,7 +156,7 @@
                 <path fill-rule="evenodd" d="M10 7.754a2.246 2.246 0 100 4.492 2.246 2.246 0 000-4.492zM6.754 10a3.246 3.246 0 116.492 0 3.246 3.246 0 01-6.492 0z" clip-rule="evenodd"/>
             </svg>
         </div>
-        <div class="site-user-name-bottom" id="getnameTwo">Welcome New User! (This Is Broken)</div>
+        <div class="site-user-name-bottom" id="getnameTwo">Welcome New User!</div>
         <!-- The JavaScript -->
         <script src="Style-JS/myScript.js"></script>
     </body>
