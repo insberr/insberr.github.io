@@ -182,7 +182,8 @@ a:active {
 }
 
 .progress-two {
-    padding: 5px 15px;
+    padding: 5px 10px;
+    font-size: 8px;
     border-radius: 16px;
     display: table;
     clear: both;
