@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Handwriting;
+    src: url("Handwriting1.ttf");
+}
+
 /* ================ JavaScript Tabs ============ */
 
 /* Style the tab */
@@ -97,13 +102,8 @@
 
 /* ============ Body ============= */
 
-@font-face {
-    font-family: "Handwriting1";
-    src: url("Handwriting1.ttf");
-}
-
 body {
-    font-family: "Handwriting1", Arial, sans-serif;
+    font-family: "Handwriting", Arial, sans-serif;
     color: white;
     background: #222222;
 }
