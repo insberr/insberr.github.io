@@ -128,7 +128,7 @@ body {
     position: fixed;
     bottom: 2px;
     background-color: rgb(34, 34, 34, 0.5);
-    margin-right: 0;
+    margin-left: 5px;
 }
 
 /* ============ Links ============ */
