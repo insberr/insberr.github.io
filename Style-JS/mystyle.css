@@ -65,7 +65,7 @@
 /* ==== Phone ==== */
 @media screen and (max-width: 700px) {
     .tab {
-        margin-left: 10px!important;
+        margin-left: 9.5px!important;
     }
     
     .tab button {
@@ -74,7 +74,7 @@
     }
     
     .page-content {
-        margin-top: 50px!important;
+        margin-top: 60px!important;
         margin-left: 1px!important;
         margin-right: 1px!important;
         margin-bottom: 5px!important;
@@ -82,7 +82,8 @@
     
     .site-user-name {
         text-align: center!important;
-        margin-top: 30px!important;
+        margin-left: 5px!important;
+        bottom: 0!important;
     }
     
     .settings-svg {
