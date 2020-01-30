@@ -1,5 +1,4 @@
 
-
 /* ================ JavaScript Tabs ============ */
 
 /* Style the tab */
@@ -83,9 +82,9 @@
     }
     
     .site-user-name {
-        all: initial;
+        all: initial!important;
         text-align: center!important;
-        margin-left: 5px!important;
+        margin-left: 10px!important;
         bottom: 0!important;
         position: fixed;
         background-color: rgb(34, 34, 34, 0.5);
