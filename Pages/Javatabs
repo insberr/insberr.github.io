@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript Testing</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="Style-JS/mystyle.css">
+        <link rel="shortcut icon" href="SpiderGaminIcon.png" type="image/x-icon" />
+    </head>
+    <body>
+        <testoneoffive>Text</testoneoffive>
+        <script src="Style-JS/myScript.js"></script>
+    </body>
+</html> 
