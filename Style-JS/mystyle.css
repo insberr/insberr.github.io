@@ -1,4 +1,3 @@
-
 /* ================ JavaScript Tabs ============ */
 
 /* Style the tab */
@@ -82,12 +81,10 @@
     }
     
     .site-user-name {
-        all: initial!important;
-        text-align: center!important;
-        margin-left: 10px!important;
-        bottom: 0!important;
-        position: fixed;
-        background-color: rgb(34, 34, 34, 0.5);
+        display: none;
+    }
+    .site-user-name-bottom {
+        display: block!important;
     }
     
     .settings-svg {
@@ -125,6 +122,12 @@ body {
     position: fixed;
     top: 5px;
     background-color: rgb(34, 34, 34, 0.5);
+}
+.site-user-name-bottom {
+    display: none;
+    bottom: 2px;
+    background-color: rgb(34, 34, 34, 0.5);
+    left: 5px;
 }
 
 /* ============ Links ============ */
