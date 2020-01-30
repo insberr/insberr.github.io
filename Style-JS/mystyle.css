@@ -154,11 +154,27 @@ body {
     border-color: black;
 }
 
-hr {
+/* === Custom HTML tags === */
+
+hr1-solidred {
+    border: 1px solid red;
+    border-radius: 2px;
+}
+
+hr2-solidred {
     border: 2px solid red;
     border-radius: 2px;
 }
 
+done {
+    text-decoration: line-through;
+}
+
+done::after {
+    content: "Done!";
+}
+
+/* ===  === */
 h3.red-or {
     color: #fc5203;
 }
