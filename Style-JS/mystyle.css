@@ -182,7 +182,7 @@ a:active {
 }
 
 .progress-two {
-    padding: 1px 5px;
+    padding: 5px 15px;
     border-radius: 16px;
     display: table;
     clear: both;
@@ -191,7 +191,7 @@ a:active {
 }
 
 .w3-container {
-    padding: 1px 5px;
+    padding: 5px 15px;
 }
 
 .w3-container:after,.w3-container:before {
