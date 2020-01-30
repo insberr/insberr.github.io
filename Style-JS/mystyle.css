@@ -132,21 +132,21 @@ body {
 
 summary:focus {
     outline: 0;
-    width: 45px;
+    width: 150px;
 }
 
 .button-tran-red {
     color: red;
+    font-size: 15px;
     background-color: none;
     border-radius: 10px;
     border-color: red;
 }
-.button-tran-red:active {
+.button-tran-red:hover {
     background-color: red;
     color: white;
-}
-.button-tran-red:hover {
-    background-color: rgb(0, 0, 0, 0.2);
+    border-color: black;
+    border: 0.5px;
 }
 
 /* ============ Links ============ */
