@@ -88,7 +88,7 @@
     }
     
     .settings-svg {
-        color: green!important;
+        color: yellow!important;
     }
 }
 
@@ -133,6 +133,7 @@ body {
 
 summary:focus {
     outline: 0;
+    transition: .5s;
 }
 
 /* ============ Links ============ */
