@@ -126,9 +126,9 @@ body {
 .site-user-name-bottom {
     display: none;
     position: fixed;
-    bottom: 2px;
+    bottom: 3px;
     background-color: rgb(34, 34, 34, 0.5);
-    margin-left: 5px;
+    margin-left: 15px;
 }
 
 summary:focus {
