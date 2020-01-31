@@ -157,11 +157,25 @@ body {
 /* === Custom HTML tags === */
 
 hr1-solidred {
+    /* hr */
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    /* style */
     border: 1px solid red;
     border-radius: 2px;
 }
 
 hr2-solidred {
+    /* hr */
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    /* style */
     border: 2px solid red;
     border-radius: 2px;
 }
