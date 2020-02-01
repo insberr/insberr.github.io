@@ -126,6 +126,9 @@ body {
 
 .settings-svg {
     color: red;
+    position: fixed;
+    bottom: 0;
+    float: left;
 }
 
 .site-user-name {
@@ -180,16 +183,9 @@ hr2-solidred {
     border-radius: 2px;
 }
 
-done {
-    text-decoration: line-through;
-}
-
-done::after {
-    content: "Done!";
-}
 
 /* ===  === */
-h3.red-or {
+.red-or {
     color: #fc5203;
 }
 
@@ -199,6 +195,14 @@ h3.red-or {
 .screen-iphone {
     display: none;
 }
+
+.setname {
+    background-color: lightblue;
+    border-radius: 15px;
+    border-color: red;
+    outline: 0;
+}
+
 
 /* ============ Links ============ */
 
@@ -236,7 +240,7 @@ a:active {
 
 .progress-two {
     padding: 5px 10px;
-    font-size: 8px;
+    font-size: 12px;
     border-radius: 16px;
     display: table;
     clear: both;
