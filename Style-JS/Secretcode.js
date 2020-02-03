@@ -70,7 +70,7 @@ function inputSecretCode() {
   var code = code.replace(/§!/g, ",");
   var code = code.replace(/§\,/g, "!");
   // Spaces and Broken or Unknown characters
-  var code = code.replace(/ /g, " ");
+  var code = code.replace(/§ /g, " ");
   var code = code.replace(/§/g, " [?] ");
   document.getElementById("outputSecretCode").innerHTML = code;
 }
