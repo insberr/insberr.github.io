@@ -1,4 +1,8 @@
 // button onclick sets the text in a textbox to the variable secretCode
+function buttonSecretCode() {
+    var secretCode = document.getElementById("secretCodeInput")
+    inputSecretCode()
+}
 
 function inputSecretCode() {
   var code = secretCode.replace(/§a/g, "@");
