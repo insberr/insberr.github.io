@@ -1,20 +1,18 @@
 // button onclick sets the text in a textbox to the variable secretCode
-function buttonSecretCode() {
-    var secretCode = document.getElementById("secretCodeInput")
-    inputSecretCode()
-}
+document.getElementById("outputSecretCode").innerHTML = "Your \"translated\" text will go here";
 
-function inputSecretCode() {
-  var code = secretCode.replace(/§a/g, "@");
-  var code = code.replace(/§b/g, "/");
-  var code = code.replace(/§c/g, "+");
-  var code = code.replace(/§d/g, "$");
-  var code = code.replace(/§e/g, "3");
-  var code = code.replace(/§f/g, "&");
-  var code = code.replace(/§g/g, "*");
-  var code = code.replace(/§h/g, "(");
-  var code = code.replace(/§i/g, "8");
-  var code = code.replace(/§j/g, ")");
+function buttonSecretCode() {
+    var secretCode = document.getElementById("secretCodeInput");
+    var code = secretCode.replace(/§a/g, "@");
+    var code = code.replace(/§b/g, "/");
+    var code = code.replace(/§c/g, "+");
+    var code = code.replace(/§d/g, "$");
+    var code = code.replace(/§e/g, "3");
+    var code = code.replace(/§f/g, "&");
+    var code = code.replace(/§g/g, "*");
+    var code = code.replace(/§h/g, "(");
+    var code = code.replace(/§i/g, "8");
+    var code = code.replace(/§j/g, ")");
   var code = code.replace(/§k/g, "'");
   var code = code.replace(/§l/g, "\"");
   var code = code.replace(/§m/g, ":");
