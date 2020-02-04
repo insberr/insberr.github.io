@@ -1,7 +1,7 @@
 /* ============ Custom Font ============ */
 @font-face {
   font-family: 'MyHand';
-  font-size: 100;
+  font-size: 200;
   src: url('../Handwriting1.ttf') format('truetype');
 }
 
