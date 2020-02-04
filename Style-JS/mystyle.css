@@ -17,11 +17,6 @@ body {
 
 /* Nav Bar */
 
-/* Progress Bar */
-
-
-/* ================ JavaScript Tabs ============ */
-
 /* The Bar */
 .tab {
     overflow: hidden;
@@ -78,6 +73,8 @@ body {
     from {opacity: 0;}
     to {opacity: 1;}
 }
+
+/* Progress Bar */
 
 
 
