@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'MyHand';
+  src: url('../Handwriting1.ttf') format('truetype');
+}
+
 /* ================ JavaScript Tabs ============ */
 
 /* Style the tab */
@@ -106,7 +111,7 @@
 /* ============ Body ============= */
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: "MyHand", Arial, sans-serif;
     color: white;
     background: #222222;
 }
