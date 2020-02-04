@@ -5,7 +5,7 @@
   src: url('../Handwriting1.ttf') format('truetype');
 }
 
-/* Main */
+/* ============ Main ============ */
 
 body {
     font-family: "MyHand", Arial, sans-serif;
@@ -13,11 +13,11 @@ body {
     background: #222222;
 }
 
-/* Other */
+/* ============ Other ============ */
 
-/* Nav Bar */
+/* ============ Nav Bar ============ */
 
-/* The Bar */
+/* == The Bar == */
 .tab {
     overflow: hidden;
     background-color: #222222;
@@ -30,7 +30,7 @@ body {
     z-index: 10;
 }
         
-/* The Tabs */
+/* == The Tabs == */
 .tab button {
     background-color: #505050;
     float: left;
@@ -44,26 +44,26 @@ body {
     margin: auto;
 }
         
-/* Tab Color On Hover */
+/* == Tab Color On Hover == */
 .tab button:hover {
     background-color: red;
     color: white;
 }
         
-/* The Active Tab Color */
+/* == The Active Tab Color == */
 .tab button.active {
     background-color: red;
     color: white;
 }
         
-/* The Tab Content */
+/* == The Tab Content == */
 .tabcontent {
     display: none;
     -webkit-animation: fadeEffect 1.5s;
     animation: fadeEffect 1.5s;
 }
         
-/* The Animations */
+/* == The Animations == */
 @-webkit-keyframes fadeEffect {
     from {opacity: 0;}
     to {opacity: 1;}
