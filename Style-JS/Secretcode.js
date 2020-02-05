@@ -1,16 +1,6 @@
 // button onclick sets the text in a textbox to the variable secretCode
 document.getElementById("outputSecretCode").innerHTML = "Your translated text will go here";
 
-function punctuation() {
-    var code = code.replace(/\./g, "?");
-    var code = code.replace(/\?/g, ".");
-    var code = code.replace(/!/g, ",");
-    var code = code.replace(/\,/g, "!");
-    // Spaces
-    var code = code.replace(/ /g, " ");
-    document.getElementById("outputSecretCode").innerHTML = code;
-}
-
 function buttonSecretCodeEncode() {
     var makeLowerE = document.getElementById("secretCodeInputEncode").value;
     var secretCodeEncode = makeLowerE.toLowerCase()
@@ -40,7 +30,12 @@ function buttonSecretCodeEncode() {
     var code = code.replace(/x/g, "-");
     var code = code.replace(/y/g, "6");
     var code = code.replace(/z/g, "%");
-    punctuation();
+    var code = code.replace(/\./g, "?");
+    var code = code.replace(/\?/g, ".");
+    var code = code.replace(/!/g, ",");
+    var code = code.replace(/\,/g, "!");
+    var code = code.replace(/ /g, " ");
+    document.getElementById("outputSecretCode").innerHTML = code;
 }
 
 function secretCodeDecode() {
@@ -72,5 +67,10 @@ function secretCodeDecode() {
     var code = code.replace(/=/g, "v");
     var code = code.replace(/-/g, "x");
     var code = code.replace(/%/g, "z");
-    punctuation();
+    var code = code.replace(/\./g, "?");
+    var code = code.replace(/\?/g, ".");
+    var code = code.replace(/!/g, ",");
+    var code = code.replace(/\,/g, "!");
+    var code = code.replace(/ /g, " ");
+    document.getElementById("outputSecretCode").innerHTML = code;
 }
