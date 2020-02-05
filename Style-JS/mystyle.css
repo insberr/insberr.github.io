@@ -46,7 +46,7 @@ body {
 }
 .button-tran-red:hover {
     background-color: red;
-    color: transparent;
+    color: black;
 }
 
 /* ============ Nav Bar ============ */
