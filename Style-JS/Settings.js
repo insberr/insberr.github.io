@@ -1,3 +1,6 @@
+// Page Color set onload
+document.getElementsByTagName("body")[0].style.background = loacalStorage.getItem("SpiderGaminPageColor");
+
 // Site Name
 setNameInput.addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
@@ -35,11 +38,11 @@ changeColorInput.addEventListener("keyup", function(event) {
     }
 });
 
-if (loacalStorage.getItem("SpiderGaminPageColor") === null) {
-    document.getElementsByTagName("body")[0].style.background = "#222222";
-} else {
-    document.getElementsByTagName("body")[0].style.background = loacalStorage.getItem("SpiderGaminPageColor");
-}
+//if (loacalStorage.getItem("SpiderGaminPageColor") === null) {
+//    document.getElementsByTagName("body")[0].style.background = "#222222";
+//} else {
+//    document.getElementsByTagName("body")[0].style.background = loacalStorage.getItem("SpiderGaminPageColor");
+//}
 
 function changeColor() {
     var pageColorSet = document.getElementById("changeColorInput").value;
