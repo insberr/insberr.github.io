@@ -38,7 +38,7 @@ function buttonSecretCodeEncode() {
     document.getElementById("outputSecretCode").innerHTML = code;
 }
 
-function secretCodeDecode() {
+function buttonSecretCodeDecode() {
     var makeLowerD = document.getElementById("secretCodeInputDecode");
     var secretCodeDecode = makeLowerD.toLowerCase()
     var code = secretCodeDecode.replace(/1/g, "q");
