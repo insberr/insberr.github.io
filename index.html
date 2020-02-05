@@ -154,8 +154,11 @@
                 <!-- === See the code for this site on page === -->
                 <p>View the code (On site) (Not added yet)</p>
                 <br>
-                <button onclick="buttonSecretCode()">Test</button>
-                <input id="secretCodeInput" name="secretCodeInput" type="text" placeholder="Secret Code">
+                <input id="secretCodeInputEncode" name="secretCodeInputEncode" type="text" placeholder="Secret Code To Encode">
+                <button class="button-tran-red" onclick="buttonSecretCodeEncode()">Encode</button>
+                <br>
+                <input id="secretCodeInputDecode" name="secretCodeInputDecode" type="text" placeholder="Secret Code To Decode">
+                <button class="button-tran-red" onclick="buttonSecretCodeDecode()">Decode</button>
                 <br>
                 <div id="outputSecretCode">broken... yup</div>
             </div>
