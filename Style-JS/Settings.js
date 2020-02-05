@@ -26,6 +26,8 @@ function setName() {
 }
 
 // Page Color
+document.getElementById("thePageColor").innerHTML = localStorage.getItem("SpiderGaminPageColor");
+
 changeColorInput.addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
         event.preventDefault();
@@ -47,6 +49,7 @@ function changeColor() {
         localStorage.setItem("SpiderGaminPageColor", pageColorSet);
     }
     document.getElementsByTagName("body")[0].style.background = localStorage.getItem("SpiderGaminPageColor");
+    document.getElementById("thePageColor").innerHTML = localStorage.getItem("SpiderGaminPageColor")
 }
 
 //
