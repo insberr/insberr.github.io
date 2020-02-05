@@ -2,8 +2,9 @@
 document.getElementById("outputSecretCode").innerHTML = "Your translated text will go here";
 
 function buttonSecretCodeEncode() {
-    var secretCode = document.getElementById("secretCodeInputEncode").value;
-    var code = secretCode.replace(/a/g, "@");
+    var makeLowerE = document.getElementById("secretCodeInputEncode").value;
+    var secretCodeEncode = makeLowerE.toLowerCase()
+    var code = secretCodeEncode.replace(/a/g, "@");
     var code = code.replace(/b/g, "/");
     var code = code.replace(/c/g, "+");
     var code = code.replace(/d/g, "$");
@@ -29,49 +30,47 @@ function buttonSecretCodeEncode() {
     var code = code.replace(/x/g, "-");
     var code = code.replace(/y/g, "6");
     var code = code.replace(/z/g, "%");
-    var code = code.replace(/§1/g, "q");
-    var code = code.replace(/§2/g, "w");
-    var code = code.replace(/§3/g, "e");
-    var code = code.replace(/§4/g, "r");
-    var code = code.replace(/§5/g, "t");
-    var code = code.replace(/§6/g, "y");
-    var code = code.replace(/§7/g, "u");
-    var code = code.replace(/§8/g, "i");
-    var code = code.replace(/§9/g, "o");
-    var code = code.replace(/§0/g, "p");
-    var code = code.replace(/§@/g, "a");
-    var code = code.replace(/§\//g, "b");
-    var code = code.replace(/§\+/g, "c");
-    var code = code.replace(/§\$/g, "d");
-    var code = code.replace(/§e/g, "3");
-    var code = code.replace(/§&/g, "f");
-    var code = code.replace(/§\*/g, "g");
-    var code = code.replace(/§\(/g, "h");
-    var code = code.replace(/§8/g, "i");
-    var code = code.replace(/§\)/g, "j");
-    var code = code.replace(/§\'/g, "k");
-    var code = code.replace(/§\"/g, "l");
-    var code = code.replace(/§\:/g, "m");
-    var code = code.replace(/§\;/g, "n");
-    var code = code.replace(/§9/g, "o");
-    var code = code.replace(/§0/g, "p");
-    var code = code.replace(/§1/g, "q");
-    var code = code.replace(/§4/g, "r");
-    var code = code.replace(/§#/g, "s");
-    var code = code.replace(/§5/g, "t");
-    var code = code.replace(/§7/g, "u");
-    var code = code.replace(/§=/g, "v");
-    var code = code.replace(/§2/g, "w");
-    var code = code.replace(/§-/g, "x");
-    var code = code.replace(/§6/g, "y");
-    var code = code.replace(/§%/g, "z");
-    // Punctuation (to be done later)
+    punctuation();
+}
+
+function secretCodeDecode() {
+    var makeLowerD = document.getElementById("secretCodeInputDecode");
+    var secretCodeDecode = makeLowerD.toLowerCase()
+    var code = secretCodeDecode.replace(/1/g, "q");
+    var code = code.replace(/2/g, "w");
+    var code = code.replace(/3/g, "e");
+    var code = code.replace(/4/g, "r");
+    var code = code.replace(/5/g, "t");
+    var code = code.replace(/6/g, "y");
+    var code = code.replace(/7/g, "u");
+    var code = code.replace(/8/g, "i");
+    var code = code.replace(/9/g, "o");
+    var code = code.replace(/0/g, "p");
+    var code = code.replace(/@/g, "a");
+    var code = code.replace(/\//g, "b");
+    var code = code.replace(/\+/g, "c");
+    var code = code.replace(/\$/g, "d");
+    var code = code.replace(/&/g, "f");
+    var code = code.replace(/\*/g, "g");
+    var code = code.replace(/\(/g, "h");
+    var code = code.replace(/\)/g, "j");
+    var code = code.replace(/\'/g, "k");
+    var code = code.replace(/\"/g, "l");
+    var code = code.replace(/\:/g, "m");
+    var code = code.replace(/\;/g, "n");
+    var code = code.replace(/#/g, "s");
+    var code = code.replace(/=/g, "v");
+    var code = code.replace(/-/g, "x");
+    var code = code.replace(/%/g, "z");
+    punctuation();
+}
+
+function punctuation() {
     var code = code.replace(/\./g, "?");
     var code = code.replace(/\?/g, ".");
     var code = code.replace(/!/g, ",");
     var code = code.replace(/\,/g, "!");
-    // Spaces and Broken or Unknown characters
+    // Spaces
     var code = code.replace(/ /g, " ");
-    var code = code.replace(/§/g, " [?] ");
     document.getElementById("outputSecretCode").innerHTML = code;
 }
