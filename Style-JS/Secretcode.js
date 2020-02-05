@@ -2,7 +2,7 @@
 document.getElementById("outputSecretCode").innerHTML = "Your translated text will go here";
 
 function buttonSecretCodeEncode() {
-    var secretCode = document.getElementById("secretCodeInput").value;
+    var secretCode = document.getElementById("secretCodeInputEncode").value;
     var code = secretCode.replace(/a/g, "@");
     var code = code.replace(/b/g, "/");
     var code = code.replace(/c/g, "+");
