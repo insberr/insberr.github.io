@@ -1,4 +1,29 @@
 // Site Name
+setNameInput.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("setNameButton").click();
+    }
+});
+
+//When the settings page loads it will set the text to the name
+document.getElementById("afterNameSet").innerHTML = localStorage.getItem("SpiderGaminName");
+                
+//Settings Page: When the name change button is clicked 
+function setName() {
+    var inputName = document.getElementById("setNameInput").value;
+    if (inputName === "") {
+        localStorage.removeItem("SpiderGaminName");
+        document.getElementById("afterNameSet").innerHTML = localStorage.getItem("SpiderGaminName");
+        document.getElementById("getname").innerHTML = localStorage.getItem("SpiderGaminName");
+        document.getElementById("getnameTwo").innerHTML = localStorage.getItem("SpiderGaminName");
+    } else {
+        localStorage.setItem("SpiderGaminName", "Welcome Back, " + inputName + "!");
+        document.getElementById("afterNameSet").innerHTML = localStorage.getItem("SpiderGaminName");
+        document.getElementById("getnameTwo").innerHTML = localStorage.getItem("SpiderGaminName");
+        document.getElementById("getname").innerHTML = localStorage.getItem("SpiderGaminName");
+    }
+}
 
 // Page Color
 var storedPageColor = loacalStorage.getItem("SpiderGaminPageColor");
