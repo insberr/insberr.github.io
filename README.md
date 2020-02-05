@@ -25,7 +25,7 @@ Use textarea for secret code inputs
 
 
 
-<script>
+
 var CI1 = "whatever"
 var CI1P = 3
 var CI1D = "none"
@@ -39,4 +39,3 @@ document.getElementsByTagName("li")[CI1P].style.display = CI1D;
 
 
 document.getElementsByTagName("li")[CI2P].innerHTML = CI2;
-</script>
