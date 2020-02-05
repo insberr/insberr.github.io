@@ -26,6 +26,13 @@ function setName() {
 }
 
 // Page Color
+changeColorInput.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("changeColorButton").click();
+    }
+});
+
 var storedPageColor = loacalStorage.getItem("SpiderGaminPageColor");
 if (storedPageColor === null) {
     document.getElementsByTagName("body")[0].style.background = "#222222";
