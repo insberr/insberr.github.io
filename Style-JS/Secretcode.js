@@ -3,7 +3,7 @@ document.getElementById("outputSecretCode").innerHTML = "Your translated text wi
 
 function buttonSecretCodeEncode() {
     var makeLowerE = document.getElementById("secretCodeInputEncode").value;
-    var secretCodeEncode = makeLowerE.toLowerCase()
+    var secretCodeEncode = makeLowerE.toLowerCase();
     var code = secretCodeEncode.replace(/a/g, "@");
     var code = code.replace(/b/g, "/");
     var code = code.replace(/c/g, "+");
@@ -39,8 +39,7 @@ function buttonSecretCodeEncode() {
 }
 
 function buttonSecretCodeDecode() {
-    var makeLowerD = document.getElementById("secretCodeInputDecode");
-    var secretCodeDecode = makeLowerD.toLowerCase()
+    var secretCodeDecode = document.getElementById("secretCodeInputDecode").value;
     var code = secretCodeDecode.replace(/1/g, "q");
     var code = code.replace(/2/g, "w");
     var code = code.replace(/3/g, "e");
