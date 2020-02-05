@@ -1,7 +1,7 @@
 // button onclick sets the text in a textbox to the variable secretCode
 document.getElementById("outputSecretCode").innerHTML = "Your translated text will go here";
 
-function buttonSecretCode() {
+function buttonSecretCodeEncode() {
     var secretCode = document.getElementById("secretCodeInput").value;
     var code = secretCode.replace(/a/g, "@");
     var code = code.replace(/b/g, "/");
