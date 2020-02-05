@@ -1,4 +1,4 @@
-// button onclick sets the text in a textbox to the variable secretCode
+// Button onclick sets the text in a textbox to the variable secretCode
 document.getElementById("outputSecretCode").innerHTML = "Your translated text will go here";
 
 function buttonSecretCodeEncode() {
