@@ -9,11 +9,46 @@
 
 body {
     font-family: "MyHand", Arial, sans-serif;
+    font-size: 12px;
     color: white;
     background: #222222;
 }
 
 /* ============ Other ============ */
+
+.page-content {
+    margin: 70px 5px 10px 5px;
+}
+
+.settings-svg {
+    color: red;
+    position: fixed;
+    bottom: 0;
+    float: left;
+}
+.site-user-name {
+    position: fixed;
+    top: 5px;
+    background-color: rgb(34, 34, 34, 0.5);
+}
+.site-user-name-bottom {
+    display: none;
+    position: fixed;
+    bottom: 6px;
+    background-color: rgb(34, 34, 34, 0.5);
+    margin-left: 30px;
+}
+.button-tran-red {
+    color: red;
+    padding: 2px;
+    background-color: transparent;
+    border-radius: 8px;
+    border-color: red;
+}
+.button-tran-red:hover {
+    background-color: red;
+    color: transparent;
+}
 
 /* ============ Nav Bar ============ */
 
@@ -78,56 +113,6 @@ body {
 
 
 
-.page-content {
-    margin: 70px 0 20px 20px;
-}
-
-/* ============ Other Classes ============ */
-.warning {
-    background-color: red;
-    border-radius: 15px;
-    text-align: center;
-    padding: 5px 15px;
-    display: none;
-}
-
-.home-progress-bar::before {
-    content: "43%";
-}
-
-.settings-svg {
-    color: red;
-    position: fixed;
-    bottom: 0;
-    float: left;
-}
-
-.site-user-name {
-    position: fixed;
-    top: 5px;
-    background-color: rgb(34, 34, 34, 0.5);
-}
-.site-user-name-bottom {
-    display: none;
-    position: fixed;
-    bottom: 6px;
-    background-color: rgb(34, 34, 34, 0.5);
-    margin-left: 30px;
-}
-
-.button-tran-red {
-    color: red;
-    font-size: 15px;
-    background-color: none;
-    border-radius: 8px;
-    border-color: red;
-}
-.button-tran-red:hover {
-    background-color: red;
-    color: white;
-    border-color: black;
-}
-
 /* === Custom HTML tags === */
 
 hr1-solidred {
@@ -155,7 +140,7 @@ hr2-solidred {
 }
 
 
-/* ===  === */
+
 .red-or {
     color: #fc5203;
 }
