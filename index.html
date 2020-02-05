@@ -118,42 +118,20 @@
                 <input class="setname" type="text" id="setNameInput" placeholder="Change Name">
                 <button class="button-tran-red" id="setNameButton" onclick="setName()">Set</button>
                 <div id="afterNameSet"></div>
-                <script>
-                setNameInput.addEventListener("keyup", function(event) {
-                    if (event.keyCode === 13) {
-                        event.preventDefault();
-                        document.getElementById("setNameButton").click();
-                    }
-                });
-                //When the settings page loads it will set the text to the name
-                document.getElementById("afterNameSet").innerHTML = localStorage.getItem("SpiderGaminName");
-                
-                //Settings Page: When the name change button is clicked 
-                function setName() {
-                    var inputName = document.getElementById("setNameInput").value;
-                    if (inputName === "") {
-                        localStorage.removeItem("SpiderGaminName");
-                        document.getElementById("afterNameSet").innerHTML = localStorage.getItem("SpiderGaminName");
-                        document.getElementById("getname").innerHTML = localStorage.getItem("SpiderGaminName");
-                        document.getElementById("getnameTwo").innerHTML = localStorage.getItem("SpiderGaminName");
-                    } else {
-                        localStorage.setItem("SpiderGaminName", "Welcome Back, " + inputName + "!");
-                        document.getElementById("afterNameSet").innerHTML = localStorage.getItem("SpiderGaminName");
-                        document.getElementById("getnameTwo").innerHTML = localStorage.getItem("SpiderGaminName");
-                        document.getElementById("getname").innerHTML = localStorage.getItem("SpiderGaminName");
-                    }
-                }
-                </script>
                 <br>
                 <hr2-solidred></hr2-solidred>
                 <!-- === Change the background color === -->
-                <p>Change the background color. (Not added yet)</p>
-                <p>The current page color is #222222</p>
+                <p>Change the background color. (Being worked on)</p>
+                <p>The current page color is <span id="thePageColor">#222222</span></p>
+                <input id="changeColorInput" name="changeColorInput" type="text" placeholder="Enter a css color name or hex">
+                <button class="button-tran-red" onclick="changeColor()">Change</button>
                 <br>
                 <hr2-solidred></hr2-solidred>
                 <!-- === See the code for this site on page === -->
                 <p>View the code (On site) (Not added yet)</p>
                 <br>
+                <hr2-solidred></hr2-solidred>
+                <p>Secret code? Maybe give it a try. It's still being worked on, so it might have some issues.</p>
                 <input id="secretCodeInputEncode" name="secretCodeInputEncode" type="text" placeholder="Secret Code To Encode">
                 <button class="button-tran-red" onclick="buttonSecretCodeEncode()">Encode</button>
                 <br>
