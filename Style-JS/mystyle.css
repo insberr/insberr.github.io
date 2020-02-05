@@ -1,7 +1,6 @@
 /* ============ Custom Font ============ */
 @font-face {
   font-family: 'MyHand';
-  font-size: 50;
   src: url('../Handwriting1.ttf') format('truetype');
 }
 
@@ -9,7 +8,7 @@
 
 body {
     font-family: "MyHand", Arial, sans-serif;
-    font-size: 12px;
+    font-size: 20px;
     color: white;
     background: #222222;
 }
