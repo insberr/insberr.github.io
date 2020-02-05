@@ -40,7 +40,7 @@ function changeColor() {
     if (pageColorSet === null) {
         // If no value then it sets it to the default
         localStorage.setItem("SpiderGaminPageColor", "#222222");
-    } else if (pageColorSet == " ") {
+    } else if (pageColorSet === " ") {
         localStorage.setItem("SpiderGaminPageColor", "#222222");
     } else {
         // If there is a value then it sets it to the value entered
