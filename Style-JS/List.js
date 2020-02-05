@@ -1,6 +1,6 @@
-// Current Tab lists Variables
+// --- Current Tab lists Variables
 // Current
-var li1 = "";
+var li1 = "Test";
 var li2 = "";
 var li3 = "";
 var li4 = "";
@@ -12,10 +12,14 @@ var li5 = "";
 
 // Websiste Later 
 
-// Code
-id (li1 === "") {
-    document.getElementsByTagName("li")[0].style
+// --- Code
+// Li 1
+function listsContent() {
+    var current = document.getElementsByTagName("ul")[0];
+    if (li1 === "") {
+        current.getElementsByTagName("li")[0].style.display = "none";
+    } else {
+        current.getElementsByTagName("li")[0].style.display = "inline";
+        current.getElementsByTagName("li")[0].innerHTML = li1;
 }
-document.getElementsByTagName("LI")[CI1P].innerHTML = CI1;
-document.getElementsByTagName("li")[CI1P].style.display = CI1D;
-document.getElementsByTagName("li")[CI2P].innerHTML = CI2;
+}
