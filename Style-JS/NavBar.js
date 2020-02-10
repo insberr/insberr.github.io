@@ -22,11 +22,3 @@ function navtwotab(evt, navtwotab) {
     evt.currentTarget.className += " active";
     document.title = (navtwotab);
 }
-
-//When the page loads it tests this to see if you are a new user or not
-if (localStorage.getItem("SpiderGaminName") === null) {
-  document.getElementById("getname").innerHTML = userName;
-} else {
-    document.getElementById("getname").innerHTML = localStorage.getItem("SpiderGaminName");
-    document.getElementById("getnameTwo").innerHTML = localStorage.getItem("SpiderGaminName");
-}
