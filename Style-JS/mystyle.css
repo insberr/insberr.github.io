@@ -49,6 +49,69 @@ body {
     color: black;
 }
 
+.red-or {
+    color: #fc5203;
+}
+
+.screen-ipad {
+    display: inline;
+}
+.screen-iphone {
+    display: none;
+}
+
+.setname {
+    background-color: lightblue;
+    border-radius: 15px;
+    border-color: red;
+    outline: 0;
+}
+
+
+/* ========= Links ========= */
+
+a:link {
+    color: gray;
+}
+
+a:visited {
+    color: gray;
+}
+
+a:hover {
+    color: lightgray;
+}
+
+a:active {
+    color: darkgray;
+}
+
+/* ======== Custom HTML tags ======== */
+
+hr1-solidred {
+    /* hr */
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    /* style */
+    border: 1px solid red;
+    border-radius: 2px;
+}
+
+hr2-solidred {
+    /* hr */
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    /* style */
+    border: 2px solid red;
+    border-radius: 2px;
+}
+
 /* ============ Nav Bar ============ */
 
 /* == The Bar == */
@@ -108,83 +171,6 @@ body {
     to {opacity: 1;}
 }
 
-/* Progress Bar */
-
-
-
-/* === Custom HTML tags === */
-
-hr1-solidred {
-    /* hr */
-    display: block;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-    margin-left: auto;
-    margin-right: auto;
-    /* style */
-    border: 1px solid red;
-    border-radius: 2px;
-}
-
-hr2-solidred {
-    /* hr */
-    display: block;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-    margin-left: auto;
-    margin-right: auto;
-    /* style */
-    border: 2px solid red;
-    border-radius: 2px;
-}
-
-
-
-.red-or {
-    color: #fc5203;
-}
-
-.screen-ipad {
-    display: inline;
-}
-.screen-iphone {
-    display: none;
-}
-
-.setname {
-    background-color: lightblue;
-    border-radius: 15px;
-    border-color: red;
-    outline: 0;
-}
-
-
-/* ============ Links ============ */
-
-a:link {
-    color: gray;
-}
-
-a:visited {
-    color: gray;
-}
-
-a:hover {
-    color: lightgray;
-}
-
-a:active {
-    color: darkgray;
-}
-
-/* Nav bar ends 
-.item-one {
-    border-radius: 15px 0 0 15px;
-}
-.item-end {
-    border-radius: 0 15px 15px 0;
-}
-*/
 /* ============ Pogress bar ============ */
 
 .progress-one {
