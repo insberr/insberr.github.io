@@ -17,7 +17,7 @@ function onPageLoad() {
         document.getElementsByTagName("body")[0].style.background = "#222222";
         document.getElementById("thePageColor").innerHTML = "#222222";
     } else {
-        document.getElementsByTagName("body")[0].style.background = loacalStorage.getItem("SpiderGaminPageColor");
+        document.getElementsByTagName("body")[0].style.background = localStorage.getItem("SpiderGaminPageColor");
         document.getElementById("thePageColor").innerHTML = localStorage.getItem("SpiderGaminPageColor");
     }
 
