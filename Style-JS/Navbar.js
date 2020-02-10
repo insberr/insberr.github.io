@@ -1,12 +1,6 @@
 //This selects the nav bar button with the "activeonload" id to be clicked
 document.getElementById("activeonload").click();
 
-//When the page is loaded it will set the title to this
-document.title = "Personal Website | Gitlab";
-
-//This is the username variable for a new user
-var userName = "Welcome New User!";
-
 //The navigation bar Script
 function navtwotab(evt, navtwotab) {
     var i, tabcontent, tablinks;
