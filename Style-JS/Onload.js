@@ -13,9 +13,14 @@ function onPageLoad() {
     document.getElementById("outputSecretCode").innerHTML = "Your translated text will go here";
     
     // Page color
-    document.getElementsByTagName("body")[0].style.background = loacalStorage.getItem("SpiderGaminPageColor");
-    document.getElementById("thePageColor").innerHTML = localStorage.getItem("SpiderGaminPageColor");
-    
+    if (loacalStorage.getItem("SpiderGaminPageColor") === null) {
+        document.getElementsByTagName("body")[0].style.background = "#222222";
+        document.getElementById("thePageColor").innerHTML = "#222222";
+    } else {
+        document.getElementsByTagName("body")[0].style.background = loacalStorage.getItem("SpiderGaminPageColor");
+        document.getElementById("thePageColor").innerHTML = localStorage.getItem("SpiderGaminPageColor");
+    }
+
     //When the page loads it tests this to see if you are a new user or not
     if (localStorage.getItem("SpiderGaminName") === null) {
         document.getElementById("getname").innerHTML = userName;
