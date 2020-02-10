@@ -6,9 +6,6 @@ setNameInput.addEventListener("keyup", function(event) {
     }
 });
 
-//When the settings page loads it will set the text to the name
-document.getElementById("afterNameSet").innerHTML = localStorage.getItem("SpiderGaminName");
-                
 //Settings Page: When the name change button is clicked 
 function setName() {
     var inputName = document.getElementById("setNameInput").value;
@@ -33,18 +30,12 @@ changeColorInput.addEventListener("keyup", function(event) {
     }
 });
 
-//if (loacalStorage.getItem("SpiderGaminPageColor") === null) {
-//    document.getElementsByTagName("body")[0].style.background = "#222222";
-//} else {
-//    document.getElementsByTagName("body")[0].style.background = loacalStorage.getItem("SpiderGaminPageColor");
-//}
-
 function changeColor() {
     var pageColorSet = document.getElementById("changeColorInput").value;
     if (pageColorSet === "") {
         localStorage.setItem("SpiderGaminPageColor", "#222222");
     } else {
-        localStorage.setItem("SpiderGaminPageColor", pageColorSet);
+        localStorage.setItem("SpiderGaminPageColor", document.getElementById("changeColorInput"));
     }
     document.getElementsByTagName("body")[0].style.background = localStorage.getItem("SpiderGaminPageColor");
     document.getElementById("thePageColor").innerHTML = localStorage.getItem("SpiderGaminPageColor");
