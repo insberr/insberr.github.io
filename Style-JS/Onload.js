@@ -14,6 +14,7 @@ function onPageLoad() {
     
     // Page color
     document.getElementsByTagName("body")[0].style.background = loacalStorage.getItem("SpiderGaminPageColor");
+    document.getElementById("thePageColor").innerHTML = localStorage.getItem("SpiderGaminPageColor");
     
     //When the page loads it tests this to see if you are a new user or not
     if (localStorage.getItem("SpiderGaminName") === null) {
