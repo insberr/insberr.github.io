@@ -13,7 +13,7 @@ function onPageLoad() {
     document.getElementById("outputSecretCode").innerHTML = "Your translated text will go here";
     
     // Page color
-    if (loacalStorage.getItem("SpiderGaminPageColor") === null) {
+    if (localStorage.getItem("SpiderGaminPageColor") === null) {
         document.getElementsByTagName("body")[0].style.background = "#222222";
         document.getElementById("thePageColor").innerHTML = "#222222";
     } else {
