@@ -1,7 +1,14 @@
-// JavaScript Variables
+// Variables
+
+//This is the username variable for a new user
+var userName = "Welcome New User!";
+
 
 // On Load (last)
 function onPageLoad() {
+    // Page Title
+    document.title = "Personal Website | Gitlab";
+
     // Secret Code
     document.getElementById("outputSecretCode").innerHTML = "Your translated text will go here";
     
