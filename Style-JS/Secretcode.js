@@ -2,7 +2,14 @@
 secretCodeInputEncode.addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
         event.preventDefault();
-        document.getElementById("????").click();
+        document.getElementById("codeEncodeButton").click();
+    }
+});
+
+secretCodeInputDecode.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("codeDecodeButton").click();
     }
 });
 
