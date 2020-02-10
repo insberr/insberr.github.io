@@ -1,6 +1,3 @@
-// Button onclick sets the text in a textbox to the variable secretCode
-document.getElementById("outputSecretCode").innerHTML = "Your translated text will go here";
-
 function buttonSecretCodeEncode() {
     var makeLowerE = document.getElementById("secretCodeInputEncode").value;
     var secretCodeEncode = makeLowerE.toLowerCase();
