@@ -35,7 +35,7 @@ function changeColor() {
     if (pageColorSet === "") {
         localStorage.setItem("SpiderGaminPageColor", "#222222");
     } else {
-        localStorage.setItem("SpiderGaminPageColor", document.getElementById("changeColorInput"));
+        localStorage.setItem("SpiderGaminPageColor", pageColorSet);
     }
     document.getElementsByTagName("body")[0].style.background = localStorage.getItem("SpiderGaminPageColor");
     document.getElementById("thePageColor").innerHTML = localStorage.getItem("SpiderGaminPageColor");
