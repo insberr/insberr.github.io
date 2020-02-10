@@ -22,6 +22,9 @@ function onPageLoad() {
         document.getElementById("getname").innerHTML = localStorage.getItem("SpiderGaminName");
         document.getElementById("getnameTwo").innerHTML = localStorage.getItem("SpiderGaminName");
     }
+    
+    // User Name Text Set (settings page)
+    document.getElementById("afterNameSet").innerHTML = localStorage.getItem("SpiderGaminName");
 }
 
 onPageLoad();
