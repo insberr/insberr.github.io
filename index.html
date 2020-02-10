@@ -139,7 +139,7 @@
                 <p>Change the name that appeares at the <span class="screen-ipad">top</span><span class="screen-iphone">bottom</span> of the page.
                 <br>
                 <lable for="setNameInput">Change Name:</lable>
-                <input class="setname" type="text" id="setNameInput" placeholder="Change Name">
+                <input class="setname" type="text" id="setNameInput" placeholder="Change Name" autocomplete="off">
                 <button class="button-tran-red" id="setNameButton" onclick="setName()">Set</button>
                 <div id="afterNameSet"></div>
                 <br>
@@ -147,7 +147,7 @@
                 <!-- === Change the background color === -->
                 <p>Change the background color. (Being worked on)</p>
                 <p>The current page color is <span id="thePageColor">#222222</span></p>
-                <input id="changeColorInput" name="changeColorInput" type="text" placeholder="Enter a css color name or hex">
+                <input id="changeColorInput" name="changeColorInput" type="text" placeholder="Enter a css color name or hex" autocomplete="off">
                 <button id="changeColorButton" class="button-tran-red" onclick="changeColor()">Change</button>
                 <br>
                 <hr2-solidred></hr2-solidred>
@@ -159,7 +159,7 @@
                 <input id="secretCodeInputEncode" name="secretCodeInputEncode" type="text" placeholder="Secret Code To Encode">
                 <button id="codeEncodeButton" class="button-tran-red" onclick="buttonSecretCodeEncode()">Encode</button>
                 <br>
-                <input id="secretCodeInputDecode" name="secretCodeInputDecode" type="number" placeholder="Secret Code To Decode">
+                <input id="secretCodeInputDecode" name="secretCodeInputDecode" type="number" placeholder="Secret Code To Decode" autocomplete="off">
                 <button id="codeDecodeButton" class="button-tran-red" onclick="buttonSecretCodeDecode()">Decode</button>
                 <br>
                 <div id="outputSecretCode">broken... yup</div>
