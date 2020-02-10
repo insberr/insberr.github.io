@@ -56,6 +56,8 @@ function buttonSecretCodeDecode() {
     var code = code.replace(/\(/g, "h");
     var code = code.replace(/\)/g, "j");
     var code = code.replace(/\'/g, "k");
+    var code = code.replace(/\’/g, "k");
+    var code = code.replace(/\”/g, "l");
     var code = code.replace(/\"/g, "l");
     var code = code.replace(/\:/g, "m");
     var code = code.replace(/\;/g, "n");
