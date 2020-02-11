@@ -5,6 +5,8 @@ Wow, coding is a lot of work.
 
 # To Do
 
+* [ ]  Use javascript for the user name display
+
 * [ ]  Fix the progress bar css
 
 * [ ]  Move the secret code to a differant place
@@ -22,7 +24,7 @@ Wow, coding is a lot of work.
 * [x] Fix the l and k characters not decoding on the secret code
 * There was an error with the ' and ’ (k) and the " and ” (l)
 
-* [ ] Use JavaScript to make lists easier to organize 
+* [x] Use JavaScript to make lists easier to organize 
 * I've mostly got this done, just need to add the rest of the variables and copy and paste a lot of things.
 
 * [ ] Fix button padding on the left and right
