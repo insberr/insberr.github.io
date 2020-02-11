@@ -5,6 +5,8 @@ Wow, coding is a lot of work.
 
 # To Do
 
+* [ ]  Fix the progress bar css
+
 * [ ]  Move the secret code to a differant place
 
 * [ ]  Add info to the About tab
