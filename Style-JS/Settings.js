@@ -3,6 +3,7 @@ setNameInput.addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
         event.preventDefault();
         document.getElementById("setNameButton").click();
+        document.getElementById("setNameInput").value = "";
     }
 });
 
@@ -27,6 +28,7 @@ changeColorInput.addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
         event.preventDefault();
         document.getElementById("changeColorButton").click();
+        document.getElementById("changeColorInput").value = "";
     }
 });
 
