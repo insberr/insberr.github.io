@@ -17,10 +17,10 @@ var li14 = "";
 var li15 = "";
 
 // Completed
-var c1 = "A JavaScript secret code encode/decode thing";
-var c2 = "This websites style";
-var c3 = "Moving Files";
-var c4 = "Learning HTML and CSS";
+var c1 = "";
+var c2 = "";
+var c3 = "";
+var c4 = "";
 var c5 = "";
 var c6 = "";
 var c7 = "";
@@ -28,10 +28,10 @@ var c8 = "";
 var c9 = "";
 var c10 = "";
 var c11 = "";
-var c12 = "";
-var c13 = "";
-var c14 = "";
-var c15 = "";
+var c12 = "A JavaScript secret code encode/decode thing";
+var c13 = "This websites style";
+var c14 = "Moving Files";
+var c15 = "Learning HTML and CSS";
 
 // --- Later Tab lists
 // Personal Later
