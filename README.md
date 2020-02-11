@@ -5,20 +5,22 @@ Wow, coding is a lot of work.
 
 # To Do
 
-* [ ] Turn off autocomplete for the color change
+* [x] Fix the color set not saving or setting when you reload
 
-* [ ] <del>Move over to using cookies</del> Not going to work
-
-* [ ] Fix the color set not saving or setting when you reload
-
-* [ ] Fix the l and k characters not decoding on the secret code
+* [x] Fix the l and k characters not decoding on the secret code
+* There was an error with the ' and ’ (k) and the " and ” (l)
 
 * [ ] Use JavaScript to make lists easier to organize 
+* I've mostly got this done, just need to add the rest of the variables and copy and paste a lot of things.
 
 * [ ] Fix button padding on the left and right
 
 * [ ] Redesign the input boxes
+* Honestly, the default style looks ugly, and my style, was me playing with it, looks terrable.
 
-* [ ] Make the decode input box a number input
+* [x] Use textarea for secret code inputs
+* Done! it looks a little better. There is more design to do, but i will do it later.
 
-* [ ] Use textarea for secret code inputs
+
+# Suggestions
+Suggestions and help would be awsome!
