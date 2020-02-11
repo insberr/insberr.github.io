@@ -1,6 +1,6 @@
 // --- Current Tab lists Variables
 // Current
-var li1 = "";
+var li1 = "Use JS for the progress bars";
 var li2 = "Using JavaScript to set the content of the list item and the order";
 var li3 = "";
 var li4 = "";
