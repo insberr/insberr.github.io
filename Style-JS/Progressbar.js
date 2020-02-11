@@ -1,11 +1,8 @@
-var pb = "50";
-var pbw = 50;
+var pb = "50%";
 
 function progressBarOne() {
-    //document.getElementById("1progress1").innerHTML = p1;
-    //document.getElementById("2progress1").innerHTML = p1;
-    document.getElementsByClassName("progressone").innerHTML = pb;
-    document.getElementsByClassName("progressbarone").style.width = pbw;
+  document.getElementsByClassName("progressone")[0].innerHTML = pb;
+  document.getElementsByClassName("progressbarone")[0].style.width = pb;
 }
 
 progressBarOne();
