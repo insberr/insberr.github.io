@@ -5,6 +5,10 @@ Wow, coding is a lot of work.
 
 # To Do
 
+* [ ] Add settings reset button
+
+* [ ] Add a local storage deleter button
+
 * [x] Fix the color set not saving or setting when you reload
 
 * [x] Fix the l and k characters not decoding on the secret code
