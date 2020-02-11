@@ -1,37 +1,13 @@
 // --- Current Tab lists Variables
-// Current
+// Current (to 15)
 var li1 = "Use JS for the progress bars";
-var li2 = "Using JavaScript to set the content of the list item and the order";
-var li3 = "";
-var li4 = "";
-var li5 = "";
-var li6 = "";
-var li7 = "";
-var li8 = "";
-var li9 = "";
-var li10 = "";
-var li11 = "";
-var li12 = "";
-var li13 = "";
-var li14 = "";
-var li15 = "";
 
-// Completed
-var c1 = "";
-var c2 = "";
-var c3 = "";
-var c4 = "";
-var c5 = "";
-var c6 = "";
-var c7 = "";
-var c8 = "";
-var c9 = "";
-var c10 = "";
-var c11 = "";
-var c12 = "A JavaScript secret code encode/decode thing";
-var c13 = "This websites style";
-var c14 = "Moving Files";
-var c15 = "Learning HTML and CSS";
+// Completed (to 15)
+var c1 = "Moving Files";
+var c2 = "Learning HTML and CSS";
+var c3 = "This websites style";
+var c4 = "A JavaScript secret code encode/decode thing";
+var c5 = "Using JavaScript to set the content of the list item and the order";
 
 // --- Later Tab lists
 // Personal Later
@@ -136,46 +112,46 @@ function listsContent() {
 	// - Completed
 	var completed = document.getElementsByTagName("ul")[1];
     // List Item 1
-    if (c1 === "") {
+    if (c15 === "") {
         completed.getElementsByTagName("li")[0].style.display = "none";
     } else {
-        completed.getElementsByTagName("li")[0].innerHTML = c1;
+        completed.getElementsByTagName("li")[0].innerHTML = c15;
 	}
 	// List Item 2
-	if (c2 === "") {
+	if (c14 === "") {
         completed.getElementsByTagName("li")[1].style.display = "none";
     } else {
-        completed.getElementsByTagName("li")[1].innerHTML = c2;
+        completed.getElementsByTagName("li")[1].innerHTML = c14;
 	}
 	//
-	if (c3 === "") {
+	if (c13 === "") {
         completed.getElementsByTagName("li")[2].style.display = "none";
     } else {
-        completed.getElementsByTagName("li")[2].innerHTML = c3;
+        completed.getElementsByTagName("li")[2].innerHTML = c13;
 	}
 	//
-	if (c4 === "") {
+	if (c12 === "") {
         completed.getElementsByTagName("li")[3].style.display = "none";
     } else {
-        completed.getElementsByTagName("li")[3].innerHTML = c4;
+        completed.getElementsByTagName("li")[3].innerHTML = c12;
 	}
 	// 
-	if (c5 === "") {
+	if (c11 === "") {
         completed.getElementsByTagName("li")[4].style.display = "none";
     } else {
-        completed.getElementsByTagName("li")[4].innerHTML = c5;
+        completed.getElementsByTagName("li")[4].innerHTML = c11;
 	}
 	//
-	if (c6 === "") {
+	if (c10 === "") {
         completed.getElementsByTagName("li")[5].style.display = "none";
     } else {
-        completed.getElementsByTagName("li")[5].innerHTML = c6;
+        completed.getElementsByTagName("li")[5].innerHTML = c10;
 	}
 	//
-	if (c7 === "") {
+	if (c9 === "") {
         completed.getElementsByTagName("li")[6].style.display = "none";
     } else {
-        completed.getElementsByTagName("li")[6].innerHTML = c7;
+        completed.getElementsByTagName("li")[6].innerHTML = c9;
 	}
 	//
 	if (c8 === "") {
@@ -184,46 +160,46 @@ function listsContent() {
         completed.getElementsByTagName("li")[7].innerHTML = c8;
 	}
 	//
-	if (c9 === "") {
+	if (c7 === "") {
         completed.getElementsByTagName("li")[8].style.display = "none";
     } else {
-        completed.getElementsByTagName("li")[8].innerHTML = c9;
+        completed.getElementsByTagName("li")[8].innerHTML = c7;
 	}
 	//
-	if (c10 === "") {
+	if (c6 === "") {
         completed.getElementsByTagName("li")[9].style.display = "none";
     } else {
-        completed.getElementsByTagName("li")[9].innerHTML = c10;
+        completed.getElementsByTagName("li")[9].innerHTML = c6;
 	}
 	//
-	if (c11 === "") {
+	if (c5 === "") {
         completed.getElementsByTagName("li")[10].style.display = "none";
     } else {
-        completed.getElementsByTagName("li")[10].innerHTML = c11;
+        completed.getElementsByTagName("li")[10].innerHTML = c5;
 	}
 	//
-	if (c12 === "") {
+	if (c4 === "") {
 	    completed.getElementsByTagName("li")[11].style.display = "none";
     } else {
-        completed.getElementsByTagName("li")[11].innerHTML = c12;
+        completed.getElementsByTagName("li")[11].innerHTML = c4;
 	}
 	//
-	if (c13 === "") {
+	if (c3 === "") {
         completed.getElementsByTagName("li")[12].style.display = "none";
     } else {
-        completed.getElementsByTagName("li")[12].innerHTML = c13;
+        completed.getElementsByTagName("li")[12].innerHTML = c3;
 	}
 	//
-	if (c14 === "") {
+	if (c2 === "") {
         completed.getElementsByTagName("li")[13].style.display = "none";
     } else {
-        completed.getElementsByTagName("li")[13].innerHTML = c14;
+        completed.getElementsByTagName("li")[13].innerHTML = c2;
 	}
 	//
-	if (c15 === "") {
+	if (c1 === "") {
         completed.getElementsByTagName("li")[14].style.display = "none";
     } else {
-        completed.getElementsByTagName("li")[14].innerHTML = c15;
+        completed.getElementsByTagName("li")[14].innerHTML = c1;
 	}
 	
 	// --- To Do Later
