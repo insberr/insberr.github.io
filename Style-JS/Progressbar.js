@@ -1,4 +1,4 @@
-var p1 = "23";
+var p1 = "23%";
 
 function progressBar1() {
     document.getElementById("1progress1", "2progress1").innerHTML = p1;
