@@ -5,6 +5,12 @@ Wow, coding is a lot of work.
 
 # To Do
 
+* [ ]  Move the secret code to a differant place
+
+* [ ]  Add info to the About tab
+
+* [ ]  Upload media and add it to the media tab
+
 * [ ] Add settings reset button
 
 * [ ] Add a local storage deleter button
