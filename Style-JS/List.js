@@ -1,6 +1,20 @@
 // --- Current Tab lists Variables
 // Current (to 15)
 var li1 = "Use JS for the progress bars";
+var li2 = "";
+var li3 = "";
+var li4 = "";
+var li5 = "";
+var li6 = "";
+var li7 = "";
+var li8 = "";
+var li9 = "";
+var li10 = "";
+var li11 = "";
+var li12 = "";
+var li13 = "";
+var li14 = "";
+var li15 = "";
 
 // Completed (to 15)
 var c1 = "Moving Files";
@@ -8,6 +22,16 @@ var c2 = "Learning HTML and CSS";
 var c3 = "This websites style";
 var c4 = "A JavaScript secret code encode/decode thing";
 var c5 = "Using JavaScript to set the content of the list item and the order";
+var c6 = "";
+var c7 = "";
+var c8 = "";
+var c9 = "";
+var c10 = "";
+var c11 = "";
+var c12 = "";
+var c13 = "";
+var c14 = "";
+var c15 = "";
 
 // --- Later Tab lists
 // Personal Later
