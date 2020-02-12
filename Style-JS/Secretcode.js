@@ -13,7 +13,7 @@ secretCodeInputDecode.addEventListener("keyup", function(event) {
     }
 });
 
-function buttonSecretCodeEncode() {
+//function buttonSecretCodeEncode() {
     var makeLowerE = document.getElementById("secretCodeInputEncode").value;
     var secretCodeEncode = makeLowerE.toLowerCase();
     var code = secretCodeEncode.replace(/a/g, "@");
@@ -50,7 +50,7 @@ function buttonSecretCodeEncode() {
     document.getElementById("outputSecretCode").innerHTML = code;
 }
 
-function buttonSecretCodeDecode() {
+//function buttonSecretCodeDecode() {
     var secretCodeDecode = document.getElementById("secretCodeInputDecode").value;
     var code = secretCodeDecode.replace(/1/g, "q");
     var code = code.replace(/2/g, "w");
