@@ -3,7 +3,6 @@ setNameInput.addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
         event.preventDefault();
         document.getElementById("setNameButton").click();
-        document.getElementById("setNameInput").value = "";
     }
 });
 
@@ -21,6 +20,7 @@ function setName() {
         document.getElementById("getnameTwo").innerHTML = localStorage.getItem("SpiderGaminName");
         document.getElementById("getname").innerHTML = localStorage.getItem("SpiderGaminName");
     }
+    document.getElementById("setNameInput").value = "";
 }
 
 // Page Color
@@ -28,7 +28,6 @@ changeColorInput.addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
         event.preventDefault();
         document.getElementById("changeColorButton").click();
-        document.getElementById("changeColorInput").value = "";
     }
 });
 
@@ -41,4 +40,5 @@ function changeColor() {
     }
     document.getElementsByTagName("body")[0].style.background = localStorage.getItem("SpiderGaminPageColor");
     document.getElementById("thePageColor").innerHTML = localStorage.getItem("SpiderGaminPageColor");
+    document.getElementById("changeColorInput").value = "";
 }
