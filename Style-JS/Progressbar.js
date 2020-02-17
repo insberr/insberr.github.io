@@ -1,4 +1,4 @@
-var pb = "50%";
+var pb = "20%";
 
 function progressBarOne() {
   document.getElementsByClassName("progressone")[0].innerHTML = pb;
@@ -7,8 +7,3 @@ function progressBarOne() {
 }
 
 progressBarOne();
-//set the text in the sentance
-
-//set the progress
-
-//set the progress bar amount
