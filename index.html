@@ -9,12 +9,12 @@
     <body>
         <!-- ====== Navigation Bar ====== -->
         <div class="tab">
-            <button class="tablinks" onclick="navtwotab(event, 'Home')" id="activeonload" title="Home Tab">Home</button>
-            <button class="tablinks" onclick="navtwotab(event, 'Current')" title="What I'm Doing">Current</button>
-            <button class="tablinks" onclick="navtwotab(event, 'Later')" title="What I Plan On Doing">Later</button>
-            <button class="tablinks" onclick="navtwotab(event, 'Links')" title="Links To The Things">Links</button>
-            <button class="tablinks" onclick="navtwotab(event, 'About')" title="About Me">About</button>
-            <button class="tablinks" onclick="navtwotab(event, 'Media')" title="My Videos, Music, And Much More">Media</button>
+            <button class="tablinks Home" onclick="navtwotab(event, 'Home')" id="activeonload" title="Home Tab">Home</button>
+            <button class="tablinks Tasks" onclick="navtwotab(event, 'Tasks')" title="What I'm Doing">Tasks</button>
+            <button class="tablinks Posts" onclick="navtwotab(event, 'Posts')" title="What I Plan On Doing">Posts</button>
+            <button class="tablinks none" onclick="navtwotab(event, 'none')" title="Links To The Things">none</button>
+            <button class="tablinks About" onclick="navtwotab(event, 'About')" title="About Me">About</button>
+            <button class="tablinks Media" onclick="navtwotab(event, 'Media')" title="My Videos, Music, And Much More">Media</button>
         </div>
         <!-- ====== Site user name ====== -->
         <div class="site-user-name" id="getname">Welcome New User!</div>
@@ -23,10 +23,12 @@
             <!-- ====== Home Tab ====== -->
             <div id="Home" class="tabcontent">
                 <h3 class="red-or">Welcome</h3>
-                <p>Hello, welcome to my personal website! This is where I post everything I can think of to post. I'm still working on this website, mainly styling it, and as I do that I've been adding content.</p>
+                <p>Hello, my name is Jonah Matteson (AKA SpiderGamin). Welcome to my personal website! I will post anything I can think of to post, however I'm still working on the JavaScript for the site. I will slowly add content, mainly to the About and Media tabs.</p>
+                <p>As a side note, the coronavirus has made life complicated, so I wont be working on the site as often as usual.</p>
+                <p>And remember! If you have any tip, suggestions, fixes, etc, please do let me know using a Gitlab issue on the source code, which can be found <a href="https://gitlab.com/spidergamin/Personal">here</a>.</p>
             </div>
             <!-- ====== Current Tab ====== -->
-            <div id="Current" class="tabcontent">
+            <div id="Tasks" class="tabcontent">
                 <h3 class="red-or">Current</h3>
                 <p>Here is a list of the things I'm currently working on</p>
                 <ul>
@@ -53,6 +55,32 @@
                 </div>
                 <br>
                 <hr2-solidred></hr2-solidred>
+                <h3 class="red-or">Later</h3>
+                <p>These are the things I plan on doing later</p>
+                <!--<ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>-->
+                <br>
+                <h4>Plans For This Website</h4>
+                <!--<ul>
+                    <li>I plan to make it so when you reload the page it will stay on the tab you had selected. I had it made and done, but it broke the whole site. I removed it and later found the issue. I will add it back in later.</li>
+                </ul>-->
+                <br>
+                <hr2-solidred></hr2-solidred>
                 <h3 class="red-or">Finished</h3>
                 <p>Here is a list of the tasks I've finished</p>
                 <ul>
@@ -73,40 +101,13 @@
                     <li></li>
                 </ul>
             </div>
-            <!-- ====== Later Tab ====== -->
-            <div id="Later" class="tabcontent">
-                <h3 class="red-or">Later</h3>
-                <p>These are the things I plan on doing later</p>
-                <br>
-                <hr2-solidred></hr2-solidred>
-                <h4>Plans For This Website</h4>
-                <ul>
-                    <li>I plan to make it so when you reload the page it will stay on the tab you had selected. I had it made and done, but it broke the whole site. I removed it and later found the issue. I will add it back in later.</li>
-                </ul>
-                <br>
-                <h4>Completed</h4>
-                <ul>
-                    <li>Use JavaScript to have all page content on the index.html file</li>
-                </ul>
-                <br>
-                <h2-solidred></h2-solidred>
+            <!-- ====== Posts Tab ====== -->
+            <div id="Posts" class="tabcontent">
+                <p>No posts here, i still have to make the javascript for it</p>
             </div>
-            <!-- ====== Links Tab ====== -->
-            <div id="Links" class="tabcontent">
-                <h3 class="red-or">Links</h3>
-                <p>These are all the links I could think to add</p>
-                <br>
-                <h4><a href="https://spidergamin.gitlab.io/Incremental-Universe/" style="color:cyan" title="Incremental Universe, Its not much right now." target="_blank">Idle Universe</a></h4>
-                <p>Idle Universe (Incremental Universe) is a game me and some friends are making. The game doesn't have anything yet because we have not really worked on it.</p>
-                <br>
-                <hr1-solidred></hr1-solidred>
-                <h4><a href="https://www.youtube.com/channel/UCO2rlcllQhQdPM8PZkqEAcA?view_as=subscriber" style="color:red" target="_blank" title="Its my YouTube channel, cringy though!">YouTube Channel</a></h4>
-                <p>My YouTube channel. There are ony 2 videos on it currently. The videos are from 2 or 3 years ago and are very cringy. I just got my channel verified, so i can upload longer videos, some of which i've been waiting to upload.</p>
-                <br>
-                <hr1-solidred></hr1-solidred>
-                <h4><a href="https://gitlab.com/spidergamin/Personal" target="_blank">This Code</a></h4>
-                <p>See the code for this website on gitlab</p>
-                <br>
+            <!-- ====== none tab Tab ====== -->
+            <div id="none" class="tabcontent">
+                <p>This tab does not have content yet. Any ideas?</p>
             </div>
             <!-- ====== About Tab ====== -->
             <div id="About" class="tabcontent">
@@ -116,7 +117,19 @@
                 <hr2-solidred></hr2-solidred>
                 <h3 class="red-or">About This Website</h3>
                 <p>This section is about this website. I will put info like changes, secrets, and lots of other things.</p>
-                <p>This website has been a big project.</p>
+                <p>Something</p>
+                <br>
+                <hr2-solidred></hr2-solidred>
+                <h3 class="red-or">Links</h3>
+                <h4><a href="https://spidergamin.gitlab.io/Incremental-Universe/" style="color:cyan" title="Incremental Universe, Its not much right now." target="_blank">Idle Universe</a></h4>
+                <p>Idle Universe (Incremental Universe) is a game me and some friends are making. The game doesn't have anything yet because we have not really worked on it.</p>
+                <br>
+                <h4><a href="https://www.youtube.com/channel/UCO2rlcllQhQdPM8PZkqEAcA?view_as=subscriber" style="color:red" target="_blank" title="Its my YouTube channel, cringy though!">YouTube Channel</a></h4>
+                <p>My YouTube channel. There are ony 2 videos on it currently. The videos are from 2 or 3 years ago and are very cringy. I just got my channel verified, so i can upload longer videos, some of which i've been waiting to upload.</p>
+                <br>
+                <h4><a href="https://gitlab.com/spidergamin/Personal" target="_blank">This Sites Code</a></h4>
+                <p>See the code for this website on gitlab</p>
+                <br>
             </div>
             <!-- ====== Media Tab ====== -->
             <div id="Media" class="tabcontent">
