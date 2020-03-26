@@ -17,7 +17,7 @@ Wow, coding is a lot of work.
 
 * [ ] Add settings reset button
 
-* [ ] Add a local storage deleter button
+* [ ] Add a local storage delete button
 
 * [x] Fix the color set not saving or setting when you reload
 
@@ -35,6 +35,6 @@ Wow, coding is a lot of work.
 * [x] Use textarea for secret code inputs
 * Done! it looks a little better. There is more design to do, but i will do it later.
 
-
+* [x] Make the tabs stay on what one was selected when you reload
 # Suggestions
 Suggestions and help would be awsome!
