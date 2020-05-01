@@ -1,19 +1,19 @@
 # My Personal Website | Gitlab
-Welcome to the code for my personal website! Its a working progress, but ill get it worked out.
+Welcome to the code for my personal website! My website is mainly finished.
 
-Wow, coding is a lot of work.
+
 
 # To Do
 
-* [ ]  Use javascript for the user name display
+* [ ] Use javascript for the user name display
 
-* [ ]  Fix the progress bar css
+* [ ] Fix the progress bar css
 
-* [ ]  Move the secret code to a differant place
+* [ ] Move the secret code to a differant place
 
-* [ ]  Add info to the About tab
+* [ ] Add info to the About tab
 
-* [ ]  Upload media and add it to the media tab
+* [ ] Upload media and add it to the media tab
 
 * [ ] Add settings reset button
 
@@ -36,5 +36,6 @@ Wow, coding is a lot of work.
 * Done! it looks a little better. There is more design to do, but i will do it later.
 
 * [x] Make the tabs stay on what one was selected when you reload
+
 # Suggestions
 Suggestions and help would be awsome!
