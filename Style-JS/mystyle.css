@@ -1,5 +1,7 @@
 /* ============ Custom Font ============ */
 @import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@3/distr/fira_code.css);
+code { font-family: 'Fira Code', monospace; }
+
 
 @font-face {
   font-family: 'MyHand';
