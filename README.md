@@ -30,7 +30,7 @@ Welcome to the code for my personal website! My website is mainly finished.
 * [ ] Fix button padding on the left and right
 
 * [ ] Redesign the input boxes
-* Honestly, the default style looks ugly, and my style, was me playing with it, looks terrable.
+* Honestly, the default style looks ugly, and my style, was me playing with it, looks terrible.
 
 * [x] Use textarea for secret code inputs
 * Done! it looks a little better. There is more design to do, but i will do it later.
