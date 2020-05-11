@@ -7,6 +7,7 @@ just a webhook test ok
 test #2 worked
 time to test the ping
 ping worked sort of. test 2 ping
+ok that failed so its time to wait for that other thing to work and then i can ping again
 # To Do
 
 * [ ] Use javascript for the user name display
