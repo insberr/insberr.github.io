@@ -6,6 +6,7 @@ I am bored and if anyone is willing to do some of my homework for me that would 
 just a webhook test ok
 test #2 worked
 time to test the ping
+ping worked sort of. test 2 ping
 # To Do
 
 * [ ] Use javascript for the user name display
