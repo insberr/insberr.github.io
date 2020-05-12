@@ -3,11 +3,6 @@ Welcome to the code for my personal website! My website is mainly finished.
 
 I am bored and if anyone is willing to do some of my homework for me that would be great because im getting way to much homework
 
-just a webhook test ok
-test #2 worked
-time to test the ping
-ping worked sort of. test 2 ping
-ok that failed so its time to wait for that other thing to work and then i can ping again
 # To Do
 
 * [ ] Use javascript for the user name display
