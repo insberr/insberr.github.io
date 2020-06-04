@@ -3,7 +3,15 @@ Welcome to the code for my personal website! My website is mainly finished.
 
 I am bored and if anyone is willing to do some of my homework for me that would be great because im getting way to much homework
 
+# Updates
+* Added background color to match the system theme
+* 
+
+## Coming soon
+* List items are more compact in the code
+
 # To Do
+* [ ] Make all local storage items use on local storage item with a JSON string
 
 * [ ] Use javascript for the user name display
 
