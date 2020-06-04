@@ -12,8 +12,13 @@
 /* ============ Custom Font ============ */
 @import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@3/distr/fira_code.css);
 code { font-family: 'Fira Code', monospace; }
-
-
+@font-facr {
+    font-family: 'Fira';
+    src: url(https://sdn.jsdelivr.net/gh/tonsky/FiraCode@3/distr/fira_code.css);
+}
+code {
+    font-family: 'Fira', monospace;
+}
 @font-face {
   font-family: 'MyHand';
   src: url('../Handwriting1.ttf') format('truetype');
