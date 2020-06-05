@@ -34,7 +34,7 @@ changeColorInput.addEventListener("keyup", function(event) {
 function changeColor() {
     var pageColorSet = document.getElementById("changeColorInput").value;
     if (pageColorSet === "") {
-        localStorage.setItem("SpiderGaminPageColor", "#222222");
+        localStorage.removeItem("SpiderGaminPageColor");
     } else {
         localStorage.setItem("SpiderGaminPageColor", pageColorSet);
     }
