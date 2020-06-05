@@ -13,16 +13,16 @@
 }
 
 
-/* ============ Custom Font ============ /
+/* ============ Custom Font ============ */
 @import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@3/distr/fira_code.css);
-/code { font-family: 'Fira Code', monospace; }*/
-@font-face {
-    font-family: 'Fira';
-    src: url(https://sdn.jsdelivr.net/gh/tonsky/FiraCode@3/distr/fira_code.css);
+/* Specify in CSS */
+code { font-family: 'Fira Code', monospace; }
+
+@supports (font-variation-settings: normal) {
+  code { font-family: 'Fira Code VF', monospace; }
 }
-code {
-    font-family: 'Fira', monospace;
-}
+
+
 @font-face {
   font-family: 'MyHand';
   src: url('../Handwriting1.ttf') format('truetype');
