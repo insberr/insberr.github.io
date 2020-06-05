@@ -7,7 +7,7 @@
 
 @media (prefers-color-scheme: light) {
   body {
-      background:  white;
+      background:  rgb(165, 165, 165);
       color: black;
   }
 }
@@ -32,8 +32,6 @@ code { font-family: 'Fira Code', monospace; }
 body {
     font-family: /*"MyHand"*/Arial, sans-serif;
     font-size: 20px; 
-    color: white;
-    background: #222222;
 }
 
 /* ============ Other ============ */
