@@ -83,12 +83,16 @@
                 <br>
                 <hr2-solidred></hr2-solidred>
                 <h3 class="red-or">Links</h3>
-                <h4><a href="">Twitter</a></h4>
-                <h4>SpiderBot</h4>
-                <h4>Github</h4>
-                <h4>Gitlab</h4>
-                <h4>new link</h4>
-                <h4><a href="https://spidergaming.gitlab.io/Incremental-Universe/" style="color:cyan" title="Incremental Universe, Its not much right now." target="_blank">Idle Universe</a></h4>
+                <h4><a href="https://twitter.com/SpiderGaming0" target="_blank">Twitter</a></h4>
+                <p>Go follow me on Twitter. I post randomness if you ask me.</p>
+                <br>
+                <h4><a href="https://github.com/spidergamin" target="_blank">Github</a></h4>
+                <p>I put all my open source code here. The project I'm currently working on is a desktop version of a game called <a href="https://github.com/sparticle999/spacecompany" target="_blank">SpaceCompany</a></p>
+                <h5><a href="https://github.com/spidergamin/SpaceCompany-Desktop" target="_blank">SpaceCompany-Desktop</a></h5>
+                <br>
+                <h4><a href="https://gitlab.com/spidergaming" target="_blank">Gitlab</a></h4>
+                <p>about ... </p>
+                <h5><a href="https://spidergaming.gitlab.io/Incremental-Universe/" style="color:cyan" title="Incremental Universe, Its not much right now." target="_blank">Idle Universe</a></h5>
                 <p>Idle Universe (Incremental Universe) is a game me and some friends are making. The game doesn't have anything yet because we have not really worked on it.</p>
                 <br>
                 <h4><a href="https://www.youtube.com/channel/UCO2rlcllQhQdPM8PZkqEAcA?view_as=subscriber" style="color:red" target="_blank" title="Its my YouTube channel, cringy though!">YouTube Channel</a></h4>
@@ -136,7 +140,7 @@
                 <br>
                 <hr2-solidred></hr2-solidred>
                 <!-- === Change the background color === -->
-                <p>Change the background color.</p>
+                <p>Change the background color. It defaults to your system theme</p>
                 <p>The current page color is <span id="thePageColor">#222222</span></p>
                 <input id="changeColorInput" name="changeColorInput" type="text" placeholder="Enter a css color name or hex" autocomplete="off">
                 <button id="changeColorButton" class="button-tran-red" onclick="changeColor()">Change</button>
@@ -146,17 +150,15 @@
                 <p>View the code (On site) (Not added yet)</p>
                 <br>
                 <hr2-solidred></hr2-solidred>
-                <p>Secret code? Maybe give it a try. It's still being worked on, so it might have some issues.</p>
-                <textarea id="secretCodeInputEncode" name="secretCodeInputEncode" placeholder="Text To Encode" rows="4" cols="30" max="5"></textarea>
-                <button id="codeEncodeButton" class="button-tran-red" onclick="buttonSecretCodeEncode()">Encode</button>
-                <br>
-                <textarea id="secretCodeInputDecode" name="secretCodeInputDecode" placeholder="Text To Decode" rows="4" cols="30" max="5" autocomplete="off"></textarea>
-                <button id="codeDecodeButton" class="button-tran-red" onclick="buttonSecretCodeDecode()">Decode</button>
+                <p>Secret code? Maybe give it a try. It Should acctually work now.</p>
+                <textarea id="secretCodeInput" name="secretCodeInput" placeholder="Decode/Encode Text Into Secret Code" rows="4" cols="30" max="5"></textarea>
+                <button id="codeButton" class="button-tran-red" onclick="buttonSecretCode()">Decode/Encode</button>
                 <br>
                 <div id="outputSecretCode">The Secret Code Is Currently Broken</div>
                 <br>
                 <br>Force the site to reload and get fles from the server
                 <br><button class="button-tran-red" onclick="location.reload(true)">Force Reload</button>
+                <br>
                 <br>
             </div>
         </div>
@@ -168,8 +170,8 @@
             </svg>
         </div>
         <div class="site-user-name-bottom" id="getnameTwo">Welcome New User!</div>
-        <!-- The JavaScript -->
-        <script src="Style-JS/JQ/jquery-3.4.1.min.js"></script>
+        <!-- The JavaScript --
+        <script src="Style-JS/JQ/jquery-3.4.1.min.js"></script>-->
         <script src="Style-JS/Navbar.js"></script>
         <script src="Style-JS/Settings.js"></script>
         <script src="Style-JS/Secretcode.js"></script>

@@ -31,9 +31,9 @@ code { font-family: 'Fira Code', monospace; }
 
 body {
     font-family: /*"MyHand"*/Arial, sans-serif;
-    /* font-size: 20px; 
+    font-size: 20px; 
     color: white;
-    background: #222222;*/
+    background: #222222;
 }
 
 /* ============ Other ============ */
@@ -94,15 +94,15 @@ body {
 /* ========= Links ========= */
 
 a:link {
-    color: gray;
+    color:rgb(211, 0, 0);
 }
 
 a:visited {
-    color: gray;
+    color: rgb(211, 0, 0);
 }
 
 a:hover {
-    color: lightgray;
+    color: rgb(238, 0, 0);
 }
 
 a:active {
