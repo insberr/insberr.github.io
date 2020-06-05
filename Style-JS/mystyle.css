@@ -14,7 +14,6 @@
 
 
 /* ============ Custom Font ============ */
-@import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@3/distr/fira_code.css);
 /* Specify in CSS */
 code { font-family: 'Fira Code', monospace; }
 
