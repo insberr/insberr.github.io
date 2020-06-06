@@ -1,12 +1,12 @@
 // Retern Key Enters
-secretCodeInputEncode.addEventListener("keyup", function(event) {
+secretCodeInput.addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
         event.preventDefault();
-        document.getElementById("codeEncodeButton").click();
+        document.getElementById("codeButton").click();
     }
 });
 
-function buttonSecretCodeEncode() {
+function buttonSecretCode() {
     var codeInput = document.getElementById('secretCodeInput').value.toLowerCase().split('');
     var output;
     output = '';

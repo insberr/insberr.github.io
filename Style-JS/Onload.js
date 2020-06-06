@@ -1,3 +1,12 @@
+var local;
+local = JSON.parse(localStorage.getItem('siteData'));
+
+if (!local) {
+    document.title = defaultTitle;
+    document.getElementById("getname").innerHTML = defaultName;
+}
+
+
 // Variables
 
 //This is the username variable for a new user
