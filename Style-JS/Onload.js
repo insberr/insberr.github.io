@@ -4,9 +4,11 @@ var local;
 local = JSON.parse(localStorage.getItem('siteData'));
 
 function onPageLoad() {
-    var tab = local.tab || 'activeonload';
-    document.getElementsByClassName(tab).click();
-    local.tab = local.tab || 'activeonload';
+    if (local.tab === null) {
+        document.getElementsByClassName('activeonload').click();
+    } else {
+        document.getElementsByClassName(local.tab).click();
+    }
 
     document.title = local.title || defaultTitle;
     local.title = local.title || defaultTitle;
