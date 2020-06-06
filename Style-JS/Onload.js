@@ -14,7 +14,7 @@ function onPageLoad() {
                 color: null
             }
         }
-        document.getElementsByClassName(local.tab).click();
+        document.getElementsByClassName(local.tab)[0].click();
 
         document.title = local.title;
 
@@ -28,7 +28,7 @@ function onPageLoad() {
 
         localStorage.setItem('siteData', JSON.stringify(local));
     } else {
-        document.getElementsByClassName(local.tab).click();
+        document.getElementsByClassName(local.tab)[0].click();
 
         document.title = local.title;
 
