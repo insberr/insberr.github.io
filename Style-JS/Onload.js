@@ -4,7 +4,8 @@ var local;
 local = JSON.parse(localStorage.getItem('siteData'));
 
 function onPageLoad() {
-    document.getElementsByClassName(local.tab || 'activeonload').click();
+    var tab = local.tab || 'activeonload';
+    document.getElementsByClassName(tab).click();
 
     document.title = local.title || defaultTitle;
     local.title = local.title || defaultTitle;
