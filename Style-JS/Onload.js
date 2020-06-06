@@ -6,7 +6,7 @@ local = JSON.parse(localStorage.getItem('siteData'));
 function onPageLoad() {
     if (local === null) {
         local = {
-            tab: 'activeonload',
+            tab: 'Home',
             title: 'SpiderGamin\'s Website | Gitlab',
             name: 'Welcome New User!',
             color: {
