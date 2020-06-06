@@ -10,17 +10,18 @@ setNameInput.addEventListener("keyup", function(event) {
 function setName() {
     var inputName = document.getElementById("setNameInput").value;
     if (inputName === "") {
-        localStorage.removeItem("SpiderGaminName");
-        document.getElementById("afterNameSet").innerHTML = localStorage.getItem("SpiderGaminName");
-        document.getElementById("getname").innerHTML = localStorage.getItem("SpiderGaminName");
-        document.getElementById("getnameTwo").innerHTML = localStorage.getItem("SpiderGaminName");
+        local.name = 'Welcome New User';
+        document.getElementsByClassName('site-user-name').forEach(element => {
+            element.innerHTML = local.name;
+        });
     } else {
-        localStorage.setItem("SpiderGaminName", "Welcome Back, " + inputName + "!");
-        document.getElementById("afterNameSet").innerHTML = localStorage.getItem("SpiderGaminName");
-        document.getElementById("getnameTwo").innerHTML = localStorage.getItem("SpiderGaminName");
-        document.getElementById("getname").innerHTML = localStorage.getItem("SpiderGaminName");
+        local.name = `Welcome Back, ${inputName}!`;
+        document.getElementsByClassName('site-user-name').forEach(element => {
+            element.innerHTML = local.name;
+        });
     }
     document.getElementById("setNameInput").value = "";
+    localStorage.setItem('siteData', JSON.stringify(local));
 }
 
 // Page Color
