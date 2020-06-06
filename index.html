@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/fira_code.css">
         <link rel="shortcut icon" href="SpiderGaminIcon.png" type="image/x-icon" />
     </head>
-    <body>
+    <body onload="onPageLoad()">
         <!-- ====== Navigation Bar ====== -->
         <div class="tab">
             <button class="tablinks Home" onclick="navtwotab(event, 'Home')" id="activeonload" title="Home Tab">Home</button>
@@ -17,8 +17,6 @@
             <button class="tablinks About" onclick="navtwotab(event, 'About')" title="About Me And The Website">About</button>
             <button class="tablinks Media" onclick="navtwotab(event, 'Media')" title="My Videos, Music, And Much More">Media</button>
         </div>
-        <!-- ====== Site user name ====== -->
-        <div class="site-user-name" id="getname">Welcome New User!</div>
         <!-- ====== Nav Bar Tab Content ====== -->
         <div class="page-content">
             <!-- ====== Home Tab ====== -->
@@ -169,7 +167,7 @@
                 <path fill-rule="evenodd" d="M10 7.754a2.246 2.246 0 100 4.492 2.246 2.246 0 000-4.492zM6.754 10a3.246 3.246 0 116.492 0 3.246 3.246 0 01-6.492 0z" clip-rule="evenodd"/>
             </svg>
         </div>
-        <div class="site-user-name-bottom" id="getnameTwo">Welcome New User!</div>
+        <div id="site-user-name">Welcome New User!</div>
         <!-- The JavaScript --
         <script src="Style-JS/JQ/jquery-3.4.1.min.js"></script>-->
         <script src="Style-JS/Navbar.js"></script>

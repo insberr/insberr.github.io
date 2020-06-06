@@ -1,44 +1,23 @@
+var defaultName = 'Welcome New User!'
+var defaultTitle = 'SpiderGamin\'s Website | Gitlab'
 var local;
 local = JSON.parse(localStorage.getItem('siteData'));
 
-if (!local) {
-    document.title = defaultTitle;
-    document.getElementById("getname").innerHTML = defaultName;
-}
-
-
-// Variables
-
-//This is the username variable for a new user
-var userName = "Welcome New User!";
-
-
-// On Load (last)
 function onPageLoad() {
-    // Page Title
-    document.title = "Personal Website | Gitlab";
+    document.getElementsByClassName(local.tab || 'activeonload').click();
 
-    // Secret Code
+    document.title = local.title || defaultTitle;
+    local.title = local.title || defaultTitle;
+
+    document.getElementById("site-user-name").innerHTML = local.name || defaultName;
+    document.getElementById("afterNameSet").innerHTML = local.name || defaultName;
+    local.name = local.name || defaultName;
+
     document.getElementById("outputSecretCode").innerHTML = "Your translated text will go here";
-    
-    // Page color
-    if (localStorage.getItem("SpiderGaminPageColor") === null) {
-        document.getElementById("thePageColor").innerHTML = "default";
-    } else {
-        document.getElementsByTagName("body")[0].style.background = localStorage.getItem("SpiderGaminPageColor");
-        document.getElementById("thePageColor").innerHTML = localStorage.getItem("SpiderGaminPageColor");
-    }
 
-    //When the page loads it tests this to see if you are a new user or not
-    if (localStorage.getItem("SpiderGaminName") === null) {
-        document.getElementById("getname").innerHTML = userName;
-    } else {
-        document.getElementById("getname").innerHTML = localStorage.getItem("SpiderGaminName");
-        document.getElementById("getnameTwo").innerHTML = localStorage.getItem("SpiderGaminName");
-    }
-    
-    // User Name Text Set (settings page)
-    document.getElementById("afterNameSet").innerHTML = localStorage.getItem("SpiderGaminName");
-}
+    document.getElementsByTagName("body")[0].style.background = local.color || null;
+    document.getElementById("thePageColor").innerHTML = local.color || 'the default';
+    local.color = local.color || null;
 
-onPageLoad();
+    localStorage.setItem('siteData', JSON.stringify(local));
+};

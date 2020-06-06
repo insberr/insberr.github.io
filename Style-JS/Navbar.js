@@ -2,17 +2,6 @@
 //If it is null it will click the default tab (Home)
 //If it has a value it tests if it is the "Settings" tab
 //If it is the settings tab it will set it to the default tab (Home)
-
-if(localStorage.getItem("Tab") === null) {
-	document.getElementById("activeonload").click();
-} else {
-	if(localStorage.getItem("Tab") == "Settings") {
-		document.getElementById("activeonload").click();
-	} else {
-		document.getElementsByClassName(localStorage.getItem("Tab"))[0].click();
-	}
-}
-
 //Removes the Tab item fron the local storage
 //localStorage.removeItem("Tab")
 
@@ -34,5 +23,6 @@ function navtwotab(evt, navtwotab) {
     document.getElementById(navtwotab).style.display = "block";
     evt.currentTarget.className += " active";
     document.title = (navtwotab);
-    localStorage.setItem("Tab", navtwotab)
+    local.tab = navtwotab;
+    localStorage.setItem("siteData", JSON.stringify(local));
 }

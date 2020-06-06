@@ -156,10 +156,16 @@ function buttonSecretCode() {
             case ')': {
                 return output += 'j';
             }
-            case '\'' || '’': {
+            case '\'': {
                 return output += 'k';
             }
-            case '"' || '”': {
+            case '’': {
+                return output += 'k';
+            }
+            case '"': {
+                return output += 'l';
+            }
+            case '”': {
                 return output += 'l';
             }
             case ':': {
