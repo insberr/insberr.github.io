@@ -18,8 +18,7 @@ function onPageLoad() {
 
         document.title = local.title;
 
-        document.getElementById("site-user-name").innerHTML = local.name;
-        document.getElementById("afterNameSet").innerHTML = local.name;
+        document.getElementsByClassName("site-user-name").innerHTML = local.name;
 
         document.getElementById("outputSecretCode").innerHTML = "Your translated text will go here";
 
@@ -32,8 +31,7 @@ function onPageLoad() {
 
         document.title = local.title;
 
-        document.getElementById("site-user-name").innerHTML = local.name;
-        document.getElementById("afterNameSet").innerHTML = local.name;
+        document.getElementsByClassName("site-user-name").innerHTML = local.name;
 
         document.getElementById("outputSecretCode").innerHTML = "Your translated text will go here";
 
