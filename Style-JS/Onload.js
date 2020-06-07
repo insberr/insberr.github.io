@@ -2,6 +2,7 @@ var defaultName = 'Welcome New User!'
 var defaultTitle = 'SpiderGamin\'s Website | Gitlab'
 var local;
 local = JSON.parse(localStorage.getItem('siteData'));
+console.log(local)
 
 function onPageLoad() {
     if (local === null) {
@@ -27,6 +28,7 @@ function onPageLoad() {
 
         localStorage.setItem('siteData', JSON.stringify(local));
     } else {
+        console.log(local)
         document.getElementsByClassName(local.tab)[0].click();
 
         document.title = local.title;

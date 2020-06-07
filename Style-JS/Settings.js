@@ -37,9 +37,12 @@ function changeColor() {
     if (pageColorSet === "") {
         local.color.color = null
         local.color.text = 'the default';
+        console.log(local)
         localStorage.setItem('siteData', JSON.stringify(local))
     } else {
-        local.color.color, local.color.text = pageColorSet;
+        local.color.color = pageColorSet;
+        local.color.text = pageColorSet;
+        console.log(local)
         localStorage.setItem('siteData', JSON.stringify(local));
     }
     document.getElementsByTagName("body")[0].style.background = local.color.color;
