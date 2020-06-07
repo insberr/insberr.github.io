@@ -47,6 +47,7 @@ Welcome to the code for my website!
 
 
 # File Tree
+```
 Personal
 ├── 404.html
 ├── CHANGELOG
@@ -66,7 +67,6 @@ Personal
     ├── Secretcode.js
     ├── Settings.js
     └── syntax-highlighting.css
-
-
+```
 # Suggestions
 Suggestions and help would be awsome!
