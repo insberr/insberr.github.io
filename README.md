@@ -45,5 +45,28 @@ I am bored and if anyone is willing to do some of my homework for me that would 
 
 * [x] Make the tabs stay on what one was selected when you reload
 
+
+# File Tree
+.
+├── ./404.html
+├── ./CHANGELOG
+├── ./Handwriting1.ttf
+├── ./index.html
+├── ./LICENSE.md
+├── ./Pages
+│   ├── ./Pages/Javatabs
+│   └── ./Pages/syntax.html
+├── ./README.md
+├── ./SpiderGaminIcon.png
+└── ./Style-JS
+    ├── ./Style-JS/List.js
+    ├── ./Style-JS/mystyle.css
+    ├── ./Style-JS/Navbar.js
+    ├── ./Style-JS/Onload.js
+    ├── ./Style-JS/Secretcode.js
+    ├── ./Style-JS/Settings.js
+    └── ./Style-JS/syntax-highlighting.css
+
+
 # Suggestions
 Suggestions and help would be awsome!

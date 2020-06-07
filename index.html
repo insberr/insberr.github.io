@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="Style-JS/mystyle.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/fira_code.css">
         <link rel="shortcut icon" href="SpiderGaminIcon.png" type="image/x-icon" />
+        <link href="Style-JS/prism.css" rel="stylesheet" />
     </head>
     <body onload="onPageLoad()">
         <!-- ====== Navigation Bar ====== -->
@@ -61,13 +62,32 @@
             <!-- ====== none tab Tab ====== -->
             <div id="none" class="tabcontent">
                 <p>This tab does not have content yet. Any ideas? <br>This code element uses a font called Fira Code.</p>
-                <code>
-                    console.log('hi');
-                    function test() {
-                        console.log('test => ');
-                        if (this === that)
-                    };
-                </code>
+                <pre><code class="language-js">console.log('hi');<br>function test() {
+                    console.log('test => ');
+                    if (this === that)
+                };
+                </code></pre>
+                <pre><code class="language-css">p { color: red }</code></pre>
+                <pre><code class="language-tree">
+                .
+                ├── ./404.html
+                ├── ./CHANGELOG
+                ├── ./Handwriting1.ttf
+                ├── ./index.html
+                ├── ./LICENSE.md
+                ├── ./Pages
+                │   ├── ./Pages/Javatabs
+                │   └── ./Pages/syntax.html
+                ├── ./README.md
+                ├── ./SpiderGaminIcon.png
+                └── ./Style-JS
+                    ├── ./Style-JS/List.js
+                    ├── ./Style-JS/mystyle.css
+                    ├── ./Style-JS/Navbar.js
+                    ├── ./Style-JS/Onload.js
+                    ├── ./Style-JS/Secretcode.js
+                    ├── ./Style-JS/Settings.js
+                    └── ./Style-JS/syntax-highlighting.css</code></pre>
             </div>
             <!-- ====== About Tab ====== -->
             <div id="About" class="tabcontent">
@@ -175,5 +195,6 @@
         <script src="Style-JS/Secretcode.js"></script>
         <script src="Style-JS/Onload.js"></script>
         <script src="Style-JS/List.js"></script>
+        <script src="Style-JS/prism.js"></script>
     </body>
 </html> 
