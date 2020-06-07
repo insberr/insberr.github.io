@@ -35,11 +35,14 @@ changeColorInput.addEventListener("keyup", function(event) {
 function changeColor() {
     var pageColorSet = document.getElementById("changeColorInput").value;
     if (pageColorSet === "") {
-        localStorage.removeItem("SpiderGaminPageColor");
+        local.color.color = null
+        local.color.text = 'the default';
+        localStorage.setItem('siteData', JSON.stringify(local))
     } else {
-        localStorage.setItem("SpiderGaminPageColor", pageColorSet);
+        local.color.color, local.color.text = pageColorSet;
+        localStorage.setItem('siteData', JSON.stringify(local));
     }
-    document.getElementsByTagName("body")[0].style.background = localStorage.getItem("SpiderGaminPageColor");
-    document.getElementById("thePageColor").innerHTML = localStorage.getItem("SpiderGaminPageColor");
+    document.getElementsByTagName("body")[0].style.background = local.color.color;
+    document.getElementById("thePageColor").innerHTML = local.color.text;
     document.getElementById("changeColorInput").value = "";
 }
