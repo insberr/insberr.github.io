@@ -13,7 +13,7 @@
             <button class="tablinks Home" onclick="navtwotab(event, 'Home')" id="activeonload" title="Home Tab">Home</button>
             <button class="tablinks Tasks" onclick="navtwotab(event, 'Tasks')" title="Things I'm Doing">Tasks</button>
             <button class="tablinks Posts" onclick="navtwotab(event, 'Posts')" title="Posts">Posts</button>
-            <button class="tablinks none" onclick="navtwotab(event, 'none')" title="Nothing Yet">Null</button>
+            <button class="tablinks none" onclick="navtwotab(event, 'none')" title="Nothing Yet">Code?</button>
             <button class="tablinks About" onclick="navtwotab(event, 'About')" title="About Me And The Website">About</button>
             <button class="tablinks Media" onclick="navtwotab(event, 'Media')" title="My Videos, Music, And Much More">Media</button>
         </div>
@@ -23,13 +23,13 @@
             <div id="Home" class="tabcontent">
                 <h3 class="red-or">Welcome</h3>
                 <p>Hello, my name is Jonah Matteson (AKA SpiderGamin, SpiderGaming, McSpiderGamin). Welcome to my website! I will post anything I can think of to post, however I'm still working on the JavaScript. I will slowly add content, mainly to the About and Media tabs.</p>
-                <p>Due to various events, I will not be working on this website for a while. And if anyone is willing to do some of my homework for me, that would be awsome, just send me an email or submit an issue to gitlab</p>
-                <p>Remember! If you have a tip, suggestion, fix, etc, please let me know by submitting an issue on the Gitlab code, which can be found <a href="https://gitlab.com/spidergaming/Personal">here</a>.
+                <p>Due to various events, updates to this website will be slowed down.</p>
+                <p>Remember! If you have a tip, suggestion, fix, etc, please let me know by submitting an issue on the Gitlab code, found <a href="https://gitlab.com/spidergaming/Personal">here</a>.
             </div>
             <!-- ====== Tasks Tab ====== -->
             <div id="Tasks" class="tabcontent">
                 <h3 class="red-or">Current</h3>
-                <p>Here is a list of the things I'm currently working on</p>
+                <p>What I'm currently working on.</p>
                 <div class="current-task-list"></div>
                 <br>
                 <p>I am <span class="progressone">(broken, so 0%)</span> done with these tasks</p>
@@ -39,11 +39,11 @@
                 <br>
                 <hr2-solidred></hr2-solidred>
                 <h3 class="red-or">Later</h3>
-                <p>These are the things I plan on doing later</p>
+                <p>Things I plan on doing later</p>
                 <div class="later-task-list"></div>
                 <br>
                 <h4>Plans For This Website</h4>
-                <p>- To add more javascript and to make these lists more easy to manage</p>
+                <p>Plans I have for this website.</p>
                 <div class="plans-web-list"></div>
                 <br>
                 <hr2-solidred></hr2-solidred>
@@ -60,7 +60,7 @@
             </div>
             <!-- ====== none tab Tab ====== -->
             <div id="none" class="tabcontent">
-                <p>This tab does not have content yet. Any ideas?</p>
+                <p>This tab does not have content yet. Any ideas? <br>This code element uses a font called Fira Code.</p>
                 <code>
                     console.log('hi');
                     function test() {
@@ -72,7 +72,7 @@
             <!-- ====== About Tab ====== -->
             <div id="About" class="tabcontent">
                 <h3 class="red-or">About Me</h3>
-                <p>This is the the about me section. I'll put info about myself here once I've gotten more of info on this website.</p>
+                <p>Bio: </p>
                 <br>
                 <hr2-solidred></hr2-solidred>
                 <h3 class="red-or">About This Website</h3>
@@ -129,7 +129,7 @@
                 <p>You found the settings page. Im going to warn you, settings are <u>experimental</u>, so use with caution!</p>
                 <br>
                 <hr2-solidred></hr2-solidred>
-                <p>Change the name that appeares at the <span class="screen-ipad">top</span><span class="screen-iphone">bottom</span> of the page.</p>
+                <p>Change your name for the site. It appears at the bottom of the page.</p>
                 <br>
                 <lable for="setNameInput">Change Name:</lable>
                 <input class="setname" type="text" id="setNameInput" placeholder="Change Name" autocomplete="off">
@@ -139,7 +139,7 @@
                 <hr2-solidred></hr2-solidred>
                 <!-- === Change the background color === -->
                 <p>Change the background color. It defaults to your system theme</p>
-                <p>The current page color is <span id="thePageColor">#222222</span></p>
+                <p>The current page color is set to <span id="thePageColor">the default</span>.</p>
                 <input id="changeColorInput" name="changeColorInput" type="text" placeholder="Enter a css color name or hex" autocomplete="off">
                 <button id="changeColorButton" class="button-tran-red" onclick="changeColor()">Change</button>
                 <br>
@@ -169,14 +169,11 @@
             <div class="site-user-name">Welcome New User!</div>
             <a href="https://gitlab.com/SpiderGaming/Personal/-/commits/master"><img alt="pipeline status" src="https://gitlab.com/SpiderGaming/Personal/badges/master/pipeline.svg" /></a>
         </div>
-        <!-- The JavaScript --
-        <script src="Style-JS/JQ/jquery-3.4.1.min.js"></script>-->
+        <!-- The JavaScript -->
         <script src="Style-JS/Navbar.js"></script>
         <script src="Style-JS/Settings.js"></script>
         <script src="Style-JS/Secretcode.js"></script>
         <script src="Style-JS/Onload.js"></script>
         <script src="Style-JS/List.js"></script>
-        <script src="Style-JS/Progressbar.js"></script>
-        <!--<script src="Style-JS/JQ/Jquery.js"></script>-->
     </body>
 </html> 
