@@ -1,12 +1,5 @@
-//This tests if the local storage item "Tab" is null
-//If it is null it will click the default tab (Home)
-//If it has a value it tests if it is the "Settings" tab
-//If it is the settings tab it will set it to the default tab (Home)
-//Removes the Tab item fron the local storage
-//localStorage.removeItem("Tab")
-
-
-//document.getElementById("activeonload").click();
+// localStorage.removeItem("Tab")
+// document.getElementById("activeonload").click();
 	
 
 //The navigation bar Script

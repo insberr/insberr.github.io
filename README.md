@@ -1,17 +1,17 @@
-# My Personal Website | Gitlab
-Welcome to the code for my personal website! My website is mainly finished.
+# SpiderGaming's Website
+Welcome to the code for my website!
 
-I am bored and if anyone is willing to do some of my homework for me that would be great because im getting way to much homework
+
 
 # Updates
 * Added background color to match the system theme
-* 
+* Fixed the secret code
+* Local storage is all part of one item
+* Made the lists js have less code
 
-## Coming soon
-* List items are more compact in the code
 
 # To Do
-* [ ] Make all local storage items use on local storage item with a JSON string
+* [x] Make all local storage items use on local storage item with a JSON string
 
 * [ ] Use javascript for the user name display
 
@@ -47,25 +47,25 @@ I am bored and if anyone is willing to do some of my homework for me that would 
 
 
 # File Tree
-.
-├── ./404.html
-├── ./CHANGELOG
-├── ./Handwriting1.ttf
-├── ./index.html
-├── ./LICENSE.md
-├── ./Pages
-│   ├── ./Pages/Javatabs
-│   └── ./Pages/syntax.html
-├── ./README.md
-├── ./SpiderGaminIcon.png
-└── ./Style-JS
-    ├── ./Style-JS/List.js
-    ├── ./Style-JS/mystyle.css
-    ├── ./Style-JS/Navbar.js
-    ├── ./Style-JS/Onload.js
-    ├── ./Style-JS/Secretcode.js
-    ├── ./Style-JS/Settings.js
-    └── ./Style-JS/syntax-highlighting.css
+Personal
+├── 404.html
+├── CHANGELOG
+├── Handwriting1.ttf
+├── index.html
+├── LICENSE.md
+├── Pages
+│   ├── Javatabs
+│   └── syntax.html
+├── README.md
+├── SpiderGaminIcon.png
+└── Style-JS
+    ├── List.js
+    ├── mystyle.css
+    ├── Navbar.js
+    ├── Onload.js
+    ├── Secretcode.js
+    ├── Settings.js
+    └── syntax-highlighting.css
 
 
 # Suggestions
