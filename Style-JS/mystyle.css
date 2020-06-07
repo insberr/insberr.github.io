@@ -3,11 +3,17 @@
       background: black;
       color:  white;
   }
+  .progress-two {
+      color: white;
+  }
 }
 
 @media (prefers-color-scheme: light) {
   body {
       background:  rgb(206, 206, 206);
+      color: black;
+  }
+  .progress-two {
       color: black;
   }
 }
@@ -46,11 +52,24 @@ body {
     bottom: 0;
     float: left;
 }
-#site-user-name {
+
+.settings-area {
     position: fixed;
-    top: 5px;
+}
+
+.site-user-name {
+    position: fixed;
+    bottom: 5px;
+    left: 40px;
     /*background-color: rgb(34, 34, 34, 0.5);*/
 }
+
+.pipeline {
+    position: fixed;
+    bottom: 5px;
+    right: 0;
+}
+
 .site-user-name-bottom {
     display: none;
     position: fixed;
@@ -207,7 +226,7 @@ hr2-solidred {
     display: table;
     clear: both;
     color: #fff;
-    background-color: #2196F3;
+    background-color: rgb(243, 82, 33);
 }
 
 .w3-container {

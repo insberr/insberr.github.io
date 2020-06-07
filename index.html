@@ -14,7 +14,7 @@
             <button class="tablinks Home" onclick="navtwotab(event, 'Home')" id="activeonload" title="Home Tab">Home</button>
             <button class="tablinks Tasks" onclick="navtwotab(event, 'Tasks')" title="Things I'm Doing">Tasks</button>
             <button class="tablinks Posts" onclick="navtwotab(event, 'Posts')" title="Posts">Posts</button>
-            <button class="tablinks none" onclick="navtwotab(event, 'none')" title="Nothing Yet">Code?</button>
+            <button class="tablinks none" onclick="navtwotab(event, 'Code')" title="Code and Secret Code">Code</button>
             <button class="tablinks About" onclick="navtwotab(event, 'About')" title="About Me And The Website">About</button>
             <button class="tablinks Media" onclick="navtwotab(event, 'Media')" title="My Videos, Music, And Much More">Media</button>
         </div>
@@ -60,54 +60,54 @@
                 <a class="twitter-timeline" data-theme="dark" href="https://twitter.com/SpiderGaming0?ref_src=twsrc%5Etfw">Tweets by SpiderGaming0 (Probabally Broken)</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
             <!-- ====== none tab Tab ====== -->
-            <div id="none" class="tabcontent">
-                <code class="language-css">
-   @import url(http://fonts.googleapis.com/css?family=Questrial);
-   @import url(http://fonts.googleapis.com/css?family=Arvo);
-
-   @font-face {
-	src: url(http://lea.verou.me/logo.otf);
-	font-family: 'LeaVerou';
-   }
-
-   /*
-      Shared styles
-   */
- 
-   section h1,
-   #features li strong,
-   header h2,
-   footer p {
-	font: 100% Rockwell, Arvo, serif;
-   }
-</code>
-                <p>This tab does not have content yet. Any ideas? <br>This code element uses a font called Fira Code.</p>
-                <pre><code class="language-js">console.log('hi');<br>function test() {
-                    console.log('test => ');
-                    if (this === that)
-                };
+            <div id="Code" class="tabcontent">
+                <p>This tab does not have content yet. Any ideas?</p>
+                <!-- === See the code for this site on page === -->
+                <p>View the code (On site) (Not added yet)</p>
+                <br>
+                <hr2-solidred></hr2-solidred>
+                <p>Secret code? Maybe give it a try. It Should acctually work now.</p>
+                <textarea id="secretCodeInput" name="secretCodeInput" placeholder="Decode/Encode Text Into Secret Code" rows="4" cols="30" max="5"></textarea>
+                <button id="codeButton" class="button-tran-red" onclick="buttonSecretCode()">Decode/Encode</button>
+                <br>
+                <div id="outputSecretCode">Secret Code Output</div>
+                <br>
+                <pre><code class="language-js">
+console.log('hi');
+function test() {
+    console.log('test => ');
+    if (this === that)
+};
                 </code></pre>
                 <pre><code class="language-css">p { color: red }</code></pre>
-                <pre><code class="language-tree">
-                .
-                ├── ./404.html
-                ├── ./CHANGELOG
-                ├── ./Handwriting1.ttf
-                ├── ./index.html
-                ├── ./LICENSE.md
-                ├── ./Pages
-                │   ├── ./Pages/Javatabs
-                │   └── ./Pages/syntax.html
-                ├── ./README.md
-                ├── ./SpiderGaminIcon.png
-                └── ./Style-JS
-                    ├── ./Style-JS/List.js
-                    ├── ./Style-JS/mystyle.css
-                    ├── ./Style-JS/Navbar.js
-                    ├── ./Style-JS/Onload.js
-                    ├── ./Style-JS/Secretcode.js
-                    ├── ./Style-JS/Settings.js
-                    └── ./Style-JS/syntax-highlighting.css</code></pre>
+                <pre><code class="language-treeview">
+Personal/
+└── .vscode/
+    └── settings.json
+├── 404.html
+├── .gitignore
+├── .gitlab-ci.yml
+├── CHANGELOG
+├── Handwriting1.ttf
+├── index.html
+├── LICENSE.md
+├── Pages/
+│   ├── Javatabs
+│   └── syntax.html
+├── README.md
+├── SpiderGaminIcon.png
+└── Style-JS/
+    ├── List.js
+    ├── mystyle.css
+    ├── Navbar.js
+    ├── Onload.js
+    ├── prism.css
+    ├── prism.js
+    ├── Secretcode.js
+    ├── Settings.js
+    └── syntax-highlighting.css
+                </code></pre>
+                <pre data-src="myfile.js"></pre>
             </div>
             <!-- ====== About Tab ====== -->
             <div id="About" class="tabcontent">
@@ -184,20 +184,12 @@
                 <button id="changeColorButton" class="button-tran-red" onclick="changeColor()">Change</button>
                 <br>
                 <hr2-solidred></hr2-solidred>
-                <!-- === See the code for this site on page === -->
-                <p>View the code (On site) (Not added yet)</p>
-                <br>
-                <hr2-solidred></hr2-solidred>
-                <p>Secret code? Maybe give it a try. It Should acctually work now.</p>
-                <textarea id="secretCodeInput" name="secretCodeInput" placeholder="Decode/Encode Text Into Secret Code" rows="4" cols="30" max="5"></textarea>
-                <button id="codeButton" class="button-tran-red" onclick="buttonSecretCode()">Decode/Encode</button>
-                <br>
-                <div id="outputSecretCode">The Secret Code Is Currently Broken</div>
-                <br>
                 <br>Force the site to reload and get fles from the server
                 <br><button class="button-tran-red" onclick="location.reload(true)">Force Reload</button>
                 <br>
-                <br>
+                <hr2-solidred></hr2-solidred>
+                <br>Reset site settings
+                <br><button class="button-tran-red" onclick="resetSiteData">Reset</button>
             </div>
         </div>
         <!-- === Settings button (gear) === -->
@@ -206,9 +198,10 @@
                 <path fill-rule="evenodd" d="M10.837 3.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 016.377 5.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 01-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 011.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 012.692 1.115l.094.319c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 012.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 011.115-2.693l.319-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 01-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159a1.873 1.873 0 01-2.693-1.115l-.094-.319zm-2.633-.283c.527-1.79 3.064-1.79 3.592 0l.094.319a.873.873 0 001.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 00.52 1.255l.319.094c1.79.527 1.79 3.064 0 3.592l-.319.094a.873.873 0 00-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 00-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 00-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 00-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 00.52-1.255l-.16-.292c-.892-1.64.901-3.433 2.541-2.54l.292.159a.873.873 0 001.255-.52l.094-.319z" clip-rule="evenodd"/>
                 <path fill-rule="evenodd" d="M10 7.754a2.246 2.246 0 100 4.492 2.246 2.246 0 000-4.492zM6.754 10a3.246 3.246 0 116.492 0 3.246 3.246 0 01-6.492 0z" clip-rule="evenodd"/>
             </svg>
-            <div class="site-user-name">Welcome New User!</div>
-            <a href="https://gitlab.com/SpiderGaming/Personal/-/commits/master"><img alt="pipeline status" src="https://gitlab.com/SpiderGaming/Personal/badges/master/pipeline.svg" /></a>
         </div>
+        <div class="site-user-name">Welcome New User!</div>
+        <a class="pipeline" href="https://gitlab.com/SpiderGaming/Personal/-/commits/master"><img alt="pipeline status" src="https://gitlab.com/SpiderGaming/Personal/badges/master/pipeline.svg" /></a>
+        
         <!-- The JavaScript -->
         <script src="Style-JS/Navbar.js"></script>
         <script src="Style-JS/Settings.js"></script>

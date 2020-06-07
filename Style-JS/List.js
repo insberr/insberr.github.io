@@ -6,19 +6,19 @@ var taskClass = [
 ];
 
 var currentTasks = [
+    "Rewriting this sites JavaScript",
     "Learning JavaScript mainly using nodejs",
     "Lots of homework",
-    "Making a desktop version of a game"
+    "Making a desktop version of a game (More info on the about page)"
 ];
 
 var laterTasks = [
     "Copying and converting 4K videos to 1080p",
-    "Learn JQuery"
+    "Make a game using Java"
 ];
 
 var plansWeb = [
-    "Switch out as much of the JavaScript for Jqueury",
-    "Add content to the media tab, use JQ and JavaScript for it, to make life a bit easier"
+    "Add content to the media tab"
 ];
 
 var finishedTasks = [
@@ -61,9 +61,7 @@ str += '</ul>'
 document.getElementsByClassName(taskClass[3])[0].innerHTML = str;
 
 // Progress bars
-var pb = "20%";
+var pb = ".05%";
 document.getElementsByClassName("progressone")[0].innerHTML = pb;
 document.getElementsByClassName("progressone")[1].innerHTML = pb;
 document.getElementsByClassName("progressbarone")[0].style.width = pb;
-
-progressBarOne();

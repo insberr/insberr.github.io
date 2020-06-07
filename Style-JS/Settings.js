@@ -49,3 +49,14 @@ function changeColor() {
     document.getElementById("thePageColor").innerHTML = local.color.text;
     document.getElementById("changeColorInput").value = "";
 }
+
+
+function resetSiteData() {
+    var reset = confirm('Are you sure you want to reset the site data?');
+    if (!reset) {
+        return alert('Data was not reset');
+    } else {
+        localStorage.clear();
+        return alert('Data was reset');
+    }
+}

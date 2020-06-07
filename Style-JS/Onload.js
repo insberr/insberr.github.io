@@ -6,6 +6,7 @@ console.log(local)
 
 function onPageLoad() {
     if (local === null) {
+        localStorage.clear();
         local = {
             tab: 'Home',
             title: 'SpiderGamin\'s Website | Gitlab',
