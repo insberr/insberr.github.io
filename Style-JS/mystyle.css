@@ -270,15 +270,4 @@ hr2-solidred {
     .page-content {
         margin: 60px 1px 50px 1px;
     }
-    
-    #site-user-name {
-        display: block;
-    }
-    
-    .screen-ipad {
-        display: none;
-    }
-    .screen-iphone {
-        display: inline;
-    }
 }
