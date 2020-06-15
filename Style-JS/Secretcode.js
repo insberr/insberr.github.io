@@ -159,13 +159,13 @@ function buttonSecretCode() {
             case '\'': {
                 return output += 'k';
             }
-            case '’': {
+            case '‘': {
                 return output += 'k';
             }
             case '"': {
                 return output += 'l';
             }
-            case '”': {
+            case '“': {
                 return output += 'l';
             }
             case ':': {
