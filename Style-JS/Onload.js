@@ -48,4 +48,6 @@ function onPageLoad() {
 };
 
 var page = window.location.href;
-if (page.ends)
+if (page.contains("#secret")) {
+    
+}
