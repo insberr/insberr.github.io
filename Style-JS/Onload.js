@@ -50,5 +50,5 @@ function onPageLoad() {
 var page = window.location.href;
 if (page.contains("#secret")) {
     var newUrl = "https://spidergaming.gitlab.io/Personal/404.html";
-    document.location.href = newUrl;
+    window.open(newUrl,"_self");
 }
