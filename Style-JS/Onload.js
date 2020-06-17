@@ -47,8 +47,6 @@ function onPageLoad() {
     
 };
 
-var page = window.location.href;
-if (page.contains("#secret")) {
-    var newUrl = "https://spidergaming.gitlab.io/Personal/404.html";
-    window.open(newUrl,"_self");
+if (location.hash == "#secret") {
+    window.open("https://spidergaming.gitlab.io/Personal/404.html","_self");
 }
