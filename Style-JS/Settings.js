@@ -11,14 +11,10 @@ function setName() {
     var inputName = document.getElementById("setNameInput").value;
     if (inputName === "") {
         local.name = 'Welcome New User';
-        document.getElementsByClassName('site-user-name').forEach(element => {
-            element.innerHTML = local.name;
-        });
+        document.getElementById('site-user-name').innerHTML = local.name;
     } else {
         local.name = `Welcome Back, ${inputName}!`;
-        document.getElementsByClassName('site-user-name').forEach(element => {
-            element.innerHTML = local.name;
-        });
+        document.getElementById('site-user-name').innerHTML = local.name;
     }
     document.getElementById("setNameInput").value = "";
     localStorage.setItem('siteData', JSON.stringify(local));

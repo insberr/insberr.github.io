@@ -14,7 +14,7 @@
             <button class="tablinks Home" onclick="navtwotab(event, 'Home')" id="activeonload" title="Home Tab">Home</button>
             <button class="tablinks Tasks" onclick="navtwotab(event, 'Tasks')" title="Things I'm Doing">Tasks</button>
             <button class="tablinks Posts" onclick="navtwotab(event, 'Posts')" title="Posts">Posts</button>
-            <button class="tablinks none" onclick="navtwotab(event, 'Code')" title="Code and Secret Code">Code</button>
+            <button class="tablinks Code" onclick="navtwotab(event, 'Code')" title="Code and Secret Code">Code</button>
             <button class="tablinks About" onclick="navtwotab(event, 'About')" title="About Me And The Website">About</button>
             <button class="tablinks Media" onclick="navtwotab(event, 'Media')" title="My Videos, Music, And Much More">Media</button>
         </div>
@@ -61,12 +61,13 @@
                 <h4 href="#tp-twitter" class="red-or">Twitter</h4>
                 <a class="twitter-timeline" data-theme="dark" href="https://twitter.com/SpiderGaming0?ref_src=twsrc%5Etfw">Tweets by SpiderGaming0 (Probabally Broken)</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
-            <!-- ====== none tab Tab ====== -->
+            <!-- ====== Code tab Tab ====== -->
             <div id="Code" class="tabcontent">
-                <p>This tab does not have content yet. Any ideas?</p>
+                <p>This is the code tab</p>
                 <!-- === See the code for this site on page === -->
                 <p>View the code (On site) (Not added yet)</p>
                 <br>
+                <pre data-src="Style-JS/Onload.js"></pre>
                 <hr2-solidred></hr2-solidred>
                 <p>Secret code? Maybe give it a try. It Should acctually work now.</p>
                 <textarea id="secretCodeInput" name="secretCodeInput" placeholder="Decode/Encode Text Into Secret Code" rows="4" cols="30" max="5"></textarea>
@@ -109,7 +110,6 @@ Personal/
     ├── Settings.js
     └── syntax-highlighting.css
                 </code></pre>
-                <pre data-src="Style-JS/Onload.js"></pre>
             </div>
             <!-- ====== About Tab ====== -->
             <div id="About" class="tabcontent">
@@ -201,7 +201,7 @@ Personal/
                 <path fill-rule="evenodd" d="M10 7.754a2.246 2.246 0 100 4.492 2.246 2.246 0 000-4.492zM6.754 10a3.246 3.246 0 116.492 0 3.246 3.246 0 01-6.492 0z" clip-rule="evenodd"/>
             </svg>
         </div>
-        <div class="site-user-name">Welcome New User!</div>
+        <div id="site-user-name">Welcome New User!</div>
         <a class="pipeline" href="https://gitlab.com/SpiderGaming/Personal/-/commits/master"><img alt="pipeline status" src="https://gitlab.com/SpiderGaming/Personal/badges/master/pipeline.svg" /></a>
         
         <!-- The JavaScript -->

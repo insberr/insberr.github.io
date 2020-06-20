@@ -10,7 +10,7 @@ function onPageLoad() {
         local = {
             tab: 'Home',
             title: 'SpiderGamin\'s Website | Gitlab',
-            name: 'Welcome New User!',
+            name: 'Welcome New User',
             color: {
                 text: 'the default',
                 color: null
@@ -20,7 +20,7 @@ function onPageLoad() {
 
         document.title = local.title;
 
-        document.getElementsByClassName("site-user-name").innerHTML = local.name;
+        document.getElementById("site-user-name").innerHTML = local.name;
 
         document.getElementById("outputSecretCode").innerHTML = "Your translated text will go here";
 
@@ -34,7 +34,7 @@ function onPageLoad() {
 
         document.title = local.title;
 
-        document.getElementsByClassName("site-user-name").innerHTML = local.name;
+        document.getElementById("site-user-name").innerHTML = local.name;
 
         document.getElementById("outputSecretCode").innerHTML = "Your translated text will go here";
 

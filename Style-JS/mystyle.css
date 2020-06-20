@@ -61,7 +61,7 @@ pre {
     position: fixed;
 }
 
-.site-user-name {
+#site-user-name {
     position: fixed;
     bottom: 5px;
     left: 40px;
