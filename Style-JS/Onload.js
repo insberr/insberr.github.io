@@ -16,7 +16,7 @@ function onPageLoad() {
                 color: null
             }
         }
-        document.getElementsByClassName(local.tab)[0].click();
+        pageAncors();
 
         document.title = local.title;
 
@@ -30,7 +30,7 @@ function onPageLoad() {
         localStorage.setItem('siteData', JSON.stringify(local));
     } else {
         console.log(local)
-        document.getElementsByClassName(local.tab)[0].click();
+        pageAncors();
 
         document.title = local.title;
 
@@ -47,6 +47,8 @@ function onPageLoad() {
     
 };
 
+/*
 if (location.hash == "#secret") {
     window.open("https://spidergaming.gitlab.io/Personal/404.html","_self");
 }
+*/

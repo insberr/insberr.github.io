@@ -6,14 +6,14 @@ var taskClass = [
 ];
 
 var currentTasks = [
+    "Attempting to relax",
     "Rewriting this sites JavaScript",
     "Learning JavaScript mainly using nodejs",
-    "Lots of homework",
     "Making a desktop version of a game (More info on the about page)"
 ];
 
 var laterTasks = [
-    "Copying and converting 4K videos to 1080p",
+    "IDK",
     "Make a game using Java"
 ];
 
@@ -22,6 +22,7 @@ var plansWeb = [
 ];
 
 var finishedTasks = [
+    "Lots of homework",
     "To add more javascript and to make these lists more easy to manage",
     "When you reload the page it will stay on the tab you had selected",
     "Moving Files",
