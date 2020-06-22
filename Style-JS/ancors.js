@@ -7,9 +7,8 @@ var Tab;
 function pageAncors() {
     if (location.hash) {
         var tabHash = location.hash;
-        console.log(tabHash);
+        tabHash = tabHash.toLowerCase()
         tabHash = tabHash.charAt(1).toUpperCase() + tabHash.slice(2);
-        console.log(tabHash);
         tabHash = tabHash.replace('#','');
         console.log(tabHash);
         removeHash();
