@@ -71,7 +71,7 @@ pre {
 .pipeline {
     position: fixed;
     bottom: 5px;
-    right: 0;
+    right: 40px;
 }
 
 .site-user-name-bottom {

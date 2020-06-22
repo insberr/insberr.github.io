@@ -16,3 +16,7 @@ function pageAncors() {
         document.getElementsByClassName(local.tab)[0].click();
     }
 }
+
+$(window).bind('hashchange', function() {
+    pageAncors();
+});
