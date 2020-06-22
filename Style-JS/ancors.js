@@ -1,7 +1,6 @@
-function removeHash () { 
-    history.pushState("", document.title, window.location.pathname
-                                                       + window.location.search);
-}
+function removeHash() { 
+    history.pushState("", document.title, window.location.pathname + window.location.search);
+};
 
 function pageAncors() {
     if (location.hash) {
