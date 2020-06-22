@@ -36,8 +36,8 @@ function pageAncors() {
                 return document.getElementsByClassName('Media')[0].click();
             }
             case ('#Secret'): {
-                removeHash()
-                return document.getElementsByClassName('Secret')[0].click();
+                removeHash();
+                return navtwotab(event, 'Secret');
             }
             default: {
                 return document.getElementsByClassName(local.tab)[0].click();
