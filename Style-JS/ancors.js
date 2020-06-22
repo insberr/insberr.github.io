@@ -1,11 +1,11 @@
 function pageAncors() {
     if (location.hash) {
         switch (location.hash) {
-            case ('Home'): {
+            case ('#Home'): {
                 console.log('Home');
                 return navtwotab(event, 'Home');
             }
-            case ('Secret'): {
+            case ('#Secret'): {
                 return navtwotab(event, 'Secret');
             }
             default: {
