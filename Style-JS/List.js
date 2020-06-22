@@ -6,7 +6,8 @@ var taskClass = [
 ];
 
 var currentTasks = [
-    "Attempting to relax",
+    "Doing chores and hating life because i dont get to enjoy my summer",
+    "Failed - Attempting to relax",
     "Rewriting this sites JavaScript",
     "Learning JavaScript mainly using nodejs",
     "Making a desktop version of a game (More info on the about page)"

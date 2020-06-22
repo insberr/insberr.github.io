@@ -6,43 +6,12 @@ var Tab;
 
 function pageAncors() {
     if (location.hash) {
-        switch (location.hash) {
-            case ('#Home'): {
-                Tab = 'Home';
-                break;
-            }
-            case ('#Tasks'): {
-                Tab = 'Tasks';
-                break;
-            }
-            case ('#Posts'): {
-                Tab = 'Posts';
-                break;
-            }
-            case ('#Code'): {
-                Tab = 'Code';
-                break;
-            }
-            case ('#About'): {
-                Tab = 'About';
-                break;
-            }
-            case ('#Media'): {
-                Tab = 'Media';
-                break;
-            }
-            case ('#Secret'): {
-                navtwotab(event, 'Secret')
-                return;
-            }
-            default: {
-                Tab = local.tab;
-                break;
-            }
-        }
-        console.log(location.hash);
+        var tabHash = location.hash;
+        tabHash.charAt(0).toUpperCase() + tabHash.slice(1);
+        tabHash.replace('#','');
+        console.log(tabHash);
         removeHash();
-        document.getElementsByClassName(Tab)[0].click();
+        return document.getElementsByClassName(tabHash)[0].click();
     } else {
         document.getElementsByClassName(local.tab)[0].click();
     }
