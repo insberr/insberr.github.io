@@ -3,30 +3,30 @@ function pageAncors() {
         switch (location.hash) {
             case ('#Home'): {
                 console.log('Home');
-                return navtwotab(event, 'Home');
+                return document.getElementsByClassName('Home')[0].click();
             }
             case ('#Tasks'): {
                 console.log('Tasks');
-                return navtwotab(event, 'Tasks');
+                return document.getElementsByClassName('Tasks')[0].click();
             }
             case ('#Posts'): {
                 console.log('Posts');
-                return navtwotab(event, 'Posts');
+                return document.getElementsByClassName('Posts')[0].click();
             }
             case ('#Code'): {
                 console.log('Code');
-                return navtwotab(event, 'Code');
+                return document.getElementsByClassName('Code')[0].click();
             }
             case ('#About'): {
                 console.log('About');
-                return navtwotab(event, 'About');
+                return document.getElementsByClassName('About')[0].click();
             }
             case ('#Media'): {
                 console.log('Media');
-                return navtwotab(event, 'Media');
+                return document.getElementsByClassName('Media')[0].click();
             }
             case ('#Secret'): {
-                return navtwotab(event, 'Secret');
+                return document.getElementsByClassName('Secret')[0].click();
             }
             default: {
                 return document.getElementsByClassName(local.tab)[0].click();
