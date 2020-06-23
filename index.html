@@ -144,11 +144,11 @@ Personal/
             <!-- ====== Media Tab ====== -->
             <div id="Media" class="tabcontent">
                 <h3 class="red-or">Media</h3>
-                <p>This is where I will put videos, pictures, and audio along with some other things. I need to add some things so I can add the media.</p>
+                <p>Check out my YouTube channel to see vidoes.</p>
                 <br>
                 <hr2-solidred></hr2-solidred>
                 <h4>Videos</h4>
-                <p>Notin. It takes a while to upload things, so ill do this last</p>
+                <p>.</p>
                 <br>
                 <hr2-solidred></hr2-solidred>
                 <h4>Pictures</h4>
@@ -156,36 +156,40 @@ Personal/
                 <br>
                 <hr2-solidred></hr2-solidred>
                 <h4>Music</h4>
-                <p>A whole lotta nothin. I'll put music I listen to here</p>
+                <p>I dont really listen to music : f</p>
                 <br>
                 <br>
             </div>
             <!-- ====== The settings tab contenet ====== -->
             <div id="Settings" class="tabcontent">
                 <h2 class="red-or">Site Settings</h2>
-                <p>You found the settings page. Im going to warn you, settings are <u>experimental</u>, so use with caution!</p>
+                <p>You found the settings page. These settings are <u>experimental</u>, so use with caution!</p>
                 <br>
                 <hr2-solidred></hr2-solidred>
                 <p>Change your name for the site. It appears at the bottom of the page.</p>
                 <br>
                 <lable for="setNameInput">Change Name:</lable>
-                <input class="setname" type="text" id="setNameInput" placeholder="Change Name" autocomplete="off">
-                <button class="button-tran-red" id="setNameButton" onclick="setName()">Set</button>
+                <input class="setname input-box" type="text" id="setNameInput" placeholder="Change Name" autocomplete="off">
+                <button class="button-tran-red" id="setNameButton" onclick="setName()">Set Name</button>
                 <div class="site-user-name"></div>
                 <br>
                 <hr2-solidred></hr2-solidred>
                 <!-- === Change the background color === -->
                 <p>Change the background color. It defaults to your system theme</p>
                 <p>The current page color is set to <span id="thePageColor">the default</span>.</p>
-                <input id="changeColorInput" name="changeColorInput" type="text" placeholder="Enter a css color name or hex" autocomplete="off">
-                <button id="changeColorButton" class="button-tran-red" onclick="changeColor()">Change</button>
+                <input class="input-box" id="changeColorInput" name="changeColorInput" type="text" placeholder="Enter a css color name or hex" autocomplete="off">
+                <button id="changeColorButton" class="button-tran-red" onclick="changeColor()">Change Color</button>
                 <br>
                 <hr2-solidred></hr2-solidred>
-                <br>Force the site to reload and get fles from the server
+                <br>Get the newest site updates, this is not recommended as refreshing the page should work, however this makes developement easier for me.
                 <br><button class="button-tran-red" onclick="location.reload(true)">Force Reload</button>
                 <br>
                 <hr2-solidred></hr2-solidred>
-                <br>Reset site settings
+                <br>Reset all site settings, including custom background color, name, last tab, and old site data that is no longer needed. (Checkboxes do nothing yet)
+                <input type="checkbox" id="resetAll" name="resetAll" value="resetAll">
+                <label for="resetAll">Reset all site settings</label><br>
+                <input type="checkbox" id="resetColor" name="resetColor" value="resetColor">
+                <label for="resetColor">Page color</label><br>
                 <br><button class="button-tran-red" onclick="resetSiteData()">Reset</button>
             </div>
             <div class="Secret" onclick="navtwotab(event, 'Secret')"></div>
@@ -200,7 +204,7 @@ Personal/
                 <path fill-rule="evenodd" d="M10 7.754a2.246 2.246 0 100 4.492 2.246 2.246 0 000-4.492zM6.754 10a3.246 3.246 0 116.492 0 3.246 3.246 0 01-6.492 0z" clip-rule="evenodd"/>
             </svg>
         </div>
-        <div id="site-user-name">Welcome New User!</div>
+        <div id="site-user-name"></div>
         <a class="pipeline" href="https://gitlab.com/SpiderGaming/Personal/-/commits/master"><img alt="pipeline status" src="https://gitlab.com/SpiderGaming/Personal/badges/master/pipeline.svg" /></a>
         <!-- The JavaScript -->
         <script src="Style-JS/jquery-3.5.1.min.js"></script>

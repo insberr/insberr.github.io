@@ -1,5 +1,5 @@
 var defaultName = 'Welcome New User!'
-var defaultTitle = 'SpiderGamin\'s Website | Gitlab'
+var defaultTitle = 'SpiderGamin\'s Website'
 var local;
 local = JSON.parse(localStorage.getItem('siteData'));
 console.log(local)
@@ -9,7 +9,7 @@ function onPageLoad() {
         localStorage.clear();
         local = {
             tab: 'Home',
-            title: 'SpiderGamin\'s Website | Gitlab',
+            title: 'SpiderGamin\'s Website',
             name: 'Welcome New User',
             color: {
                 text: 'the default',
