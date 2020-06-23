@@ -14,7 +14,7 @@ function onPageLoad() {
             color: {
                 text: 'the default',
                 color: null
-            }
+            },
         }
         pageAncors();
 
@@ -40,7 +40,6 @@ function onPageLoad() {
 
         document.getElementsByTagName("body")[0].style.background = local.color.color;
         document.getElementById("thePageColor").innerHTML = local.color.text;
-
         // localStorage.setItem('siteData', JSON.stringify(local));
     }
 

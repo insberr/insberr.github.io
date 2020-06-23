@@ -6,6 +6,9 @@
   .progress-two {
       color: white;
   }
+  .input-box {
+      color: white;
+  }
 }
 
 @media (prefers-color-scheme: light) {
@@ -14,6 +17,9 @@
       color: black;
   }
   .progress-two {
+      color: black;
+  }
+  .input-box {
       color: black;
   }
 }
