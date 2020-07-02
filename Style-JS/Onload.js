@@ -1,5 +1,5 @@
 var defaultName = 'Welcome New User!'
-var defaultTitle = 'SpiderGamin\'s Website'
+var defaultTitle = 'SpiderGaming\'s Website'
 var local;
 local = JSON.parse(localStorage.getItem('siteData'));
 console.log(local)
