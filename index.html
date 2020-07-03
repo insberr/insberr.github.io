@@ -1,90 +1,103 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>SpiderGaming's Website</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="Style-JS/mystyle.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/fira_code.css">
-        <link rel="shortcut icon" href="SpiderGaminIcon.png" type="image/x-icon" />
-        <link href="Style-JS/prism.css" rel="stylesheet" />
-<!-- Primary Meta Tags -->
-<meta name="title" content="SpiderGaming's Website">
-<meta name="description" content="My website, working progress">
 
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://spidergaming.gitlab.io/personal/">
-<meta property="twitter:title" content="SpiderGaming's Website">
-<meta property="twitter:description" content="My website, working progress, and the link here on Twitter">
-<meta property="twitter:image" content="./SpiderGaminIcon.png">
-<meta name="theme-color" content="#ff0000">
-    </head>
-    <body onload="onPageLoad()">
-        <!-- ====== Navigation Bar ====== -->
-        <div class="tab">
-            <button class="tablinks Home" onclick="navtwotab(event, 'Home')" id="activeonload" title="Home Tab">Home</button>
-            <button class="tablinks Tasks" onclick="navtwotab(event, 'Tasks')" title="Things I'm Doing">Tasks</button>
-            <button class="tablinks Posts" onclick="navtwotab(event, 'Posts')" title="Posts">Posts</button>
-            <button class="tablinks Code" onclick="navtwotab(event, 'Code')" title="Code and Secret Code">Code</button>
-            <button class="tablinks About" onclick="navtwotab(event, 'About')" title="About Me And The Website">About</button>
-            <button class="tablinks Media" onclick="navtwotab(event, 'Media')" title="My Videos, Music, And Much More">Media</button>
+<head>
+    <title>SpiderGaming's Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="Style-JS/mystyle.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/fira_code.css">
+    <link rel="shortcut icon" href="SpiderGaminIcon.png" type="image/x-icon" />
+    <link href="Style-JS/prism.css" rel="stylesheet" />
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="SpiderGaming's Website">
+    <meta name="description" content="My website, working progress">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_medium_image">
+    <meta property="twitter:url" content="https://spidergaming.gitlab.io/personal/">
+    <meta property="twitter:title" content="SpiderGaming's Website">
+    <meta property="twitter:description" content="My website, working progress, and this is embeded here">
+    <meta property="twitter:image" content="SpiderGaminIcon.png">
+    <meta name="theme-color" content="#ff0000">
+</head>
+
+<body onload="onPageLoad()">
+    <!-- ====== Navigation Bar ====== -->
+    <div class="tab">
+        <button class="tablinks Home" onclick="navtwotab(event, 'Home')" id="activeonload"
+            title="Home Tab">Home</button>
+        <button class="tablinks Tasks" onclick="navtwotab(event, 'Tasks')" title="Things I'm Doing">Tasks</button>
+        <button class="tablinks Posts" onclick="navtwotab(event, 'Posts')" title="Posts">Posts</button>
+        <button class="tablinks Code" onclick="navtwotab(event, 'Code')" title="Code and Secret Code">Code</button>
+        <button class="tablinks About" onclick="navtwotab(event, 'About')"
+            title="About Me And The Website">About</button>
+        <button class="tablinks Media" onclick="navtwotab(event, 'Media')"
+            title="My Videos, Music, And Much More">Media</button>
+    </div>
+    <!-- ====== Nav Bar Tab Content ====== -->
+    <div class="page-content">
+        <!-- ====== Home Tab ====== -->
+        <div id="Home" class="tabcontent">
+            <h3 class="red-or">Welcome</h3>
+            <p>Hello, my name is Jonah Matteson (AKA SpiderGamin, SpiderGaming, McSpiderGamin). Welcome to my website! I
+                will post anything I can think of to post, however I'm still working on the JavaScript. I will slowly
+                add content, mainly to the About and Media tabs.</p>
+            <p>Due to various events, updates to this website will be slowed down.</p>
+            <p>Hi. Remember! If you have a tip, suggestion, fix, etc, please let me know by submitting an issue on the
+                Gitlab code, found <a href="https://gitlab.com/spidergaming/Personal">here</a>.
         </div>
-        <!-- ====== Nav Bar Tab Content ====== -->
-        <div class="page-content">
-            <!-- ====== Home Tab ====== -->
-            <div id="Home" class="tabcontent">
-                <h3 class="red-or">Welcome</h3>
-                <p>Hello, my name is Jonah Matteson (AKA SpiderGamin, SpiderGaming, McSpiderGamin). Welcome to my website! I will post anything I can think of to post, however I'm still working on the JavaScript. I will slowly add content, mainly to the About and Media tabs.</p>
-                <p>Due to various events, updates to this website will be slowed down.</p>
-                <p>Hi. Remember! If you have a tip, suggestion, fix, etc, please let me know by submitting an issue on the Gitlab code, found <a href="https://gitlab.com/spidergaming/Personal">here</a>.
+        <!-- ====== Tasks Tab ====== -->
+        <div id="Tasks" class="tabcontent">
+            <h3 class="red-or">Current</h3>
+            <p>What I'm currently working on.</p>
+            <div class="current-task-list"></div>
+            <br>
+            <p>I am <span class="progressone">(broken, so 0%)</span> done with these tasks</p>
+            <div class="progress-one">
+                <div class="progress-two w3-container progressbarone" style="width:23%"><span
+                        class="progressone">(broken, so 0%)</span></div>
             </div>
-            <!-- ====== Tasks Tab ====== -->
-            <div id="Tasks" class="tabcontent">
-                <h3 class="red-or">Current</h3>
-                <p>What I'm currently working on.</p>
-                <div class="current-task-list"></div>
-                <br>
-                <p>I am <span class="progressone">(broken, so 0%)</span> done with these tasks</p>
-                <div class="progress-one">
-                    <div class="progress-two w3-container progressbarone" style="width:23%"><span class="progressone">(broken, so 0%)</span></div>
-                </div>
-                <br>
-                <hr2-solidred></hr2-solidred>
-                <h3 class="red-or">Later</h3>
-                <p>Things I plan on doing later</p>
-                <div class="later-task-list"></div>
-                <br>
-                <h4>Plans For This Website</h4>
-                <p>Plans I have for this website.</p>
-                <div class="plans-web-list"></div>
-                <br>
-                <hr2-solidred></hr2-solidred>
-                <h3 class="red-or">Finished</h3>
-                <p>Here is a list of the tasks I've finished</p>
-                <div class="finished-task-list"></div>
-            </div>
-            <!-- ====== Posts Tab ====== -->
-            <div id="Posts" class="tabcontent">
-                <h3 class='red-or'>Posts</h3>
-                <p>Here is where thing I post will go. As of now I've embeded my Twitter feed.</p>
-                <h4 href="#tp-twitter" class="red-or">Twitter</h4>
-                <a class="twitter-timeline" data-theme="dark" href="https://twitter.com/SpiderGaming0?ref_src=twsrc%5Etfw">Tweets by SpiderGaming0 (Probabally Broken)</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-            </div>
-            <!-- ====== Code tab Tab ====== -->
-            <div id="Code" class="tabcontent">
-                <p>This is the code tab</p>
-                <!-- === See the code for this site on page === -->
-                <p>View the code (On site) (Not added yet)</p>
-                <br>
-                <pre data-src="Style-JS/Onload.js"></pre>
-                <hr2-solidred></hr2-solidred>
-                <p>Secret code? Maybe give it a try. It Should acctually work now.</p>
-                <textarea id="secretCodeInput" name="secretCodeInput" placeholder="Decode/Encode Text Into Secret Code" rows="4" cols="30" max="5"></textarea>
-                <button id="codeButton" class="button-tran-red" onclick="buttonSecretCode()">Decode/Encode</button>
-                <br>
-                <div id="outputSecretCode">Secret Code Output</div>
-                <br>
-                <pre><code class="language-treeview">
+            <br>
+            <hr2-solidred></hr2-solidred>
+            <h3 class="red-or">Later</h3>
+            <p>Things I plan on doing later</p>
+            <div class="later-task-list"></div>
+            <br>
+            <h4>Plans For This Website</h4>
+            <p>Plans I have for this website.</p>
+            <div class="plans-web-list"></div>
+            <br>
+            <hr2-solidred></hr2-solidred>
+            <h3 class="red-or">Finished</h3>
+            <p>Here is a list of the tasks I've finished</p>
+            <div class="finished-task-list"></div>
+        </div>
+        <!-- ====== Posts Tab ====== -->
+        <div id="Posts" class="tabcontent">
+            <h3 class='red-or'>Posts</h3>
+            <p>Here is where thing I post will go. As of now I've embeded my Twitter feed.</p>
+            <h4 href="#tp-twitter" class="red-or">Twitter</h4>
+            <a class="twitter-timeline" data-theme="dark"
+                href="https://twitter.com/SpiderGaming0?ref_src=twsrc%5Etfw">Tweets by SpiderGaming0 (Probabally
+                Broken)</a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+        <!-- ====== Code tab Tab ====== -->
+        <div id="Code" class="tabcontent">
+            <p>This is the code tab</p>
+            <!-- === See the code for this site on page === -->
+            <p>View the code (On site) (Not added yet)</p>
+            <br>
+            <pre data-src="Style-JS/Onload.js"></pre>
+            <hr2-solidred></hr2-solidred>
+            <p>Secret code? Maybe give it a try. It Should acctually work now.</p>
+            <textarea id="secretCodeInput" name="secretCodeInput" placeholder="Decode/Encode Text Into Secret Code"
+                rows="4" cols="30" max="5"></textarea>
+            <button id="codeButton" class="button-tran-red" onclick="buttonSecretCode()">Decode/Encode</button>
+            <br>
+            <div id="outputSecretCode">Secret Code Output</div>
+            <br>
+            <pre><code class="language-treeview">
 Personal/
 └── .vscode/
     └── settings.json
@@ -111,121 +124,136 @@ Personal/
     ├── Settings.js
     └── syntax-highlighting.css
                 </code></pre>
-            </div>
-            <!-- ====== About Tab ====== -->
-            <div id="About" class="tabcontent">
-                <h3 class="red-or">About Me</h3>
-                <p>Bio: </p>
-                <iframe src="https://discord.bio/p/523826395801976842" width="100%" height="750" allowtransparency="true" frameborder="0"></iframe>
-                <br>
-                <hr2-solidred></hr2-solidred>
-                <h3 class="red-or">About This Website</h3>
-                <p>This section is about this website. I will put info like changes, secrets, and lots of other things.</p>
-                <p>Something</p>
-                <br>
-                <hr2-solidred></hr2-solidred>
-                <h3 class="red-or">Links</h3>
-                
-                <br>
-                <h4><a href="https://github.com/spidergamin" target="_blank">Github</a></h4>
-                <p>I put all my open source code here. The project I'm currently working on is a desktop version of a game called <a href="https://github.com/sparticle999/spacecompany" target="_blank">SpaceCompany</a></p>
-                <h5><a href="https://github.com/spidergamin/SpaceCompany-Desktop" target="_blank">SpaceCompany-Desktop</a></h5>
-                <br>
-                <h4><a href="https://gitlab.com/spidergaming" target="_blank">Gitlab</a></h4>
-                <p>.</p>
-                <h5><a href="https://gitlab.com/spidergaming/Personal" target="_blank">This Sites Code</a></h5>
-                <p>See the code for this website on Gitlab</p>
-                <br>
-                <h5><a href="https://spidergaming.gitlab.io/Incremental-Universe/" style="color:cyan" title="Incremental Universe, Its not much right now." target="_blank">Idle Universe</a></h5>
-                <p>Idle Universe (Incremental Universe) is a game me and some friends were making.</p>
-                <br>
-                <h4>Social Media</h4>
-                <h4><a href="https://www.youtube.com/channel/UCO2rlcllQhQdPM8PZkqEAcA?view_as=subscriber" style="color:red" target="_blank" title="Its my YouTube channel, cringy though!">YouTube Channel</a></h4>
-                <p>My YouTube channel. I do Minecraft, challenges, vlogs, and much more!</p>
-                <br>
-                <h4><a href="https://twitter.com/SpiderGaming0" target="_blank">Twitter</a></h4>
-                <p>Go follow me on Twitter. I post randomness if you ask me.</p>
-                <br>
-                <h4><a href="https://twitch.tv/SpiderGaming00">Twitch</a></h4>
-                <br>
-                <h4><a href="https://discord.gg/gRMbZyU" target="_blank">Discord</a></h4>
-                <p>My discord server</p>
-                <iframe src="https://discordapp.com/widget?id=523826876599500801&theme=dark" width="300" height="300" allowtransparency="true" frameborder="0"></iframe>
-                <br>
-            </div>
-            <!-- ====== Media Tab ====== -->
-            <div id="Media" class="tabcontent">
-                <h3 class="red-or">Media</h3>
-                <p>Check out my YouTube channel to see vidoes.</p>
-                <br>
-                <hr2-solidred></hr2-solidred>
-                <h4>Videos</h4>
-                <p>.</p>
-                <br>
-                <hr2-solidred></hr2-solidred>
-                <h4>Pictures</h4>
-                <p>...</p>
-                <br>
-                <hr2-solidred></hr2-solidred>
-                <h4>Music</h4>
-                <p>I dont really listen to music : f</p>
-                <br>
-                <br>
-            </div>
-            <!-- ====== The settings tab contenet ====== -->
-            <div id="Settings" class="tabcontent">
-                <h2 class="red-or">Site Settings</h2>
-                <p>You found the settings page. These settings are <u>experimental</u>, so use with caution!</p>
-                <br>
-                <hr2-solidred></hr2-solidred>
-                <p>Change your name for the site. It appears at the bottom of the page.</p>
-                <br>
-                <lable for="setNameInput">Change Name:</lable>
-                <input class="setname input-box" type="text" id="setNameInput" placeholder="Change Name" autocomplete="off">
-                <button class="button-tran-red" id="setNameButton" onclick="setName()">Set Name</button>
-                <div class="site-user-name"></div>
-                <br>
-                <hr2-solidred></hr2-solidred>
-                <!-- === Change the background color === -->
-                <p>Change the background color. It defaults to your system theme</p>
-                <p>The current page color is set to <span id="thePageColor">the default</span>.</p>
-                <input class="input-box" id="changeColorInput" name="changeColorInput" type="text" placeholder="Enter a css color name or hex" autocomplete="off">
-                <button id="changeColorButton" class="button-tran-red" onclick="changeColor()">Change Color</button>
-                <br>
-                <hr2-solidred></hr2-solidred>
-                <br>Get the newest site updates, this is not recommended as refreshing the page should work, however this makes developement easier for me.
-                <br><button class="button-tran-red" onclick="location.reload(true)">Force Reload</button>
-                <br>
-                <hr2-solidred></hr2-solidred>
-                <br>Reset all site settings, including custom background color, name, last tab, and old site data that is no longer needed. (Checkboxes do nothing yet)
-                <input type="checkbox" id="resetAll" name="resetAll" value="resetAll">
-                <label for="resetAll">Reset all site settings</label><br>
-                <input type="checkbox" id="resetColor" name="resetColor" value="resetColor">
-                <label for="resetColor">Page color</label><br>
-                <br><button class="button-tran-red" onclick="resetSiteData()">Reset</button>
-            </div>
-            <div class="Secret" onclick="navtwotab(event, 'Secret')"></div>
-            <div id="Secret" class="tabcontent">
-                <p>You found my secret page</p>
-            </div>
         </div>
-        <!-- === Settings button (gear) === -->
-        <div class="settings-svg Settings" title="Site Settings (Experimental)" onclick="navtwotab(event, 'Settings')">
-            <svg class="bi bi-gear" width="25px" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" d="M10.837 3.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 016.377 5.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 01-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 011.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 012.692 1.115l.094.319c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 012.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 011.115-2.693l.319-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 01-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159a1.873 1.873 0 01-2.693-1.115l-.094-.319zm-2.633-.283c.527-1.79 3.064-1.79 3.592 0l.094.319a.873.873 0 001.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 00.52 1.255l.319.094c1.79.527 1.79 3.064 0 3.592l-.319.094a.873.873 0 00-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 00-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 00-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 00-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 00.52-1.255l-.16-.292c-.892-1.64.901-3.433 2.541-2.54l.292.159a.873.873 0 001.255-.52l.094-.319z" clip-rule="evenodd"/>
-                <path fill-rule="evenodd" d="M10 7.754a2.246 2.246 0 100 4.492 2.246 2.246 0 000-4.492zM6.754 10a3.246 3.246 0 116.492 0 3.246 3.246 0 01-6.492 0z" clip-rule="evenodd"/>
-            </svg>
+        <!-- ====== About Tab ====== -->
+        <div id="About" class="tabcontent">
+            <h3 class="red-or">About Me</h3>
+            <p>Bio: </p>
+            <iframe src="https://discord.bio/p/523826395801976842" width="100%" height="750" allowtransparency="true"
+                frameborder="0"></iframe>
+            <br>
+            <hr2-solidred></hr2-solidred>
+            <h3 class="red-or">About This Website</h3>
+            <p>This section is about this website. I will put info like changes, secrets, and lots of other things.</p>
+            <p>Something</p>
+            <br>
+            <hr2-solidred></hr2-solidred>
+            <h3 class="red-or">Links</h3>
+
+            <br>
+            <h4><a href="https://github.com/spidergamin" target="_blank">Github</a></h4>
+            <p>I put all my open source code here. The project I'm currently working on is a desktop version of a game
+                called <a href="https://github.com/sparticle999/spacecompany" target="_blank">SpaceCompany</a></p>
+            <h5><a href="https://github.com/spidergamin/SpaceCompany-Desktop" target="_blank">SpaceCompany-Desktop</a>
+            </h5>
+            <br>
+            <h4><a href="https://gitlab.com/spidergaming" target="_blank">Gitlab</a></h4>
+            <p>.</p>
+            <h5><a href="https://gitlab.com/spidergaming/Personal" target="_blank">This Sites Code</a></h5>
+            <p>See the code for this website on Gitlab</p>
+            <br>
+            <h5><a href="https://spidergaming.gitlab.io/Incremental-Universe/" style="color:cyan"
+                    title="Incremental Universe, Its not much right now." target="_blank">Idle Universe</a></h5>
+            <p>Idle Universe (Incremental Universe) is a game me and some friends were making.</p>
+            <br>
+            <h4>Social Media</h4>
+            <h4><a href="https://www.youtube.com/channel/UCO2rlcllQhQdPM8PZkqEAcA?view_as=subscriber" style="color:red"
+                    target="_blank" title="Its my YouTube channel, cringy though!">YouTube Channel</a></h4>
+            <p>My YouTube channel. I do Minecraft, challenges, vlogs, and much more!</p>
+            <br>
+            <h4><a href="https://twitter.com/SpiderGaming0" target="_blank">Twitter</a></h4>
+            <p>Go follow me on Twitter. I post randomness if you ask me.</p>
+            <br>
+            <h4><a href="https://twitch.tv/SpiderGaming00">Twitch</a></h4>
+            <br>
+            <h4><a href="https://discord.gg/gRMbZyU" target="_blank">Discord</a></h4>
+            <p>My discord server</p>
+            <iframe src="https://discordapp.com/widget?id=523826876599500801&theme=dark" width="300" height="300"
+                allowtransparency="true" frameborder="0"></iframe>
+            <br>
         </div>
-        <div id="site-user-name"></div>
-        <a class="pipeline" href="https://gitlab.com/SpiderGaming/Personal/-/commits/master"><img alt="pipeline status" src="https://gitlab.com/SpiderGaming/Personal/badges/master/pipeline.svg" /></a>
-        <!-- The JavaScript -->
-        <script src="Style-JS/jquery-3.5.1.min.js"></script>
-        <script src="Style-JS/Navbar.js"></script>
-        <script src="Style-JS/Settings.js"></script>
-        <script src="Style-JS/Secretcode.js"></script>
-        <script src="Style-JS/Onload.js"></script>
-        <script src="Style-JS/List.js"></script>
-        <script src="Style-JS/prism.js"></script>
-        <script src="Style-JS/ancors.js"></script>
-    </body>
-</html> 
+        <!-- ====== Media Tab ====== -->
+        <div id="Media" class="tabcontent">
+            <h3 class="red-or">Media</h3>
+            <p>Check out my YouTube channel to see vidoes.</p>
+            <br>
+            <hr2-solidred></hr2-solidred>
+            <h4>Videos</h4>
+            <p>.</p>
+            <br>
+            <hr2-solidred></hr2-solidred>
+            <h4>Pictures</h4>
+            <p>...</p>
+            <br>
+            <hr2-solidred></hr2-solidred>
+            <h4>Music</h4>
+            <p>I dont really listen to music : f</p>
+            <br>
+            <br>
+        </div>
+        <!-- ====== The settings tab contenet ====== -->
+        <div id="Settings" class="tabcontent">
+            <h2 class="red-or">Site Settings</h2>
+            <p>You found the settings page. These settings are <u>experimental</u>, so use with caution!</p>
+            <br>
+            <hr2-solidred></hr2-solidred>
+            <p>Change your name for the site. It appears at the bottom of the page.</p>
+            <br>
+            <lable for="setNameInput">Change Name:</lable>
+            <input class="setname input-box" type="text" id="setNameInput" placeholder="Change Name" autocomplete="off">
+            <button class="button-tran-red" id="setNameButton" onclick="setName()">Set Name</button>
+            <div class="site-user-name"></div>
+            <br>
+            <hr2-solidred></hr2-solidred>
+            <!-- === Change the background color === -->
+            <p>Change the background color. It defaults to your system theme</p>
+            <p>The current page color is set to <span id="thePageColor">the default</span>.</p>
+            <input class="input-box" id="changeColorInput" name="changeColorInput" type="text"
+                placeholder="Enter a css color name or hex" autocomplete="off">
+            <button id="changeColorButton" class="button-tran-red" onclick="changeColor()">Change Color</button>
+            <br>
+            <hr2-solidred></hr2-solidred>
+            <br>Get the newest site updates, this is not recommended as refreshing the page should work, however this
+            makes developement easier for me.
+            <br><button class="button-tran-red" onclick="location.reload(true)">Force Reload</button>
+            <br>
+            <hr2-solidred></hr2-solidred>
+            <br>Reset all site settings, including custom background color, name, last tab, and old site data that is no
+            longer needed. (Checkboxes do nothing yet)
+            <input type="checkbox" id="resetAll" name="resetAll" value="resetAll">
+            <label for="resetAll">Reset all site settings</label><br>
+            <input type="checkbox" id="resetColor" name="resetColor" value="resetColor">
+            <label for="resetColor">Page color</label><br>
+            <br><button class="button-tran-red" onclick="resetSiteData()">Reset</button>
+        </div>
+        <div class="Secret" onclick="navtwotab(event, 'Secret')"></div>
+        <div id="Secret" class="tabcontent">
+            <p>You found my secret page</p>
+        </div>
+    </div>
+    <!-- === Settings button (gear) === -->
+    <div class="settings-svg Settings" title="Site Settings (Experimental)" onclick="navtwotab(event, 'Settings')">
+        <svg class="bi bi-gear" width="25px" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+                d="M10.837 3.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 016.377 5.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 01-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 011.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 012.692 1.115l.094.319c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 012.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 011.115-2.693l.319-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 01-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159a1.873 1.873 0 01-2.693-1.115l-.094-.319zm-2.633-.283c.527-1.79 3.064-1.79 3.592 0l.094.319a.873.873 0 001.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 00.52 1.255l.319.094c1.79.527 1.79 3.064 0 3.592l-.319.094a.873.873 0 00-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 00-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 00-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 00-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 00.52-1.255l-.16-.292c-.892-1.64.901-3.433 2.541-2.54l.292.159a.873.873 0 001.255-.52l.094-.319z"
+                clip-rule="evenodd" />
+            <path fill-rule="evenodd"
+                d="M10 7.754a2.246 2.246 0 100 4.492 2.246 2.246 0 000-4.492zM6.754 10a3.246 3.246 0 116.492 0 3.246 3.246 0 01-6.492 0z"
+                clip-rule="evenodd" />
+        </svg>
+    </div>
+    <div id="site-user-name"></div>
+    <a class="pipeline" href="https://gitlab.com/SpiderGaming/Personal/-/commits/master"><img alt="pipeline status"
+            src="https://gitlab.com/SpiderGaming/Personal/badges/master/pipeline.svg" /></a>
+    <!-- The JavaScript -->
+    <script src="Style-JS/jquery-3.5.1.min.js"></script>
+    <script src="Style-JS/Navbar.js"></script>
+    <script src="Style-JS/Settings.js"></script>
+    <script src="Style-JS/Secretcode.js"></script>
+    <script src="Style-JS/Onload.js"></script>
+    <script src="Style-JS/List.js"></script>
+    <script src="Style-JS/prism.js"></script>
+    <script src="Style-JS/ancors.js"></script>
+</body>
+
+</html>
