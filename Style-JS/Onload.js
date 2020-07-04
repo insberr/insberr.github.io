@@ -5,7 +5,8 @@ local = JSON.parse(localStorage.getItem('siteData'));
 console.log(local)
 
 function onPageLoad() {
-    if (local.cookies === true || local.cookies === null) return pageLoad();
+    if (local.cookies === null) return pageLoad();
+    if (local.cookies === true) return pageLoad();
     var cookies = confirm("This site uses cookies, click 'ok' to allow cookies, 'cancel' to deny.");
     if (cookies === true) {
         return pageLoad(true);
