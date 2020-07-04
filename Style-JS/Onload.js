@@ -5,13 +5,26 @@ local = JSON.parse(localStorage.getItem('siteData'));
 console.log(local)
 
 function onPageLoad() {
-    if (local.cookies === true) return pageLoad();
-    var cookies = confirm("This site uses cookies, click 'ok' to allow cookies, 'cancel' to deny.");
-    if (cookies === true) {
-        return pageLoad(true);
+    if (local) {
+        if (local.cookies === true) {
+            return pageLoad();
+        } else {
+            var cookies = confirm("This site uses cookies, click 'ok' to allow cookies, 'cancel' to deny.");
+            if (cookies === true) {
+                return pageLoad(true);
+            } else {
+                localStorage.clear();
+                return pageLoad(false);
+            }
+        }
     } else {
-        localStorage.clear();
-        return pageLoad(false);
+        var cookies = confirm("This site uses cookies, click 'ok' to allow cookies, 'cancel' to deny.");
+        if (cookies === true) {
+            return pageLoad(true);
+        } else {
+            localStorage.clear();
+            return pageLoad(false);
+        }
     }
 }
 
@@ -25,29 +38,29 @@ function pageLoad(store) {
             color: {
                 text: 'the default',
                 color: null,
-            cookies: store,
+                cookies: store,
             },
         }
         if (!local.cookies) {
             pageAncors();
-    
+
             document.title = local.title;
-    
+
             document.getElementById("site-user-name").innerHTML = local.name;
-    
+
             document.getElementById("outputSecretCode").innerHTML = "Your translated text will go here";
-    
+
             // document.getElementsByTagName("body")[0].style.background = local.color.color;
             document.getElementById("thePageColor").innerHTML = local.color.text;
         } else {
             pageAncors();
-    
+
             document.title = local.title;
-    
+
             document.getElementById("site-user-name").innerHTML = local.name;
-    
+
             document.getElementById("outputSecretCode").innerHTML = "Your translated text will go here";
-    
+
             // document.getElementsByTagName("body")[0].style.background = local.color.color;
             document.getElementById("thePageColor").innerHTML = local.color.text;
 
