@@ -5,31 +5,8 @@ local = JSON.parse(localStorage.getItem('siteData'));
 console.log(local)
 
 function onPageLoad() {
-    if (local) {
-        if (local.cookies === true) {
-            return pageLoad();
-        } else {
-            var cookies = confirm("This site uses cookies, click 'ok' to allow cookies, 'cancel' to deny.");
-            if (cookies === true) {
-                return pageLoad(true);
-            } else {
-                localStorage.clear();
-                return pageLoad(false);
-            }
-        }
-    } else {
-        var cookies = confirm("This site uses cookies, click 'ok' to allow cookies, 'cancel' to deny.");
-        if (cookies === true) {
-            return pageLoad(true);
-        } else {
-            localStorage.clear();
-            return pageLoad(false);
-        }
-    }
-}
-
-function pageLoad(store) {
     if (local === null) {
+        alert('By using my website, you agree to allowing the use of cookies. The cookies can be cleared on the settings page (click the gear icon in the bottom left)')
         localStorage.clear();
         local = {
             tab: 'Home',
@@ -38,59 +15,22 @@ function pageLoad(store) {
             color: {
                 text: 'the default',
                 color: null,
-                cookies: store,
             },
         }
-        if (!local.cookies) {
-            pageAncors();
-
-            document.title = local.title;
-
-            document.getElementById("site-user-name").innerHTML = local.name;
-
-            document.getElementById("outputSecretCode").innerHTML = "Your translated text will go here";
-
-            // document.getElementsByTagName("body")[0].style.background = local.color.color;
-            document.getElementById("thePageColor").innerHTML = local.color.text;
-        } else {
-            pageAncors();
-
-            document.title = local.title;
-
-            document.getElementById("site-user-name").innerHTML = local.name;
-
-            document.getElementById("outputSecretCode").innerHTML = "Your translated text will go here";
-
-            // document.getElementsByTagName("body")[0].style.background = local.color.color;
-            document.getElementById("thePageColor").innerHTML = local.color.text;
-
-            localStorage.setItem('siteData', JSON.stringify(local));
-        }
-    } else {
-        var cookies;
-        if (!local.cookies) {
-            cookies = confirm("This site uses cookies, click 'ok' to allow cookies, 'cancel' to deny.");
-        }
-        if (cookies) return;
-        console.log(local)
         pageAncors();
-
         document.title = local.title;
-
         document.getElementById("site-user-name").innerHTML = local.name;
-
         document.getElementById("outputSecretCode").innerHTML = "Your translated text will go here";
-
+        document.getElementById("thePageColor").innerHTML = local.color.text;
+        localStorage.setItem('siteData', JSON.stringify(local));
+    } else {
+        pageAncors();
+        document.title = local.title;
+        document.getElementById("site-user-name").innerHTML = local.name;
+        document.getElementById("outputSecretCode").innerHTML = "Your translated text will go here";
         document.getElementsByTagName("body")[0].style.background = local.color.color;
         document.getElementById("thePageColor").innerHTML = local.color.text;
-        // localStorage.setItem('siteData', JSON.stringify(local));
     }
 
 
 };
-
-/*
-if (location.hash == "#secret") {
-    window.open("https://spidergaming.gitlab.io/Personal/404.html","_self");
-}
-*/
