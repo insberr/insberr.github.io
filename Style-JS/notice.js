@@ -1,4 +1,4 @@
-document.getElementById('notice').innerHTML = '<div>It is reccomended that you reset this sites cookies/localstorage. Click <button onclick="noticeReset()">here</button> to reset. <button onclick="noticeClose()">close</button></div>';
+document.getElementById('notice').innerHTML = '<div>It is reccomended that you reset this sites cookies/localstorage. Click <button class="button-tran-red" onclick="noticeReset()">here</button> to reset. <button class="button-tran-red" onclick="noticeClose()">close</button></div>';
 function noticeReset() {
     resetSiteData()
 }
