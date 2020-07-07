@@ -1,35 +1,22 @@
-var defaultName = 'Welcome New User!'
-var defaultTitle = 'SpiderGaming\'s Website'
 var local;
 local = JSON.parse(localStorage.getItem('siteData'));
-console.log(local)
-
+var cookies;
 function onPageLoad() {
     if (local === null) {
-        alert('By using my website, you agree to allowing the use of cookies. The cookies can be cleared on the settings page (click the gear icon in the bottom left)')
         localStorage.clear();
         local = {
             tab: 'Home',
-            title: 'SpiderGamin\'s Website',
-            name: 'Welcome New User',
-            color: {
-                text: 'the default',
-                color: null,
-            },
+        }
+        cookies = confirm('My website uses cookies, click "ok" to allow. Click "cancel" to deny');
+        if (cookies) {
+            localStorage.setItem('siteData', JSON.stringify(local));
         }
         pageAncors();
-        document.title = local.title;
-        document.getElementById("site-user-name").innerHTML = local.name;
         document.getElementById("outputSecretCode").innerHTML = "Your translated text will go here";
-        document.getElementById("thePageColor").innerHTML = local.color.text;
-        localStorage.setItem('siteData', JSON.stringify(local));
     } else {
+        cookies = true;
         pageAncors();
-        document.title = local.title;
-        document.getElementById("site-user-name").innerHTML = local.name;
         document.getElementById("outputSecretCode").innerHTML = "Your translated text will go here";
-        document.getElementsByTagName("body")[0].style.background = local.color.color;
-        document.getElementById("thePageColor").innerHTML = local.color.text;
     }
 
 

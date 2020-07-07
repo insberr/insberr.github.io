@@ -1,8 +1,3 @@
-// localStorage.removeItem("Tab")
-// document.getElementById("activeonload").click();
-	
-
-//The navigation bar Script
 function navtwotab(evt, navtwotab) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
@@ -17,5 +12,7 @@ function navtwotab(evt, navtwotab) {
     evt.currentTarget.className += " active";
     document.title = (navtwotab);
     local.tab = navtwotab;
-    localStorage.setItem("siteData", JSON.stringify(local));
+    if (cookies) {
+        localStorage.setItem("siteData", JSON.stringify(local));
+    }
 }

@@ -48,8 +48,12 @@ body {
 
 /* ============ Other ============ */
 
-pre {
-    width: 100%;
+#notice {
+    background-color: orange;
+    text-align: center;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 10px 10px;
 }
 
 .page-content {
@@ -67,48 +71,28 @@ pre {
     position: fixed;
 }
 
-#site-user-name {
-    position: fixed;
-    bottom: 5px;
-    left: 40px;
-    /*background-color: rgb(34, 34, 34, 0.5);*/
-}
-
 .pipeline {
     position: fixed;
     bottom: 5px;
     right: 10px;
 }
 
-.site-user-name-bottom {
-    display: none;
-    position: fixed;
-    bottom: 6px;
-    /*background-color: rgb(34, 34, 34, 0.5);*/
-    margin-left: 30px;
-}
 .button-tran-red {
-    color: red;
+    color: white;
     padding: 4px 10px 4px 10px;
-    background-color: transparent;
-    border-radius: 10px;
-    border-color: red;
-    outline: 0;
-}
-.button-tran-red:hover {
     background-color: red;
+    border-radius: 10px;
+    outline: 0;
+    border: 1.5px solid red;
+}
+
+.button-tran-red:hover {
     color: black;
+    border-radius: 5px;
 }
 
 .red-or {
     color: #fc5203;
-}
-
-.screen-ipad {
-    display: inline;
-}
-.screen-iphone {
-    display: none;
 }
 
 .input-box {

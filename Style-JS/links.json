@@ -1,0 +1,30 @@
+{
+    "Github": {
+        "Profile": {
+            "url": "https://github.com/SpiderGamin",
+            "text": "Test github profile text"
+        },
+        "SpiderBot": {
+            "url": "https://github.com/SpiderGamin",
+            "text": "Test github bot text"
+        },
+        "SpaceCompany-Desktop": {
+            "url": "https://github.com/SpiderGamin",
+            "text": "Test github desk text"
+        },
+        "This sites code": {
+            "url": "https://github.com/SpiderGamin",
+            "text": "Test github code text"
+        },
+        "Idle-Universe": {
+            "url": "https://github.com/SpiderGamin",
+            "text": "Test github idle text"
+        }
+    },
+    "Socials": {
+        "Twitter": {
+            "url": "https://github.com/SpiderGamin",
+            "text": "Test github twitter text"
+        }
+    }
+}
