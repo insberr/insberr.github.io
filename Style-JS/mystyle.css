@@ -71,12 +71,6 @@ body {
     position: fixed;
 }
 
-.pipeline {
-    position: fixed;
-    bottom: 5px;
-    right: 10px;
-}
-
 .button-tran-red {
     color: white;
     padding: 4px 10px 4px 10px;
@@ -153,9 +147,9 @@ hr2-solidred {
 /* == The Bar == */
 .tab {
     overflow: hidden;
-    background-color: #222222;
+    background-color: #505050;
     padding: 0;
-    width: auto;
+    width: fit-content;
     border-radius: 15px;
     position: fixed;
     top: 0;
@@ -252,18 +246,3 @@ hr2-solidred {
 }
 
 /* ======== @media content size ======== */
-
-@media screen and (max-width: 450px) {
-    .tab {
-        margin-left: 8px;
-    }
-    
-    .tab button {
-        padding: 13px 15px;
-        font-size: 13px;
-    }
-    
-    .page-content {
-        margin: 60px 1px 50px 1px;
-    }
-}

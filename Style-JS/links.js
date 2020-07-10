@@ -26,17 +26,29 @@ var links = {
         },
     },
     Socials: {
-        list: ['Twitter'],
-        url: 'https://',
+        list: ['Twitter', 'YouTube', 'Twitch', 'Discord'],
+        url: '',
         info: 'Here are all my social medias. I mainly use Twitter for posts, and Discord for chats.',
         Twitter: {
             url: 'https://twitter.com/SpiderGaming0',
             text: 'On my Twitter, I post random crap and complain.'
+        },
+        YouTube: {
+            url: 'https://www.youtube.com/channel/UCO2rlcllQhQdPM8PZkqEAcA',
+            text: 'My YouTube channel, I do Minecraft, challenges, vlogs, and much more! I`ts a weird place there, be warned.'
+        },
+        Twitch: {
+            url: 'https://twitch.tv/SpiderGaming00',
+            text: 'I dontuse Twitch much, however I livestream Minecraft and coronacation videos here when I do.'
+        },
+        Discord: {
+            url: 'https://discord.gg/gRMbZyU',
+            text: 'My Discord server <br><iframe src="https://discordapp.com/widget?id=523826876599500801&theme=dark" width="300" height="300" allowtransparency="true" frameborder="0"></iframe>'
         }
     },
 }
 
-linkManager()
+linkManager();
 function linkManager() {
     var str;
     str = '';
