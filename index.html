@@ -28,14 +28,13 @@
         content="I am SpiderGaming, here is my website. Info about me, links, and more!">
     <meta property="twitter:image" content="https://spidergamin.github.io/SpiderGaming-Website/SpiderGaminIcon.png">
     <meta name="theme-color" content="#FF804A">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154370846-1"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-        gtag('config', 'UA-154370846-1');
+    gtag('config', 'UA-154370846-1');
     </script>
 </head>
 
@@ -48,7 +47,7 @@
         <button class="tablinks Posts" onclick="navtwotab(event, 'Posts')" title="Posts">Posts</button>
         <button class="tablinks Code" onclick="navtwotab(event, 'Code')" title="Code stuffs">Code</button>
         <button class="tablinks About" onclick="navtwotab(event, 'About')" title="About Me And Links">About</button>
-        <button class="tablinks Media" onclick="navtwotab(event, 'Media')" title="Idk yet">Media</button>
+        <button class="tablinks Other" onclick="navtwotab(event, 'Other')" title="Idk yet">Other</button>
     </div>
     <!-- ====== Nav Bar Tab Content ====== -->
     <div class="page-content">
@@ -115,9 +114,11 @@
             <h4><a href="https://gitlab.com/spidergaming" target="_blank">Gitlab</a></h4>
         </div>
         <!-- ====== Media Tab ====== -->
-        <div id="Media" class="tabcontent">
-            <h3 class="red-or">Media</h3>
-            <p>I might remove this tab : (</p>
+        <div id="Other" class="tabcontent">
+            <h3 class="red-or">Other</h3>
+            <p>Other random things are here</p>
+            <p>Check out the <a href="/pages/requests.html">requests</a> page to send things to a server and maybe get a response.</p>
+            <p>Check out the <a href="/pages/fun.html">fun</a> page to do small games and whatnot.</p>
         </div>
         <!-- ====== The settings tab contenet ====== -->
         <div id="Settings" class="tabcontent">
