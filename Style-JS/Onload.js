@@ -18,6 +18,9 @@ function onPageLoad() {
         pageAncors();
         document.getElementById("outputSecretCode").innerHTML = "Your translated text will go here";
     }
-
-
+    /*
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        document.getElementsByClassName('tab')[0].style.width = '100%'
+    }
+    */
 };
