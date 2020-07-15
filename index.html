@@ -20,7 +20,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="Style-JS/mystyle.css">
     <link rel="shortcut icon" href="SpiderGaminIcon.png" type="image/x-icon" />
-    <link href="Style-JS/prism.css" rel="stylesheet" />
 
     <!-- Embed Stuffs -->
     <link type="application/json+oembed"
@@ -116,7 +115,11 @@
             <br>
             <hr class="hr2-solidred">
             <h3 class="red-or">Links</h3>
-            <div id="links"></div>
+            <div id="links">
+                <div v-for="link in links">
+                    {{ link.link }} {{ link.url }}
+                </div>
+            </div>
             <br>
             <h4><a href="https://gitlab.com/spidergaming" target="_blank">Gitlab</a></h4>
         </div>
@@ -165,7 +168,6 @@
     <script src="Style-JS/Settings.js"></script>
     <script src="Style-JS/Secretcode.js"></script>
     <script src="Style-JS/List.js"></script>
-    <script src="Style-JS/prism.js"></script>
     <script src="Style-JS/ancors.js"></script>
     <script src="Style-JS/notice.js"></script>
     <script src="Style-JS/links.js"></script>

@@ -1,54 +1,6 @@
-var links = {
-    groups: ['Github', 'Socials'],
-    Github: {
-        list: ['Profile', 'SpiderBot', 'SpaceCompany Desktop', 'This sites code', 'Idle Universe'],
-        url: 'https://github.com/SpiderGamin',
-        info: 'Github links',
-        Profile: {
-            url: 'https://github.com/SpiderGamin/',
-            text: 'My github profile. I store all of my open souce code here.',
-        },
-        SpiderBot: {
-            url: 'https://github.com/SpiderGamin/SpiderBot-Code',
-            text: 'A discord bot im making. Its supposed to do everything. Its under heavy dev at the moment.',
-        },
-        'SpaceCompany Desktop': {
-            url: 'https://github.com/spidergamin/SpaceCompany-Desktop',
-            text: 'I am turning a web game, SpaceCompany, into a desktop app.',
-        },
-        'This sites code': {
-            url: 'https://github.com/spidergamin/spidergamin.github.io/',
-            text: 'Take a look at this sites code. You can also help code it, report bugs, and more.',
-        },
-        'Idle Universe': {
-            url: 'https://spidergaming.gitlab.io/Incremental-Universe',
-            text: 'Idle Universe (Incremental Universe) is a game me and some friends were making.',
-        },
-    },
-    Socials: {
-        list: ['Twitter', 'YouTube', 'Twitch', 'Discord'],
-        url: '',
-        info: 'Here are all my social medias. I mainly use Twitter for posts, and Discord for chats.',
-        Twitter: {
-            url: 'https://twitter.com/SpiderGaming0',
-            text: 'On my Twitter, I post random crap and complain.'
-        },
-        YouTube: {
-            url: 'https://www.youtube.com/channel/UCO2rlcllQhQdPM8PZkqEAcA',
-            text: 'My YouTube channel, I do Minecraft, challenges, vlogs, and much more! I`ts a weird place there, be warned.'
-        },
-        Twitch: {
-            url: 'https://twitch.tv/SpiderGaming00',
-            text: 'I dontuse Twitch much, however I livestream Minecraft and coronacation videos here when I do.'
-        },
-        Discord: {
-            url: 'https://discord.gg/gRMbZyU',
-            text: 'My Discord server <br><iframe src="https://discordapp.com/widget?id=523826876599500801&theme=dark" width="300" height="300" allowtransparency="true" frameborder="0"></iframe>'
-        }
-    },
-}
 
-linkManager();
+
+// linkManager();
 function linkManager() {
     var str;
     str = '';
@@ -71,9 +23,20 @@ function Get(yourUrl){
     console.log(Httpreq.responseType)         
 }
 
+var siteData = fetch('https://spidergamin.github.io/Style-JS/data.json')
+.then(response => response.json())
+.then(json => {
+    console.log(json)
+});
 
-fetch('https://spidergamin.github.io/Style-JS/data.json')
-    .then(response => response.json())
-    .then(json => {
-        console.log(json)
-    })
+
+
+
+/* vue */
+var app = new Vue({
+    el: '#links',
+    data: {
+        links: siteData?.links
+    }
+})
+
