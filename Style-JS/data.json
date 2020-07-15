@@ -53,9 +53,9 @@
         },
         {
             "link": "Discord",
-            "color": "none",
+            "color": "cornflowerblue",
             "url": "https://discord.gg/gRMbZyU",
-            "info": "My Discord server <br><iframe src=\"https://discordapp.com/widget?id=523826876599500801&theme=dark\" width=\"300\" height=\"300\" allowtransparency=\"true\" frameborder=\"0\"></iframe>"
+            "info": "My Discord server"
         }
     ],
     "lists": {

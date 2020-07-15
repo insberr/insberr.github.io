@@ -36,7 +36,14 @@ var siteData = fetch('https://spidergamin.github.io/Style-JS/data.json')
 var app = new Vue({
     el: '#links',
     data: {
-        links: siteData?.links
+        links: []
+    },
+    created() {
+        fetch('https://spidergamin.github.io/Style-JS/data.json')
+        .then(response => response.json())
+        .then(json => {
+            this.links = json.links
+        });
     }
 })
 
