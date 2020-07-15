@@ -62,3 +62,13 @@ function linkManager() {
     str += '</div>'
     document.getElementById('links').innerHTML = str;
 }
+
+
+function Get(yourUrl){
+    var Httpreq = new XMLHttpRequest(); // a new request
+    Httpreq.open("GET",yourUrl,false);
+    Httpreq.send(null);
+    Httpreq.responseText;
+    console.log(Httpreq.responseText)         
+}
+Get('https://spider-web-requests.glitch.me/ping')
