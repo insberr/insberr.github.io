@@ -69,6 +69,11 @@
         <!-- ====== Tasks Tab ====== -->
         <div id="Tasks" class="tabcontent">
             <h3 class="red-or">What I'm currently working on.</h3>
+            <div id="tasks">
+                <ul>
+                    <li v-if="task.done === false" v-for="task in tasks">{{ task.task }} <span class="date">{{ task.date }}</span></li>
+                </ul>
+            </div>
             <div class="current-task-list"></div>
             <br>
             <p>I am <span class="progressone">(broken, so 0%)</span> done with these tasks</p>
