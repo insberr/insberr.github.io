@@ -72,7 +72,7 @@ function Get(yourUrl){
 }
 
 
-fetch('https://spidergaming-node-web-requests.spidergamin.repl.co/links.json')
+fetch('https://spidergamin.github.io/data.json')
     .then(response => response.json())
     .then(json => {
         console.log(json)
