@@ -3,6 +3,7 @@ function resetSiteData() {
     if (!reset) {
         return alert('Data was not reset');
     } else {
+        cookies = false;
         localStorage.clear();
         return alert('Data was reset');
     }

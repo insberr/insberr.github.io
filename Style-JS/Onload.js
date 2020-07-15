@@ -2,7 +2,6 @@ var local;
 local = JSON.parse(localStorage.getItem('siteData'));
 var cookies;
 function onPageLoad() {
-    console.log(local?.tab)
     if (local === null) {
         localStorage.clear();
         local = {

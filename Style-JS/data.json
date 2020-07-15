@@ -60,9 +60,96 @@
     ],
     "lists": {
         "tasks": [
-            { "type": "task", "w": 1, "p": "40", "task":"make this json  ", "date": "7-15-20", "done": false },
-            { "type": "site", "w": 1, "p": "30", "task":"make this ", "date": "7-15-20", "done": false },
-            { "type": "later", "w": 1, "p": "2", "task":"make ", "date": "7-15-20", "done": false }
+            {
+                "type": "task",
+                "task": "Doing chores and hating life because I dont get to enjoy my summer",
+                "date": "unknown",
+                "done": false
+            },
+            {
+                "type": "task",
+                "task": "Attempting to relax",
+                "date": "unknown",
+                "done": false
+            },
+            {
+                "type": "task",
+                "task": "Rewriting this sites JavaScript",
+                "date": "unknown",
+                "done": false
+            },
+            {
+                "type": "task",
+                "task": "Learning JavaScript mainly using nodejs",
+                "date": "unknown",
+                "done": false
+            },
+            {
+                "type": "task",
+                "task": "Lots of homework",
+                "date": "unknown",
+                "done": true
+            },
+            {
+                "type": "task",
+                "task": "To add more javascript and to make these lists more easy to manage",
+                "date": "unknown",
+                "done": true
+            },
+            {
+                "type": "task",
+                "task": "When you reload the page it will stay on the tab you had selected",
+                "date": "unknown",
+                "done": true
+            },
+            {
+                "type": "task",
+                "task": "Moving Files",
+                "date": "unknown",
+                "done": true
+            },
+            {
+                "type": "task",
+                "task": "Learning HTML and CSS",
+                "date": "unknown",
+                "done": true
+            },
+            {
+                "type": "task",
+                "task": "This websites style",
+                "date": "unknown",
+                "done": true
+            },
+            {
+                "type": "task",
+                "task": "A JavaScript secret code encode/decode thing",
+                "date": "unknown",
+                "done": true
+            },
+            {
+                "type": "task",
+                "task": "Using JavaScript to set the content of the list item and the order",
+                "date": "unknown",
+                "done": true
+            },
+            {
+                "type": "task",
+                "task": "Use JS for the progress bars",
+                "date": "unknown",
+                "done": true
+            },
+            {
+                "type": "site",
+                "task": "test site task",
+                "date": "7-15-20",
+                "done": false
+            },
+            {
+                "type": "later",
+                "task": "Make a game using Java",
+                "date": "7-15-20",
+                "done": false
+            }
         ]
     }
 }

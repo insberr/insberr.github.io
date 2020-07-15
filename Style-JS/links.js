@@ -16,21 +16,6 @@ function linkManager() {
 }
 
 
-function Get(yourUrl){
-    var Httpreq = new XMLHttpRequest(); // a new request
-    Httpreq.open("GET",yourUrl,false);
-    Httpreq.responseType
-    console.log(Httpreq.responseType)         
-}
-
-var siteData = fetch('https://spidergamin.github.io/Style-JS/data.json')
-.then(response => response.json())
-.then(json => {
-    console.log(json)
-});
-
-
-
 
 
 
