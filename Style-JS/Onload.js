@@ -19,9 +19,9 @@ function onPageLoad() {
         pageAncors();
         document.getElementById("outputSecretCode").innerHTML = "Your translated text will go here";
     }
-    
+    /*
     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-        document.body('tab').style.color = 'red'
+        document.getElementsByTagName('body')[0].style.backgroundColor= 'red'
     }
-    
+    */
 };
