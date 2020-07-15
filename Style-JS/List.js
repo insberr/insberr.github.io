@@ -95,7 +95,7 @@ var tasks = new Vue({
         fetch('https://spidergamin.github.io/Style-JS/data.json')
         .then(response => response.json())
         .then(json => {
-            this.links = json.lists.tasks
+            this.tasks = json.lists.tasks
         });
     }
 })
