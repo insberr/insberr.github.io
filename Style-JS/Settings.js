@@ -1,4 +1,3 @@
-
 function resetSiteData() {
     var reset = confirm('Are you sure you want to reset the site data?');
     if (!reset) {

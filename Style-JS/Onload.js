@@ -2,6 +2,7 @@ var local;
 local = JSON.parse(localStorage.getItem('siteData'));
 var cookies;
 function onPageLoad() {
+    console.log(local?.tab)
     if (local === null) {
         localStorage.clear();
         local = {
@@ -18,9 +19,9 @@ function onPageLoad() {
         pageAncors();
         document.getElementById("outputSecretCode").innerHTML = "Your translated text will go here";
     }
-    /*
+    
     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-        document.getElementsByClassName('tab')[0].style.width = '100%'
+        document.body('tab').style.color = 'red'
     }
-    */
+    
 };

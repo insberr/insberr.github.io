@@ -2,8 +2,8 @@ var links = {
     groups: ['Github', 'Socials'],
     Github: {
         list: ['Profile', 'SpiderBot', 'SpaceCompany Desktop', 'This sites code', 'Idle Universe'],
-        url: 'https://',
-        info: 'Github lol',
+        url: 'https://github.com/SpiderGamin',
+        info: 'Github links',
         Profile: {
             url: 'https://github.com/SpiderGamin/',
             text: 'My github profile. I store all of my open souce code here.',
@@ -14,7 +14,7 @@ var links = {
         },
         'SpaceCompany Desktop': {
             url: 'https://github.com/spidergamin/SpaceCompany-Desktop',
-            text: 'I am turning a web game, <a href="https://github.com/sparticle999/spacecompany" target="_blank">SpaceCompany</a>, into a desktop app.',
+            text: 'I am turning a web game, SpaceCompany, into a desktop app.',
         },
         'This sites code': {
             url: 'https://github.com/spidergamin/SpiderGaming-Website',
@@ -55,7 +55,7 @@ function linkManager() {
     links.groups.forEach(group => {
         str += `<div><h3><a href="${links[group].url}" target="_blank">${group}</a></h3>${links[group].info}`;
         links[group].list.forEach(item => {
-            str += `<br><h5><a href="${links[group][item].url}" target="_blank">${item}</a></h5><p>${links[group][item].text}</p>`;
+            str += `<br><h5><a href="${links[group][item].url}" target="_blank" data-tooltip="Link">${item}</a></h5><p>${links[group][item].text}</p>`;
         })
         str += '<br><br><hr1-solidred></hr1-solidred>'
     });
