@@ -67,3 +67,35 @@ var pb = ".05%";
 document.getElementsByClassName("progressone")[0].innerHTML = pb;
 document.getElementsByClassName("progressone")[1].innerHTML = pb;
 document.getElementsByClassName("progressbarone")[0].style.width = pb;
+
+
+
+/* About > links */
+var app = new Vue({
+    el: '#links',
+    data: {
+        links: []
+    },
+    created() {
+        fetch('https://spidergamin.github.io/Style-JS/data.json')
+        .then(response => response.json())
+        .then(json => {
+            this.links = json.links
+        });
+    }
+})
+
+/* Tasks > Tasks */
+var tasks = new Vue({
+    el: '#tasks',
+    data: {
+        tasks: []
+    },
+    created() {
+        fetch('https://spidergamin.github.io/Style-JS/data.json')
+        .then(response => response.json())
+        .then(json => {
+            this.links = json.lists.tasks
+        });
+    }
+})
