@@ -67,8 +67,13 @@ function linkManager() {
 function Get(yourUrl){
     var Httpreq = new XMLHttpRequest(); // a new request
     Httpreq.open("GET",yourUrl,false);
-    Httpreq.send(null);
-    Httpreq.responseText;
-    console.log(Httpreq.responseText)         
+    Httpreq.responseType
+    console.log(Httpreq.responseType)         
 }
-Get('https://spider-web-requests.glitch.me/ping')
+
+
+fetch('https://spidergaming-node-web-requests.spidergamin.repl.co/links.json')
+    .then(response => response.json())
+    .then(json => {
+        console.log(json)
+    })

@@ -1,0 +1,13 @@
+{
+    "site": {
+        "name": "SpiderGaming's Website"
+    },
+    "links": [
+        { "link": "github", "url": "https://", "info": "my github" }
+    ],
+    "lists": {
+        "todo": [
+            { "task": "make this json work", "date": "7-15-20", "done": false }
+        ]
+    }
+}
