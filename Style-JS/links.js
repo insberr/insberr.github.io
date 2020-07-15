@@ -17,7 +17,7 @@ var links = {
             text: 'I am turning a web game, SpaceCompany, into a desktop app.',
         },
         'This sites code': {
-            url: 'https://github.com/spidergamin/SpiderGaming-Website',
+            url: 'https://github.com/spidergamin/spidergamin.github.io/',
             text: 'Take a look at this sites code. You can also help code it, report bugs, and more.',
         },
         'Idle Universe': {
