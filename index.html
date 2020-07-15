@@ -76,10 +76,12 @@
             </div>
             <div class="current-task-list"></div>
             <br>
-            <p>I am <span class="progressone">(broken, so 0%)</span> done with these tasks</p>
-            <div class="progress-one">
-                <div class="progress-two w3-container progressbarone" style="width:23%"><span
-                        class="progressone">(broken, so 0%)</span></div>
+            <div id="progressbar">
+            <p>I am <span class="progressone">{{ amount }}%</span> done with these tasks</p>
+                <div class="progress-one">
+                    <div class="progress-two w3-container progressbarone" v-bind:style="{ width: amount + '%' }"><span
+                            class="progressone">{{ amount }}%<span></div>
+                </div>
             </div>
             <br>
             <hr class="hr2-solidred">

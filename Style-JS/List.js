@@ -33,7 +33,7 @@ var finishedTasks = [
     "Using JavaScript to set the content of the list item and the order",
     "Use JS for the progress bars"
 ];
-
+/*
 var str = '<ul>';
 currentTasks.forEach(function(currentTasks) {
     str += '<li>' + currentTasks + '</li>';
@@ -67,7 +67,7 @@ var pb = ".05%";
 document.getElementsByClassName("progressone")[0].innerHTML = pb;
 document.getElementsByClassName("progressone")[1].innerHTML = pb;
 document.getElementsByClassName("progressbarone")[0].style.width = pb;
-
+*/
 
 
 /* About > links */
@@ -99,3 +99,20 @@ var tasks = new Vue({
         });
     }
 })
+
+var progressbar = new Vue({
+    el: '#progressbar',
+    data: {
+        amount: 0
+    }
+})
+
+var amt;
+
+tasks.tasks.forEach(task => {
+    var w = task.w;
+    var p = tak.p;
+    amt += w % p;
+});
+
+progressbar.amount = amt;

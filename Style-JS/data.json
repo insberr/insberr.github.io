@@ -60,9 +60,9 @@
     ],
     "lists": {
         "tasks": [
-            { "type": "task", "w": 1, "task":"make this json  ", "date": "7-15-20", "done": false },
-            { "type": "site", "w": 1, "task":"make this ", "date": "7-15-20", "done": false },
-            { "type": "later", "w": 1, "task":"make ", "date": "7-15-20", "done": false }
+            { "type": "task", "w": 1, "p": "40", "task":"make this json  ", "date": "7-15-20", "done": false },
+            { "type": "site", "w": 1, "p": "30", "task":"make this ", "date": "7-15-20", "done": false },
+            { "type": "later", "w": 1, "p": "2", "task":"make ", "date": "7-15-20", "done": false }
         ]
     }
 }
