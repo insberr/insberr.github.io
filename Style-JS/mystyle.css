@@ -28,30 +28,22 @@
 /* width */
 ::-webkit-scrollbar {
     width: 5px;
-  }
+}
   
-  /* Track */
-  ::-webkit-scrollbar-track {
+/* Track */
+::-webkit-scrollbar-track {
     background: transparent; 
-  }
+}
    
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
+/* Handle */
+::-webkit-scrollbar-thumb {
     background: #888; 
     border-radius: 2px;
-  }
+}
   
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
+/* Handle On Hover */
+::-webkit-scrollbar-thumb:hover {
     background: #555; 
-  }
-
-/* ============ Custom Font ============ */
-/* Specify in CSS */
-code { font-family: 'Fira Code', monospace; }
-
-@supports (font-variation-settings: normal) {
-  code { font-family: 'Fira Code VF', monospace; }
 }
 
 
@@ -60,14 +52,11 @@ code { font-family: 'Fira Code', monospace; }
   src: url('../Handwriting1.ttf') format('truetype');
 }
 
-/* ============ Main ============ */
 
 body {
     font-family: /*"MyHand",*/Arial, sans-serif;
     font-size: 20px;
 }
-
-/* ============ Other ============ */
 
 #notice {
     background-color: orange;
@@ -152,28 +141,12 @@ a:active {
     color: darkgray;
 }
 
-/* ======== Custom HTML tags ======== */
-
-hr1-solidred {
-    /* hr */
-    display: block;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-    margin-left: auto;
-    margin-right: auto;
-    /* style */
+.hr1-solidred {
     border: 1px solid red;
     border-radius: 2px;
 }
 
-hr2-solidred {
-    /* hr */
-    display: block;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-    margin-left: auto;
-    margin-right: auto;
-    /* style */
+.hr2-solidred {
     border: 2px solid red;
     border-radius: 2px;
 }

@@ -72,7 +72,7 @@ function Get(yourUrl){
 }
 
 
-fetch('https://spidergamin.github.io/data.json')
+fetch('https://spidergamin.github.io/Style-JS/data.json')
     .then(response => response.json())
     .then(json => {
         console.log(json)
