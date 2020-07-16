@@ -62,6 +62,12 @@
         "tasks": [
             {
                 "type": "task",
+                "task": "PROGRAMMING / Learning vue.js",
+                "date": "7-15-20",
+                "done": false
+            },
+            {
+                "type": "task",
                 "task": "Doing chores and hating life because I dont get to enjoy my summer",
                 "date": "unknown",
                 "done": false
@@ -73,7 +79,7 @@
                 "done": false
             },
             {
-                "type": "task",
+                "type": "site",
                 "task": "Rewriting this sites JavaScript",
                 "date": "unknown",
                 "done": false
@@ -85,20 +91,26 @@
                 "done": false
             },
             {
+                "type": "site",
+                "task": "Using vue.js for this website",
+                "date": "7-15-20",
+                "done": false
+            },
+            {
                 "type": "task",
                 "task": "Lots of homework",
                 "date": "unknown",
                 "done": true
             },
             {
-                "type": "task",
-                "task": "To add more javascript and to make these lists more easy to manage",
+                "type": "site",
+                "task": "Use JavaScript for the lists",
                 "date": "unknown",
                 "done": true
             },
             {
-                "type": "task",
-                "task": "When you reload the page it will stay on the tab you had selected",
+                "type": "site",
+                "task": "The page stays on the same tab even when you reload",
                 "date": "unknown",
                 "done": true
             },
@@ -115,37 +127,37 @@
                 "done": true
             },
             {
-                "type": "task",
+                "type": "site",
                 "task": "This websites style",
                 "date": "unknown",
                 "done": true
             },
             {
-                "type": "task",
+                "type": "site",
                 "task": "A JavaScript secret code encode/decode thing",
                 "date": "unknown",
                 "done": true
             },
             {
-                "type": "task",
-                "task": "Using JavaScript to set the content of the list item and the order",
+                "type": "site",
+                "task": "Use JavaScript to set the content of the list items",
                 "date": "unknown",
                 "done": true
             },
             {
-                "type": "task",
+                "type": "site",
                 "task": "Use JS for the progress bars",
                 "date": "unknown",
                 "done": true
             },
             {
                 "type": "site",
-                "task": "test site task",
+                "task": "Combining all the JS into less files",
                 "date": "7-15-20",
                 "done": false
             },
             {
-                "type": "later",
+                "type": "task",
                 "task": "Make a game using Java",
                 "date": "7-15-20",
                 "done": false

@@ -77,7 +77,7 @@ fetch('https://spidergamin.github.io/Style-JS/data.json')
 });
 
 /* About > links */
-var app = new Vue({
+var links = new Vue({
     el: '#links',
     data: {
         links: []

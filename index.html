@@ -71,17 +71,12 @@
             <div id="tasks">
                 <h3 class="red-or">What I'm currently working on.</h3>
                 <ul>
-                    <li v-for="task in tasks" v-if="task.type === 'task'" v-if="task.done === false">{{ task.task }} <span class="date">{{ task.date }}</span></li>
-                </ul>
-                <br>
-                <h3 class="red-or">Things I plan on doing later</h3>
-                <ul>
-                    <li v-for="task in tasks" v-if="task.type === 'later'">{{ task.task }} <span class="date">{{ task.date }}</span></li>
+                    <li v-for="task in tasks" v-if="task.type === 'task' && task.done === false">{{ task.task }} <span class="date">{{ task.date }} - {{ task.type }}</span></li>
                 </ul>
                 <br>
                 <h3 class="red-or">Plans For This Website</h3>
                 <ul>
-                    <li v-for="task in tasks" v-if="task.type === 'site'" v-if="task.done === false">{{ task.task }} <span class="date">{{ task.date }}</span></li>
+                    <li v-for="task in tasks" v-if="task.type === 'site' && task.done === false">{{ task.task }} <span class="date">{{ task.date }}</span></li>
                 </ul>
                 <br>
                 <h3 class="red-or">Things I've finished</h3>
