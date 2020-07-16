@@ -84,7 +84,7 @@ function navBar(evt, tab) {
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
         'event': 'Pageview',
-        'pagePath': `https://spidergaming.github.io/${tab}`,
+        'pagePath': tab,
         'pageTitle': tab //some arbitrary name for the page/state
     });
 }
