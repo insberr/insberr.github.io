@@ -114,7 +114,7 @@ var links = new Vue({
     }
 })
 
-/* Tasks > Tasks */
+/* Tasks */
 var tasks = new Vue({
     el: '#tasks',
     data: {

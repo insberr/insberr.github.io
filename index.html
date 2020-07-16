@@ -81,51 +81,24 @@
         <!-- ====== Tasks Tab ====== -->
         <div id="Tasks" class="tabcontent">
             <div id="tasks">
-                <h3 class="red-or">What I'm currently working on.</h3>
+                <h3 class="red-or">Things I'm Doing</h3>
                 <ul>
-                    <li v-for="task in tasks" v-if="task.type === 'task' && task.done === false">{{ task.task }} <span
+                    <li v-for="task in tasks" v-if="task.type === 'task' && task.done === false">{{ task.task }}<br><span
                             class="date">{{ task.date }} - {{ task.type }}</span></li>
                 </ul>
                 <br>
                 <h3 class="red-or">Plans For This Website</h3>
                 <ul>
-                    <li v-for="task in tasks" v-if="task.type === 'site' && task.done === false">{{ task.task }} <span
+                    <li v-for="task in tasks" v-if="task.type === 'site' && task.done === false">{{ task.task }}<br><span
                             class="date">{{ task.date }} - {{ task.type }}</span></li>
                 </ul>
                 <br>
-                <h3 class="red-or">Things I've finished</h3>
+                <h3 class="red-or">Things I've Finished</h3>
                 <ul>
-                    <li v-for="task in tasks" v-if="task.done === true">{{ task.task }} <span
+                    <li v-for="task in tasks" v-if="task.done === true">{{ task.task }}<br><span
                             class="date">{{ task.date }} - {{ task.type }}</span></li>
                 </ul>
             </div>
-            <div class="current-task-list"></div>
-            <br>
-            <!--
-            <div id="progressbar">
-            <p>I am <span class="progressone">{{ amount }}%</span> done with these tasks</p>
-                <div class="progress-one">
-                    <div class="progress-two w3-container progressbarone" v-bind:style="{ width: amount + '%' }"><span
-                            class="progressone">{{ amount }}%<span></div>
-                </div>
-            </div>
-            <br>
-            <hr class="hr2-solidred">
-            <h3 class="red-or">Things I plan on doing later</h3>
-            <div class="later-task-list"></div>
-            <div id="later">
-                <ul>
-                    <li></li>
-                </ul>
-            </div>
-            <br>
-            <h3 class="red-or">Plans For This Website</h3>
-            <div class="plans-web-list"></div>
-            <br>
-            <hr class="hr2-solidred">
-            <h3 class="red-or">Things I've finished</h3>
-            <div class="finished-task-list"></div>
-        -->
         </div>
         <!-- ====== Posts Tab ====== -->
         <div id="Posts" class="tabcontent">

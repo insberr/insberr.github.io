@@ -58,14 +58,6 @@ body {
     font-size: 20px;
 }
 
-#notice {
-    background-color: orange;
-    text-align: center;
-    margin-left: 5%;
-    margin-right: 5%;
-    padding: 10px 10px;
-}
-
 .date {
     color: gray;
     font-size: 15px;
@@ -95,7 +87,6 @@ body {
     outline: 0;
     border: 1.5px solid red;
 }
-
 .button-tran-red:hover {
     color: black;
     border-radius: 5px;
@@ -127,8 +118,6 @@ body {
 [data-tooltip] {
     position: relative;
 }
-
-/* ========= Links ========= */
 
 a:link {
     color:rgb(211, 0, 0);
@@ -201,8 +190,8 @@ a:active {
 /* == The Tab Content == */
 .tabcontent {
     display: none;
-    -webkit-animation: fadeEffect 1.5s;
-    animation: fadeEffect 1.5s;
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s;
 }
         
 /* == The Animations == */
@@ -216,48 +205,26 @@ a:active {
     to {opacity: 1;}
 }
 
-/* ============ Pogress bar ============ */
-
-.progress-one {
-    color: #000;
-    background-color: #f1f1f1;
-    border-radius: 16px;
-}
-
-.progress-two {
-    padding: 5px 10px;
-    font-size: 12px;
-    border-radius: 16px;
-    display: table;
-    clear: both;
-    color: #fff;
-    background-color: rgb(243, 82, 33);
-}
-
-.w3-container {
-    padding: 5px 15px;
-}
-
-.w3-container:after,.w3-container:before {
-    content:"";
-}
-
-.w3-round-xlarge {
-    border-radius:16px;
-}
-
-.w3-blue,.w3-hover-blue:hover {
-	color: #fff!important;
-	background-color: #2196F3!important;
-}
-
-.w3-light-grey,.w3-hover-light-grey:hover,.w3-light-gray,.w3-hover-light-gray:hover {
-    color:#000!important;
-    background-color:#f1f1f1!important;
-}
-
-.w3-round,.w3-round-medium {
-    border-radius:16px;
-}
-
 /* ======== @media content size ======== */
+@media only screen and (min-width: 601px) {
+    .tab button {
+        padding: 14px 16px;
+        font-size: 15px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    body {
+        font-size: 15px;
+    }
+    .tab button {
+        padding: 10px 12px;
+    }
+}
+@media only screen and (max-width: 341px) {
+    body {
+        font-size: 15px;
+    }
+    .tab button {
+        padding: 8px 10px;
+    }
+}
