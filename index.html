@@ -16,14 +16,14 @@
 
     <!-- vue.js -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="Style-JS/mystyle.css">
-    <link rel="shortcut icon" href="SpiderGaminIcon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="https://spidergamin.github.io/SpiderGaminIcon.png" type="image/x-icon" />
 
     <!-- Embed Stuffs -->
     <link type="application/json+oembed"
-        href="https://gist.githubusercontent.com/SpiderGamin/c78c0a7532b78735b5989e8444eaf350/raw/f0e6f838e971cc6b1c3b93f5546754711744e5ea/oembed.json" />
+        href="https://spidergamin.github.io/Style-JS/oembed.json" />
     <!-- Primary Meta Tags -->
     <meta name="title" content="SpiderGaming's Website">
     <meta name="description" content="I am SpiderGaming, here is my website. Info about me, links, and more!">
@@ -47,19 +47,18 @@
 <body onload="onPageLoad()">
     <!-- ====== Navigation Bar ====== -->
     <div class="tab">
-        <button class="tablinks Home" onclick="navtwotab(event, 'Home')" id="activeonload"
+        <button class="tablinks Home" onclick="navBar(event, 'Home')" id="activeonload"
             title="Home Tab">Home</button>
-        <button class="tablinks Tasks" onclick="navtwotab(event, 'Tasks')" title="Things I'm Doing">Tasks</button>
-        <button class="tablinks Posts" onclick="navtwotab(event, 'Posts')" title="Posts">Posts</button>
-        <button class="tablinks Code" onclick="navtwotab(event, 'Code')" title="Code stuffs">Code</button>
-        <button class="tablinks About" onclick="navtwotab(event, 'About')" title="About Me And Links">About</button>
-        <button class="tablinks Other" onclick="navtwotab(event, 'Other')" title="Idk yet">Other</button>
+        <button class="tablinks Tasks" onclick="navBar(event, 'Tasks')" title="Things I'm Doing">Tasks</button>
+        <button class="tablinks Posts" onclick="navBar(event, 'Posts')" title="Posts">Posts</button>
+        <button class="tablinks Code" onclick="navBar(event, 'Code')" title="Code stuffs">Code</button>
+        <button class="tablinks About" onclick="navBar(event, 'About')" title="About Me And Links">About</button>
+        <button class="tablinks Other" onclick="navBar(event, 'Other')" title="Idk yet">Other</button>
     </div>
     <!-- ====== Nav Bar Tab Content ====== -->
     <div class="page-content">
         <!-- ====== Home Tab ====== -->
         <div id="Home" class="tabcontent">
-            <div id="notice"></div>
             <h3 class="red-or">Welcome</h3>
             <p>Hello, my name is Jonah Matteson (AKA SpiderGamin or SpiderGaming). Welcome to my website! Soon I
                 will use this as my blog, however I'm still working on the JavaScript. Have a look around.</p>
@@ -168,13 +167,13 @@
             <br>Reset all site settings.
             <br><button class="button-tran-red" onclick="resetSiteData()">Reset</button>
         </div>
-        <div class="Secret" onclick="navtwotab(event, 'Secret')"></div>
+        <div class="Secret" onclick="navBar(event, 'Secret')"></div>
         <div id="Secret" class="tabcontent">
             <p>You found the secret page</p>
         </div>
     </div>
     <!-- === Settings button (gear) === -->
-    <div class="settings-svg Settings" onclick="navtwotab(event, 'Settings')">
+    <div class="settings-svg Settings" onclick="navBar(event, 'Settings')">
         <svg class="bi bi-gear" width="25px" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd"
                 d="M10.837 3.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 016.377 5.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 01-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 011.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 012.692 1.115l.094.319c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 012.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 011.115-2.693l.319-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 01-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159a1.873 1.873 0 01-2.693-1.115l-.094-.319zm-2.633-.283c.527-1.79 3.064-1.79 3.592 0l.094.319a.873.873 0 001.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 00.52 1.255l.319.094c1.79.527 1.79 3.064 0 3.592l-.319.094a.873.873 0 00-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 00-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 00-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 00-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 00.52-1.255l-.16-.292c-.892-1.64.901-3.433 2.541-2.54l.292.159a.873.873 0 001.255-.52l.094-.319z"
@@ -187,17 +186,10 @@
     <div id="Site" class="tabcontent">
         <p>My site uses cookies to save the tab you left off on. My site also uses Google Analytics which tracks things such as Demographics, site veiws, and more.</p>
     </div>
-    <div class="Site" style="position: fixed; bottom: 5px; right: 5px; font-size: 12px; color: gray; cursor: pointer;" onclick="navtwotab(event, 'Site')">Cookies and Analytics</div>
+    <div class="Site" style="position: fixed; bottom: 5px; right: 5px; font-size: 12px; color: gray; cursor: pointer;" onclick="navBar(event, 'Site')">Cookies and Analytics</div>
     <!-- The JavaScript -->
-    <script src="Style-JS/jquery-3.5.1.min.js"></script>
-    <script src="Style-JS/Onload.js"></script>
-    <script src="Style-JS/Navbar.js"></script>
-    <script src="Style-JS/Settings.js"></script>
+    <script src="Style-JS/main.js"></script>
     <script src="Style-JS/Secretcode.js"></script>
-    <script src="Style-JS/List.js"></script>
-    <script src="Style-JS/ancors.js"></script>
-    <script src="Style-JS/notice.js"></script>
-    <script src="Style-JS/links.js"></script>
 </body>
 
 </html>
