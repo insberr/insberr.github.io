@@ -7,13 +7,22 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-172427288-1"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-    gtag('config', 'UA-172427288-1');
+        gtag('config', 'UA-172427288-1');
     </script>
-
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MN3JQ2H');</script>
+    <!-- End Google Tag Manager -->
     <!-- vue.js -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -22,8 +31,7 @@
     <link rel="shortcut icon" href="https://spidergamin.github.io/SpiderGaminIcon.png" type="image/x-icon" />
 
     <!-- Embed Stuffs -->
-    <link type="application/json+oembed"
-        href="https://spidergamin.github.io/Style-JS/oembed.json" />
+    <link type="application/json+oembed" href="https://spidergamin.github.io/Style-JS/oembed.json" />
     <!-- Primary Meta Tags -->
     <meta name="title" content="SpiderGaming's Website">
     <meta name="description" content="I am SpiderGaming, here is my website. Info about me, links, and more!">
@@ -47,8 +55,7 @@
 <body onload="onPageLoad()">
     <!-- ====== Navigation Bar ====== -->
     <div class="tab">
-        <button class="tablinks Home" onclick="navBar(event, 'Home')" id="activeonload"
-            title="Home Tab">Home</button>
+        <button class="tablinks Home" onclick="navBar(event, 'Home')" id="activeonload" title="Home Tab">Home</button>
         <button class="tablinks Tasks" onclick="navBar(event, 'Tasks')" title="Things I'm Doing">Tasks</button>
         <button class="tablinks Posts" onclick="navBar(event, 'Posts')" title="Posts">Posts</button>
         <button class="tablinks Code" onclick="navBar(event, 'Code')" title="Code stuffs">Code</button>
@@ -57,6 +64,10 @@
     </div>
     <!-- ====== Nav Bar Tab Content ====== -->
     <div class="page-content">
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MN3JQ2H" height="0" width="0"
+                style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
         <!-- ====== Home Tab ====== -->
         <div id="Home" class="tabcontent">
             <h3 class="red-or">Welcome</h3>
@@ -70,17 +81,20 @@
             <div id="tasks">
                 <h3 class="red-or">What I'm currently working on.</h3>
                 <ul>
-                    <li v-for="task in tasks" v-if="task.type === 'task' && task.done === false">{{ task.task }} <span class="date">{{ task.date }} - {{ task.type }}</span></li>
+                    <li v-for="task in tasks" v-if="task.type === 'task' && task.done === false">{{ task.task }} <span
+                            class="date">{{ task.date }} - {{ task.type }}</span></li>
                 </ul>
                 <br>
                 <h3 class="red-or">Plans For This Website</h3>
                 <ul>
-                    <li v-for="task in tasks" v-if="task.type === 'site' && task.done === false">{{ task.task }} <span class="date">{{ task.date }}</span></li>
+                    <li v-for="task in tasks" v-if="task.type === 'site' && task.done === false">{{ task.task }} <span
+                            class="date">{{ task.date }} - {{ task.type }}</span></li>
                 </ul>
                 <br>
                 <h3 class="red-or">Things I've finished</h3>
                 <ul>
-                    <li v-for="task in tasks" v-if="task.done === true">{{ task.task }} <span class="date">{{ task.date }} - {{ task.type }}</span></li>
+                    <li v-for="task in tasks" v-if="task.done === true">{{ task.task }} <span
+                            class="date">{{ task.date }} - {{ task.type }}</span></li>
                 </ul>
             </div>
             <div class="current-task-list"></div>
@@ -153,7 +167,8 @@
         <div id="Other" class="tabcontent">
             <h3 class="red-or">Other</h3>
             <p>Other random things are here</p>
-            <p>Check out the <a href="pages/requests.html">requests</a> page to send things to a server and maybe get a response.</p>
+            <p>Check out the <a href="pages/requests.html">requests</a> page to send things to a server and maybe get a
+                response.</p>
             <p>Check out the <a href="pages/fun.html">fun</a> page to do small games and whatnot.</p>
         </div>
         <!-- ====== The settings tab contenet ====== -->
@@ -184,9 +199,11 @@
         </svg>
     </div>
     <div id="Site" class="tabcontent">
-        <p>My site uses cookies to save the tab you left off on. My site also uses Google Analytics which tracks things such as Demographics, site veiws, and more.</p>
+        <p>My site uses cookies to save the tab you left off on. My site also uses Google Analytics which tracks things
+            such as Demographics, site veiws, and more.</p>
     </div>
-    <div class="Site" style="position: fixed; bottom: 5px; right: 5px; font-size: 12px; color: gray; cursor: pointer;" onclick="navBar(event, 'Site')">Cookies and Analytics</div>
+    <div class="Site" style="position: fixed; bottom: 5px; right: 5px; font-size: 12px; color: gray; cursor: pointer;"
+        onclick="navBar(event, 'Site')">Cookies and Analytics</div>
     <!-- The JavaScript -->
     <script src="Style-JS/main.js"></script>
     <script src="Style-JS/Secretcode.js"></script>

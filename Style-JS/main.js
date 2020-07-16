@@ -29,7 +29,7 @@ function onPageLoad() {
 
 
 /* ----- Hash Tab linking ----- */
-function removeHash() { 
+function removeHash() {
     history.pushState("", document.title, window.location.pathname + window.location.search);
 };
 var Tab;
@@ -38,7 +38,7 @@ function pageAncors() {
         var tabHash = location.hash;
         tabHash = tabHash.toLowerCase()
         tabHash = tabHash.charAt(1).toUpperCase() + tabHash.slice(2);
-        tabHash = tabHash.replace('#','');
+        tabHash = tabHash.replace('#', '');
         removeHash();
         return document.getElementsByClassName(tabHash)[0].click();
     } else {
@@ -46,7 +46,7 @@ function pageAncors() {
     }
 }
 
-$(window).bind('hashchange', function() {
+$(window).bind('hashchange', function () {
     pageAncors();
 });
 
@@ -81,6 +81,12 @@ function navBar(evt, tab) {
     if (cookies) {
         localStorage.setItem("siteData", JSON.stringify(local));
     }
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+        'event': 'Pageview',
+        'pagePath': `https://spidergaming.github.io/${tab}`,
+        'pageTitle': tab //some arbitrary name for the page/state
+    });
 }
 
 
@@ -101,10 +107,10 @@ var links = new Vue({
     },
     created() {
         fetch('https://spidergamin.github.io/Style-JS/data.json')
-        .then(response => response.json())
-        .then(json => {
-            this.links = json.links
-        });
+            .then(response => response.json())
+            .then(json => {
+                this.links = json.links
+            });
     }
 })
 
@@ -116,9 +122,9 @@ var tasks = new Vue({
     },
     created() {
         fetch('https://spidergamin.github.io/Style-JS/data.json')
-        .then(response => response.json())
-        .then(json => {
-            this.tasks = json.lists.tasks
-        });
+            .then(response => response.json())
+            .then(json => {
+                this.tasks = json.lists.tasks
+            });
     }
 })
