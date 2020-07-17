@@ -57,12 +57,12 @@
 <body onload="onPageLoad()">
     <!-- ====== Navigation Bar ====== -->
     <div class="tab">
-        <button class="tablinks Home" onclick="navBar(event, 'Home')" id="activeonload" title="Home Tab">Home</button>
-        <button class="tablinks Tasks" onclick="navBar(event, 'Tasks')" title="Things I'm Doing">Tasks</button>
-        <button class="tablinks Posts" onclick="navBar(event, 'Posts')" title="Posts">Posts</button>
-        <button class="tablinks Code" onclick="navBar(event, 'Code')" title="Code stuffs">Code</button>
-        <button class="tablinks About" onclick="navBar(event, 'About')" title="About Me And Links">About</button>
-        <button class="tablinks Other" onclick="navBar(event, 'Other')" title="Idk yet">Other</button>
+        <button class="tablinks home" onclick="navBar(event, 'home')" id="activeonload" title="Home Tab">Home</button>
+        <button class="tablinks tasks" onclick="navBar(event, 'tasks')" title="Things I'm Doing">Tasks</button>
+        <button class="tablinks posts" onclick="navBar(event, 'posts')" title="Posts">Posts</button>
+        <button class="tablinks code" onclick="navBar(event, 'code')" title="Code stuffs">Code</button>
+        <button class="tablinks about" onclick="navBar(event, 'about')" title="About Me And Links">About</button>
+        <button class="tablinks other" onclick="navBar(event, 'other')" title="Idk yet">Other</button>
     </div>
     <!-- ====== Nav Bar Tab Content ====== -->
     <div class="page-content">
@@ -70,27 +70,36 @@
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MN3JQ2H" height="0" width="0"
                 style="display:none;visibility:hidden"></iframe></noscript>
         <!-- End Google Tag Manager (noscript) -->
+        <!-- ====== Error Tab ====== -->
+        <div id="errortab" class="tabcontent"></div>
         <!-- ====== Home Tab ====== -->
-        <div id="Home" class="tabcontent">
+        <div id="home" class="tabcontent">
             <h3 class="red-or">Welcome</h3>
-            <p>Hello, my name is Jonah Matteson (AKA SpiderGamin or SpiderGaming). Welcome to my website! Soon I
-                will use this as my blog, however I'm still working on the JavaScript. Have a look around.</p>
+            <p>Hello there, I'm SpiderGaming, and SpiderGaming0 on Twitter. Welcome to my website! This site started as
+                a simple project for me to play around with HTML, CSS, and JavaScript, later deciding to use it as my
+                personal website. More info about me and this website can be found <a href="##about-site"
+                    onclick="navBar(event, 'about')">here</a>.
+            </p>
+            <p>On this website you can see my blog, check on what I'm doing, find my socials, and find info about me and
+                this website. Have a look around!
+            </p>
             <p>Remember! If you have a tip, suggestion, fix, etc, please let me know by submitting an issue on the
                 Gitlab code, found <a href="https://github.com/spidergamin/spidergamin.github.io/">here</a>.
+            </p>
         </div>
         <!-- ====== Tasks Tab ====== -->
-        <div id="Tasks" class="tabcontent">
-            <div id="tasks">
+        <div id="tasks" class="tabcontent">
+            <div id="tasks-list">
                 <h3 class="red-or">Things I'm Doing</h3>
                 <ul>
-                    <li v-for="task in tasks" v-if="task.type === 'task' && task.done === false">{{ task.task }}<br><span
-                            class="date">{{ task.date }} - {{ task.type }}</span></li>
+                    <li v-for="task in tasks" v-if="task.type === 'task' && task.done === false">
+                        {{ task.task }}<br><span class="date">{{ task.date }} - {{ task.type }}</span></li>
                 </ul>
                 <br>
                 <h3 class="red-or">Plans For This Website</h3>
                 <ul>
-                    <li v-for="task in tasks" v-if="task.type === 'site' && task.done === false">{{ task.task }}<br><span
-                            class="date">{{ task.date }} - {{ task.type }}</span></li>
+                    <li v-for="task in tasks" v-if="task.type === 'site' && task.done === false">
+                        {{ task.task }}<br><span class="date">{{ task.date }} - {{ task.type }}</span></li>
                 </ul>
                 <br>
                 <h3 class="red-or">Things I've Finished</h3>
@@ -101,12 +110,12 @@
             </div>
         </div>
         <!-- ====== Posts Tab ====== -->
-        <div id="Posts" class="tabcontent">
+        <div id="posts" class="tabcontent">
             <h3 class='red-or'>Posts</h3>
             <p>Here is where things I post will go. (still thinking of how ill do it)</p>
         </div>
         <!-- ====== Code tab Tab ====== -->
-        <div id="Code" class="tabcontent">
+        <div id="code" class="tabcontent">
             <p>This is the code tab</p>
             <p>View the code (On site) (Not added yet)</p>
             <p>Secret code? Maybe give it a try. It Should acctually work now.</p>
@@ -116,17 +125,31 @@
             <p id="outputSecretCode"></p>
         </div>
         <!-- ====== About Tab ====== -->
-        <div id="About" class="tabcontent">
-            <h3 class="red-or">About Me</h3>
-            <p>Bio: (comming soon)</p>
+        <div id="about" class="tabcontent">
+            <h3 id="#about-me" class="red-or">About Me</h3>
+            <div id="bio">
+                {{ bio }}
+            </div>
+            <p>I like programming, video games, and anything computer related. Recentally I've been working on making a
+                Discord bot using NodeJS and JavaScript.</p>
             <hr class="hr2-solidred">
-            <h3 class="red-or">About This Website</h3>
-            <p>I wanted to make a website ok</p>
-            <h4 class="red-or">Cookies</h4>
-            <p>This site uses cookies for the tab you left off on.</p>
+            <h3 id="#about-site" class="red-or">About This Website</h3>
+            <p>As I said before, this site started as
+                a simple project for me to play around with HTML, CSS, and JavaScript, and later decided to use it as my
+                personal website.
+                After a while, mainly during these times of Corona, I decided I wanted to use it as my blog site. And
+                here I am now, using it as my website for my gaming info, blog, and JavaScript testing!
+                This site is still in the dev state. I think I'm going to start work on the blog part of my website, but
+                im not 100% sure how im going to do that yet. If you have any ideas on how I can add a blog to this
+                website, feel free to send me a DM on Twitter or Discord (links to those can be found <a
+                    href="##about-links" onclick="navBar(event, 'about')">here</a>)
+            </p>
+            <h4 class="red-or">localStorage and Google Analytics</h4>
+            <p>My site uses the localStorage feture to save the tab you left off on so when you reload the page (or come back to it) it will leave you on the tab you left off on. This site uses Google Analytics which tracks things
+                such as Demographics, site veiws, and more..</p>
             <br>
             <hr class="hr2-solidred">
-            <h3 class="red-or">Links</h3>
+            <h3 id="#about-links" class="red-or">Links</h3>
             <div id="links">
                 <div v-for="link in links">
                     <a v-bind:style="{ color: link.color }" v-bind:href="link.url" target="_blank">{{ link.link }}</a>
@@ -135,35 +158,49 @@
                 </div>
                 <br>
             </div>
-            <br>
-            <h4><a href="https://gitlab.com/spidergaming" target="_blank">Gitlab</a></h4>
         </div>
-        <!-- ====== Media Tab ====== -->
-        <div id="Other" class="tabcontent">
+        <!-- ====== Other Tab ====== -->
+        <div id="other" class="tabcontent">
             <h3 class="red-or">Other</h3>
             <p>Other random things are here</p>
-            <p>Check out the <a href="pages/requests.html">requests</a> page to send things to a server and maybe get a
-                response.</p>
-            <p>Check out the <a href="pages/fun.html">fun</a> page to do small games and whatnot.</p>
         </div>
         <!-- ====== The settings tab contenet ====== -->
-        <div id="Settings" class="tabcontent">
+        <div id="settings" class="tabcontent">
             <h2 class="red-or">Site Settings</h2>
-            <br>Get the newest site updates, this is not recommended as refreshing the page should work, however this
-            makes developement easier for me.
-            <br><button class="button-tran-red" onclick="location.reload(true)">Force Reload</button>
-            <br>
-            <hr class="hr2-solidred">
-            <br>Reset all site settings.
-            <br><button class="button-tran-red" onclick="resetSiteData()">Reset</button>
+            <div id="theme">
+                <span>Chose the color theme you want</span>
+                <br>
+                <input type="radio" id="dark" value="Dark" v-model="picked">
+                <label for="dark">Dark</label>
+                <br>
+                <input type="radio" id="light" value="Light" v-model="picked">
+                <label for="light">Light</label>
+                <br>
+                <span>Picked: {{ picked }}</span>
+            </div>
+            <br><hr class="hr2-solidred"><br>
+            <div id="text-size">
+                <span>Change text size (not added)</span>
+                <input type="range" min="12" max="42" id="slider" />
+            </div>
+            <br><hr class="hr2-solidred"><br>
+            <div id="reset-settings">
+                <span>Reset all site settings</span>
+                <button class="button-tran-red" onclick="resetSiteData()">Reset</button>
+            </div>
+            <br><hr class="hr2-solidred"><br>
+            <div id="force-reload">
+                <span>Force reload (gets new data for the site quicker)</span>
+                <button class="button-tran-red" onclick="location.reload(true)">Force Reload</button>
+            </div>
         </div>
-        <div class="Secret" onclick="navBar(event, 'Secret')"></div>
-        <div id="Secret" class="tabcontent">
-            <p>You found the secret page</p>
+        <div class="secret" onclick="navBar(event, 'secret')"></div>
+        <div id="secret" class="tabcontent">
+            <p>You found the secret page. So I guess, Hello o/</p>
         </div>
     </div>
     <!-- === Settings button (gear) === -->
-    <div class="settings-svg Settings" onclick="navBar(event, 'Settings')">
+    <div class="settings-svg settings" onclick="navBar(event, 'settings')">
         <svg class="bi bi-gear" width="25px" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd"
                 d="M10.837 3.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 016.377 5.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 01-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 011.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 012.692 1.115l.094.319c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 012.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 011.115-2.693l.319-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 01-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159a1.873 1.873 0 01-2.693-1.115l-.094-.319zm-2.633-.283c.527-1.79 3.064-1.79 3.592 0l.094.319a.873.873 0 001.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 00.52 1.255l.319.094c1.79.527 1.79 3.064 0 3.592l-.319.094a.873.873 0 00-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 00-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 00-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 00-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 00.52-1.255l-.16-.292c-.892-1.64.901-3.433 2.541-2.54l.292.159a.873.873 0 001.255-.52l.094-.319z"
@@ -173,12 +210,11 @@
                 clip-rule="evenodd" />
         </svg>
     </div>
-    <div id="Site" class="tabcontent">
-        <p>My site uses cookies to save the tab you left off on. My site also uses Google Analytics which tracks things
+    <div id="site" class="tabcontent">
+        <p>My site uses the localStorage feture to save the tab you left off on so when you reload the page (or come back to it) it will leave you on the tab you left off on. This site uses Google Analytics which tracks things
             such as Demographics, site veiws, and more.</p>
     </div>
-    <div class="Site" style="position: fixed; bottom: 5px; right: 5px; font-size: 12px; color: gray; cursor: pointer;"
-        onclick="navBar(event, 'Site')">Cookies and Analytics</div>
+    <div class="site" onclick="navBar(event, 'site')">localStorage and Analytics</div>
     <!-- The JavaScript -->
     <script src="Style-JS/main.js"></script>
     <script src="Style-JS/Secretcode.js"></script>

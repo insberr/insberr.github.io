@@ -96,6 +96,15 @@ body {
     color: #fc5203;
 }
 
+.site {
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    font-size: 12px;
+    color: gray;
+    cursor: pointer;
+}
+
 .input-box {
     background-color: transparent;
     border-radius: 10px;

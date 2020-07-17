@@ -10,6 +10,12 @@
             "info": "My github profile. I store all of my open souce code here."
         },
         {
+            "link": "Gitlab Profile",
+            "color": "orange",
+            "url": "https://gitlab.com/SpiderGaming",
+            "info": "My gitlab profile. I dont put much of my code there anymore."
+        },
+        {
             "link": "SpiderBot",
             "color": "none",
             "url": "https://github.com/SpiderGamin/SpiderBot-Code",
@@ -60,6 +66,12 @@
     ],
     "lists": {
         "tasks": [
+            {
+                "type": "site",
+                "task": "Adding accsessibility settings",
+                "date": "7-16-20",
+                "done": false
+            },
             {
                 "type": "task",
                 "task": "PROGRAMMING / Learning vue.js",
@@ -135,26 +147,20 @@
             {
                 "type": "site",
                 "task": "A JavaScript secret code encode/decode thing",
-                "date": "unknown",
+                "date": "ukn -- ukn",
                 "done": true
             },
             {
                 "type": "site",
                 "task": "Use JavaScript to set the content of the list items",
-                "date": "unknown",
-                "done": true
-            },
-            {
-                "type": "site",
-                "task": "Use JS for the progress bars",
-                "date": "unknown",
+                "date": "ukn -- 7-15-20",
                 "done": true
             },
             {
                 "type": "site",
                 "task": "Combining all the JS into less files",
                 "date": "7-15-20",
-                "done": false
+                "done": true
             },
             {
                 "type": "task",

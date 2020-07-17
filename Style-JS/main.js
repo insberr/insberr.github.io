@@ -1,14 +1,13 @@
 /* ----- Page on Load ----- */
-var local;
+var local, cookies, Tab;
 local = JSON.parse(localStorage.getItem('siteData'));
-var cookies;
 function onPageLoad() {
     if (local === null) {
         localStorage.clear();
         local = {
-            tab: 'Home',
+            tab: 'home',
         }
-        cookies = confirm('My website uses cookies, click "ok" to allow. Click "cancel" to deny');
+        cookies = confirm('My website uses the local storage feture, which stores data that is used for this website. Click "ok" to allow this site to store data or click "cancel" to deny.');
         if (cookies) {
             localStorage.setItem('siteData', JSON.stringify(local));
         }
@@ -32,7 +31,7 @@ function onPageLoad() {
 function removeHash() {
     history.pushState("", document.title, window.location.pathname + window.location.search);
 };
-var Tab;
+
 function pageAncors() {
     if (location.hash) {
         var tabHash = location.hash;
@@ -47,7 +46,13 @@ function pageAncors() {
 }
 
 $(window).bind('hashchange', function () {
-    pageAncors();
+    if (location.hash.includes('##')) removeHash();
+    try {
+        pageAncors();
+    }
+    catch(err) {
+        navBar(event, 'errortab', 'An error ocurred, That Tab does not exist.')
+    }
 });
 
 
@@ -55,7 +60,7 @@ $(window).bind('hashchange', function () {
 function resetSiteData() {
     var reset = confirm('Are you sure you want to reset the site data?');
     if (!reset) {
-        return alert('Data was not reset');
+        return;
     } else {
         cookies = false;
         localStorage.clear();
@@ -64,7 +69,11 @@ function resetSiteData() {
 }
 
 /* ----- Nav Bar ----- */
-function navBar(evt, tab) {
+function navBar(evt, tab, error) {
+    if (tab === 'errortab') {
+        document.getElementById('errortab').innerHTML(error || 'An unknown error has ocurred');
+    };
+    window.scrollTo(0, 0);
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
@@ -116,7 +125,7 @@ var links = new Vue({
 
 /* Tasks */
 var tasks = new Vue({
-    el: '#tasks',
+    el: '#tasks-list',
     data: {
         tasks: []
     },
@@ -126,5 +135,21 @@ var tasks = new Vue({
             .then(json => {
                 this.tasks = json.lists.tasks
             });
+    }
+})
+
+
+/* Bio */
+var bio = new Vue({
+    el: '#bio',
+    data: {
+        bio: 'Test bio from vuejs'
+    }
+})
+
+var theme = new Vue({
+    el: '#theme',
+    data: {
+        picked: ''
     }
 })
