@@ -3,17 +3,19 @@
 
 <head>
     <title>SpiderGaming's Website</title>
-
+    <!-- Google Analytics -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-172859367-1"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-172907257-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
-        gtag('config', 'UA-172859367-1');
+        gtag('config', 'UA-172907257-1');
+        ga('create', 'UA-172907257-1', 'auto');
+        ga('require', 'linkid');
+        ga('send', 'pageview');
     </script>
-
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
             w[l] = w[l] || []; w[l].push({
@@ -22,9 +24,9 @@
             }); var f = d.getElementsByTagName(s)[0],
                 j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
                     'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-MN3JQ2H');</script>
+        })(window, document, 'script', 'dataLayer', 'GTM-N7G5V8T');
+    </script>
     <!-- End Google Tag Manager -->
-    <meta name="google-site-verification" content="FMVUmJV6PXTl1IVoKxwmoW65Qh-NF87y7eAMi_YxTyk" />
     <!-- vue.js -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -55,6 +57,10 @@
 </head>
 
 <body onload="onPageLoad()">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N7G5V8T" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <!-- ====== Navigation Bar ====== -->
     <div class="tab">
         <button class="tablinks home" onclick="navBar(event, 'home')" id="activeonload" title="Home Tab">Home</button>
@@ -66,10 +72,6 @@
     </div>
     <!-- ====== Nav Bar Tab Content ====== -->
     <div class="page-content">
-        <!-- Google Tag Manager (noscript) -->
-        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MN3JQ2H" height="0" width="0"
-                style="display:none;visibility:hidden"></iframe></noscript>
-        <!-- End Google Tag Manager (noscript) -->
         <!-- ====== Error Tab ====== -->
         <div id="errortab" class="tabcontent"></div>
         <!-- ====== Home Tab ====== -->
@@ -145,7 +147,9 @@
                     href="##about-links" onclick="navBar(event, 'about')">here</a>)
             </p>
             <h4 class="red-or">localStorage and Google Analytics</h4>
-            <p>My site uses the localStorage feture to save the tab you left off on so when you reload the page (or come back to it) it will leave you on the tab you left off on. This site uses Google Analytics which tracks things
+            <p>My site uses the localStorage feture to save the tab you left off on so when you reload the page (or come
+                back to it) it will leave you on the tab you left off on. This site uses Google Analytics which tracks
+                things
                 such as Demographics, site veiws, and more..</p>
             <br>
             <hr class="hr2-solidred">
@@ -178,17 +182,20 @@
                 <br>
                 <span>Picked: {{ picked }}</span>
             </div>
-            <br><hr class="hr2-solidred"><br>
+            <br>
+            <hr class="hr2-solidred"><br>
             <div id="text-size">
                 <span>Change text size (not added)</span>
                 <input type="range" min="12" max="42" id="slider" />
             </div>
-            <br><hr class="hr2-solidred"><br>
+            <br>
+            <hr class="hr2-solidred"><br>
             <div id="reset-settings">
                 <span>Reset all site settings</span>
                 <button class="button-tran-red" onclick="resetSiteData()">Reset</button>
             </div>
-            <br><hr class="hr2-solidred"><br>
+            <br>
+            <hr class="hr2-solidred"><br>
             <div id="force-reload">
                 <span>Force reload (gets new data for the site quicker)</span>
                 <button class="button-tran-red" onclick="location.reload(true)">Force Reload</button>
@@ -211,7 +218,9 @@
         </svg>
     </div>
     <div id="site" class="tabcontent">
-        <p>My site uses the localStorage feture to save the tab you left off on so when you reload the page (or come back to it) it will leave you on the tab you left off on. This site uses Google Analytics which tracks things
+        <p>My site uses the localStorage feture to save the tab you left off on so when you reload the page (or come
+            back to it) it will leave you on the tab you left off on. This site uses Google Analytics which tracks
+            things
             such as Demographics, site veiws, and more.</p>
     </div>
     <div class="site" onclick="navBar(event, 'site')">localStorage and Analytics</div>
