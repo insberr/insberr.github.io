@@ -69,11 +69,11 @@ function resetSiteData() {
 }
 
 /* ----- Nav Bar ----- */
-function navBar(evt, tab, error) {
+function navBar(evt, tab, other) {
     if (tab === 'errortab') {
-        document.getElementById('errortab').innerHTML(error || 'An unknown error has ocurred');
+        document.getElementById('errortab').innerHTML = other || 'An unknown error has ocurred';
     };
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
