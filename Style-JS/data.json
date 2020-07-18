@@ -68,6 +68,12 @@
         "tasks": [
             {
                 "type": "site",
+                "task": "Adding in notifications",
+                "data": "7-17-20",
+                "done": false
+            },
+            {
+                "type": "site",
                 "task": "Adding accsessibility settings",
                 "date": "7-16-20",
                 "done": false

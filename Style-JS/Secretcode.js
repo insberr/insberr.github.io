@@ -1,10 +1,12 @@
-// Retern Key Enters
+// Return Key Enters
 secretCodeInput.addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
         event.preventDefault();
         document.getElementById("codeButton").click();
     }
 });
+
+document.getElementById("outputSecretCode").innerHTML = "Your translated text will go here";
 
 function buttonSecretCode() {
     var codeInput = document.getElementById('secretCodeInput').value.toLowerCase().split('');

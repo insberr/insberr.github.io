@@ -27,7 +27,10 @@
     <!-- vue.js -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <link rel="stylesheet" href="Style-JS/style.css" />
+    <script src="Style-JS/index.var.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://host.relaychat.app"></script>
     <link rel="stylesheet" href="Style-JS/mystyle.css">
     <link rel="shortcut icon" href="https://spidergamin.github.io/SpiderGaminIcon.png" type="image/x-icon" />
 
@@ -75,17 +78,17 @@
         <div id="errortab" class="tabcontent"></div>
         <!-- ====== Home Tab ====== -->
         <div id="home" class="tabcontent">
-            <h3 class="red-or">Welcome</h3>
+            <h2 class="red-or">Welcome</h2>
             <p>Hello there, I'm SpiderGaming, and SpiderGaming0 on Twitter. Welcome to my website! This site started as
                 a simple project for me to play around with HTML, CSS, and JavaScript, later deciding to use it as my
-                personal website. More info about me and this website can be found <a href="##about-site"
-                    onclick="navBar(event, 'about')">here</a>.
+                personal website. More info about me and this website can be found <a href="#about-site">here</a>.
             </p>
             <p>On this website you can see my blog, check on what I'm doing, find my socials, and find info about me and
                 this website. Have a look around!
             </p>
             <p>Remember! If you have a tip, suggestion, fix, etc, please let me know by submitting an issue on the
-                Gitlab code, found <a href="https://github.com/spidergamin/spidergamin.github.io/" target="_blank">here</a>.
+                Github code, found <a href="https://github.com/spidergamin/spidergamin.github.io/"
+                    target="_blank">here</a>.
             </p>
         </div>
         <!-- ====== Tasks Tab ====== -->
@@ -119,7 +122,7 @@
         <div id="code" class="tabcontent">
             <p>This is the code tab</p>
             <p>View the code (On site) (Not added yet)</p>
-            <p>Secret code? Maybe give it a try. It Should acctually work now.</p>
+            <p>Secret code? Maybe give it a try. It Should actually work now.</p>
             <textarea id="secretCodeInput" name="secretCodeInput" placeholder="Decode/Encode Text Into Secret Code"
                 rows="4" cols="30" max="5"></textarea>
             <button id="codeButton" class="button-tran-red" onclick="buttonSecretCode()">Decode/Encode</button>
@@ -127,14 +130,14 @@
         </div>
         <!-- ====== About Tab ====== -->
         <div id="about" class="tabcontent">
-            <h3 id="#about-me" class="red-or">About Me</h3>
+            <h3 id="-me" class="red-or">About Me</h3>
             <div id="bio">
                 {{ bio }}
             </div>
-            <p>I like programming, video games, and anything computer related. Recentally I've been working on making a
+            <p>I like programming, video games, and anything computer related. Recently I've been working on making a
                 Discord bot using NodeJS and JavaScript.</p>
-            <hr class="hr2-solidred">
-            <h3 id="#about-site" class="red-or">About This Website</h3>
+            <hr id="-site" class="hr2">
+            <h3 class="red-or">About This Website</h3>
             <p>As I said before, this site started as
                 a simple project for me to play around with HTML, CSS, and JavaScript, and later decided to use it as my
                 personal website.
@@ -142,21 +145,23 @@
                 here I am now, using it as my website for my gaming info, blog, and JavaScript testing!
                 This site is still in the dev state. I think I'm going to start work on the blog part of my website, but
                 im not 100% sure how im going to do that yet. If you have any ideas on how I can add a blog to this
-                website, feel free to send me a DM on Twitter or Discord (links to those can be found down below)
+                website, feel free to send me a DM on Twitter or Discord (links to those can be found <a
+                    href="#about-link-twitter">here</a>)
             </p>
             <h4 class="red-or">localStorage and Google Analytics</h4>
-            <p>My site uses the localStorage feture to save the tab you left off on so when you reload the page (or come
+            <p>My site uses the localStorage feature to save the tab you left off on so when you reload the page (or
+                come
                 back to it) it will leave you on the tab you left off on. This site uses Google Analytics which tracks
                 things
-                such as Demographics, site veiws, and more..</p>
-            <br>
-            <hr class="hr2-solidred">
-            <h3 id="#about-links" class="red-or">Links</h3>
+                such as Demographics, site views, and more..</p>
+            <hr id="-links" class="hr2">
+            <h3 id="about-links" class="red-or">Links</h3>
             <div id="links">
                 <div v-for="link in links">
-                    <a v-bind:style="{ color: link.color }" v-bind:href="link.url" target="_blank">{{ link.link }}</a>
+                    <a v-bind:id="'-link-' + link.link.replace(' ', '-').toLowerCase()"
+                        v-bind:style="{ color: link.color }" v-bind:href="link.url" target="_blank">{{ link.link }}</a>
                     <br><span>{{ link.info }}</span>
-                    <br><br><br>
+                    <hr class="hr1">
                 </div>
                 <br>
             </div>
@@ -166,34 +171,31 @@
             <h3 class="red-or">Other</h3>
             <p>Other random things are here</p>
         </div>
-        <!-- ====== The settings tab contenet ====== -->
+        <!-- ====== The settings tab content ====== -->
         <div id="settings" class="tabcontent">
             <h2 class="red-or">Site Settings</h2>
             <div id="theme">
-                <span>Chose the color theme you want</span>
+                <span>Chose the color theme you want (works now)</span>
                 <br>
                 <input type="radio" id="dark" value="Dark" v-model="picked">
                 <label for="dark">Dark</label>
                 <br>
                 <input type="radio" id="light" value="Light" v-model="picked">
                 <label for="light">Light</label>
-                <br>
-                <span>Picked: {{ picked }}</span>
+                <br><br>
+                <span>Current Mode: {{ picked }}</span>
             </div>
-            <br>
-            <hr class="hr2-solidred"><br>
+            <hr class="hr1">
             <div id="text-size">
                 <span>Change text size (not added)</span>
                 <input type="range" min="12" max="42" id="slider" />
             </div>
-            <br>
-            <hr class="hr2-solidred"><br>
+            <hr class="hr1">
             <div id="reset-settings">
                 <span>Reset all site settings</span>
                 <button class="button-tran-red" onclick="resetSiteData()">Reset</button>
             </div>
-            <br>
-            <hr class="hr2-solidred"><br>
+            <hr class="hr1">
             <div id="force-reload">
                 <span>Force reload (gets new data for the site quicker)</span>
                 <button class="button-tran-red" onclick="location.reload(true)">Force Reload</button>
@@ -216,10 +218,10 @@
         </svg>
     </div>
     <div id="site" class="tabcontent">
-        <p>My site uses the localStorage feture to save the tab you left off on so when you reload the page (or come
+        <p>My site uses the localStorage feature to save the tab you left off on so when you reload the page (or come
             back to it) it will leave you on the tab you left off on. This site uses Google Analytics which tracks
             things
-            such as Demographics, site veiws, and more.</p>
+            such as Demographics, site views, and more.</p>
     </div>
     <div class="site" onclick="navBar(event, 'site')">localStorage and Analytics</div>
     <!-- The JavaScript -->

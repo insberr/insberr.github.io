@@ -4,19 +4,26 @@ local = JSON.parse(localStorage.getItem('siteData'));
 function onPageLoad() {
     if (local === null) {
         localStorage.clear();
-        local = {
-            tab: 'home',
-        }
-        cookies = confirm('My website uses the local storage feture, which stores data that is used for this website. Click "ok" to allow this site to store data or click "cancel" to deny.');
-        if (cookies) {
-            localStorage.setItem('siteData', JSON.stringify(local));
-        }
-        pageAncors();
-        document.getElementById("outputSecretCode").innerHTML = "Your translated text will go here";
-    } else {
-        cookies = true;
-        pageAncors();
-        document.getElementById("outputSecretCode").innerHTML = "Your translated text will go here";
+        local = { tab: 'home' }
+        let notifier = new AWN();
+        let onOk = () => { notifier.info('You allowed the use of the local storage feature'); cookies = true };
+        let onCancel = () => { notifier.info('You denied the use of the local storage feature. For more info click <a href="#site">here</a>'); cookies = false };
+        notifier.confirm(
+            'My website uses the local storage feature. Click "ok" to allow this site to store data or click "cancel" to deny.',
+            onOk,
+            onCancel,
+            {
+                labels: {
+                    confirm: 'Cookies'
+                }
+            }
+        )
+        if (cookies) localStorage.setItem('siteData', JSON.stringify(local));
+    } else { cookies = true }
+    try { pageAnchors() }
+    catch (err) {
+        notify('alert', 'Tab Error', 'There was a problem selecting that tab');
+        removeHash();
     }
     /*
     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
@@ -32,48 +39,66 @@ function removeHash() {
     history.pushState("", document.title, window.location.pathname + window.location.search);
 };
 
-function pageAncors() {
+function pageAnchors() {
     if (location.hash) {
-        var tabHash = location.hash;
-        tabHash = tabHash.toLowerCase()
-        tabHash = tabHash.charAt(1).toUpperCase() + tabHash.slice(2);
-        tabHash = tabHash.replace('#', '');
-        removeHash();
-        return document.getElementsByClassName(tabHash)[0].click();
+        if (location.hash.includes('-')) {
+            var hash = location.hash
+            var tab = hash.split('-')[0].replace('#', '');
+            var anchor = hash.replace(tab, '');
+            document.getElementsByClassName(tab)[0].click();
+            scrollToAnchor(anchor)
+        } else {
+            document.getElementsByClassName(location.hash.toLowerCase().replace('#', ''))[0].click();
+        }
     } else {
         document.getElementsByClassName(local.tab)[0].click();
+    }
+    removeHash();
+}
+
+function scrollToAnchor(anchor) {
+    try {
+        $([document.documentElement, document.body]).animate({
+            scrollTop: $(anchor).offset().top
+        });
+    }
+    catch (err) {
+        notify('alert', 'Scroll Error', 'The scroll part failed, so you have to scroll there yourself');
+        removeHash();
     }
 }
 
 $(window).bind('hashchange', function () {
-    if (location.hash.includes('##')) removeHash();
     try {
-        pageAncors();
+        pageAnchors();
     }
-    catch(err) {
-        navBar(event, 'errortab', 'An error ocurred, That Tab does not exist.')
+    catch (err) {
+        notify('alert', 'Tab Error', `The tab or anchor "${location.hash}" does not exist`);
+        removeHash();
     }
 });
 
 
 /* ----- Settings ----- */
 function resetSiteData() {
-    var reset = confirm('Are you sure you want to reset the site data?');
-    if (!reset) {
-        return;
-    } else {
-        cookies = false;
-        localStorage.clear();
-        return alert('Data was reset');
-    }
+    var reset;
+    let notifier = new AWN();
+    let onOk = () => { notifier.success('Site data reset'); reset = true; cookies = false; localStorage.clear(); };
+    let onCancel = () => { notifier.info('Site data was not reset'); reset = false };
+    notifier.confirm(
+        'Are you sure you want to reset this sites data?',
+        onOk,
+        onCancel,
+        {
+            labels: {
+                confirm: 'Reset site data'
+            }
+        }
+    )
 }
 
 /* ----- Nav Bar ----- */
 function navBar(evt, tab, other) {
-    if (tab === 'errortab') {
-        document.getElementById('errortab').innerHTML = other || 'An unknown error has ocurred';
-    };
-    // window.scrollTo(0, 0);
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
@@ -94,8 +119,29 @@ function navBar(evt, tab, other) {
     window.dataLayer.push({
         'event': 'Pageview',
         'pagePath': tab,
-        'pageTitle': tab //some arbitrary name for the page/state
+        'pageTitle': tab
     });
+}
+
+/* Notification thingy */
+function notify(type, info, text, callback) {
+    let notifier = new AWN({ labels: { info: info, alert: info } });
+    notifier[type](`${text}`)
+    /*
+    let onOk = () => { notifier.info('You pressed OK') };
+    let onCancel = () => { notifier.info('You pressed Cancel') };
+    notifier.confirm(
+        'Are you sure?',
+        onOk,
+        onCancel,
+        {
+            labels: {
+                confirm: 'Dangerous action'
+            }
+        }
+    )
+    */
+
 }
 
 
@@ -150,6 +196,19 @@ var bio = new Vue({
 var theme = new Vue({
     el: '#theme',
     data: {
-        picked: ''
+        picked: 'Default'
+    },
+    watch: {
+        picked: function (val) {
+
+            if (val == 'Dark') {
+                document.documentElement.style.setProperty("--bg", "black");
+                document.documentElement.style.setProperty("--color", "white");
+            } else if (val == 'Light') {
+                document.documentElement.style.setProperty("--bg", "rgb(206, 206, 206)");
+                document.documentElement.style.setProperty("--color", "black");
+            }
+
+        },
     }
 })
