@@ -7,13 +7,13 @@
             "link": "Github Profile",
             "color": "none",
             "url": "https://github.com/SpiderGamin",
-            "info": "My github profile. I store all of my open souce code here."
+            "info": "My github profile. I store all of my open souse code here."
         },
         {
             "link": "Gitlab Profile",
             "color": "orange",
             "url": "https://gitlab.com/SpiderGaming",
-            "info": "My gitlab profile. I dont put much of my code there anymore."
+            "info": "My gitlab profile. I don't put much of my code there anymore."
         },
         {
             "link": "SpiderBot",
@@ -49,13 +49,13 @@
             "link": "YouTube",
             "color": "red",
             "url": "https://www.youtube.com/channel/UCO2rlcllQhQdPM8PZkqEAcA",
-            "info": "My YouTube channel, I do Minecraft, challenges, vlogs, and much more! I`ts a weird place there, be warned."
+            "info": "My YouTube channel, I do Minecraft, challenges, blogs, and much more! I`ts a weird place there, be warned."
         },
         {
             "link": "Twitch",
             "color": "purple",
             "url": "https://twitch.tv/SpiderGaming00",
-            "info": "I dontuse Twitch much, however I livestream Minecraft and coronacation videos here when I do."
+            "info": "I don't use Twitch much, however I livestream Minecraft and coronacation videos here when I do."
         },
         {
             "link": "Discord",
@@ -74,7 +74,7 @@
             },
             {
                 "type": "site",
-                "task": "Adding accsessibility settings",
+                "task": "Adding accessibility settings",
                 "date": "7-16-20",
                 "done": false
             },
@@ -86,7 +86,7 @@
             },
             {
                 "type": "task",
-                "task": "Doing chores and hating life because I dont get to enjoy my summer",
+                "task": "Doing chores and hating life because I don't get to enjoy my summer",
                 "date": "unknown",
                 "done": false
             },
