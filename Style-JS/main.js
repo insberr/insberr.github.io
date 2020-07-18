@@ -24,6 +24,7 @@ function onPageLoad() {
     catch (err) {
         notify('alert', 'Tab Error', 'There was a problem selecting that tab');
         removeHash();
+        navBar(event, 'home')
     }
     /*
     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
