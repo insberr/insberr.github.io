@@ -1,4 +1,5 @@
 // Return Key Enters
+/*
 secretCodeInput.addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
         event.preventDefault();
@@ -7,13 +8,14 @@ secretCodeInput.addEventListener("keyup", function(event) {
 });
 
 document.getElementById("outputSecretCode").innerHTML = "Your translated text will go here";
-
-function buttonSecretCode() {
-    var codeInput = document.getElementById('secretCodeInput').value.toLowerCase().split('');
-    var output;
-    output = '';
-    codeInput.forEach(character => {
-        switch (character) {
+*/
+function secretCode(input, callback) {
+    var output; output = '';
+    input.split('').forEach(character => {
+        switch (character.toLowerCase()) {
+            case '\n': {
+                return output += '<br>'
+            }
             case 'a': {
                 return output += '@';
             }
@@ -196,5 +198,5 @@ function buttonSecretCode() {
             }
         }
     });
-    document.getElementById("outputSecretCode").innerHTML = output;
+    callback(output);
 }

@@ -1,5 +1,6 @@
 html {
     scroll-behavior: smooth;
+    user-select: none;
 }
   
 @media (prefers-color-scheme: dark) {
@@ -88,6 +89,14 @@ body {
     cursor: help;
 }
 
+.s-output {
+    background-color: gray;
+    padding: 20px 30px 15px 30px;
+    user-select: text;
+    overflow-x: scroll;
+    overflow-wrap: normal;
+}
+
 .settings-area {
     position: fixed;
 }
@@ -124,6 +133,7 @@ body {
     border-color: red;
     border-width: 4px;
     outline: 0;
+    padding: 15px;
 }
 
 [data-tooltip]:hover::before {

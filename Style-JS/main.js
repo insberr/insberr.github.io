@@ -185,6 +185,19 @@ var tasks = new Vue({
     }
 })
 
+var updates = new Vue({
+    el: '#updates',
+    data: {
+        updates: []
+    },
+    created() {
+        fetch('https://spidergamin.github.io/Style-JS/data.json')
+        .then(response => response.json())
+        .then(json => {
+            this.updates = json.lists.updates
+        });
+    }
+})
 
 /* Bio */
 var bio = new Vue({
@@ -211,5 +224,22 @@ var theme = new Vue({
             }
 
         },
+    }
+})
+
+var secretcode = new Vue({
+    el: '#secretcode',
+    data: {
+        input: '',
+        output: 'The translated secret code will display here'
+    },
+    watch: {
+        input: function (val) {
+            if (this.input === '') {
+                this.output = 'The translated secret code will display here';
+            } else {
+                secretCode(val, (data) => this.output = data);
+            }
+        }
     }
 })

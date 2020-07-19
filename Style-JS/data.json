@@ -65,71 +65,83 @@
         }
     ],
     "lists": {
+        "updates": [
+            {
+                "update": "<ul><li>Changed the secret code to use vuejs</li></ul>",
+                "date": "7/18/20"
+            }
+        ],
         "tasks": [
             {
-                "type": "site",
-                "task": "Adding in notifications",
-                "data": "7-17-20",
-                "done": false
-            },
-            {
-                "type": "site",
-                "task": "Adding accessibility settings",
-                "date": "7-16-20",
-                "done": false
-            },
-            {
                 "type": "task",
-                "task": "PROGRAMMING / Learning vue.js",
-                "date": "7-15-20",
-                "done": false
-            },
-            {
-                "type": "task",
-                "task": "Doing chores and hating life because I don't get to enjoy my summer",
-                "date": "unknown",
-                "done": false
-            },
-            {
-                "type": "task",
-                "task": "Attempting to relax",
-                "date": "unknown",
-                "done": false
-            },
-            {
-                "type": "site",
-                "task": "Rewriting this sites JavaScript",
-                "date": "unknown",
+                "task": "Make a game using Java",
+                "date": "7/15, 20",
                 "done": false
             },
             {
                 "type": "task",
                 "task": "Learning JavaScript mainly using nodejs",
-                "date": "unknown",
+                "date": "7/18, 20",
                 "done": false
             },
             {
                 "type": "site",
-                "task": "Using vue.js for this website",
-                "date": "7-15-20",
+                "task": "Adding vue.js to this website",
+                "date": "7/15, 20",
+                "done": false
+            },
+            {
+                "type": "site",
+                "task": "Adding in notifications",
+                "data": "7/17-18, 20",
+                "done": true
+            },
+            {
+                "type": "site",
+                "task": "Adding accessibility settings",
+                "date": "7/16, 20",
                 "done": false
             },
             {
                 "type": "task",
+                "task": "PROGRAMMING / Learning vue.js",
+                "date": "7/15, 20",
+                "done": false
+            },
+            {
+                "type": "task",
+                "task": "Doing chores and hating life because I don't get to enjoy my summer",
+                "date": "7/18, 20",
+                "done": false
+            },
+            {
+                "type": "task",
+                "task": "Attempting to relax",
+                "date": "7/18, 20",
+                "done": false
+            },
+            {
+                "type": "site",
+                "task": "Rewriting this sites JavaScript",
+                "date": "7/18, 20",
+                "done": true
+            },
+            {
+                "type": "task",
                 "task": "Lots of homework",
-                "date": "unknown",
+                "date": "4/1 - 6/15, 20",
                 "done": true
             },
             {
                 "type": "site",
                 "task": "Use JavaScript for the lists",
-                "date": "unknown",
+                "date": "7/18, 20",
                 "done": true
             },
             {
                 "type": "site",
                 "task": "The page stays on the same tab even when you reload",
-                "date": "unknown",
+                "date": "6/12, 20",
                 "done": true
             },
             {
@@ -141,38 +153,32 @@
             {
                 "type": "task",
                 "task": "Learning HTML and CSS",
-                "date": "unknown",
+                "date": "",
                 "done": true
             },
             {
                 "type": "site",
                 "task": "This websites style",
-                "date": "unknown",
+                "date": "",
                 "done": true
             },
             {
                 "type": "site",
                 "task": "A JavaScript secret code encode/decode thing",
-                "date": "ukn -- ukn",
+                "date": "",
                 "done": true
             },
             {
                 "type": "site",
                 "task": "Use JavaScript to set the content of the list items",
-                "date": "ukn -- 7-15-20",
+                "date": "7/15, 20",
                 "done": true
             },
             {
                 "type": "site",
                 "task": "Combining all the JS into less files",
-                "date": "7-15-20",
+                "date": "7/15, 20",
                 "done": true
-            },
-            {
-                "type": "task",
-                "task": "Make a game using Java",
-                "date": "7-15-20",
-                "done": false
             }
         ]
     }

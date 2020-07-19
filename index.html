@@ -123,10 +123,11 @@
             <p>This is the code tab</p>
             <p>View the code (On site) (Not added yet)</p>
             <p>Secret code? Maybe give it a try. It Should actually work now.</p>
-            <textarea id="secretCodeInput" name="secretCodeInput" placeholder="Decode/Encode Text Into Secret Code"
-                rows="4" cols="30" max="5"></textarea>
-            <button id="codeButton" class="button-tran-red" onclick="buttonSecretCode()">Decode/Encode</button>
-            <p id="outputSecretCode"></p>
+            <div id="secretcode">
+                <textarea class="input-box" v-model="input" placeholder="Decode/Encode my Secret Code" rows="4"
+                    cols="30"></textarea>
+                <p v-html="output" class="s-output">{{ output }}</p>
+            </div>
         </div>
         <!-- ====== About Tab ====== -->
         <div id="about" class="tabcontent">
@@ -148,7 +149,9 @@
                 website, feel free to send me a DM on Twitter or Discord (links to those can be found <a
                     href="#about-link-twitter">here</a>)
             </p>
-            <p>Did you know if you install <a href="https://chrome.google.com/webstore/detail/relay-chat-on-every-websi/niifmlaakldeiifddnihjkgahaipjdmh">this chrome extension</a> you can chat on this website.</p>
+            <p>Did you know if you install <a
+                    href="https://chrome.google.com/webstore/detail/relay-chat-on-every-websi/niifmlaakldeiifddnihjkgahaipjdmh">this
+                    chrome extension</a> you can chat on this website?</p>
             <h4 class="red-or">localStorage and Google Analytics</h4>
             <p>My site uses the localStorage feature to save the tab you left off on so when you reload the page (or
                 come
@@ -223,6 +226,13 @@
             back to it) it will leave you on the tab you left off on. This site uses Google Analytics which tracks
             things
             such as Demographics, site views, and more.</p>
+        <div id="updates">
+            <h3 class="red-or">Site Updates</h3>
+            <ul>
+                <li v-for="update in updates">
+                    {{ update.update }}<br><span class="date">{{ update.date }}</span></li>
+            </ul>
+        </div>
     </div>
     <div class="site" onclick="navBar(event, 'site')">localStorage and Analytics</div>
     <!-- The JavaScript -->
