@@ -68,6 +68,13 @@
         "updates": [
             {
                 "update": [
+                    "Fixed the updates page",
+                    "Added a header to the site info tab",
+                    "Renamed the 'localStorage and analytics' to 'site info'"
+                ]
+            }
+            {
+                "update": [
                     "Changed the secret code to use vuejs",
                     "Restyled the secret code input and output"
                 ],
