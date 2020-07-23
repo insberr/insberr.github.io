@@ -93,19 +93,19 @@
         <!-- ====== Tasks Tab ====== -->
         <div id="tasks" class="tabcontent">
             <div id="tasks-list">
-                <h3 class="red-or">Things I'm Doing</h3>
+                <h2 class="red-or">To Do/Am Doing</h2>
                 <ul>
                     <li v-for="task in tasks" v-if="task.type === 'task' && task.done === false">
                         {{ task.task }}<br><span class="date">{{ task.date }} - {{ task.type }}</span></li>
                 </ul>
                 <br>
-                <h3 class="red-or">Plans For This Website</h3>
+                <h2 class="red-or">Website Plans</h2>
                 <ul>
                     <li v-for="task in tasks" v-if="task.type === 'site' && task.done === false">
                         {{ task.task }}<br><span class="date">{{ task.date }} - {{ task.type }}</span></li>
                 </ul>
                 <br>
-                <h3 class="red-or">Things I've Finished</h3>
+                <h2 class="red-or">Completed Tasks</h2>
                 <ul>
                     <li v-for="task in tasks" v-if="task.done === true">{{ task.task }}<br><span
                             class="date">{{ task.date }} - {{ task.type }}</span></li>
@@ -114,11 +114,12 @@
         </div>
         <!-- ====== Posts Tab ====== -->
         <div id="posts" class="tabcontent">
-            <h3 class='red-or'>Posts</h3>
+            <h2 class='red-or'>Posts</h2>
             <p>Here is where things I post will go. (still thinking of how ill do it)</p>
         </div>
         <!-- ====== Code tab Tab ====== -->
         <div id="code" class="tabcontent">
+            <h2>Code</h2>
             <p>This is the code tab</p>
             <p>View the code (On site) (Not added yet)</p>
             <p>Secret code? Maybe give it a try. It Should actually work now.</p>
@@ -130,14 +131,14 @@
         </div>
         <!-- ====== About Tab ====== -->
         <div id="about" class="tabcontent">
-            <h3 id="-me" class="red-or">About Me</h3>
+            <h2 id="-me" class="red-or">About Me</h2>
             <div id="bio">
                 {{ bio }}
             </div>
             <p>I like programming, video games, and anything computer related. Recently I've been working on making a
                 Discord bot using NodeJS and JavaScript.</p>
             <hr id="-site" class="hr2">
-            <h3 class="red-or">About This Website</h3>
+            <h2 class="red-or">About This Website</h2>
             <p>As I said before, this site started as
                 a simple project for me to play around with HTML, CSS, and JavaScript, and later decided to use it as my
                 personal website.
@@ -171,7 +172,7 @@
         </div>
         <!-- ====== Other Tab ====== -->
         <div id="other" class="tabcontent">
-            <h3 class="red-or">Other</h3>
+            <h2 class="red-or">Other Things</h2>
             <p>Other random things are here</p>
         </div>
         <!-- ====== The settings tab content ====== -->
@@ -206,19 +207,8 @@
         </div>
         <div class="secret" onclick="navBar(event, 'secret')"></div>
         <div id="secret" class="tabcontent">
+            <h2 class="red-or">Secret page</h2>
             <p>You found the secret page. So I guess, Hello o/</p>
-        </div>
-        <!-- === Settings button (gear) === -->
-        <div class="settings-svg settings" onclick="navBar(event, 'settings')">
-            <svg class="bi bi-gear" width="25px" viewBox="0 0 20 20" fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd"
-                    d="M10.837 3.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 016.377 5.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 01-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 011.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 012.692 1.115l.094.319c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 012.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 011.115-2.693l.319-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 01-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159a1.873 1.873 0 01-2.693-1.115l-.094-.319zm-2.633-.283c.527-1.79 3.064-1.79 3.592 0l.094.319a.873.873 0 001.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 00.52 1.255l.319.094c1.79.527 1.79 3.064 0 3.592l-.319.094a.873.873 0 00-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 00-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 00-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 00-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 00.52-1.255l-.16-.292c-.892-1.64.901-3.433 2.541-2.54l.292.159a.873.873 0 001.255-.52l.094-.319z"
-                    clip-rule="evenodd" />
-                <path fill-rule="evenodd"
-                    d="M10 7.754a2.246 2.246 0 100 4.492 2.246 2.246 0 000-4.492zM6.754 10a3.246 3.246 0 116.492 0 3.246 3.246 0 01-6.492 0z"
-                    clip-rule="evenodd" />
-            </svg>
         </div>
         <div id="site" class="tabcontent">
             <h2 class="red-or">Site Info</h2>
@@ -238,7 +228,20 @@
             </div>
         </div>
         <div class="site" onclick="navBar(event, 'site')" title="Info about this site, local storage, and analytics.">
-            Site Info</div>
+            Site Info
+        </div>
+        <!-- === Settings button (gear) === -->
+        <div class="settings-svg settings" onclick="navBar(event, 'settings')">
+            <svg class="bi bi-gear" width="25px" viewBox="0 0 20 20" fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                    d="M10.837 3.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 016.377 5.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 01-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 011.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 012.692 1.115l.094.319c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 012.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 011.115-2.693l.319-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 01-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159a1.873 1.873 0 01-2.693-1.115l-.094-.319zm-2.633-.283c.527-1.79 3.064-1.79 3.592 0l.094.319a.873.873 0 001.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 00.52 1.255l.319.094c1.79.527 1.79 3.064 0 3.592l-.319.094a.873.873 0 00-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 00-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 00-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 00-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 00.52-1.255l-.16-.292c-.892-1.64.901-3.433 2.541-2.54l.292.159a.873.873 0 001.255-.52l.094-.319z"
+                    clip-rule="evenodd" />
+                <path fill-rule="evenodd"
+                    d="M10 7.754a2.246 2.246 0 100 4.492 2.246 2.246 0 000-4.492zM6.754 10a3.246 3.246 0 116.492 0 3.246 3.246 0 01-6.492 0z"
+                    clip-rule="evenodd" />
+            </svg>
+        </div>
     </div>
     <!-- The JavaScript -->
     <script src="Style-JS/main.js"></script>
