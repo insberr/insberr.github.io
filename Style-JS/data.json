@@ -68,7 +68,8 @@
         "updates": [
             {
                 "update": [
-                    "<li>Changed the secret code to use vuejs</li>"
+                    "Changed the secret code to use vuejs",
+                    "Restyled the secret code input and output"
                 ],
                 "date": "7/18/20"
             }
