@@ -71,8 +71,9 @@
                     "Fixed the updates page",
                     "Added a header to the site info tab",
                     "Renamed the 'localStorage and analytics' to 'site info'"
-                ]
-            }
+                ],
+                "date": "7/22/20"
+            },
             {
                 "update": [
                     "Changed the secret code to use vuejs",
