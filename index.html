@@ -119,16 +119,16 @@
         </div>
         <!-- ====== Code tab Tab ====== -->
         <div id="code" class="tabcontent">
-            <h2>Code</h2>
-            <p>This is the code tab</p>
-            <p>View the code (On site) (Not added yet)</p>
-            <h3></h3>
+            <h3 id="-sec-code">Secret Code</h3>
             <p>Secret code? Maybe give it a try. It Should actually work now.</p>
             <div id="secretcode">
                 <textarea class="input-box" v-model="input" placeholder="Decode/Encode my Secret Code" rows="4"
                     cols="30"></textarea>
                 <p v-html="output" class="s-output">{{ output }}</p>
             </div>
+            <hr id="-site-code" class="hr2">
+            <h3>Sites Code</h3>
+            <p>View the code (On site) (Not added yet)</p>
         </div>
         <!-- ====== About Tab ====== -->
         <div id="about" class="tabcontent">

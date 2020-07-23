@@ -71,7 +71,8 @@
                     "Fixed the updates page",
                     "Added a header to the site info tab",
                     "Renamed the 'localStorage and analytics' to 'site info'",
-                    "something"
+                    "Made font size larger for smaller screens",
+                    "Made navbar larger on smaller screens"
                 ],
                 "date": "7/22/20"
             },

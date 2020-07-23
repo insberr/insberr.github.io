@@ -99,7 +99,7 @@ function resetSiteData() {
 }
 
 /* ----- Nav Bar ----- */
-function navBar(evt, tab, other) {
+function navBar(evt, tab) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
@@ -125,24 +125,9 @@ function navBar(evt, tab, other) {
 }
 
 /* Notification thingy */
-function notify(type, info, text, callback) {
+function notify(type, info, text) {
     let notifier = new AWN({ labels: { info: info, alert: info } });
     notifier[type](`${text}`)
-    /*
-    let onOk = () => { notifier.info('You pressed OK') };
-    let onCancel = () => { notifier.info('You pressed Cancel') };
-    notifier.confirm(
-        'Are you sure?',
-        onOk,
-        onCancel,
-        {
-            labels: {
-                confirm: 'Dangerous action'
-            }
-        }
-    )
-    */
-
 }
 
 
