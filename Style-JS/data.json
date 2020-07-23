@@ -70,7 +70,8 @@
                 "update": [
                     "Fixed the updates page",
                     "Added a header to the site info tab",
-                    "Renamed the 'localStorage and analytics' to 'site info'"
+                    "Renamed the 'localStorage and analytics' to 'site info'",
+                    "something"
                 ],
                 "date": "7/22/20"
             },
