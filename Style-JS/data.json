@@ -67,7 +67,9 @@
     "lists": {
         "updates": [
             {
-                "update": "<ul><li>Changed the secret code to use vuejs</li></ul>",
+                "update": [
+                    "<li>Changed the secret code to use vuejs</li>"
+                ],
                 "date": "7/18/20"
             }
         ],

@@ -222,15 +222,18 @@
         </svg>
     </div>
     <div id="site" class="tabcontent">
+        <h2 class="red-or">Site Info</h2>
         <p>My site uses the localStorage feature to save the tab you left off on so when you reload the page (or come
             back to it) it will leave you on the tab you left off on. This site uses Google Analytics which tracks
             things
             such as Demographics, site views, and more.</p>
         <div id="updates">
             <h3 class="red-or">Site Updates</h3>
-            <ul>
-                <li v-for="update in updates">
-                    {{ update.update }}<br><span class="date">{{ update.date }}</span></li>
+            <ul v-for="update in updates">
+                <li>{{ update.date }}<ul v-for="up in update.update">
+                        <li>{{ up }}</li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>
