@@ -17,14 +17,14 @@ $(document).ready(function () {
                     confirm: 'Cookies'
                 }
             }
-        )
-    } else { cookies = true }
-    try { pageAnchors() }
+        );
+    } else { cookies = true; }
+    try { pageAnchors(); }
     catch (err) {
         notify('alert', 'Tab Error', 'There was a problem selecting that tab');
         removeHash();
-        navBar(event, 'home')
-    }
+        navBar(event, 'home');
+    };
     if (local.theme !== 'default') document.getElementById(local.theme).click();
     if (local.size !== 'default') { document.documentElement.style.setProperty("--size", local.size + 'px'); document.getElementById('slider').value = local.size; fontSize.size = local.size; }
     /*
@@ -43,21 +43,21 @@ function removeHash() {
 function pageAnchors() {
     if (location.hash) {
         if (location.hash.includes('-')) {
-            var hash = location.hash
+            var hash = location.hash;
             var tab = hash.split('-')[0].replace('#', '');
             var anchor = hash.replace(tab, '');
             document.getElementsByClassName(tab)[0].click();
             setTimeout(() => {
-                scrollToAnchor(anchor)
-            }, 200)
+                scrollToAnchor(anchor);
+            }, 200);
         } else {
             document.getElementsByClassName(location.hash.toLowerCase().replace('#', ''))[0].click();
-        }
+        };
     } else {
         navBar(event, local.tab);
-    }
+    };
     removeHash();
-}
+};
 
 function scrollToAnchor(anchor) {
     try {
@@ -68,8 +68,8 @@ function scrollToAnchor(anchor) {
     catch (err) {
         notify('alert', 'Scroll Error', 'The scroll part failed, so you have to scroll there yourself');
         removeHash();
-    }
-}
+    };
+};
 
 $(window).bind('hashchange', function () {
     try {
@@ -78,7 +78,7 @@ $(window).bind('hashchange', function () {
     catch (err) {
         notify('alert', 'Tab Error', `The tab or anchor "${location.hash}" does not exist`);
         removeHash();
-    }
+    };
 });
 
 /* ----- Settings ----- */
@@ -86,7 +86,7 @@ function resetSiteData() {
     var reset;
     let notifier = new AWN();
     let onOk = () => { notifier.success('Site data reset'); reset = true; cookies = false; localStorage.clear(); };
-    let onCancel = () => { notifier.info('Site data was not reset'); reset = false };
+    let onCancel = () => { notifier.info('Site data was not reset'); reset = false; };
     notifier.confirm(
         'Are you sure you want to reset this sites data?',
         onOk,
@@ -96,46 +96,46 @@ function resetSiteData() {
                 confirm: 'Reset site data'
             }
         }
-    )
-}
+    );
+};
 
 /* ----- Nav Bar ----- */
 function navBar(evt, tab, mobile) {
     if (mobile) {
-        closeNav()
-    }
+        closeNav();
+    };
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tab");
     for (i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
-    }
+    };
     tablinks = document.getElementsByClassName("tab-");
     for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
+    };
     document.getElementById(tab).style.display = "block";
     // evt.currentTarget.className += " active";
     var elmt = document.getElementsByClassName(tab);
     elmt[0].className += ' active';
     elmt[1].className += ' active';
-    document.title = ('SpiderGaming - ' + tab);
+    document.title = ('SpiderGaming | ' + tab);
     local.tab = tab;
     if (cookies) {
         localStorage.setItem("siteData", JSON.stringify(local));
-    }
+    };
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
         'event': 'Pageview',
         'pagePath': tab,
-        'pageTitle': 'SpiderGaming - ' + tab
+        'pageTitle': 'SpiderGaming | ' + tab
     });
 }
 
 /* Notification thingy */
 function notify(type, info, text) {
     let notifier = new AWN({ labels: { info: info, alert: info } });
-    notifier[type](`${text}`)
-}
+    notifier[type](`${text}`);
+};
 
 
 /* ----- vue js ----- */
@@ -160,7 +160,7 @@ var links = new Vue({
                 this.links = json.links
             });
     }
-})
+});
 
 /* Tasks */
 var tasks = new Vue({
@@ -175,7 +175,7 @@ var tasks = new Vue({
                 this.tasks = json.lists.tasks
             });
     }
-})
+});
 
 var i = 0;
 var updates = new Vue({
@@ -190,7 +190,7 @@ var updates = new Vue({
                 this.updates = json.lists.updates
             });
     },
-})
+});
 
 /* Bio */
 var bio = new Vue({
@@ -198,7 +198,7 @@ var bio = new Vue({
     data: {
         bio: `Hello, I'm SpiderGaming. I am A YouTuber, gamer, web dev, and JS programmer. I spend most of my free time programming, mainly working on this website. Recently I've been working on this websites JavaScript.`
     }
-})
+});
 
 var theme = new Vue({
     el: '#theme',
@@ -221,7 +221,7 @@ var theme = new Vue({
             }
         },
     }
-})
+});
 
 var secretcode = new Vue({
     el: '#secretcode',
@@ -238,7 +238,7 @@ var secretcode = new Vue({
             }
         }
     }
-})
+});
 
 var fontSize = new Vue({
     el: '#text-size',
@@ -254,30 +254,30 @@ var fontSize = new Vue({
             }
         }
     }
-})
+});
 
 function openNav() {
     document.getElementsByClassName("sidenav")[0].style.width = "250px";
-}
+};
 
 function closeNav(time) {
     if (time === undefined) time = 300;
     setTimeout(() => {
         document.getElementsByClassName("sidenav")[0].style.width = "0";
-    }, time)
-}
+    }, time);
+};
 
 function resize() {
-    closeNav(10)
-}
+    closeNav(10);
+};
 window.onresize = resize;
 
 $(document).mouseup(function (e) {
     var container = $('#sidebar');
-    var menu = $('#menu')
+    var menu = $('#menu');
     if (!container.is(e.target) && container.has(e.target).length === 0) {
         if (!menu.is(e.target) && menu.has(e.target).length === 0) {
-            closeNav(0)
-        }
-    }
+            closeNav(0);
+        };
+    };
 });
