@@ -1,12 +1,12 @@
 /* ----- Page on Load ----- */
 var local, cookies, Tab;
-local = JSON.parse(localStorage.getItem('siteData'));
-function onPageLoad() {
+$(document).ready(function () {
+    local = JSON.parse(localStorage.getItem('siteData'));
     if (local === null) {
         localStorage.clear();
-        local = { tab: 'home', size: 'default', theme: 'default' }
+        local = { tab: 'home', size: 'default', theme: 'default' };
         let notifier = new AWN();
-        let onOk = () => { notifier.info('You allowed the use of the local storage feature'); cookies = true };
+        let onOk = () => { notifier.info('You allowed the use of the local storage feature'); cookies = true; localStorage.setItem('siteData', JSON.stringify(local)) };
         let onCancel = () => { notifier.info('You denied the use of the local storage feature. For more info click <a href="#site">here</a>'); cookies = false };
         notifier.confirm(
             'My website uses the local storage feature. Click "ok" to allow this site to store data or click "cancel" to deny.',
@@ -18,23 +18,22 @@ function onPageLoad() {
                 }
             }
         )
-        if (cookies) localStorage.setItem('siteData', JSON.stringify(local));
     } else { cookies = true }
-    if (local.theme !== 'default') document.getElementById(local.theme).click();
-    if (local.size !== 'default') document.documentElement.style.setProperty("--size", local.size + 'px');
     try { pageAnchors() }
     catch (err) {
         notify('alert', 'Tab Error', 'There was a problem selecting that tab');
         removeHash();
         navBar(event, 'home')
     }
+    if (local.theme !== 'default') document.getElementById(local.theme).click();
+    if (local.size !== 'default') { document.documentElement.style.setProperty("--size", local.size + 'px'); document.getElementById('slider').value = local.size; fontSize.size = local.size; }
     /*
     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
         document.getElementsByTagName('body')[0].style.backgroundColor= 'red'
     }
     */
-};
 
+});
 
 /* ----- Hash Tab linking ----- */
 function removeHash() {
@@ -84,7 +83,7 @@ $(window).bind('hashchange', function () {
 function resetSiteData() {
     var reset;
     let notifier = new AWN();
-    let onOk = () => { notifier.success('Site data reset'); reset = true; cookies = false; localStorage.clear();};
+    let onOk = () => { notifier.success('Site data reset'); reset = true; cookies = false; localStorage.clear(); };
     let onCancel = () => { notifier.info('Site data was not reset'); reset = false };
     notifier.confirm(
         'Are you sure you want to reset this sites data?',
