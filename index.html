@@ -2,8 +2,8 @@
 <html>
 
 <head>
-    <title>SpiderGaming's Website</title>
-    <!-- Google Analytics -->
+    <title>SpiderGaming</title>
+    <!-- ===== Google Analytics ===== -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-172907257-1"></script>
     <script>
@@ -24,7 +24,8 @@
         })(window, document, 'script', 'dataLayer', 'GTM-N7G5V8T');
     </script>
     <!-- End Google Tag Manager -->
-    <!-- vue.js -->
+    <!-- ===== Import styles and important js scripts ===== -->
+    <!-- vue.js, jquery, notification style and js, and my styles -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <link rel="stylesheet" href="Style-JS/style.css" />
@@ -33,51 +34,73 @@
     <link rel="stylesheet" href="Style-JS/mystyle.css">
     <link rel="shortcut icon" href="https://spidergamin.github.io/SpiderGaminIcon.png" type="image/x-icon" />
 
-    <!-- Embed Stuffs -->
+    <!-- ===== Embed Stuffs ===== -->
     <link type="application/json+oembed" href="https://spidergamin.github.io/Style-JS/oembed.json" />
-    <!-- Primary Meta Tags -->
-    <meta name="keywords" content="SpiderGaming, SpiderGamin, SpiderGaming0, spidergamings website">
     <meta name="author" content="SpiderGaming">
-    <meta name="title" content="SpiderGaming's Website">
-    <meta name="description" content="I am SpiderGaming, here is my website. Info about me, links, and more!">
-    <!-- Twitter Card data -->
-    <meta name="twitter:card" value="summary">
-
-    <!-- Open Graph data -->
-    <meta content="SpiderGaming - Home" property="og:title">
-    <meta property="og:description" content="I am SpiderGaming, here is my website. Info about me, links, and more!">
-    <meta content="SpiderGaming's Website" property="og:site_name">
+    <meta name="title" content="SpiderGaming">
+    <meta name="description"
+        content="I'm SpiderGaming, a YouTuber, web designer, and programmer. Here is my website. Info about me, links, and more!">
+    <meta content="SpiderGaming" property="og:title">
+    <meta property="og:description"
+        content="I'm SpiderGaming, a YouTuber, web designer, and programmer. Here is my website. Info about me, links, and more!">
+    <meta content="SpiderGaming" property="og:site_name">
     <meta property="og:image" content="https://spidergamin.github.io/SpiderGaminIcon.png">
-    <!-- Twitter -->
+    <meta name="twitter:card" value="summary">
     <meta property="twitter:url" content="https://spidergamin.github.io/">
-    <meta property="twitter:title" content="SpiderGaming's Website">
+    <meta property="twitter:title" content="SpiderGaming">
     <meta property="twitter:description"
-        content="I am SpiderGaming, here is my website. Info about me, links, and more!">
+        content="I'm SpiderGaming, a YouTuber, web designer, and programmer. Here is my website. Info about me, links, and more!">
     <meta property="twitter:image" content="https://spidergamin.github.io/SpiderGaminIcon.png">
-    <meta name="theme-color" content="#FF804A">
+    <meta name="theme-color" content="#fd3f2e">
 </head>
 
 <body onload="onPageLoad()">
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N7G5V8T" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <!-- ====== Navigation Bar ====== -->
-    <div class="tab">
-        <button class="tablinks home" onclick="navBar(event, 'home')" id="activeonload" title="Home Tab">Home</button>
-        <button class="tablinks tasks" onclick="navBar(event, 'tasks')" title="Things I'm Doing">Tasks</button>
-        <button class="tablinks posts" onclick="navBar(event, 'posts')" title="Posts">Posts</button>
-        <button class="tablinks code" onclick="navBar(event, 'code')" title="Code stuffs">Code</button>
-        <button class="tablinks about" onclick="navBar(event, 'about')" title="About Me And Links">About</button>
-        <button class="tablinks other" onclick="navBar(event, 'other')" title="Idk yet">Other</button>
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N7G5V8T" height="0" width="0"
+            style="display:none;visibility:hidden">
+        </iframe>
+    </noscript>
+    <!-- NavBar -->
+    <div class="bar">
+        <button class="tab- home" onclick="navBar(event, 'home')" id="activeonload" title="Home Tab">Home</button>
+        <button class="tab- tasks" onclick="navBar(event, 'tasks')" title="To do/ finished">Tasks</button>
+        <button class="tab- posts" onclick="navBar(event, 'posts')" title="Posts">Posts</button>
+        <button class="tab- code" onclick="navBar(event, 'code')" title="Code stuffs">Code</button>
+        <button class="tab- about" onclick="navBar(event, 'about')" title="About Me And Links">About</button>
+        <button class="tab- other" onclick="navBar(event, 'other')" title="Idk yet">Other</button>
     </div>
+    <!-- SideBar for smaller screens -->
+    <div id="sidebar" class="sidenav">
+        <img class="logo" src="SpiderGaminIcon.png">
+        <span class="logo-name">SpiderGaming</span>
+        <button class="closebtn" onclick="closeNav()">&times;</button>
+        <button class="tab- home" onclick="navBar(event, 'home', 1)" id="activeonload">Home</button>
+        <button class="tab- tasks" onclick="navBar(event, 'tasks', 1)">Tasks</button>
+        <button class="tab- posts" onclick="navBar(event, 'posts', 1)">Posts</button>
+        <button class="tab- code" onclick="navBar(event, 'code', 1)">Code</button>
+        <button class="tab- about" onclick="navBar(event, 'about', 1)">About</button>
+        <button class="tab- other" onclick="navBar(event, 'other', 1)">Other</button>
+        <div class="tab- site info-btn-" style="font-size: 20px;" onclick="navBar(event, 'site', 1)">Site Info</div>
+        <div class="tab- settings settings-svg info-btn-" onclick="navBar(event, 'settings', 1)">
+            <svg class="bi bi-gear" viewBox="0 0 20 20" fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                    d="M10.837 3.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 016.377 5.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 01-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 011.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 012.692 1.115l.094.319c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 012.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 011.115-2.693l.319-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 01-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159a1.873 1.873 0 01-2.693-1.115l-.094-.319zm-2.633-.283c.527-1.79 3.064-1.79 3.592 0l.094.319a.873.873 0 001.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 00.52 1.255l.319.094c1.79.527 1.79 3.064 0 3.592l-.319.094a.873.873 0 00-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 00-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 00-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 00-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 00.52-1.255l-.16-.292c-.892-1.64.901-3.433 2.541-2.54l.292.159a.873.873 0 001.255-.52l.094-.319z"
+                    clip-rule="evenodd" />
+                <path fill-rule="evenodd"
+                    d="M10 7.754a2.246 2.246 0 100 4.492 2.246 2.246 0 000-4.492zM6.754 10a3.246 3.246 0 116.492 0 3.246 3.246 0 01-6.492 0z"
+                    clip-rule="evenodd" />
+            </svg>
+        </div>
+    </div>
+    <!-- Use any element to open the sidenav -->
+    <span id="menu" class="menu" onclick="openNav()">&#9776;</span>
     <!-- ====== Nav Bar Tab Content ====== -->
     <div class="page-content">
-        <!-- ====== Error Tab ====== -->
-        <div id="errortab" class="tabcontent"></div>
         <!-- ====== Home Tab ====== -->
-        <div id="home" class="tabcontent">
-            <h2 class="red-or">Welcome</h2>
+        <div id="home" class="tab">
+            <h2 class="top">Welcome</h2>
             <p>Hello there, I'm SpiderGaming, and SpiderGaming0 on Twitter. Welcome to my website! This site started as
                 a simple project for me to play around with HTML, CSS, and JavaScript, later deciding to use it as my
                 personal website. More info about me and this website can be found <a href="#site-site">here</a>.
@@ -91,21 +114,22 @@
             </p>
         </div>
         <!-- ====== Tasks Tab ====== -->
-        <div id="tasks" class="tabcontent">
+        <div id="tasks" class="tab">
+            <h2 class="top h">Tasks</h2>
             <div id="tasks-list">
-                <h3 class="red-or">To Do/Am Doing</h3>
+                <h3>To Do/Am Doing</h3>
                 <ul>
                     <li v-for="task in tasks" v-if="task.type === 'task' && task.done === false">
                         {{ task.task }}<br><span class="date">{{ task.date }} - {{ task.type }}</span></li>
                 </ul>
                 <br>
-                <h3 class="red-or">Website Plans</h3>
+                <h3>Website Plans</h3>
                 <ul>
                     <li v-for="task in tasks" v-if="task.type === 'site' && task.done === false">
                         {{ task.task }}<br><span class="date">{{ task.date }} - {{ task.type }}</span></li>
                 </ul>
                 <br>
-                <h3 class="red-or">Completed Tasks</h3>
+                <h3>Completed Tasks</h3>
                 <ul>
                     <li v-for="task in tasks" v-if="task.done === true">{{ task.task }}<br><span
                             class="date">{{ task.date }} - {{ task.type }}</span></li>
@@ -113,12 +137,13 @@
             </div>
         </div>
         <!-- ====== Posts Tab ====== -->
-        <div id="posts" class="tabcontent">
-            <h2>Posts</h2>
+        <div id="posts" class="tab">
+            <h2 class="top">Posts</h2>
             <p>Here is where things I post will go. (still thinking of how ill do it)</p>
         </div>
         <!-- ====== Code tab Tab ====== -->
-        <div id="code" class="tabcontent">
+        <div id="code" class="tab">
+            <h2 class="top h">Code</h2>
             <h3 id="-sec-code">Secret Code</h3>
             <p>Secret code? Maybe give it a try. It Should actually work now.</p>
             <div id="secretcode">
@@ -131,17 +156,15 @@
             <p>View the code (On site) (Not added yet)</p>
         </div>
         <!-- ====== About Tab ====== -->
-        <div id="about" class="tabcontent">
+        <div id="about" class="tab">
+            <h2 class="top h">About</h2>
             <h3 id="-me">About Me</h3>
-            <div id="bio">
-                {{ bio }}
-            </div>
-            <p>I like programming, video games, and anything computer related. Recently I've been working on making a
-                Discord bot using NodeJS and JavaScript.</p>
+            <div id="bio" v-html="bio"></div>
             <hr id="-links" class="hr2">
             <h3 id="about-links">Links</h3>
             <div id="links">
                 <div v-for="link in links">
+                    <img width="20px" :src="link.img">
                     <a v-bind:id="'-link-' + link.link.replace(' ', '-').toLowerCase()"
                         v-bind:style="{ color: link.color }" v-bind:href="link.url" target="_blank">{{ link.link }}</a>
                     <br><span>{{ link.info }}</span>
@@ -150,14 +173,19 @@
                 <br>
             </div>
         </div>
-        <!-- ====== Other Tab ====== -->
-        <div id="other" class="tabcontent">
-            <h2>Other Things</h2>
+        <!-- == Other Tab == -->
+        <div id="other" class="tab">
+            <h2 class="top">Other Things</h2>
             <p>Other random things are here</p>
         </div>
-        <!-- ====== The settings tab content ====== -->
-        <div id="settings" class="tabcontent">
-            <h2>Site Settings</h2>
+        <!-- == Secret Tab == -->
+        <div id="secret" class="tab">
+            <h2 class="top">Secret page</h2>
+            <p>You found the secret page. So I guess, Hello o/</p>
+        </div>
+        <!-- == Settings Tab == -->
+        <div id="settings" style="font-size: 20px;" class="tab">
+            <h2 class="top">Site Settings</h2>
             <div id="theme">
                 <span>Chose the color theme you want (works now)</span>
                 <br>
@@ -171,8 +199,9 @@
             </div>
             <hr class="hr1">
             <div id="text-size">
-                <span>Change text size (not added)</span>
-                <input type="range" min="12" max="42" id="slider" />
+                <span>Change text size (The settings page is not affected by this)</span>
+                <br><input v-model="size" type="range" min="12" max="40" id="slider" />
+                <br><span :style="{ fontSize: size + 'px' }">{{ size }}px</span>
             </div>
             <hr class="hr1">
             <div id="reset-settings">
@@ -185,13 +214,9 @@
                 <button class="button-tran-red" onclick="location.reload(true)">Force Reload</button>
             </div>
         </div>
-        <div class="secret" onclick="navBar(event, 'secret')"></div>
-        <div id="secret" class="tabcontent">
-            <h2 class="red-or">Secret page</h2>
-            <p>You found the secret page. So I guess, Hello o/</p>
-        </div>
-        <div id="site" class="tabcontent">
-            <h2 id="-site">Site Info</h2>
+        <!-- == Site Info Tab == -->
+        <div id="site" class="tab">
+            <h2 id="-site" class="top">Site Info</h2>
             <p>This site started as
                 a simple project for me to play around with HTML, CSS, and JavaScript, and later decided to use it as my
                 personal website.
@@ -208,7 +233,8 @@
             <hr id="-st-an" class="hr2">
             <h3>localStorage and Analytics</h3>
             <p>My site uses the localStorage feature to save the tab you left off on so when you reload the page (or
-                come back to it) it will leave you on the tab you left off on. This site uses Google Analytics which tracks
+                come back to it) it will leave you on the tab you left off on. This site uses Google Analytics which
+                tracks
                 things
                 such as Demographics, site views, and more.
             </p>
@@ -216,19 +242,17 @@
             <div id="updates">
                 <h3>Site Updates</h3>
                 <ul v-for="update in updates">
-                    <li>{{ update.date }}<ul v-for="up in update.update">
+                    <li :id="'-' + update.date.replace('/', '-').replace('/', '-')">{{ update.date }}<ul v-for="up in update.update">
                             <li>{{ up }}</li>
                         </ul>
                     </li>
                 </ul>
             </div>
         </div>
-        <div class="site" onclick="navBar(event, 'site')" title="Info about this site, local storage, and analytics.">
-            Site Info
-        </div>
+        <div class="tab- site info-btn" onclick="navBar(event, 'site')">Site Info</div>
         <!-- === Settings button (gear) === -->
-        <div class="settings-svg settings" onclick="navBar(event, 'settings')">
-            <svg class="bi bi-gear" width="25px" viewBox="0 0 20 20" fill="currentColor"
+        <div class="tab- settings info-btn settings-svg" onclick="navBar(event, 'settings')">
+            <svg class="bi bi-gear" viewBox="0 0 20 20" fill="currentColor"
                 xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd"
                     d="M10.837 3.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 016.377 5.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 01-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 011.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 012.692 1.115l.094.319c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 012.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 011.115-2.693l.319-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 01-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159a1.873 1.873 0 01-2.693-1.115l-.094-.319zm-2.633-.283c.527-1.79 3.064-1.79 3.592 0l.094.319a.873.873 0 001.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 00.52 1.255l.319.094c1.79.527 1.79 3.064 0 3.592l-.319.094a.873.873 0 00-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 00-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 00-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 00-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 00.52-1.255l-.16-.292c-.892-1.64.901-3.433 2.541-2.54l.292.159a.873.873 0 001.255-.52l.094-.319z"

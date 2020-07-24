@@ -34,7 +34,6 @@ function onPageLoad() {
 };
 
 
-
 /* ----- Hash Tab linking ----- */
 function removeHash() {
     history.pushState("", document.title, window.location.pathname + window.location.search);
@@ -52,7 +51,7 @@ function pageAnchors() {
             document.getElementsByClassName(location.hash.toLowerCase().replace('#', ''))[0].click();
         }
     } else {
-        document.getElementsByClassName(local.tab)[0].click();
+        navBar(event, local.tab);
     }
     removeHash();
 }
@@ -99,29 +98,35 @@ function resetSiteData() {
 }
 
 /* ----- Nav Bar ----- */
-function navBar(evt, tab) {
+function navBar(evt, tab, mobile) {
+    if (mobile) {
+        closeNav()
+    }
     var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
+    tabcontent = document.getElementsByClassName("tab");
     for (i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
     }
-    tablinks = document.getElementsByClassName("tablinks");
+    tablinks = document.getElementsByClassName("tab-");
     for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
     document.getElementById(tab).style.display = "block";
-    evt.currentTarget.className += " active";
-    document.title = (tab);
+    // evt.currentTarget.className += " active";
+    var elmt = document.getElementsByClassName(tab);
+    elmt[0].className += ' active';
+    elmt[1].className += ' active';
+    document.title = ('SpiderGaming - ' + tab);
     local.tab = tab;
     if (cookies) {
         localStorage.setItem("siteData", JSON.stringify(local));
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            'event': 'Pageview',
+            'pagePath': tab,
+            'pageTitle': 'SpiderGaming - ' + tab
+        });
     }
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-        'event': 'Pageview',
-        'pagePath': tab,
-        'pageTitle': tab
-    });
 }
 
 /* Notification thingy */
@@ -170,6 +175,7 @@ var tasks = new Vue({
     }
 })
 
+var i = 0;
 var updates = new Vue({
     el: '#updates',
     data: {
@@ -177,18 +183,18 @@ var updates = new Vue({
     },
     created() {
         fetch('https://spidergamin.github.io/Style-JS/data.json')
-        .then(response => response.json())
-        .then(json => {
-            this.updates = json.lists.updates
-        });
-    }
+            .then(response => response.json())
+            .then(json => {
+                this.updates = json.lists.updates
+            });
+    },
 })
 
 /* Bio */
 var bio = new Vue({
     el: '#bio',
     data: {
-        bio: 'Test bio from vuejs'
+        bio: `Hello, I'm SpiderGaming. I am A YouTuber, gamer, web dev, and JS programmer. I spend most of my free time programming, mainly working on this website. Recently I've been working on this websites JavaScript.`
     }
 })
 
@@ -228,3 +234,51 @@ var secretcode = new Vue({
         }
     }
 })
+
+var fontSize = new Vue({
+    el: '#text-size',
+    data: {
+        size: '20'
+    },
+    watch: {
+        size: function (size) {
+            document.documentElement.style.setProperty("--size", size + 'px');
+        }
+    }
+})
+
+/* Set the width of the side navigation to 250px */
+function openNav() {
+    document.getElementsByClassName("sidenav")[0].style.width = "250px";
+}
+
+/* Set the width of the side navigation to 0 */
+function closeNav(time) {
+    if (time === undefined) time = 300;
+    setTimeout(() => {
+        document.getElementsByClassName("sidenav")[0].style.width = "0";
+    }, time)
+}
+
+
+
+
+function resize() {
+    closeNav(10)
+    // heightOutput.textContent = window.innerHeight;
+    // widthOutput.textContent = window.innerWidth;
+}
+window.onresize = resize;
+
+
+
+$(document).mouseup(function (e) {
+    var container = $('#sidebar');
+    var menu = $('#menu')
+    // If the target of the click isn't the container
+    if (!container.is(e.target) && container.has(e.target).length === 0) {
+        if (!menu.is(e.target) && menu.has(e.target).length === 0) {
+            closeNav(0)
+        }
+    }
+});

@@ -15,10 +15,10 @@ jobs:
       env:
         DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         DISCORD_USERNAME: Spiders Website
-        DISCORD_AVATAR: https://spidergamin.github.io/SpiderGaminLogo.png
+        DISCORD_AVATAR: https://spidergamin.github.io/SpiderGaminIcon.png
       uses: Ilshidur/action-discord@master
       with:
-        args: 'An update to my website has been released'
+        args: 'An update to my website has been released @Website Update'
     - name: Discord notification
       env:
         DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
