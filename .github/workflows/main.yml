@@ -18,7 +18,7 @@ jobs:
         DISCORD_AVATAR: https://spidergamin.github.io/SpiderGaminIcon.png
       uses: Ilshidur/action-discord@master
       with:
-        args: 'An update to my website has been released <@736086502228099073>'
+        args: 'An update to my website has been released'
     - name: Discord notification
       env:
         DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
