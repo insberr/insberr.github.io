@@ -80,7 +80,6 @@ $(window).bind('hashchange', function () {
     }
 });
 
-document.domain = "spidergaming.com";
 /* ----- Settings ----- */
 function resetSiteData() {
     var reset;
