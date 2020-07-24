@@ -80,12 +80,12 @@ $(window).bind('hashchange', function () {
     }
 });
 
-
+document.domain = "spidergaming.com";
 /* ----- Settings ----- */
 function resetSiteData() {
     var reset;
     let notifier = new AWN();
-    let onOk = () => { notifier.success('Site data reset'); reset = true; cookies = false; localStorage.clear(); };
+    let onOk = () => { notifier.success('Site data reset'); reset = true; cookies = false; localStorage.clear();};
     let onCancel = () => { notifier.info('Site data was not reset'); reset = false };
     notifier.confirm(
         'Are you sure you want to reset this sites data?',
