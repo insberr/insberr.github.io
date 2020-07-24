@@ -4,7 +4,7 @@ local = JSON.parse(localStorage.getItem('siteData'));
 function onPageLoad() {
     if (local === null) {
         localStorage.clear();
-        local = { tab: 'home' }
+        local = { tab: 'home', size: 'default', theme: 'default' }
         let notifier = new AWN();
         let onOk = () => { notifier.info('You allowed the use of the local storage feature'); cookies = true };
         let onCancel = () => { notifier.info('You denied the use of the local storage feature. For more info click <a href="#site">here</a>'); cookies = false };
@@ -20,6 +20,8 @@ function onPageLoad() {
         )
         if (cookies) localStorage.setItem('siteData', JSON.stringify(local));
     } else { cookies = true }
+    if (local.theme !== 'default') document.getElementById(local.theme).click();
+    if (local.size !== 'default') document.documentElement.style.setProperty("--size", local.size + 'px');
     try { pageAnchors() }
     catch (err) {
         notify('alert', 'Tab Error', 'There was a problem selecting that tab');
@@ -120,13 +122,13 @@ function navBar(evt, tab, mobile) {
     local.tab = tab;
     if (cookies) {
         localStorage.setItem("siteData", JSON.stringify(local));
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-            'event': 'Pageview',
-            'pagePath': tab,
-            'pageTitle': 'SpiderGaming - ' + tab
-        });
     }
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+        'event': 'Pageview',
+        'pagePath': tab,
+        'pageTitle': 'SpiderGaming - ' + tab
+    });
 }
 
 /* Notification thingy */
@@ -201,19 +203,22 @@ var bio = new Vue({
 var theme = new Vue({
     el: '#theme',
     data: {
-        picked: 'Default'
+        picked: local?.theme || 'default'
     },
     watch: {
         picked: function (val) {
-
             if (val == 'Dark') {
+                local.theme = 'dark';
                 document.documentElement.style.setProperty("--bg", "black");
                 document.documentElement.style.setProperty("--color", "white");
             } else if (val == 'Light') {
+                local.theme = 'light';
                 document.documentElement.style.setProperty("--bg", "rgb(206, 206, 206)");
                 document.documentElement.style.setProperty("--color", "black");
             }
-
+            if (cookies) {
+                localStorage.setItem("siteData", JSON.stringify(local));
+            }
         },
     }
 })
@@ -238,21 +243,23 @@ var secretcode = new Vue({
 var fontSize = new Vue({
     el: '#text-size',
     data: {
-        size: '20'
+        size: local?.size || 'default '
     },
     watch: {
         size: function (size) {
+            local.size = size;
             document.documentElement.style.setProperty("--size", size + 'px');
+            if (cookies) {
+                localStorage.setItem("siteData", JSON.stringify(local));
+            }
         }
     }
 })
 
-/* Set the width of the side navigation to 250px */
 function openNav() {
     document.getElementsByClassName("sidenav")[0].style.width = "250px";
 }
 
-/* Set the width of the side navigation to 0 */
 function closeNav(time) {
     if (time === undefined) time = 300;
     setTimeout(() => {
@@ -260,22 +267,14 @@ function closeNav(time) {
     }, time)
 }
 
-
-
-
 function resize() {
     closeNav(10)
-    // heightOutput.textContent = window.innerHeight;
-    // widthOutput.textContent = window.innerWidth;
 }
 window.onresize = resize;
-
-
 
 $(document).mouseup(function (e) {
     var container = $('#sidebar');
     var menu = $('#menu')
-    // If the target of the click isn't the container
     if (!container.is(e.target) && container.has(e.target).length === 0) {
         if (!menu.is(e.target) && menu.has(e.target).length === 0) {
             closeNav(0)
