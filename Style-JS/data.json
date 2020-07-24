@@ -69,6 +69,12 @@
         "updates": [
             {
                 "update": [
+                    "Added a timeout to the # anchor linking to prevent the scroll error"
+                ],
+                "date": "7-24-20"
+            },
+            {
+                "update": [
                     "Renamed the NavBar's css classes",
                     "Made a sidebar for smaller screens since the NavBar is a pain to resize",
                     "Changed the title of the site to 'SpiderGaming' instead of 'SpiderGaming`s Website'",
@@ -83,7 +89,7 @@
                     "Added a logo to the sidebar",
                     "Made the gear icon white unless its been clicked"
                 ],
-                "date": "7/23/20"
+                "date": "7-23-20"
             },
             {
                 "update": [
@@ -94,14 +100,14 @@
                     "Made navbar larger on smaller screens",
                     "Updated something not useful"
                 ],
-                "date": "7/22/20"
+                "date": "7-22-20"
             },
             {
                 "update": [
                     "Changed the secret code to use vuejs",
                     "Restyled the secret code input and output"
                 ],
-                "date": "7/18/20"
+                "date": "7-18-20"
             }
         ],
         "tasks": [

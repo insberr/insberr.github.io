@@ -47,7 +47,9 @@ function pageAnchors() {
             var tab = hash.split('-')[0].replace('#', '');
             var anchor = hash.replace(tab, '');
             document.getElementsByClassName(tab)[0].click();
-            scrollToAnchor(anchor)
+            setTimeout(() => {
+                scrollToAnchor(anchor)
+            }, 200)
         } else {
             document.getElementsByClassName(location.hash.toLowerCase().replace('#', ''))[0].click();
         }

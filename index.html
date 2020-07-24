@@ -242,7 +242,7 @@
             <div id="updates">
                 <h3>Site Updates</h3>
                 <ul v-for="update in updates">
-                    <li :id="'-' + update.date.replace('/', '-').replace('/', '-')">{{ update.date }}<ul v-for="up in update.update">
+                    <li :id="'-' + update.date">{{ update.date }}<ul v-for="up in update.update">
                             <li>{{ up }}</li>
                         </ul>
                     </li>
