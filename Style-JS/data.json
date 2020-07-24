@@ -87,7 +87,8 @@
                     "Made the gear icon bigger",
                     "Added an image to each link on the about page",
                     "Added a logo to the sidebar",
-                    "Made the gear icon white unless its been clicked"
+                    "Made the gear icon white unless its been clicked",
+                    "Made the theme and font size stay when you reload"
                 ],
                 "date": "7-23-20"
             },
@@ -111,6 +112,24 @@
             }
         ],
         "tasks": [
+            {
+                "type": "site",
+                "task": "Add a theme and font size reset button",
+                "date": "7/24, 20",
+                "done": false
+            },
+            {
+                "type": "site",
+                "task": "Add a mobile/desktop layout switcher and make layout better when smaller screens are rotated",
+                "date": "7/24, 20",
+                "done": false
+            },
+            {
+                "type": "site",
+                "task": "Redesigning the site",
+                "date": "7/24, 20",
+                "done": false
+            },
             {
                 "type": "task",
                 "task": "Make a game using Java",
