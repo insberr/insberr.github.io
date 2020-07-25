@@ -30,6 +30,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <link rel="stylesheet" href="Style-JS/style.css" />
     <script src="Style-JS/index.var.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="Style-JS/mystyle.css">
     <link rel="shortcut icon" href="https://spidergamin.github.io/SpiderGaminIcon.png" type="image/x-icon" />
@@ -81,17 +82,8 @@
         <button class="tab- code" onclick="navBar(event, 'code', 1)">Code</button>
         <button class="tab- about" onclick="navBar(event, 'about', 1)">About</button>
         <button class="tab- other" onclick="navBar(event, 'other', 1)">Other</button>
-        <div class="tab- site info-btn-" style="font-size: 20px;" onclick="navBar(event, 'site', 1)">Site Info</div>
-        <div class="tab- settings settings-svg info-btn-" onclick="navBar(event, 'settings', 1)">
-            <svg class="bi bi-gear" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd"
-                    d="M10.837 3.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 016.377 5.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 01-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 011.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 012.692 1.115l.094.319c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 012.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 011.115-2.693l.319-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 01-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159a1.873 1.873 0 01-2.693-1.115l-.094-.319zm-2.633-.283c.527-1.79 3.064-1.79 3.592 0l.094.319a.873.873 0 001.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 00.52 1.255l.319.094c1.79.527 1.79 3.064 0 3.592l-.319.094a.873.873 0 00-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 00-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 00-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 00-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 00.52-1.255l-.16-.292c-.892-1.64.901-3.433 2.541-2.54l.292.159a.873.873 0 001.255-.52l.094-.319z"
-                    clip-rule="evenodd" />
-                <path fill-rule="evenodd"
-                    d="M10 7.754a2.246 2.246 0 100 4.492 2.246 2.246 0 000-4.492zM6.754 10a3.246 3.246 0 116.492 0 3.246 3.246 0 01-6.492 0z"
-                    clip-rule="evenodd" />
-            </svg>
-        </div>
+        <i class="tab- site info-btn- material-icons" onclick="navBar(event, 'site', 1)">&#xe88e;</i>
+        <i class="tab- settings info-btn- material-icons" onclick="navBar(event, 'settings', 1)">&#xe8b8;</i>
     </div>
     <!-- Use any element to open the sidenav -->
     <span id="menu" class="menu" onclick="openNav()">&#9776;</span>
@@ -176,6 +168,7 @@
         <div id="other" class="tab">
             <h2 class="top">Other Things</h2>
             <p>Other random things are here</p>
+            <div id="corona-counter" v-html="day"></div>
         </div>
         <!-- == Secret Tab == -->
         <div id="secret" class="tab">
@@ -188,6 +181,7 @@
             <div id="theme">
                 <span>Chose the color theme you want (works now)</span>
                 <br>
+                <div>Dark/Light toggle</div>
                 <input type="radio" id="dark" value="Dark" v-model="picked">
                 <label for="dark">Dark</label>
                 <br>
@@ -195,17 +189,25 @@
                 <label for="light">Light</label>
                 <br><br>
                 <span>Current Mode: {{ picked }}</span>
+                <br><button class="button-tran-red" onclick="reset('theme')">Reset</button>
             </div>
             <hr class="hr1">
             <div id="text-size">
                 <span>Change text size (The settings page is not affected by this)</span>
                 <br><input v-model="size" type="range" min="12" max="40" id="slider" />
+                <br><button class="button-tran-red" onclick="reset('text')">Reset</button>
                 <br><span :style="{ fontSize: size + 'px' }">{{ size }}px</span>
+            </div>
+            <hr class="hr1">
+            <div id="device">
+                <span>Want to use the mobile version of this site on desktop? Or maybe the other way around? You can do that here. (Not added)</span>
+                <br><div>TOGGLE MOBILE/DESKTOP</div>
+                <br><button class="button-tran-red" onclick="reset('device')">Reset</button>
             </div>
             <hr class="hr1">
             <div id="reset-settings">
                 <span>Reset all site settings</span>
-                <button class="button-tran-red" onclick="resetSiteData()">Reset</button>
+                <br><button class="button-tran-red" onclick="reset('site')">Reset</button>
             </div>
             <hr class="hr1">
             <div id="force-reload">
@@ -253,19 +255,9 @@
             <a href="https://lgtm.com/projects/g/SpiderGamin/SpiderGamin.github.io/context:javascript"><img
                     alt="Language grade: JavaScript"
                     src="https://img.shields.io/lgtm/grade/javascript/g/SpiderGamin/SpiderGamin.github.io.svg?logo=lgtm&logoWidth=18" /></a>
-            </div>
-        <div class="tab- site info-btn" onclick="navBar(event, 'site')">Site Info</div>
-        <!-- === Settings button (gear) === -->
-        <div class="tab- settings info-btn settings-svg" onclick="navBar(event, 'settings')">
-            <svg class="bi bi-gear" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd"
-                    d="M10.837 3.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 016.377 5.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 01-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 011.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 012.692 1.115l.094.319c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 012.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 011.115-2.693l.319-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 01-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159a1.873 1.873 0 01-2.693-1.115l-.094-.319zm-2.633-.283c.527-1.79 3.064-1.79 3.592 0l.094.319a.873.873 0 001.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 00.52 1.255l.319.094c1.79.527 1.79 3.064 0 3.592l-.319.094a.873.873 0 00-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 00-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 00-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 00-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 00.52-1.255l-.16-.292c-.892-1.64.901-3.433 2.541-2.54l.292.159a.873.873 0 001.255-.52l.094-.319z"
-                    clip-rule="evenodd" />
-                <path fill-rule="evenodd"
-                    d="M10 7.754a2.246 2.246 0 100 4.492 2.246 2.246 0 000-4.492zM6.754 10a3.246 3.246 0 116.492 0 3.246 3.246 0 01-6.492 0z"
-                    clip-rule="evenodd" />
-            </svg>
         </div>
+        <i class="tab- site info-btn material-icons" onclick="navBar(event, 'site')">&#xe88e;</i>
+        <i class="tab- settings info-btn material-icons" onclick="navBar(event, 'settings')">&#xe8b8;</i>
     </div>
     <!-- The JavaScript -->
     <script src="Style-JS/main.js"></script>

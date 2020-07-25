@@ -87,7 +87,7 @@ body {
 .info-btn { display: initial; }
 .info-btn- { display: none; }
 
-.settings-svg {
+.settings {
     color: white;
     position: fixed;
     bottom: 0;
@@ -96,7 +96,7 @@ body {
     width: 35px;
     font-size: 20px;
 }
-.settings-svg.active {
+.settings.active {
     color: red;
 }
 
@@ -260,6 +260,7 @@ a:active {
     left: 0;
     background-color: #111;
     overflow-x: hidden;
+    overflow-y: scroll;
     padding-top: 60px;
     transition: .3s;
 }
@@ -307,11 +308,7 @@ a:active {
     top: 10px;
     left: 60px;
     font-size: 18px;
-}
-
-
-@media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
+    color: white;
 }
 
 .menu {
@@ -352,19 +349,58 @@ a:active {
     .site {
         position: absolute;
         bottom: 70px;
-        right: 20px;
-        font-size: 20px;
+        right: 10px;
+        font-size: 30px;
         color: white;
         cursor: initial;
     }
 
-    .settings-svg {
+    .settings {
         color: white;
         position: absolute;
-        bottom: 65px;
-        left: 15px;
+        bottom: 70px;
+        left: 10px;
         cursor: initial;
-        width: 30px;
-        font-size: 20px;
+        font-size: 30px;
+    }
+}
+
+@media only screen and (max-height: 500px) {
+    .bar {
+        display: none;
+    }
+    .menu {
+        display: initial;
+    }
+    .page-content {
+        margin: 70px 5px 50px 5px;
+    }
+    .h { display: initial; }
+    .top {
+        position: fixed;
+        top: 0;
+        margin-top: 10px;
+        right: 10px;
+    }
+
+    .info-btn { display: none; }
+    .info-btn- { display: initial; }
+
+    .site {
+        position: absolute;
+        bottom: 110px;
+        left: 10px;
+        font-size: 30px;
+        color: white;
+        cursor: initial;
+    }
+
+    .settings {
+        color: white;
+        position: absolute;
+        bottom: 70px;
+        left: 10px;
+        cursor: initial;
+        font-size: 30px;
     }
 }

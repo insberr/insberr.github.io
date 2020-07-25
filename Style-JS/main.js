@@ -82,6 +82,25 @@ $(window).bind('hashchange', function () {
 });
 
 /* ----- Settings ----- */
+function reset(i) {
+    switch (i) {
+        case 'text':
+            local.size = 'default';
+            break;
+        case 'site':
+            return resetSiteData();
+        case 'theme':
+            local.theme = 'default';
+            break;
+        case 'device':
+            // local.device = 'default';
+            break;
+    }
+    if (cookies) {
+        localStorage.setItem("siteData", JSON.stringify(local));
+    };
+}
+
 function resetSiteData() {
     var reset;
     let notifier = new AWN();
@@ -203,7 +222,7 @@ var bio = new Vue({
 var theme = new Vue({
     el: '#theme',
     data: {
-        picked: local?.theme || 'default'
+        picked: local?.theme || 'default',
     },
     watch: {
         picked: function (val) {
@@ -220,6 +239,11 @@ var theme = new Vue({
                 localStorage.setItem("siteData", JSON.stringify(local));
             }
         },
+    },
+    methods: {
+        clickMethod() {
+            // ...
+        }
     }
 });
 
@@ -255,6 +279,38 @@ var fontSize = new Vue({
         }
     }
 });
+
+function tConvert(time) {
+    time = time.toString().match(/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [time];
+    if (time.length > 1) { // If time format correct
+        time = time.slice(1);  // Remove full string match value
+        time[5] = +time[0] < 12 ? ' AM' : ' PM'; // Set AM/PM
+        time[0] = +time[0] % 12 || 12; // Adjust hours
+    }
+    return time.join(''); // return adjusted time or original string
+}
+
+var coronacation = new Vue({
+    el: '#corona-counter',
+    data: {
+        day: ''
+    }
+})
+
+var countDownDate = new Date("Mar 17, 2020 00:00:00").getTime();
+var x = setInterval(function () {
+    var now = new Date().getTime();
+    var distance = now - countDownDate;
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    minutes = ('0' + minutes).slice(-2)
+    seconds = ('0' + seconds).slice(-2)
+    console.debug()
+    coronacation.day = `Day ${days} of coronacation. ${tConvert(`${hours}:${minutes}:${seconds}`)}`;
+}, 1000);
+
 
 function openNav() {
     document.getElementsByClassName("sidenav")[0].style.width = "250px";

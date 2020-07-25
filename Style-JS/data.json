@@ -6,6 +6,7 @@
         {
             "link": "Github Profile",
             "color": "none",
+            "img": "https://spidergamin.github.io/SpiderGaminIcon.png",
             "url": "https://github.com/SpiderGamin",
             "info": "My github profile. I store all of my open souse code here."
         },
@@ -18,12 +19,14 @@
         {
             "link": "SpiderBot",
             "color": "none",
+            "img": "https://spidergamin.github.io/SpiderGaminIcon.png",
             "url": "https://github.com/SpiderGamin/SpiderBot-Code",
             "info": "A discord bot im making. Its supposed to do everything. Its under heavy dev at the moment."
         },
         {
             "link": "SpaceCompany Desktop",
             "color": "none",
+            "img": "https://sparticle999.github.io/SpaceCompany/SpaceCompanyFavicon.png",
             "url": "https://github.com/spidergamin/SpaceCompany-Desktop",
             "info": "I am turning a web game, SpaceCompany, into a desktop app."
         },
@@ -37,7 +40,7 @@
         {
             "link": "Idle Universe",
             "color": "none",
-            "url": "https://spidergaming.gitlab.io/Incremental-Universe",
+            "url": "https://spidergaming.gitlab.io/idle-universe",
             "info": "Idle Universe (Incremental Universe) is a game me and some friends were making."
         },
         {
@@ -67,6 +70,16 @@
     ],
     "lists": {
         "updates": [
+            {
+                "update": [
+                    "Added a 'Day of coronacation' counter to the other tab",
+                    "Added reset buttons to all of the settings",
+                    "Started work on adding a dark/light mode toggle",
+                    "Changed the 'Site Info' and gear icon to google font icons",
+                    "Made the size bar appear on small screens even when rotated horizontally"
+                ],
+                "date": "7-25-20"
+            },
             {
                 "update": [
                     "Added a timeout to the # anchor linking to prevent the scroll error"
@@ -115,8 +128,8 @@
             {
                 "type": "site",
                 "task": "Add a theme and font size reset button",
-                "date": "7/24, 20",
-                "done": false
+                "date": "7/24-25, 20",
+                "done": true
             },
             {
                 "type": "site",
@@ -127,8 +140,8 @@
             {
                 "type": "site",
                 "task": "Redesigning the site",
-                "date": "7/24, 20",
-                "done": false
+                "date": "7/24-25, 20",
+                "done": true
             },
             {
                 "type": "task",
@@ -157,8 +170,8 @@
             {
                 "type": "site",
                 "task": "Adding accessibility settings",
-                "date": "7/16, 20",
-                "done": false
+                "date": "7/16-25, 20",
+                "done": true
             },
             {
                 "type": "task",
