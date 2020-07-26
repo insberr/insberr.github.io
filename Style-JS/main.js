@@ -96,6 +96,7 @@ function reset(i) {
             // local.device = 'default';
             break;
     }
+    notify('success', 'Reset', `Setting: ${i} was successfully reset`)
     if (cookies) {
         localStorage.setItem("siteData", JSON.stringify(local));
     };
