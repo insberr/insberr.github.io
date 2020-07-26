@@ -7,7 +7,7 @@ Welcome to the code for my website!
 See [update 7-25-20 here](https://spidergamin.github.io/#site-7-25-20)
 
 # Suggestions
-Suggestions and help would be awsome!
+Suggestions and help would be awesome!
 
 
 # v0.0.2 !!!
