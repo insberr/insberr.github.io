@@ -343,7 +343,7 @@ $(document).mouseup(function (e) {
 
 var webPosts = 'https://website-posts--spidergamin.repl.co'
 var posts = new Vue({
-    el: '#posts',
+    el: '#posts-display',
     data: {
         posts: []
     },
