@@ -342,14 +342,14 @@ $(document).mouseup(function (e) {
 
 
 var webPosts = 'https://website-posts--spidergamin.repl.co'
-var links = new Vue({
+var posts = new Vue({
     el: '#posts',
     data: {
         posts: []
     },
     created() {
         pushP('/posts', 'post', { num: 2, more: 0 }, function(res) {
-            console.log('Callback ' + res);
+            console.log(res);
             this.posts = res.posts;
         })
     }
