@@ -360,7 +360,7 @@ function pushP(url, type, data, resp) {
 	.then(function (res) {
 		console.log(res.data.error);
       	console.log(res.data);
-		return resp(res)
+		return resp(res.data)
     })
     .catch(function (error) {
       	// handle error
