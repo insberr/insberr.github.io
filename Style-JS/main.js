@@ -264,17 +264,17 @@ var posts = new Vue({
 
 function pushP(url, type, data) {
     return new Promise(function (resolve, reject) {
-        resolve(function () {
-            axios.post(webPosts + url, data)
-                .then(function (res) {
-                    console.log(res.data.error);
-                    console.log(res.data);
-                })
-                .catch(function (error) {
-                    // handle error
-                    console.log(error);
-                })
-        })
+        axios.post(webPosts + url, data)
+            .then(function (res) {
+                console.log(res.data.error);
+                console.log(res.data);
+                resolve(res.data)
+            })
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+                reject(err)
+            })
     })
 }
 /*
