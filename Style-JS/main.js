@@ -349,16 +349,17 @@ var links = new Vue({
     },
     created() {
         pushP('/posts', 'post', { num: 2, more: 0 }, function(res) {
+            console.log('Callback ' + res);
             this.posts = res.posts;
         })
     }
 });
-function pushP(url, type, data, resp) {
+function pushP(url, type, data, callback) {
 	axios.post(webPosts + url, data)
 	.then(function (res) {
 		console.log(res.data.error);
       	console.log(res.data);
-		return resp(res.data)
+		return callback(res.data)
     })
     .catch(function (error) {
       	// handle error
