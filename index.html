@@ -133,7 +133,7 @@
             <p>Here is where things I post will go. (still thinking of how ill do it)</p>
             <div id="postsdisplay">
                 {{ posts }}
-                <div v-for="post in posts">
+                <div v-for="post in posts.posts">
                     <span>{{ post.content.title }}<span>
                     <br><span>{{ post.content.body }}</span>
                 </div>
