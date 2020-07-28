@@ -250,7 +250,7 @@ var theme = new Vue({
 
 var webPosts = 'https://website-posts--spidergamin.repl.co'
 var posts = new Vue({
-    el: '#posts-display',
+    el: '#postsdisplay',
     data: {
         posts: []
     },
@@ -261,24 +261,28 @@ var posts = new Vue({
         })
     }
 });
+
+function pushP(url, type, data) {
+    return new Promise(function (resolve, reject) {
+        resolve(function () {
+            axios.post(webPosts + url, data)
+                .then(function (res) {
+                    console.log(res.data.error);
+                    console.log(res.data);
+                })
+                .catch(function (error) {
+                    // handle error
+                    console.log(error);
+                })
+        })
+    })
+}
 /*
 pushP('/posts', 'post', { num: 2, more: 0 }, function(res) {
     console.log(res);
     postsposts = res;
 })
 */
-function pushP(url, type, data, callback) {
-    axios.post(webPosts + url, data)
-        .then(function (res) {
-            console.log(res.data.error);
-            console.log(res.data);
-            return callback(res.data)
-        })
-        .catch(function (error) {
-            // handle error
-            console.log(error);
-        })
-}
 
 
 var secretcode = new Vue({
