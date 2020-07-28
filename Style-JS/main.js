@@ -248,6 +248,39 @@ var theme = new Vue({
     }
 });
 
+var webPosts = 'https://website-posts--spidergamin.repl.co'
+var posts = new Vue({
+    el: '#posts-display',
+    data: {
+        posts: []
+    },
+    created() {
+        pushP('/posts', 'post', { num: 2, more: 0 }).then((res) => {
+            console.log(res);
+            this.posts = res;
+        })
+    }
+});
+/*
+pushP('/posts', 'post', { num: 2, more: 0 }, function(res) {
+    console.log(res);
+    postsposts = res;
+})
+*/
+function pushP(url, type, data, callback) {
+    axios.post(webPosts + url, data)
+        .then(function (res) {
+            console.log(res.data.error);
+            console.log(res.data);
+            return callback(res.data)
+        })
+        .catch(function (error) {
+            // handle error
+            console.log(error);
+        })
+}
+
+
 var secretcode = new Vue({
     el: '#secretcode',
     data: {
@@ -338,31 +371,3 @@ $(document).mouseup(function (e) {
         };
     };
 });
-
-
-
-var webPosts = 'https://website-posts--spidergamin.repl.co'
-var posts = new Vue({
-    el: '#posts-display',
-    data: {
-        posts: []
-    },
-    created() {
-        pushP('/posts', 'post', { num: 2, more: 0 }, function(res) {
-            console.log(res);
-            this.posts = res.posts;
-        })
-    }
-});
-function pushP(url, type, data, callback) {
-	axios.post(webPosts + url, data)
-	.then(function (res) {
-		console.log(res.data.error);
-      	console.log(res.data);
-		return callback(res.data)
-    })
-    .catch(function (error) {
-      	// handle error
-      	console.log(error);
-    })
-}
