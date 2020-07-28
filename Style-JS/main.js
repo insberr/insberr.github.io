@@ -338,3 +338,32 @@ $(document).mouseup(function (e) {
         };
     };
 });
+
+
+
+var webPosts = 'https://website-posts--spidergamin.repl.co'
+var links = new Vue({
+    el: '#posts',
+    data: {
+        posts: []
+    },
+    created() {
+        pushP('/posts', 'post', { num: 2, more: 0 })
+            .then(response => response.body.posts)
+            .then(posts => {
+                this.posts = posts
+            });
+    }
+});
+function pushP(url, type, data, resp) {
+	axios.post(webPosts + url, data)
+	.then(function (res) {
+		console.log(res.data.error);
+      	console.log(res.data);
+		return resp(res)
+    })
+    .catch(function (error) {
+      	// handle error
+      	console.log(error);
+    })
+}
