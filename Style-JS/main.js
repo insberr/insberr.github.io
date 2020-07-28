@@ -348,11 +348,9 @@ var links = new Vue({
         posts: []
     },
     created() {
-        pushP('/posts', 'post', { num: 2, more: 0 })
-            .then(response => response.body.posts)
-            .then(posts => {
-                this.posts = posts
-            });
+        pushP('/posts', 'post', { num: 2, more: 0 }, function(res) {
+            this.posts = res.posts;
+        })
     }
 });
 function pushP(url, type, data, resp) {
