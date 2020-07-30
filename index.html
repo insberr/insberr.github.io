@@ -130,13 +130,43 @@
         <!-- ====== Posts Tab ====== -->
         <div id="posts" class="tab">
             <h2 class="top">Posts</h2>
-            <p>Here is where things I post will go. (still thinking of how ill do it)</p>
+            <p style="color: red; font-weight: bold;">Please read the rules and info listed at the top of the page before posting. I do not expect much from you.</p>
+            <h4>Rules and Info</h4>
+            <p>Welcome to my official Blog. Comments are disabled because they are not stable for use yet. Please don't spam the comments and have fun. This tab is a working progress and may have some issues.</p>
             <div id="postsdisplay">
-                {{ posts }}
-                <div v-for="post in posts.posts">
-                    <span>{{ post.content.title }}<span>
-                    <br><span>{{ post.content.body }}</span>
+                <div v-for="post in posts">
+                    <div v-bind:id="'-' + post.id" class="post-frame">
+                        <div class="post-title">{{ post.title }}</div>
+                        <div class="post-body" v-html="post.body"></div>
+                        <div class="post-info">
+                            <span><i v-on:click="commentShow(post.id)" class="material-icons">&#xe0b9;</i> {{ post.commentCount || 0 }}</span>
+                            <span>{{ post.username }} | {{ post.date }}</span>
+                        </div>
+                        <div class="post-coms com-hide">
+                            <div v-for="comment in comments">
+                                <div v-if="comment.postId === post.id">
+                                    <div v-bind:id="'-' + post.id + '-' + comment.id" class="com-frame">
+                                        <div class="post-title">{{ comment.title }}</div>
+                                        <div class="post-body">{{ comment.body }}</div>
+                                        <div class="post-info">
+                                            <span>{{ comment.username }} | {{ comment.date }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span v-if="comment.postId !== post.id">No comments to display here</span>
+                            </div>
+                            <h4>Post a comment, {{ username }}</h4>
+                            <p v-if="error" style="color: red; font-weight: bold;">Error: {{ error }}</p>
+                            <div class="com-post">
+                                <textarea v-model="commentTitle" placeholder="Title" rows="2"></textarea>
+                                <textarea v-model="commentBody" placeholder="Post a comment" rows="5"></textarea>
+                                <br><button class="b" v-on:click="postComment(post.id)">Post</button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="hr1">
                 </div>
+                <button class="b" v-on:click="loadMorePosts">Load more posts</button><span v-if="noMore">There are no more posts to load</span>
             </div>
         </div>
         <!-- ====== Code tab Tab ====== -->
@@ -145,9 +175,8 @@
             <h3 id="-sec-code">Secret Code</h3>
             <p>Secret code? Maybe give it a try. It Should actually work now.</p>
             <div id="secretcode">
-                <textarea class="input-box" v-model="input" placeholder="Decode/Encode my Secret Code" rows="4"
-                    cols="30"></textarea>
-                <p v-html="output" class="s-output">{{ output }}</p>
+                <textarea v-model="input" placeholder="Decode/Encode my Secret Code" rows="4" cols="30"></textarea>
+                    <p v-html="output" class="s-output">{{ output }}</p>
             </div>
             <hr id="-site-code" class="hr2">
             <h3>Sites Code</h3>
@@ -185,41 +214,43 @@
         <!-- == Settings Tab == -->
         <div id="settings" style="font-size: 20px;" class="tab">
             <h2 class="top">Site Settings</h2>
+            <div id="username">
+                <span>Chose the username you would like to use</span>
+                <br><input v-model="username" type="text">
+            </div>
+            <hr class="hr1">
             <div id="theme">
                 <span>Chose the color theme you want (works now)</span>
                 <br>
-                <div>Dark/Light toggle</div>
-                <input type="radio" id="dark" value="Dark" v-model="picked">
-                <label for="dark">Dark</label>
-                <br>
-                <input type="radio" id="light" value="Light" v-model="picked">
-                <label for="light">Light</label>
+                <div v-on:click="toggleTheme(false, false)" id="theme-toggle">Toggle theme</div>
                 <br><br>
                 <span>Current Mode: {{ picked }}</span>
-                <br><button class="button-tran-red" onclick="reset('theme')">Reset</button>
+                <br><button class="b" onclick="reset('theme')">Reset</button>
             </div>
             <hr class="hr1">
             <div id="text-size">
                 <span>Change text size (The settings page is not affected by this)</span>
                 <br><input v-model="size" type="range" min="12" max="40" id="slider" />
-                <br><button class="button-tran-red" onclick="reset('text')">Reset</button>
+                <br><button class="b" onclick="reset('text')">Reset</button>
                 <br><span :style="{ fontSize: size + 'px' }">{{ size }}px</span>
             </div>
             <hr class="hr1">
             <div id="device">
-                <span>Want to use the mobile version of this site on desktop? Or maybe the other way around? You can do that here. (Not added)</span>
-                <br><div>TOGGLE MOBILE/DESKTOP</div>
-                <br><button class="button-tran-red" onclick="reset('device')">Reset</button>
+                <span>Want to use the mobile version of this site on desktop? Or maybe the other way around? You can do
+                    that here. (Not added)</span>
+                <br>
+                <div>TOGGLE MOBILE/DESKTOP</div>
+                <br><button class="b" onclick="reset('device')">Reset</button>
             </div>
             <hr class="hr1">
             <div id="reset-settings">
                 <span>Reset all site settings</span>
-                <br><button class="button-tran-red" onclick="reset('site')">Reset</button>
+                <br><button class="b" onclick="reset('site')">Reset</button>
             </div>
             <hr class="hr1">
             <div id="force-reload">
                 <span>Force reload (gets new data for the site quicker)</span>
-                <button class="button-tran-red" onclick="location.reload(true)">Force Reload</button>
+                <button class="b" onclick="location.reload(true)">Force Reload</button>
             </div>
         </div>
         <!-- == Site Info Tab == -->
@@ -251,7 +282,7 @@
                 <h3>Site Updates</h3>
                 <ul v-for="update in updates">
                     <li :id="'-' + update.date">{{ update.date }}<ul v-for="up in update.update">
-                            <li>{{ up }}</li>
+                            <li v-html="up"></li>
                         </ul>
                     </li>
                 </ul>
