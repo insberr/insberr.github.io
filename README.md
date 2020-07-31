@@ -4,7 +4,7 @@
 # SpiderGaming's Website
 Welcome to the code for my website!
 
-See the most recent update - [update 7-30-20 here](https://spidergamin.github.io/#site-7-30-20)
+See the most recent update - [update 7-31-20 here](https://spidergamin.github.io/#site-7-31-20)
 
 Currently working on the posts section of my website. Stay tuned for the release of comments!
 

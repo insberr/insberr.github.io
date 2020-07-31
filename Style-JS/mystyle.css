@@ -1,69 +1,83 @@
+* {
+    transition: background-color .4s;
+}
+
 html {
     scroll-behavior: smooth;
     user-select: none;
     -webkit-user-select: none;
     --size: 20px;
 }
-  
-@media (prefers-color-scheme: dark) {
-    html {
-        --bg: black;
-        --color: white;
-    }
-    body {
-        background: var(--bg);
-        color: var(--color);
-    }
-    input, textarea { color: white; }
-}
-
-@media (prefers-color-scheme: light) {
-    html {
-        --bg: rgb(206, 206, 206);
-        --color: black;
-    }
-    body {
-        background: var(--bg);
-        color: var(--color);
-    }
-    input, textarea { color: black; }
-}
 
 #awn-popup-wrapper .awn-popup-body {
     background-color: #5c5c5c;
     color: white;
 }
-.awn-buttons { outline: 0; }
+
+.awn-buttons {
+    outline: 0;
+}
 
 /* === Scroll Bar === */
-::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: transparent; }
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
 ::-webkit-scrollbar-thumb {
-    background: #888; 
+    background: #888;
     border-radius: 2px;
 }
-::-webkit-scrollbar-thumb:hover { background: #555; }
 
-@font-face {
-  font-family: 'MyHand';
-  src: url('../Handwriting1.ttf') format('truetype');
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 
-h1, h2, h3, h4, h5, h6 { color: #fc5203; }
+@font-face {
+    font-family: 'MyHand';
+    src: url('../Handwriting1.ttf') format('truetype');
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #fc5203;
+}
 
 body {
+    background-color: black;
+    color: white;
     font-family: Arial, sans-serif;
     font-size: var(--size);
     user-select: none;
     -webkit-user-select: none;
 }
 
-.date { color: gray; font-size: 15px; }
+#theme #theme-toggle .material-icons {
+    font-size: 30px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
 
-.page-content { margin: 60px 5px 50px 5px; }
+.date {
+    color: gray;
+    font-size: 15px;
+}
 
-.info-btn { display: initial; }
-.info-btn- { display: none; }
+.page-content {
+    margin: 60px 5px 50px 5px;
+}
+
+.info-btn {
+    display: initial;
+}
+
+.info-btn- {
+    display: none;
+}
 
 .settings {
     color: gray;
@@ -74,7 +88,10 @@ body {
     width: 35px;
     font-size: 20px;
 }
-.settings.active, .site.active, .settings:hover, .site:hover { color: red; }
+
+.settings.active, .site.active, .settings:hover, .site:hover {
+    color: red;
+}
 
 .s-output {
     background-color: gray;
@@ -92,6 +109,7 @@ button.b {
     outline: 0;
     border: 1.5px solid red;
 }
+
 button.b:hover {
     color: black;
     border-radius: 5px;
@@ -114,19 +132,26 @@ textarea, input {
     border-width: 4px;
     outline: 0;
     padding: 8px;
-    color: var(--color);
 }
+
 input {
     border-radius: 5px;
     border-width: 2px;
     padding: 2px;
-    color: var(--color);
     margin: 3px;
 }
 
-a:link, a:visited { color:rgb(255, 39, 39); }
-a:hover { color: rgb(255, 80, 80); }
-a:active { color: rgb(170, 0, 0); }
+a:link, a:visited {
+    color: rgb(255, 39, 39);
+}
+
+a:hover {
+    color: rgb(255, 80, 80);
+}
+
+a:active {
+    color: rgb(170, 0, 0);
+}
 
 .hr2, .hr1 {
     margin-top: 30px;
@@ -134,6 +159,7 @@ a:active { color: rgb(170, 0, 0); }
     border: 3px solid red;
     border-radius: 2px;
 }
+
 .hr1 {
     border: 1.5px solid red;
     border-radius: 1px;
@@ -141,41 +167,57 @@ a:active { color: rgb(170, 0, 0); }
 }
 
 .post-frame {
-    background-color: #222222;
-    padding: 20px;
+    padding-top: 5px;
+    padding-left: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
+
 .com-frame {
-    background-color: #505050;
     padding: 20px;
     margin-top: 20px;
 }
+
 .post-title {
     font-weight: bold;
     margin-bottom: 15px;
 }
+
 .post-body {
-    color: #ff8f6d;
     margin-bottom: 10px;
 }
+
 .post-info {
     color: #888;
     font-size: 20px;
     bottom: 5px;
 }
-.post-info span { margin-right: 10px; }
+
+.post-info span {
+    margin-right: 10px;
+}
+
 .post-info i {
     font-size: 20px;
     transform: translateY(3px);
 }
-.post-info i:hover { color: red; }
+
+.post-info i:hover {
+    color: red;
+}
+
 .com-post textarea {
     width: -webkit-fill-available;
 }
-.com-hide { display: none; }
+
+.com-hide {
+    display: none;
+}
 
 /* ====== NavBar & SideBar ====== */
 
 /* == The bar == */
+
 .bar {
     overflow: hidden;
     background-color: #505050;
@@ -188,8 +230,9 @@ a:active { color: rgb(170, 0, 0); }
     left: 50%;
     z-index: 10;
 }
-        
+
 /* == The Tabs == */
+
 .bar button {
     background-color: #505050;
     float: left;
@@ -202,38 +245,51 @@ a:active { color: rgb(170, 0, 0); }
     color: white;
     margin: auto;
 }
-        
+
 /* == Tab Color On Hover == */
+
 .bar button:hover {
     background-color: red;
     color: white;
 }
-        
+
 /* == The Active Tab Color == */
+
 .bar button.active {
     background-color: red;
     color: white;
 }
-        
+
 /* == The Tab Content == */
+
 .tab {
     display: none;
     -webkit-animation: fadeEffect 1s;
     animation: fadeEffect 1s;
 }
-        
+
 /* == The Animations == */
+
 @-webkit-keyframes fadeEffect {
-    from {opacity: 0;}
-    to {opacity: 1;}
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
-        
+
 @keyframes fadeEffect {
-    from {opacity: 0;}
-    to {opacity: 1;}
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /* == SideBar == */
+
 .sidenav {
     height: 100%;
     width: 0;
@@ -249,10 +305,12 @@ a:active { color: rgb(170, 0, 0); }
 }
 
 /* == Close Button == */
+
 .sidenav .closebtn {
     position: absolute;
+    padding-right: 2px;
     top: 5px;
-    right: 25px;
+    right: 10px;
     font-size: 36px;
     margin-left: 50px;
     background-color: transparent;
@@ -262,6 +320,7 @@ a:active { color: rgb(170, 0, 0); }
 }
 
 /* == The Nav Buttons == */
+
 .sidenav button.tab- {
     background-color: transparent;
     border: none;
@@ -286,6 +345,7 @@ a:active { color: rgb(170, 0, 0); }
     left: 10px;
     width: 40px;
 }
+
 .sidenav .logo-name {
     position: absolute;
     top: 10px;
@@ -303,24 +363,37 @@ a:active { color: rgb(170, 0, 0); }
     left: 10px;
 }
 
-.h { display: none; }
+.h {
+    display: none;
+}
 
 /* ======== @media content size ======== */
+
 @media only screen and (max-width: 450px) {
-    .bar { display: none;     }
-    .menu { display: initial; }
-    .page-content { margin: 70px 5px 50px 5px; }
-    .h { display: initial; }
+    .bar {
+        display: none;
+    }
+    .menu {
+        display: initial;
+    }
+    .page-content {
+        margin: 70px 5px 50px 5px;
+    }
+    .h {
+        display: initial;
+    }
     .top {
         position: fixed;
         top: 0;
         margin-top: 10px;
         right: 10px;
     }
-
-    .info-btn { display: none; }
-    .info-btn- { display: initial; }
-
+    .info-btn {
+        display: none;
+    }
+    .info-btn- {
+        display: initial;
+    }
     .site {
         position: absolute;
         bottom: 70px;
@@ -340,20 +413,30 @@ a:active { color: rgb(170, 0, 0); }
 }
 
 @media only screen and (max-height: 500px) {
-    .bar { display: none; }
-    .menu { display: initial; }
-    .page-content { margin: 70px 5px 50px 5px; }
-    .h { display: initial; }
+    .bar {
+        display: none;
+    }
+    .menu {
+        display: initial;
+    }
+    .page-content {
+        margin: 70px 5px 50px 5px;
+    }
+    .h {
+        display: initial;
+    }
     .top {
         position: fixed;
         top: 0;
         margin-top: 10px;
         right: 10px;
     }
-
-    .info-btn { display: none; }
-    .info-btn- { display: initial; }
-
+    .info-btn {
+        display: none;
+    }
+    .info-btn- {
+        display: initial;
+    }
     .site {
         position: absolute;
         bottom: 110px;

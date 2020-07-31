@@ -111,18 +111,20 @@
                 <h3>To Do/Am Doing</h3>
                 <ul>
                     <li v-for="task in tasks" v-if="task.type === 'task' && task.done === false">
-                        {{ task.task }}<br><span class="date">{{ task.date }} - {{ task.type }}</span></li>
+                        <span v-html="task.task"></span><br><span class="date">{{ task.date }} - {{ task.type }}</span>
+                    </li>
                 </ul>
                 <br>
                 <h3>Website Plans</h3>
                 <ul>
                     <li v-for="task in tasks" v-if="task.type === 'site' && task.done === false">
-                        {{ task.task }}<br><span class="date">{{ task.date }} - {{ task.type }}</span></li>
+                        <span v-html="task.task"></span><br><span class="date">{{ task.date }} - {{ task.type }}</span>
+                    </li>
                 </ul>
                 <br>
-                <h3>Completed Tasks</h3>
+                <h3>Completed / Discarded Tasks</h3>
                 <ul>
-                    <li v-for="task in tasks" v-if="task.done === true">{{ task.task }}<br><span
+                    <li v-for="task in tasks" v-if="task.done === true"><span v-html="task.task"></span><br><span
                             class="date">{{ task.date }} - {{ task.type }}</span></li>
                 </ul>
             </div>
@@ -130,17 +132,21 @@
         <!-- ====== Posts Tab ====== -->
         <div id="posts" class="tab">
             <h2 class="top">Posts</h2>
-            <p style="color: red; font-weight: bold;">Please read the rules and info listed at the top of the page before posting. I do not expect much from you.</p>
+            <p style="color: red; font-weight: bold;">Please read the rules and info listed at the top of the page
+                before posting. I do not expect much from you.</p>
             <h4>Rules and Info</h4>
-            <p>Welcome to my official Blog. Comments are disabled because they are not stable for use yet. Please don't spam the comments and have fun. This tab is a working progress and may have some issues.</p>
+            <p>Welcome to my official Blog. Comments are disabled because they are not stable for use yet. Please don't
+                spam the comments and have fun. This tab is a working progress and may have some issues.</p>
             <div id="postsdisplay">
                 <div v-for="post in posts">
-                    <div v-bind:id="'-' + post.id" class="post-frame">
+                    <hr class="hr1" :id="'-' + post.id">
+                    <div :class="'-' + post.id + ' post-frame'">
                         <div class="post-title">{{ post.title }}</div>
                         <div class="post-body" v-html="post.body"></div>
                         <div class="post-info">
-                            <span><i v-on:click="commentShow(post.id)" class="material-icons">&#xe0b9;</i> {{ post.commentCount || 0 }}</span>
-                            <span>{{ post.username }} | {{ post.date }}</span>
+                            <span><i v-on:click="commentShow(post.id)" class="material-icons">&#xe0b9;</i>
+                                {{ post.commentCount || 0 }}</span>
+                            <span>{{ post.username }} <span style="display: inline-block;">{{ post.date }}</span></span>
                         </div>
                         <div class="post-coms com-hide">
                             <div v-for="comment in comments">
@@ -164,9 +170,10 @@
                             </div>
                         </div>
                     </div>
-                    <hr class="hr1">
                 </div>
-                <button class="b" v-on:click="loadMorePosts">Load more posts</button><span v-if="noMore">There are no more posts to load</span>
+                <hr class="hr1">
+                <button class="b" v-on:click="loadMorePosts">Load more posts</button><span v-if="noMore">There are no
+                    more posts to load</span>
             </div>
         </div>
         <!-- ====== Code tab Tab ====== -->
@@ -176,7 +183,7 @@
             <p>Secret code? Maybe give it a try. It Should actually work now.</p>
             <div id="secretcode">
                 <textarea v-model="input" placeholder="Decode/Encode my Secret Code" rows="4" cols="30"></textarea>
-                    <p v-html="output" class="s-output">{{ output }}</p>
+                <p v-html="output" class="s-output">{{ output }}</p>
             </div>
             <hr id="-site-code" class="hr2">
             <h3>Sites Code</h3>
@@ -222,17 +229,18 @@
             <div id="theme">
                 <span>Chose the color theme you want (works now)</span>
                 <br>
-                <div v-on:click="toggleTheme(false, false)" id="theme-toggle">Toggle theme</div>
+                <span v-on:click="toggle('toggle')" id="theme-toggle" v-html="themeDiv"></span><span>&lt; Click that
+                    icon to change the theme</span>
                 <br><br>
                 <span>Current Mode: {{ picked }}</span>
-                <br><button class="b" onclick="reset('theme')">Reset</button>
+                <br><br><button class="b" onclick="reset('theme')">Reset</button>
             </div>
             <hr class="hr1">
             <div id="text-size">
                 <span>Change text size (The settings page is not affected by this)</span>
                 <br><input v-model="size" type="range" min="12" max="40" id="slider" />
-                <br><button class="b" onclick="reset('text')">Reset</button>
                 <br><span :style="{ fontSize: size + 'px' }">{{ size }}px</span>
+                <br><br><button class="b" onclick="reset('text')">Reset</button>
             </div>
             <hr class="hr1">
             <div id="device">

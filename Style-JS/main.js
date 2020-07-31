@@ -1,6 +1,7 @@
 /* ----- Page on Load ----- */
 var webPosts = 'https://website-posts--spidergamin.repl.co';
 var local, cookies;
+local = JSON.parse(localStorage.getItem('siteData'));
 $(document).ready(function () {
     local = JSON.parse(localStorage.getItem('siteData'));
     if (local === null) {
@@ -26,13 +27,12 @@ $(document).ready(function () {
         removeHash();
         navBar(event, 'home');
     };
-    if (local.size !== 'default') { document.documentElement.style.setProperty("--size", local.size + 'px'); document.getElementById('slider').value = local.size; fontSize.size = local.size; }
+    if (local.size !== 'default') { document.documentElement.style.setProperty("--size", local.size + 'px'); document.getElementById('slider').value = local.size; };
     /*
     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
         document.getElementsByTagName('body')[0].style.backgroundColor= 'red'
     }
     */
-
 });
 
 /* ----- Hash Tab linking ----- */
@@ -49,7 +49,7 @@ function pageAnchors() {
             document.getElementsByClassName(tab)[0].click();
             setTimeout(() => {
                 scrollToAnchor(anchor);
-            }, 200);
+            }, 500);
         } else {
             document.getElementsByClassName(location.hash.toLowerCase().replace('#', ''))[0].click();
         };
@@ -96,7 +96,7 @@ function reset(i) {
             // local.device = 'default';
             break;
     }
-    notify('success', 'Reset', `Setting: ${i} was successfully reset`)
+    notify('success', 'Reset', `Setting: ${i} was successfully reset`);
     if (cookies) {
         localStorage.setItem("siteData", JSON.stringify(local));
     };
@@ -150,7 +150,7 @@ function navBar(evt, tab, mobile) {
         'pagePath': tab,
         'pageTitle': 'SpiderGaming | ' + tab
     });
-}
+};
 
 /* Notification thingy */
 function notify(type, info, text) {
@@ -160,6 +160,266 @@ function notify(type, info, text) {
 
 
 /* ----- vue js ----- */
+var bio = new Vue({
+    el: '#bio',
+    data: {
+        bio: `Hello, I'm SpiderGaming. I am A YouTuber, gamer, web dev, and JS programmer. I spend most of my free time programming, mainly working on this website. Recently I've been working on this websites JavaScript.`
+    }
+});
+
+var userName = new Vue({
+    el: '#username',
+    data: {
+        username: 'anonymous'
+    },
+    watch: {
+        username: function () {
+            local.username = userName.username;
+            if (cookies) {
+                localStorage.setItem("siteData", JSON.stringify(local));
+            };
+        }
+    }
+});
+
+var theme = new Vue({
+    el: '#theme',
+    data: {
+        picked: '',
+        themeDiv: 'Toggle'
+    },
+    methods: {
+        toggle: function (p) {
+            if (p.includes('default')) {
+                theme.picked = 'default';
+                if (window.matchMedia('(prefers-color-scheme: dark').matches) { this.darkMode('default') };
+                if (window.matchMedia('(prefers-color-scheme: light').matches) { this.lightMode('default') };
+            } else if (p === 'dark') {
+                this.picked = 'dark';
+                this.darkMode();
+            } else if (p === 'light') {
+                this.picked = 'light';
+                this.lightMode();
+            } else if (p === 'toggle') {
+                if (this.picked.includes('dark')) {
+                    this.picked = 'light';
+                    this.lightMode();
+                } else {
+                    this.picked = 'dark';
+                    this.darkMode();
+                };
+            } else if (p === 'refresh') {
+                if (this.picked.includes('dark')) {
+                    this.darkMode(this.picked);
+                } else if (this.picked.includes('light')) {
+                    this.darkMode(this.picked);
+                };
+            };
+        },
+        darkMode: function (a) {
+            this.themeDiv = '<i class="material-icons">&#xe1ac;<i>';
+            if (a?.includes('default')) {
+                this.picked = 'default dark';
+            } else {
+                this.picked = 'dark';
+            };
+            local.theme = this.picked;
+            if (cookies) {
+                localStorage.setItem("siteData", JSON.stringify(local));
+            };
+
+            var body = document.querySelector('body');
+            body.style.backgroundColor = 'black';
+            body.style.color = 'white';
+
+            var textarea = document.querySelectorAll('textarea');
+            var input = document.querySelectorAll('input');
+            textarea.forEach(item => { item.style.color = 'white'; });
+            input.forEach(item => { item.style.color = 'white'; });
+
+            // document.querySelectorAll('.post-frame').forEach(i => { i.style.backgroundColor = 'transparent' });
+            document.querySelectorAll('.com-frame').forEach(i => { i.style.backgroundColor = '#505050' });
+            document.querySelectorAll('.post-title').forEach(i => { i.style.color = '#ff7247' });
+            document.querySelectorAll('.post-body').forEach(i => { i.style.color = 'white' });
+        },
+        lightMode: function (a) {
+            this.themeDiv = '<i class="material-icons">&#xe1ad;<i>';
+            if (a?.includes('default')) {
+                this.picked = 'default light';
+            } else {
+                this.picked = 'light';
+            };
+            local.theme = this.picked;
+            if (cookies) {
+                localStorage.setItem("siteData", JSON.stringify(local));
+            };
+
+            var body = document.querySelector('body');
+            body.style.backgroundColor = 'white';
+            body.style.color = 'black';
+
+            document.querySelectorAll('textarea').forEach(item => { item.style.color = 'black'; });
+            document.querySelectorAll('input').forEach(item => { item.style.color = 'black'; });
+
+            // document.querySelectorAll('.post-frame').forEach(i => { i.style.backgroundColor = 'transparent' });
+            document.querySelectorAll('.com-frame').forEach(i => { i.style.backgroundColor = '#cccccc' });
+            document.querySelectorAll('.post-title').forEach(i => { i.style.color = '#ff7247' });
+            document.querySelectorAll('.post-body').forEach(i => { i.style.color = 'black' });
+        }
+    }
+});
+
+window.matchMedia("(prefers-color-scheme: dark)").addListener(
+    e => e.matches && theme.darkMode(local.theme)
+);
+window.matchMedia("(prefers-color-scheme: light)").addListener(
+    e => e.matches && theme.lightMode(local.theme)
+);
+
+var secretcode = new Vue({
+    el: '#secretcode',
+    data: {
+        input: '',
+        output: 'The translated secret code will display here'
+    },
+    watch: {
+        input: function (val) {
+            if (this.input === '') {
+                this.output = 'The translated secret code will display here';
+            } else {
+                secretCode(val, (data) => this.output = data);
+            };
+        }
+    }
+});
+
+var fontSize = new Vue({
+    el: '#text-size',
+    data: {
+        size: local?.size || 'default '
+    },
+    watch: {
+        size: function (size) {
+            local.size = size;
+            document.documentElement.style.setProperty("--size", size + 'px');
+            if (cookies) {
+                localStorage.setItem("siteData", JSON.stringify(local));
+            };
+        }
+    }
+});
+
+
+var coronacation = new Vue({
+    el: '#corona-counter',
+    data: {
+        day: ''
+    }
+});
+
+function tConvert(time) {
+    var time = time.toString().match(/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [time];
+    if (time.length > 1) {
+        time = time.slice(1);
+        time[5] = +time[0] < 12 ? ' AM' : ' PM';
+        time[0] = +time[0] % 12 || 12;
+    };
+    return time.join('');
+};
+
+var countDownDate = new Date("Mar 17, 2020 00:00:00").getTime();
+var x = setInterval(function () {
+    var now = new Date().getTime();
+    var distance = now - countDownDate;
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    hours = ('0' + hours).slice(-2);
+    minutes = ('0' + minutes).slice(-2);
+    seconds = ('0' + seconds).slice(-2);
+    coronacation.day = `Day ${days} of coronacation. ${tConvert(`${hours}:${minutes}:${seconds}`)}`;
+}, 1000);
+
+
+
+
+var posts = new Vue({
+    el: '#postsdisplay',
+    data: {
+        username: '',
+        posts: [],
+        comments: [
+            { postId: 12, id: 1, username: 'SpiderGaming', date: 'Wed 7/29/20 5:43:00 PM', title: 'PLACEHOLDER', body: 'THIS IS A PLACEHOLDER COMMENT. Comments are disabled and will be enabled once they are stable.' }
+        ],
+        commentTitle: '',
+        commentBody: '',
+        error: null,
+        noMore: false,
+        amount: 10
+    },
+    created() {
+        pushP('/posts', 'post', { amount: this.amount }).then((res) => {
+            if (res.error) {
+                console.log(`[SERVER] ${res.error}`);
+                return this.error = `[SERVER] ${res.error}`;
+            }
+            if (res[0] === undefined) return this.noMore = true;
+            this.posts = res;
+        }).catch((err) => console.error(err));
+    },
+    methods: {
+        commentShow: function (postId) {
+            /*
+            pushP('/getComments', 'post', { postId: postId }).then((res) => {
+                if (res.error) { console.log(res.error); return; };
+                this.comments.push(res);
+            })
+            */
+            var c = document.getElementsByClassName(`-${postId}`)[0].getElementsByClassName('post-coms')[0];
+            if (c) {
+                if (c.className === 'post-coms') {
+                    c.className = 'post-coms com-hide';
+                } else {
+                    c.className = 'post-coms';
+                };
+            };
+        },
+        postComment: function (postId) {
+            return this.error = 'Comments are disabled. Also don`t send web requests for comments as it will return a status 404';
+            /*
+            if (this.commentTitle === '' || this.commentBody === '') return this.error = 'You must provide a Title and a Body';
+            // { postID: int, username: string, content: { title: string, body: string } }
+            var co = {
+                postID: postId,
+                username: local.username,
+                content: {
+                    title: this.commentTitle,
+                    body: this.commentBody
+                }
+            }
+            pushP('/comment', 'post', co).then((res) => {
+                if (res.error) return console.error(res.error);
+                if (res.info) return this.error = res.info;
+                Vue.set(posts.posts.posts, postId, res.update);
+            }).catch((err) => console.error(err));
+            this.commentBody = '', this.commentTitle = '';
+            */
+        },
+        loadMorePosts: function () {
+            pushP('/posts', 'post', { have: this.amount, amount: 5 }).then(async (res) => {
+                if (res.error) { console.log(res.error); return; };
+                if (res[0] === undefined) return this.noMore = true;
+                this.amount = this.amount + 5;
+                await res.forEach(post => {
+                    this.posts.push(post);
+                });
+                theme.toggle('refresh');
+            })?.catch((err) => console.error(err));
+        }
+    }
+});
+
 var links = new Vue({
     el: '#links',
     data: {
@@ -199,241 +459,49 @@ var updates = new Vue({
     }
 });
 
-var bio = new Vue({
-    el: '#bio',
-    data: {
-        bio: `Hello, I'm SpiderGaming. I am A YouTuber, gamer, web dev, and JS programmer. I spend most of my free time programming, mainly working on this website. Recently I've been working on this websites JavaScript.`
-    }
-});
-
-var userName = new Vue({
-    el: '#username',
-    data: {
-        username: 'anonymous'
-    },
-    watch: {
-        username: function () {
-            local.username = userName.username;
-            if (cookies) {
-                localStorage.setItem("siteData", JSON.stringify(local));
-            }
-        }
-    }
-});
-
-var theme = new Vue({
-    el: '#theme',
-    data: {
-        picked: '',
-    },
-    methods: {
-        toggleTheme: function () {
-            if (arguments[0]) {
-                this.picked = local.theme;
-                this.toggleTheme(false, true)
-            } else if (arguments[1]) {
-                if (this.picked === 'dark') {
-                    document.documentElement.style.setProperty("--bg", "black");
-                    document.documentElement.style.setProperty("--color", "white");
-                } else {
-                    document.documentElement.style.setProperty("--bg", "rgb(206, 206, 206)");
-                    document.documentElement.style.setProperty("--color", "black");
-                }
-            } else if (this.picked === 'dark') {
-                this.picked = 'light';
-                local.theme = 'light';
-                document.documentElement.style.setProperty("--bg", "rgb(206, 206, 206)");
-                document.documentElement.style.setProperty("--color", "black");
-            } else {
-                this.picked = 'dark';
-                local.theme = 'dark';
-                document.documentElement.style.setProperty("--bg", "black");
-                document.documentElement.style.setProperty("--color", "white");
-            };
-            if (cookies) {
-                localStorage.setItem("siteData", JSON.stringify(local));
-            };
-        }
-    }
-});
-
-var posts = new Vue({
-    el: '#postsdisplay',
-    data: {
-        username: '',
-        posts: [],
-        comments: [
-            { postId: 3, id: 1, username: 'SpiderGaming', date: 'Wed 7/29/20 5:43:00 PM', title: 'PLACEHOLDER', body: 'THIS IS A PLACEHOLDER COMMENT. Comments are disabled and will be enabled once they are stable.' }
-        ],
-        commentTitle: '',
-        commentBody: '',
-        error: null,
-        noMore: false,
-        amount: 10
-    },
-    created() {
-        pushP('/posts', 'post', { amount: this.amount }).then((res) => {
-            if (res.error) {
-                console.log(`[SERVER] ${res.error}`);
-                return this.error = `[SERVER] ${res.error}`;
-            }
-            if (res[0] === undefined) return this.noMore = true;
-            this.posts = res;
-        }).catch((err) => console.error(err));
-    },
-    methods: {
-        commentShow: function (postId) {
-            /*
-            pushP('/getComments', 'post', { postId: postId }).then((res) => {
-                if (res.error) { console.log(res.error); return; };
-                this.comments.push(res);
-            })
-            */
-            var c = document.getElementById(`-${postId}`).getElementsByClassName('post-coms')[0];
-            if (c) {
-                if (c.className === 'post-coms') {
-                    c.className = 'post-coms com-hide';
-                } else {
-                    c.className = 'post-coms';
-                };
-            }
-        },
-        postComment: function (postId) {
-            return this.error = 'Comments are disabled. Also don`t send web requests for comments as it will return a status 404'
-            /*
-            if (this.commentTitle === '' || this.commentBody === '') return this.error = 'You must provide a Title and a Body';
-            // { postID: int, username: string, content: { title: string, body: string } }
-            var co = {
-                postID: postId,
-                username: local.username,
-                content: {
-                    title: this.commentTitle,
-                    body: this.commentBody
-                }
-            }
-            pushP('/comment', 'post', co).then((res) => {
-                if (res.error) return console.error(res.error);
-                if (res.info) return this.error = res.info;
-                Vue.set(posts.posts.posts, postId, res.update);
-            }).catch((err) => console.error(err));
-            this.commentBody = '', this.commentTitle = '';
-            */
-        },
-        loadMorePosts: function () {
-            pushP('/posts', 'post', { have: this.amount, amount: 5 }).then((res) => {
-                if (res.error) { console.log(res.error); return; };
-                if (res[0] === undefined) return this.noMore = true;
-                this.amount = this.amount + 5;
-                this.posts.push(res)
-            })?.catch((err) => console.error(err));
-        }
-    }
-});
-
 function pushP(url, type, data) {
     return new Promise(function (resolve, reject) {
         if (type === 'post') {
             axios.post(webPosts + url, data)
                 .then(function (res) {
-                    resolve(res.data)
+                    resolve(res.data);
                 })
                 .catch(function (error) {
                     console.log(error);
-                    reject(error)
-                })
+                    reject(error);
+                });
         } else if (type === 'get') {
             axios.get(webPosts + url, data)
                 .then(function (res) {
-                    resolve(res.data)
+                    resolve(res.data);
                 })
                 .catch(function (error) {
                     console.log(error);
-                    reject(error)
-                })
-        }
-    })
+                    reject(error);
+                });
+        };
+    });
 };
 
-var secretcode = new Vue({
-    el: '#secretcode',
-    data: {
-        input: '',
-        output: 'The translated secret code will display here'
-    },
-    watch: {
-        input: function (val) {
-            if (this.input === '') {
-                this.output = 'The translated secret code will display here';
-            } else {
-                secretCode(val, (data) => this.output = data);
-            }
-        }
-    }
-});
-
-var fontSize = new Vue({
-    el: '#text-size',
-    data: {
-        size: local?.size || 'default '
-    },
-    watch: {
-        size: function (size) {
-            local.size = size;
-            document.documentElement.style.setProperty("--size", size + 'px');
-            if (cookies) {
-                localStorage.setItem("siteData", JSON.stringify(local));
-            }
-        }
-    }
-});
-
-function tConvert(time) {
-    time = time.toString().match(/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [time];
-    if (time.length > 1) { // If time format correct
-        time = time.slice(1);  // Remove full string match value
-        time[5] = +time[0] < 12 ? ' AM' : ' PM'; // Set AM/PM
-        time[0] = +time[0] % 12 || 12; // Adjust hours
-    }
-    return time.join(''); // return adjusted time or original string
-}
-
-var coronacation = new Vue({
-    el: '#corona-counter',
-    data: {
-        day: ''
-    }
-})
-
-var countDownDate = new Date("Mar 17, 2020 00:00:00").getTime();
-var x = setInterval(function () {
-    var now = new Date().getTime();
-    var distance = now - countDownDate;
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    minutes = ('0' + minutes).slice(-2)
-    seconds = ('0' + seconds).slice(-2)
-    console.debug()
-    coronacation.day = `Day ${days} of coronacation. ${tConvert(`${hours}:${minutes}:${seconds}`)}`;
-}, 1000);
-
+/* === SideBar === */
 function openNav() {
-    document.getElementsByClassName("sidenav")[0].style.width = "250px";
+    document.getElementsByClassName('sidenav')[0].style.width = '250px';
 };
 
-function closeNav(time) {
-    if (time === undefined) time = 300;
+function closeNav(t) {
+    if (t === undefined) var t = 300;
     setTimeout(() => {
-        document.getElementsByClassName("sidenav")[0].style.width = "0";
-    }, time);
+        document.getElementsByClassName('sidenav')[0].style.width = '0';
+    }, t);
 };
 
+// If the screen size changes, close the SideBar
 function resize() {
     closeNav(10);
 };
 window.onresize = resize;
 
+// When you click outside of the SideBar, close it
 $(document).mouseup(function (e) {
     var container = $('#sidebar');
     var menu = $('#menu');
@@ -444,12 +512,28 @@ $(document).mouseup(function (e) {
     };
 });
 
-
+/* === Wait 200 ms to set some values since the page load is that slow lol === */
 setTimeout(() => {
+    // Things that tak the username
     userName.username = local.username, posts.username = local.username;
-    if (local.theme !== 'default') {
-        theme.toggleTheme(true, false);
+    // Things that use the font size
+    fontSize.size = local.size;
+    // Things that use the theme
+    if (local.theme.includes('default')) {
+        theme.toggle(local.theme);
+    } else if (local.theme === 'dark') {
+        theme.toggle('dark');
     } else {
-        theme.picked = local.theme;
+        theme.toggle('light')
     };
-}, 200);
+}, 300);
+
+/* === Keyboard Shortcuts === */
+document.addEventListener('keyup', function (event) {
+    // CTR + D > change the theme
+    if (event.ctrlKey && event.key === 'q') {
+        theme.toggle('toggle');
+    } else if (event.ctrlKey && event.key === 'g') {
+        //
+    };
+});
