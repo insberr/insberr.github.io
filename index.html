@@ -137,11 +137,25 @@
             <h4>Rules and Info</h4>
             <p>Welcome to my official Blog. Comments are disabled because they are not stable for use yet. Please don't
                 spam the comments and have fun. This tab is a working progress and may have some issues.</p>
+            <div id="gottenPost" v-show="p">
+                <div class="getpostfade" style="background-color: hsl(0, 100%, 63%);">
+                    <div class="post-frame">
+                        <div class="post-title">{{ post.title }} | {{ post.id }}</div>
+                        <div class="post-body" v-html="post.body"></div>
+                        <div class="post-info">
+                            <span><i class="material-icons">&#xe0b9;</i>
+                                {{ post.commentCount || 0 }}</span>
+                            <span>{{ post.username }} <span style="display: inline-block;">{{ post.date }}</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div id="postsdisplay">
+                <p v-if="error" style="color: red; font-weight: bold;">Error: {{ error }}</p>
                 <div v-for="post in posts">
                     <hr class="hr1" :id="'-' + post.id">
-                    <div :class="'-' + post.id + ' post-frame'">
-                        <div class="post-title">{{ post.title }}</div>
+                    <div class="post-frame">
+                        <div class="post-title">{{ post.title }} | ID: {{ post.id }}</div>
                         <div class="post-body" v-html="post.body"></div>
                         <div class="post-info">
                             <span><i v-on:click="commentShow(post.id)" class="material-icons">&#xe0b9;</i>
@@ -222,27 +236,27 @@
         <div id="settings" style="font-size: 20px;" class="tab">
             <h2 class="top">Site Settings</h2>
             <div id="username">
-                <span>Chose the username you would like to use</span>
+                <span>Chose the username you would like to use. The username is only used when you create a post.</span>
                 <br><input v-model="username" type="text">
+                <br><br><button class="b" onclick="reset('username')">Reset</button>
             </div>
-            <hr class="hr1">
+            <hr class="hr1" id="-theme">
             <div id="theme">
                 <span>Chose the color theme you want (works now)</span>
-                <br>
-                <span v-on:click="toggle('toggle')" id="theme-toggle" v-html="themeDiv"></span><span>&lt; Click that
-                    icon to change the theme</span>
+                <br><span>Click the icon to change the theme</span>
+                <br><span v-on:click="toggle('toggle')" id="theme-toggle" v-html="themeDiv"></span>
                 <br><br>
-                <span>Current Mode: {{ picked }}</span>
+                <span>You are currently using <span v-if="picked.includes('default')">the </span>{{ picked }} mode.</span>
                 <br><br><button class="b" onclick="reset('theme')">Reset</button>
             </div>
-            <hr class="hr1">
+            <hr class="hr1" id="-size">
             <div id="text-size">
-                <span>Change text size (The settings page is not affected by this)</span>
+                <span>Change text size (The size does not affect this tab)</span>
                 <br><input v-model="size" type="range" min="12" max="40" id="slider" />
                 <br><span :style="{ fontSize: size + 'px' }">{{ size }}px</span>
                 <br><br><button class="b" onclick="reset('text')">Reset</button>
             </div>
-            <hr class="hr1">
+            <hr class="hr1" id="-device">
             <div id="device">
                 <span>Want to use the mobile version of this site on desktop? Or maybe the other way around? You can do
                     that here. (Not added)</span>
@@ -250,12 +264,12 @@
                 <div>TOGGLE MOBILE/DESKTOP</div>
                 <br><button class="b" onclick="reset('device')">Reset</button>
             </div>
-            <hr class="hr1">
+            <hr class="hr1" id="-reset">
             <div id="reset-settings">
                 <span>Reset all site settings</span>
                 <br><button class="b" onclick="reset('site')">Reset</button>
             </div>
-            <hr class="hr1">
+            <hr class="hr1" id="-reload">
             <div id="force-reload">
                 <span>Force reload (gets new data for the site quicker)</span>
                 <button class="b" onclick="location.reload(true)">Force Reload</button>
@@ -279,11 +293,11 @@
                     chrome extension</a> you can chat on this website?</p>
             <hr id="-st-an" class="hr2">
             <h3>localStorage and Analytics</h3>
-            <p>My site uses the localStorage feature to save the tab you left off on so when you reload the page (or
-                come back to it) it will leave you on the tab you left off on. This site uses Google Analytics which
-                tracks
-                things
-                such as Demographics, site views, and more.
+            <p>My site uses the localStorage feature to save the settings and the tab you left off on (so when you
+                reload the page you'll
+                be on the same tab). This site also uses Google Analytics which tracks things such as site views, what
+                tabs people looked at, and more. I plan to create my own Analytics system since people don't trust
+                google and they block it.
             </p>
             <hr id="-up" class="hr2">
             <div id="updates">

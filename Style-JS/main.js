@@ -1,33 +1,52 @@
 /* ----- Page on Load ----- */
+
 var webPosts = 'https://website-posts--spidergamin.repl.co';
-var local, cookies;
-local = JSON.parse(localStorage.getItem('siteData'));
-$(document).ready(function () {
+var local = {}, cookies = false;
+
+if (localStorage.getItem('siteData')) {
     local = JSON.parse(localStorage.getItem('siteData'));
-    if (local === null) {
-        localStorage.clear();
-        local = { tab: 'home', size: 'default', theme: 'default', username: 'anonymous' };
+    // Ask a user to
+    if (local.new === undefined || local.new === true) {
+        notify('info', 'Welcome Back', 'Welcome back! It is recommended that you <a href="#settings-reset">reset the site settings</a>')
+    }
+} else {
+    localStorage.clear();
+    local = { tab: 'home', size: '20', theme: 'default', username: 'Anonymous', new: true };
+};
+
+async function save() {
+    if (posts !== undefined) posts.username = local.username;
+    if (userName !== undefined) userName.username = local.username;
+    if (fontSize !== undefined) fontSize.size = local.size;
+    if (cookies) {
+        localStorage.setItem("siteData", JSON.stringify(local));
+    };
+};
+
+$(document).ready(function () {
+    if (local.new) {
+        local.new = false;
         let notifier = new AWN();
-        let onOk = () => { notifier.info('You allowed the use of the local storage feature'); cookies = true; localStorage.setItem('siteData', JSON.stringify(local)) };
-        let onCancel = () => { notifier.info('You denied the use of the local storage feature. For more info click <a href="#site">here</a>'); cookies = false };
+        let onOk = () => { notifier.info('You allowed the use of localStorage, more info <a href="#site">here</a>'); cookies = true; localStorage.setItem('siteData', JSON.stringify(local)) };
+        let onCancel = () => { notifier.info('You denied the use of the localStorage. For more info click <a href="#site">here</a>'); cookies = false };
         notifier.confirm(
-            'My website uses the local storage feature. Click "ok" to allow this site to store data or click "cancel" to deny.',
+            'My website uses the local storage feature. Click "ok" to allow this site to store data or click "cancel" to deny. This is used to save the sites settings.',
             onOk,
             onCancel,
             {
                 labels: {
-                    confirm: 'Cookies'
+                    confirm: 'LocalStorage'
                 }
             }
         );
-    } else { cookies = true; }
+    } else { cookies = true; };
     try { pageAnchors(); }
     catch (err) {
         notify('alert', 'Tab Error', 'There was a problem selecting that tab');
         removeHash();
         navBar(event, 'home');
     };
-    if (local.size !== 'default') { document.documentElement.style.setProperty("--size", local.size + 'px'); document.getElementById('slider').value = local.size; };
+    // if (local.size !== 'default') { document.documentElement.style.setProperty("--size", local.size + 'px'); document.getElementById('slider').value = local.size; };
     /*
     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
         document.getElementsByTagName('body')[0].style.backgroundColor= 'red'
@@ -40,16 +59,57 @@ function removeHash() {
     history.pushState("", document.title, window.location.pathname + window.location.search);
 };
 
+function rmSear() {
+    window.history.replaceState({}, document.title, "/" + " ");
+};
+
 function pageAnchors() {
+    if (window.location.search) {
+        let loc = new URLSearchParams(window.location.search);
+        let l = loc.get('l');
+        if (l.includes('-')) {
+            var tab = l.split('-')[0];
+            navBar(event, tab);
+            var anchor = l.split(tab)[1];
+            if (tab === 'posts') {
+                getPost(anchor.replace('-', ''))
+                rmSear();
+            } else {
+                rmSear();
+                setTimeout(() => {
+                    scrollToAnchor('#' + anchor);
+                }, 500);
+            };
+        } else {
+            var tab = l;
+            navBar(event, tab);
+            rmSear();
+        };
+    } else {
+        navBar(event, local.tab);
+        rmSear();
+    };
+
+};
+
+function pageAnchorsT() {
     if (location.hash) {
         if (location.hash.includes('-')) {
-            var hash = location.hash;
-            var tab = hash.split('-')[0].replace('#', '');
-            var anchor = hash.replace(tab, '');
-            document.getElementsByClassName(tab)[0].click();
-            setTimeout(() => {
-                scrollToAnchor(anchor);
-            }, 500);
+            if (location.hash.includes('posts')) {
+                var hash = location.hash;
+                var tab = hash.split('-')[0].replace('#', '');
+                document.getElementsByClassName(tab)[0].click();
+                var postId = hash.replace(tab, '');
+                getPost(postId.replace('-', '').replace('#', ''))
+            } else {
+                var hash = location.hash;
+                var tab = hash.split('-')[0].replace('#', '');
+                var anchor = hash.replace(tab, '');
+                document.getElementsByClassName(tab)[0].click();
+                setTimeout(() => {
+                    scrollToAnchor(anchor);
+                }, 200);
+            };
         } else {
             document.getElementsByClassName(location.hash.toLowerCase().replace('#', ''))[0].click();
         };
@@ -73,7 +133,7 @@ function scrollToAnchor(anchor) {
 
 $(window).bind('hashchange', function () {
     try {
-        pageAnchors();
+        pageAnchorsT();
     }
     catch (err) {
         notify('alert', 'Tab Error', `The tab or anchor "${location.hash}" does not exist`);
@@ -84,29 +144,30 @@ $(window).bind('hashchange', function () {
 /* ----- Settings ----- */
 function reset(i) {
     switch (i) {
+        case 'username':
+            local.username = 'Anonymous';
+            break;
         case 'text':
-            local.size = 'default';
+            local.size = '20';
             break;
         case 'site':
             return resetSiteData();
         case 'theme':
             local.theme = 'default';
+            theme.toggle(local.theme);
             break;
         case 'device':
             // local.device = 'default';
             break;
     }
-    notify('success', 'Reset', `Setting: ${i} was successfully reset`);
-    if (cookies) {
-        localStorage.setItem("siteData", JSON.stringify(local));
-    };
-    location.reload();
-}
+    save();
+    notify('success', 'Reset', `${i.toUpperCase()} was successfully reset`);
+};
 
 function resetSiteData() {
     var reset;
     let notifier = new AWN();
-    let onOk = () => { notifier.success('Site data reset'); reset = true; cookies = false; localStorage.clear(); };
+    let onOk = () => { notify("success", 'Site data reset', 'Refreshing in 1 second'); reset = true; cookies = false; localStorage.clear(); setTimeout(() => { location.reload() }, 1000) };
     let onCancel = () => { notifier.info('Site data was not reset'); reset = false; };
     notifier.confirm(
         'Are you sure you want to reset this sites data?',
@@ -122,9 +183,7 @@ function resetSiteData() {
 
 /* ----- Nav Bar ----- */
 function navBar(evt, tab, mobile) {
-    if (mobile) {
-        closeNav();
-    };
+    if (mobile) { closeNav() };
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tab");
     for (i = 0; i < tabcontent.length; i++) {
@@ -141,9 +200,7 @@ function navBar(evt, tab, mobile) {
     elmt[1].className += ' active';
     document.title = ('SpiderGaming | ' + tab);
     local.tab = tab;
-    if (cookies) {
-        localStorage.setItem("siteData", JSON.stringify(local));
-    };
+    save();
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
         'event': 'Pageview',
@@ -170,14 +227,15 @@ var bio = new Vue({
 var userName = new Vue({
     el: '#username',
     data: {
-        username: 'anonymous'
+        username: 'Loading'
+    },
+    created() {
+        this.username = ((local?.username) || 'Anonymous');
     },
     watch: {
         username: function () {
-            local.username = userName.username;
-            if (cookies) {
-                localStorage.setItem("siteData", JSON.stringify(local));
-            };
+            local.username = this.username;
+            save();
         }
     }
 });
@@ -185,15 +243,18 @@ var userName = new Vue({
 var theme = new Vue({
     el: '#theme',
     data: {
-        picked: '',
-        themeDiv: 'Toggle'
+        picked: 'default',
+        themeDiv: '<i class="material-icons">&#xe1ac</i>'
+    },
+    created() {
+        this.toggle(local.theme);
     },
     methods: {
         toggle: function (p) {
             if (p.includes('default')) {
-                theme.picked = 'default';
-                if (window.matchMedia('(prefers-color-scheme: dark').matches) { this.darkMode('default') };
-                if (window.matchMedia('(prefers-color-scheme: light').matches) { this.lightMode('default') };
+                this.picked = 'default';
+                if (window.matchMedia('(prefers-color-scheme: dark)').matches) { this.darkMode('default dark') };
+                if (window.matchMedia('(prefers-color-scheme: light)').matches) { this.lightMode('default light') };
             } else if (p === 'dark') {
                 this.picked = 'dark';
                 this.darkMode();
@@ -224,9 +285,7 @@ var theme = new Vue({
                 this.picked = 'dark';
             };
             local.theme = this.picked;
-            if (cookies) {
-                localStorage.setItem("siteData", JSON.stringify(local));
-            };
+            save();
 
             var body = document.querySelector('body');
             body.style.backgroundColor = 'black';
@@ -250,9 +309,7 @@ var theme = new Vue({
                 this.picked = 'light';
             };
             local.theme = this.picked;
-            if (cookies) {
-                localStorage.setItem("siteData", JSON.stringify(local));
-            };
+            save();
 
             var body = document.querySelector('body');
             body.style.backgroundColor = 'white';
@@ -296,15 +353,17 @@ var secretcode = new Vue({
 var fontSize = new Vue({
     el: '#text-size',
     data: {
-        size: local?.size || 'default '
+        size: '20'
+    },
+    created() {
+        this.size = ((local?.size) || '20');
+        document.getElementById('slider').value = this.size;
     },
     watch: {
         size: function (size) {
             local.size = size;
-            document.documentElement.style.setProperty("--size", size + 'px');
-            if (cookies) {
-                localStorage.setItem("siteData", JSON.stringify(local));
-            };
+            document.querySelector('body').style.fontSize = this.size + 'px';
+            save();
         }
     }
 });
@@ -313,42 +372,42 @@ var fontSize = new Vue({
 var coronacation = new Vue({
     el: '#corona-counter',
     data: {
-        day: ''
+        day: 'Days of coronacation'
+    },
+    created() {
+        function tConvert(time) {
+            var time = time.toString().match(/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [time];
+            if (time.length > 1) {
+                time = time.slice(1);
+                time[5] = +time[0] < 12 ? ' AM' : ' PM';
+                time[0] = +time[0] % 12 || 12;
+            };
+            return time.join('');
+        };
+        var countDownDate = new Date("Mar 17, 2020 00:00:00").getTime();
+        setInterval(() => {
+            var now = new Date().getTime();
+            var distance = now - countDownDate;
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            hours = ('0' + hours).slice(-2);
+            minutes = ('0' + minutes).slice(-2);
+            seconds = ('0' + seconds).slice(-2);
+            this.day = `Day ${days} of coronacation. ${tConvert(`${hours}:${minutes}:${seconds}`)}`;
+        }, 1000);
     }
 });
-
-function tConvert(time) {
-    var time = time.toString().match(/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [time];
-    if (time.length > 1) {
-        time = time.slice(1);
-        time[5] = +time[0] < 12 ? ' AM' : ' PM';
-        time[0] = +time[0] % 12 || 12;
-    };
-    return time.join('');
-};
-
-var countDownDate = new Date("Mar 17, 2020 00:00:00").getTime();
-var x = setInterval(function () {
-    var now = new Date().getTime();
-    var distance = now - countDownDate;
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    hours = ('0' + hours).slice(-2);
-    minutes = ('0' + minutes).slice(-2);
-    seconds = ('0' + seconds).slice(-2);
-    coronacation.day = `Day ${days} of coronacation. ${tConvert(`${hours}:${minutes}:${seconds}`)}`;
-}, 1000);
-
-
 
 
 var posts = new Vue({
     el: '#postsdisplay',
     data: {
         username: '',
-        posts: [],
+        posts: [
+            { title: 'Loading Posts' }
+        ],
         comments: [
             { postId: 12, id: 1, username: 'SpiderGaming', date: 'Wed 7/29/20 5:43:00 PM', title: 'PLACEHOLDER', body: 'THIS IS A PLACEHOLDER COMMENT. Comments are disabled and will be enabled once they are stable.' }
         ],
@@ -358,14 +417,22 @@ var posts = new Vue({
         noMore: false,
         amount: 10
     },
-    created() {
-        pushP('/posts', 'post', { amount: this.amount }).then((res) => {
+    async created() {
+        this.username = await local.username;
+        var lo = setTimeout(() => {
+            this.error = `Still waiting for posts? Try reloading the page`;
+        }, 20000);
+        await pushP('/posts', 'post', { amount: this.amount }).then(async (res) => {
             if (res.error) {
+                clearTimeout(lo);
                 console.log(`[SERVER] ${res.error}`);
                 return this.error = `[SERVER] ${res.error}`;
             }
             if (res[0] === undefined) return this.noMore = true;
-            this.posts = res;
+            this.posts = [];
+            this.posts = await res;
+            clearTimeout(lo);
+            theme.toggle('refresh');
         }).catch((err) => console.error(err));
     },
     methods: {
@@ -406,7 +473,7 @@ var posts = new Vue({
             this.commentBody = '', this.commentTitle = '';
             */
         },
-        loadMorePosts: function () {
+        loadMorePosts: async function () {
             pushP('/posts', 'post', { have: this.amount, amount: 5 }).then(async (res) => {
                 if (res.error) { console.log(res.error); return; };
                 if (res[0] === undefined) return this.noMore = true;
@@ -420,15 +487,24 @@ var posts = new Vue({
     }
 });
 
+var gottenpost = new Vue({
+    el: '#gottenPost',
+    data: {
+        p: false,
+        post: [],
+        comments: []
+    }
+});
+
 var links = new Vue({
     el: '#links',
     data: {
         links: []
     },
-    created() {
-        pushP('/links.json', 'get').then((res) => {
+    async created() {
+        pushP('/links.json', 'get').then(async (res) => {
             if (res.error) return console.log(res.error);
-            this.links = res.links;
+            this.links = await res.links;
         }).catch((err) => console.error(err));
     }
 });
@@ -436,12 +512,17 @@ var links = new Vue({
 var tasks = new Vue({
     el: '#tasks-list',
     data: {
-        tasks: []
+        tasks: [
+            {
+                "type": "task",
+                "task": "Loading"
+            }
+        ]
     },
-    created() {
-        pushP('/lists.json', 'get').then((res) => {
+    async created() {
+        await pushP('/lists.json', 'get').then(async (res) => {
             if (res.error) return console.log(res.error);
-            this.tasks = res.lists.tasks;
+            this.tasks = await res.lists.tasks;
         }).catch((err) => console.error(err));
     }
 });
@@ -449,10 +530,17 @@ var tasks = new Vue({
 var updates = new Vue({
     el: '#updates',
     data: {
-        updates: []
+        updates: [
+            {
+                "update": [
+                    "Loading"
+                ],
+                "date": "Loading Updates"
+            }
+        ]
     },
-    created() {
-        pushP('/lists.json', 'get').then((res) => {
+    async created() {
+        await pushP('/lists.json', 'get').then((res) => {
             if (res.error) return console.log(res.error);
             this.updates = res.lists.updates;
         }).catch((err) => console.error(err));
@@ -483,6 +571,21 @@ function pushP(url, type, data) {
     });
 };
 
+async function getPost(id) {
+    await pushP('/posts', 'post', { get: id }).then(async (res) => {
+        if (res.error) return console.error(res.error);
+        gottenpost.post = res[0];
+        gottenpost.p = true;
+        theme.toggle('refresh');
+    }).catch((err) => {
+        console.error(err);
+    });
+    setTimeout(() => {
+        document.querySelector('.getpostfade').style.backgroundColor = 'transparent';
+    }, 500);
+};
+
+
 /* === SideBar === */
 function openNav() {
     document.getElementsByClassName('sidenav')[0].style.width = '250px';
@@ -512,28 +615,17 @@ $(document).mouseup(function (e) {
     };
 });
 
-/* === Wait 200 ms to set some values since the page load is that slow lol === */
+/* === Wait 300 ms to set some values since the page load is that slow lol === *
 setTimeout(() => {
-    // Things that tak the username
-    userName.username = local.username, posts.username = local.username;
-    // Things that use the font size
-    fontSize.size = local.size;
-    // Things that use the theme
-    if (local.theme.includes('default')) {
-        theme.toggle(local.theme);
-    } else if (local.theme === 'dark') {
-        theme.toggle('dark');
-    } else {
-        theme.toggle('light')
-    };
+    theme.toggle(local.theme)
 }, 300);
-
+*/
 /* === Keyboard Shortcuts === */
 document.addEventListener('keyup', function (event) {
     // CTR + D > change the theme
     if (event.ctrlKey && event.key === 'q') {
         theme.toggle('toggle');
-    } else if (event.ctrlKey && event.key === 'g') {
+    } else if (event.ctrlKey && event.key === ' ') {
         //
     };
 });
