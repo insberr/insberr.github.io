@@ -436,12 +436,14 @@ var posts = new Vue({
         }).catch((err) => console.error(err));
     },
     methods: {
-        commentShow: function (postId) {
+        commentShow: async function (postId) {
             /*
-            pushP('/getComments', 'post', { postId: postId }).then((res) => {
+            await pushP('/getComments', 'post', { postId: postId }).then(async (res) => {
                 if (res.error) { console.log(res.error); return; };
-                this.comments.push(res);
-            })
+                this.comments = [];
+                this.comments = await res;
+                theme.toggle('refresh');
+            });
             */
             var c = document.getElementsByClassName(`-${postId}`)[0].getElementsByClassName('post-coms')[0];
             if (c) {
