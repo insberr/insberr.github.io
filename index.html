@@ -154,8 +154,8 @@
                 <p v-if="error" style="color: red; font-weight: bold;">Error: {{ error }}</p>
                 <div v-for="post in posts">
                     <hr class="hr1" :id="'-' + post.id">
-                    <div :class="'-' + post.id + ' post-frame'">>
-                        <div class="post-title">{{ post.title }} | ID: {{ post.id }}</div>
+                    <div :class="'-' + post.id + ' post-frame'">
+                        <div class="post-title" v-html="post.title"> | {{ post.id }}</div>
                         <div class="post-body" v-html="post.body"></div>
                         <div class="post-info">
                             <span><i v-on:click="commentShow(post.id)" class="material-icons">&#xe0b9;</i>
