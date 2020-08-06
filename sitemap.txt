@@ -1,8 +1,8 @@
-https://spidergamin.github.io/#home
-https://spidergamin.github.io/#tasks
-https://spidergamin.github.io/#posts
-https://spidergamin.github.io/#code
-https://spidergamin.github.io/#about
-https://spidergamin.github.io/#other
-https://spidergamin.github.io/#settings
-https://spidergamin.github.io/#site
+https://spidergamin.github.io?l=home
+https://spidergamin.github.io?l=tasks
+https://spidergamin.github.io?l=posts
+https://spidergamin.github.io?l=code
+https://spidergamin.github.io?l=about
+https://spidergamin.github.io?l=other
+https://spidergamin.github.io?l=settings
+https://spidergamin.github.io?l=site
