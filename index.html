@@ -135,48 +135,53 @@
             <p style="color: red; font-weight: bold;">Please read the rules and info listed at the top of the page
                 before posting. I do not expect much from you.</p>
             <h4>Rules and Info</h4>
-            <p>Welcome to my official Blog. Comments are disabled because they are not stable for use yet. Please don't
-                spam the comments and have fun. This tab is a working progress and may have some issues.</p>
+            <p>Welcome to my official Blog. Comments are now enabled! Please don't
+                spam, say bad things, or do anything hacky in the comments. If you find an issue with the comments, need
+                on deleted, or have a suggestion, let me know <a href="">here</a>. Have fun!</p>
             <div id="gottenPost" v-show="p">
                 <div class="getpostfade" style="background-color: hsl(0, 100%, 63%);">
+                    <div>Post {{ post.id }}</div>
                     <div class="post-frame">
-                        <div class="post-title">{{ post.title }} | {{ post.id }}</div>
+                        <div class="post-title" v-html="post.title"></div>
                         <div class="post-body" v-html="post.body"></div>
                         <div class="post-info">
-                            <span><i class="material-icons">&#xe0b9;</i>
-                                {{ post.commentCount || 0 }}</span>
+                            <span><i class="material-icons">&#xe0b9;</i>{{ post.commentCount || 0 }}</span>
+                            <span><i v-on:click="share(post.id)" class="material-icons">&#xe80d;</i></span>
                             <span>{{ post.username }} <span style="display: inline-block;">{{ post.date }}</span></span>
                         </div>
                     </div>
                 </div>
             </div>
             <div id="postsdisplay">
-                <p v-if="error" style="color: red; font-weight: bold;">Error: {{ error }}</p>
+                <p v-show="error" style="color: red; font-weight: bold;">{{ error }}</p>
                 <div v-for="post in posts">
                     <hr class="hr1" :id="'-' + post.id">
                     <div :class="'-' + post.id + ' post-frame'">
                         <div class="post-title" v-html="post.title"> | {{ post.id }}</div>
                         <div class="post-body" v-html="post.body"></div>
                         <div class="post-info">
-                            <span><i v-on:click="commentShow(post.id)" class="material-icons">&#xe0b9;</i>
-                                {{ post.commentCount || 0 }}</span>
+                            <span><i v-on:click="commentShow(post.id)"
+                                    class="material-icons">&#xe0b9;</i>{{ post.commentCount || 0 }}</span>
+                            <span><i v-on:click="share(post.id)" class="material-icons">&#xe80d;</i></span>
                             <span>{{ post.username }} <span style="display: inline-block;">{{ post.date }}</span></span>
                         </div>
                         <div class="post-coms com-hide">
                             <div v-for="comment in comments">
                                 <div v-if="comment.postId === post.id">
                                     <div v-bind:id="'-' + post.id + '-' + comment.id" class="com-frame">
-                                        <div class="post-title">{{ comment.title }}</div>
-                                        <div class="post-body">{{ comment.body }}</div>
+                                        <div class="post-title" v-html="comment.title"></div>
+                                        <div class="post-body" v-html="comment.body"></div>
                                         <div class="post-info">
                                             <span>{{ comment.username }} | {{ comment.date }}</span>
                                         </div>
                                     </div>
                                 </div>
-                                <span v-if="comment.postId !== post.id">No comments to display here</span>
+                                <div class="com-frame" v-if="comment.postId !== post.id">No comments to display here
+                                </div>
                             </div>
-                            <h4>Post a comment, {{ username }}</h4>
-                            <p v-if="error" style="color: red; font-weight: bold;">Error: {{ error }}</p>
+                            <h4>Post a comment, {{ username }}<span v-show="username === 'Anonymous'">(You can change
+                                    your username here)</span></h4>
+                            <p v-show="error" style="color: red; font-weight: bold;">{{ error }}</p>
                             <div class="com-post">
                                 <textarea v-model="commentTitle" placeholder="Title" rows="2"></textarea>
                                 <textarea v-model="commentBody" placeholder="Post a comment" rows="5"></textarea>
@@ -246,7 +251,8 @@
                 <br><span>Click the icon to change the theme</span>
                 <br><span v-on:click="toggle('toggle')" id="theme-toggle" v-html="themeDiv"></span>
                 <br><br>
-                <span>You are currently using <span v-if="picked.includes('default')">the </span>{{ picked }} mode.</span>
+                <span>You are currently using <span v-if="picked.includes('default')">the </span>{{ picked }}
+                    mode.</span>
                 <br><br><button class="b" onclick="reset('theme')">Reset</button>
             </div>
             <hr class="hr1" id="-size">
@@ -299,6 +305,13 @@
                 tabs people looked at, and more. I plan to create my own Analytics system since people don't trust
                 google and they block it.
             </p>
+            <hr id="-suggest" class="hr2">
+            <h3>Suggest a feature</h3>
+            <div id="suggestions">
+                <p>Have a suggestion for my website? Type it here and send it (not added)</p>
+                <br><textarea v-model="suggestion" placeholder="Type your suggestion here"></textarea>
+                <br><button class="b" v-on:click="send()">Send</button>
+            </div>
             <hr id="-up" class="hr2">
             <div id="updates">
                 <h3>Site Updates</h3>

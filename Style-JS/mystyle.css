@@ -6,7 +6,6 @@ html {
     scroll-behavior: smooth;
     user-select: none;
     -webkit-user-select: none;
-    --size: 20px;
 }
 
 #awn-popup-wrapper .awn-popup-body {
@@ -47,10 +46,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 body {
+    font-size: 20px;
     background-color: black;
     color: white;
     font-family: Arial, sans-serif;
-    font-size: var(--size);
     user-select: none;
     -webkit-user-select: none;
 }

@@ -40,83 +40,91 @@ $(document).ready(function () {
             }
         );
     } else { cookies = true; };
-    try { pageAnchors(); }
-    catch (err) {
-        notify('alert', 'Tab Error', 'There was a problem selecting that tab');
-        removeHash();
-        navBar(event, 'home');
-    };
-    // if (local.size !== 'default') { document.documentElement.style.setProperty("--size", local.size + 'px'); document.getElementById('slider').value = local.size; };
-    /*
+    pageAnchor();
+    pageQuery();
+    /* 
+    // Test if device is one of these
     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-        document.getElementsByTagName('body')[0].style.backgroundColor= 'red'
+        //
     }
     */
 });
 
-/* ----- Hash Tab linking ----- */
-function removeHash() {
+/* ----- Url queries for tab and anchor linking ----- */
+// Remove # from url
+function rmHash() {
     history.pushState("", document.title, window.location.pathname + window.location.search);
 };
 
-function rmSear() {
+// Remove queries from url
+function rmQuery() {
     window.history.replaceState({}, document.title, "/" + " ");
 };
 
-function pageAnchors() {
-    if (window.location.search) {
-        let loc = new URLSearchParams(window.location.search);
-        let l = loc.get('l');
-        if (l.includes('-')) {
-            var tab = l.split('-')[0];
-            navBar(event, tab);
-            var anchor = l.split(tab)[1];
-            if (tab === 'posts') {
-                getPost(anchor.replace('-', ''))
-                rmSear();
+function pageQuery() {
+    try {
+        if (window.location.search) {
+            let loc = new URLSearchParams(window.location.search);
+            let l = loc.get('l');
+            if (l.includes('-')) {
+                var tab = l.split('-')[0];
+                navBar(event, tab);
+                var anchor = l.split(tab)[1];
+                if (tab === 'posts') {
+                    getPost(anchor.replace('-', ''))
+                } else {
+                    setTimeout(() => {
+                        scrollToAnchor('#' + anchor);
+                    }, 500);
+                };
             } else {
-                rmSear();
-                setTimeout(() => {
-                    scrollToAnchor('#' + anchor);
-                }, 500);
+                var tab = l;
+                navBar(event, tab);
             };
         } else {
-            var tab = l;
-            navBar(event, tab);
-            rmSear();
+            navBar(event, local.tab);
         };
-    } else {
-        navBar(event, local.tab);
-        rmSear();
+        rmQuery();
+    } catch (error) {
+        console.error(`An error occurred with the query: ${error}`);
+        notify('error', 'Tab error', 'There was an error selecting that tab or anchor');
+        rmQuery();
+        navBar(event, 'home');
     };
-
 };
 
-function pageAnchorsT() {
-    if (location.hash) {
-        if (location.hash.includes('-')) {
-            if (location.hash.includes('posts')) {
-                var hash = location.hash;
-                var tab = hash.split('-')[0].replace('#', '');
-                document.getElementsByClassName(tab)[0].click();
-                var postId = hash.replace(tab, '');
-                getPost(postId.replace('-', '').replace('#', ''))
+function pageAnchor() {
+    try {
+        if (location.hash) {
+            if (location.hash.includes('-')) {
+                if (location.hash.includes('posts')) {
+                    var hash = location.hash;
+                    var tab = hash.split('-')[0].replace('#', '');
+                    document.getElementsByClassName(tab)[0].click();
+                    var postId = hash.replace(tab, '');
+                    getPost(postId.replace('-', '').replace('#', ''))
+                } else {
+                    var hash = location.hash;
+                    var tab = hash.split('-')[0].replace('#', '');
+                    var anchor = hash.replace(tab, '');
+                    document.getElementsByClassName(tab)[0].click();
+                    setTimeout(() => {
+                        scrollToAnchor(anchor);
+                    }, 200);
+                };
             } else {
-                var hash = location.hash;
-                var tab = hash.split('-')[0].replace('#', '');
-                var anchor = hash.replace(tab, '');
-                document.getElementsByClassName(tab)[0].click();
-                setTimeout(() => {
-                    scrollToAnchor(anchor);
-                }, 200);
+                document.getElementsByClassName(location.hash.toLowerCase().replace('#', ''))[0].click();
             };
         } else {
-            document.getElementsByClassName(location.hash.toLowerCase().replace('#', ''))[0].click();
+            navBar(event, local.tab);
         };
-    } else {
-        navBar(event, local.tab);
+        rmHash();
+    } catch (error) {
+        console.error(`An error occurred with the query: ${error}`);
+        notify('error', 'Tab error', 'There was an error selecting that tab or anchor');
+        rmHash();
+        navBar(event, 'home');
     };
-    removeHash();
 };
 
 function scrollToAnchor(anchor) {
@@ -124,21 +132,14 @@ function scrollToAnchor(anchor) {
         $([document.documentElement, document.body]).animate({
             scrollTop: $(anchor).offset().top
         });
-    }
-    catch (err) {
+    } catch (error) {
+        console.error(error)
         notify('alert', 'Scroll Error', 'The scroll part failed, so you have to scroll there yourself');
-        removeHash();
     };
 };
 
 $(window).bind('hashchange', function () {
-    try {
-        pageAnchorsT();
-    }
-    catch (err) {
-        notify('alert', 'Tab Error', `The tab or anchor "${location.hash}" does not exist`);
-        removeHash();
-    };
+    pageAnchor();
 });
 
 /* ----- Settings ----- */
@@ -165,12 +166,12 @@ function reset(i) {
 };
 
 function resetSiteData() {
-    var reset;
+    var reset = false;
     let notifier = new AWN();
-    let onOk = () => { notify("success", 'Site data reset', 'Refreshing in 1 second'); reset = true; cookies = false; localStorage.clear(); setTimeout(() => { location.reload() }, 1000) };
+    let onOk = () => { notify('success', 'Site data reset', 'Refreshing in 1 second'); reset = true; cookies = false; localStorage.clear(); setTimeout(() => { location.reload() }, 1000) };
     let onCancel = () => { notifier.info('Site data was not reset'); reset = false; };
     notifier.confirm(
-        'Are you sure you want to reset this sites data?',
+        'Are you sure you want to reset the site data?',
         onOk,
         onCancel,
         {
@@ -183,7 +184,7 @@ function resetSiteData() {
 
 /* ----- Nav Bar ----- */
 function navBar(evt, tab, mobile) {
-    if (mobile) { closeNav() };
+    if (mobile) { closeNav(); };
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tab");
     for (i = 0; i < tabcontent.length; i++) {
@@ -409,7 +410,7 @@ var posts = new Vue({
             { title: 'Loading Posts' }
         ],
         comments: [
-            { postId: 12, id: 1, username: 'SpiderGaming', date: 'Wed 7/29/20 5:43:00 PM', title: 'PLACEHOLDER', body: 'THIS IS A PLACEHOLDER COMMENT. Comments are disabled and will be enabled once they are stable.' }
+            { postId: 1, title: 'Loading Comments' }
         ],
         commentTitle: '',
         commentBody: '',
@@ -420,32 +421,40 @@ var posts = new Vue({
     async created() {
         this.username = await local.username;
         var lo = setTimeout(() => {
-            this.error = `Still waiting for posts? Try reloading the page`;
+            this.error = `Still waiting for posts? Try reloading the page (Probably server side issues Im still trying to fix)`;
         }, 20000);
         await pushP('/posts', 'post', { amount: this.amount }).then(async (res) => {
             if (res.error) {
                 clearTimeout(lo);
-                console.log(`[SERVER] ${res.error}`);
-                return this.error = `[SERVER] ${res.error}`;
+                console.error(`[ERROR] ${res.error}`);
+                return this.error = `[ERROR] ${res.error}`;
             }
             if (res[0] === undefined) return this.noMore = true;
             this.posts = [];
             this.posts = await res;
             clearTimeout(lo);
             theme.toggle('refresh');
-        }).catch((err) => console.error(err));
+        }).catch((error) => { console.error(error); this.error = `Error getting posts` });
     },
     methods: {
         commentShow: async function (postId) {
-            /*
-            await pushP('/getComments', 'post', { postId: postId }).then(async (res) => {
+            await pushP('/comments', 'post', { postId: postId }).then(async (res) => {
                 if (res.error) { console.log(res.error); return; };
                 this.comments = [];
-                this.comments = await res;
+                // console.log(res);
+                res.comments.forEach(com => {
+                    this.comments.push(com);
+                });
+                // this.comments = await res.comments;
                 theme.toggle('refresh');
             });
-            */
+
             var c = document.getElementsByClassName(`-${postId}`)[0].getElementsByClassName('post-coms')[0];
+            let comel = document.querySelectorAll('.post-coms');
+            comel.forEach(el => {
+                if (c.className === 'post-coms') return;
+                el.className = 'post-coms com-hide';
+            });
             if (c) {
                 if (c.className === 'post-coms') {
                     c.className = 'post-coms com-hide';
@@ -454,26 +463,22 @@ var posts = new Vue({
                 };
             };
         },
-        postComment: function (postId) {
-            return this.error = 'Comments are disabled. Also don`t send web requests for comments as it will return a status 404';
-            /*
+        postComment: async function (postId) {
+            // return this.error = 'Comments are disabled. Also don`t send web requests for comments as it will return a status 404';
             if (this.commentTitle === '' || this.commentBody === '') return this.error = 'You must provide a Title and a Body';
-            // { postID: int, username: string, content: { title: string, body: string } }
+            // { postId, username, title, body, ?password } }
             var co = {
-                postID: postId,
+                postId: postId,
                 username: local.username,
-                content: {
-                    title: this.commentTitle,
-                    body: this.commentBody
-                }
+                title: this.commentTitle,
+                body: this.commentBody
             }
-            pushP('/comment', 'post', co).then((res) => {
+            await pushP('/comment', 'post', co).then((res) => {
                 if (res.error) return console.error(res.error);
-                if (res.info) return this.error = res.info;
-                Vue.set(posts.posts.posts, postId, res.update);
-            }).catch((err) => console.error(err));
+                // console.log(res)
+                this.comments.push(res.comment);
+            }).catch((error) => console.error(error));
             this.commentBody = '', this.commentTitle = '';
-            */
         },
         loadMorePosts: async function () {
             pushP('/posts', 'post', { have: this.amount, amount: 5 }).then(async (res) => {
@@ -485,6 +490,10 @@ var posts = new Vue({
                 });
                 theme.toggle('refresh');
             })?.catch((err) => console.error(err));
+        },
+        share: function(id) {
+            navigator.clipboard.writeText(`https://spidergamin.github.io?l=posts-${id}`);
+            notify('info', 'Link copied', 'A link to that post was copied to your clipboard');
         }
     }
 });
@@ -495,19 +504,26 @@ var gottenpost = new Vue({
         p: false,
         post: [],
         comments: []
+    },
+    methods: {
+        share: function(id) {
+            return;
+        }
     }
 });
 
 var links = new Vue({
     el: '#links',
     data: {
-        links: []
+        links: [
+            { 'link': 'Loading links' }
+        ]
     },
     async created() {
-        pushP('/links.json', 'get').then(async (res) => {
+        await pushP('/links.json', 'get').then(async (res) => {
             if (res.error) return console.log(res.error);
             this.links = await res.links;
-        }).catch((err) => console.error(err));
+        }).catch((error) => console.error(error));
     }
 });
 
@@ -517,7 +533,8 @@ var tasks = new Vue({
         tasks: [
             {
                 "type": "task",
-                "task": "Loading"
+                "task": "Loading",
+                "done": false
             }
         ]
     },
@@ -525,7 +542,7 @@ var tasks = new Vue({
         await pushP('/lists.json', 'get').then(async (res) => {
             if (res.error) return console.log(res.error);
             this.tasks = await res.lists.tasks;
-        }).catch((err) => console.error(err));
+        }).catch((error) => console.error(error));
     }
 });
 
@@ -534,23 +551,34 @@ var updates = new Vue({
     data: {
         updates: [
             {
-                "update": [
-                    "Loading"
-                ],
                 "date": "Loading Updates"
             }
         ]
     },
     async created() {
-        await pushP('/lists.json', 'get').then((res) => {
+        await pushP('/lists.json', 'get').then(async(res) => {
             if (res.error) return console.log(res.error);
-            this.updates = res.lists.updates;
-        }).catch((err) => console.error(err));
+            this.updates = await res.lists.updates;
+        }).catch((error) => console.error(error));
     }
 });
 
-function pushP(url, type, data) {
-    return new Promise(function (resolve, reject) {
+var suggest = new Vue({
+    el: '#suggestions',
+    data: {
+        suggestion: ''
+    },
+    methods: {
+        send: async function() {
+            pushP('/suggest', 'post', { s: this.suggestion, username: local.username }).then(async (res) => {
+                return;
+            }).catch((error) => console.error(error));
+        }
+    }
+})
+
+async function pushP(url, type, data) {
+    return new Promise(async function (resolve, reject) {
         if (type === 'post') {
             axios.post(webPosts + url, data)
                 .then(function (res) {
@@ -579,8 +607,8 @@ async function getPost(id) {
         gottenpost.post = res[0];
         gottenpost.p = true;
         theme.toggle('refresh');
-    }).catch((err) => {
-        console.error(err);
+    }).catch((error) => {
+        console.error(error);
     });
     setTimeout(() => {
         document.querySelector('.getpostfade').style.backgroundColor = 'transparent';
@@ -608,20 +636,15 @@ window.onresize = resize;
 
 // When you click outside of the SideBar, close it
 $(document).mouseup(function (e) {
-    var container = $('#sidebar');
+    var bar = $('#sidebar');
     var menu = $('#menu');
-    if (!container.is(e.target) && container.has(e.target).length === 0) {
+    if (!bar.is(e.target) && bar.has(e.target).length === 0) {
         if (!menu.is(e.target) && menu.has(e.target).length === 0) {
             closeNav(0);
         };
     };
 });
 
-/* === Wait 300 ms to set some values since the page load is that slow lol === *
-setTimeout(() => {
-    theme.toggle(local.theme)
-}, 300);
-*/
 /* === Keyboard Shortcuts === */
 document.addEventListener('keyup', function (event) {
     // CTR + D > change the theme
