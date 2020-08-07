@@ -654,6 +654,11 @@ $(document).mouseup(function (e) {
     };
 });
 
+function copy(f, text, i) {
+    navigator.clipboard.writeText(text);
+    notify('info', `${f} copied`, i);
+};
+
 /* === Keyboard Shortcuts === */
 document.addEventListener('keyup', function (event) {
     // CTR + D > change the theme

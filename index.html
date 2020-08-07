@@ -204,7 +204,8 @@
             <p>Secret code? Maybe give it a try. It Should actually work now.</p>
             <div id="secretcode">
                 <textarea v-model="input" placeholder="Decode/Encode my Secret Code" rows="4" cols="30"></textarea>
-                <p v-html="output" class="s-output">{{ output }}</p>
+                <p v-html="output" class="s-output"></p>
+                <button class="b" onclick="copy('Code', output, 'The secret code was copied to your clipboard')">Copy to clipboard</button>
             </div>
             <hr id="-site-code" class="hr2">
             <h3>Sites Code</h3>
