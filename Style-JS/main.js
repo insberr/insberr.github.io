@@ -1,7 +1,7 @@
 /* ----- Page on Load ----- */
 
 var webPosts = 'https://website-posts--spidergamin.repl.co';
-var local = {}, cookies = false;
+var local = {}, cookies = false, wait = false;
 
 if (localStorage.getItem('siteData')) {
     local = JSON.parse(localStorage.getItem('siteData'));
@@ -69,9 +69,10 @@ function pageQuery() {
             if (l.includes('-')) {
                 var tab = l.split('-')[0];
                 navBar(event, tab);
-                var anchor = l.split(tab)[1];
+                var anchor = l.replace(tab, '');
+                console.log(anchor)
                 if (tab === 'posts') {
-                    getPost(anchor.replace('-', ''))
+                    getPost(anchor.replace('-', ''));
                 } else {
                     setTimeout(() => {
                         scrollToAnchor('#' + anchor);
@@ -129,6 +130,7 @@ function pageAnchor() {
 
 function scrollToAnchor(anchor) {
     try {
+        console.log(anchor)
         $([document.documentElement, document.body]).animate({
             scrollTop: $(anchor).offset().top
         });
@@ -438,17 +440,7 @@ var posts = new Vue({
     },
     methods: {
         commentShow: async function (postId) {
-            await pushP('/comments', 'post', { postId: postId }).then(async (res) => {
-                if (res.error) { console.log(res.error); return; };
-                this.comments = [];
-                // console.log(res);
-                res.comments.forEach(com => {
-                    this.comments.push(com);
-                });
-                // this.comments = await res.comments;
-                theme.toggle('refresh');
-            });
-
+            this.comments = [];
             var c = document.getElementsByClassName(`-${postId}`)[0].getElementsByClassName('post-coms')[0];
             let comel = document.querySelectorAll('.post-coms');
             comel.forEach(el => {
@@ -460,25 +452,40 @@ var posts = new Vue({
                     c.className = 'post-coms com-hide';
                 } else {
                     c.className = 'post-coms';
+                    await pushP('/comments', 'post', { postId: postId }).then(async (res) => {
+                        if (res.error) { console.log(res.error); return this.comments = []; };
+                        // console.log(res);
+                        res.comments.forEach(com => {
+                            this.comments.push(com);
+                        });
+                        // this.comments = await res.comments;
+                        theme.toggle('refresh');
+                    });
                 };
             };
         },
-        postComment: async function (postId) {
+        postComment: function (postId) {
             // return this.error = 'Comments are disabled. Also don`t send web requests for comments as it will return a status 404';
             if (this.commentTitle === '' || this.commentBody === '') return this.error = 'You must provide a Title and a Body';
-            // { postId, username, title, body, ?password } }
             var co = {
                 postId: postId,
                 username: local.username,
                 title: this.commentTitle,
                 body: this.commentBody
-            }
-            await pushP('/comment', 'post', co).then((res) => {
-                if (res.error) return console.error(res.error);
-                // console.log(res)
-                this.comments.push(res.comment);
-            }).catch((error) => console.error(error));
-            this.commentBody = '', this.commentTitle = '';
+            };
+            this.commentBody = '', this.commentTitle = '', this.error = '';
+            setTimeout(() => {
+                // { postId, username, title, body, ?password } }
+                pushP('/comment', 'post', co).then(async (res) => {
+
+                    if (res.error) return console.error(res.error);
+                    // console.log(res)
+                    this.comments.push(res.comment);
+                    this.posts.reverse();
+                    this.posts[postId - 1].commentCount = await res.post[0].commentCount;
+                    this.posts.reverse()
+                }).catch((error) => console.error(error));
+            }, 100);
         },
         loadMorePosts: async function () {
             pushP('/posts', 'post', { have: this.amount, amount: 5 }).then(async (res) => {
@@ -491,7 +498,7 @@ var posts = new Vue({
                 theme.toggle('refresh');
             })?.catch((err) => console.error(err));
         },
-        share: function(id) {
+        share: function (id) {
             navigator.clipboard.writeText(`https://spidergamin.github.io?l=posts-${id}`);
             notify('info', 'Link copied', 'A link to that post was copied to your clipboard');
         }
@@ -506,8 +513,9 @@ var gottenpost = new Vue({
         comments: []
     },
     methods: {
-        share: function(id) {
-            return;
+        share: function (id) {
+            navigator.clipboard.writeText(`https://spidergamin.github.io?l=posts-${id}`);
+            notify('info', 'Link copied', 'A link to that post was copied to your clipboard');
         }
     }
 });
@@ -556,7 +564,7 @@ var updates = new Vue({
         ]
     },
     async created() {
-        await pushP('/lists.json', 'get').then(async(res) => {
+        await pushP('/lists.json', 'get').then(async (res) => {
             if (res.error) return console.log(res.error);
             this.updates = await res.lists.updates;
         }).catch((error) => console.error(error));
@@ -569,9 +577,10 @@ var suggest = new Vue({
         suggestion: ''
     },
     methods: {
-        send: async function() {
+        send: async function () {
             pushP('/suggest', 'post', { s: this.suggestion, username: local.username }).then(async (res) => {
-                return;
+                if (res.error) console.error(res.error);
+                this.suggestion = '';
             }).catch((error) => console.error(error));
         }
     }

@@ -61,6 +61,10 @@ body {
     padding-right: 10px;
 }
 
+.hide {
+    display: none;
+}
+
 .date {
     color: gray;
     font-size: 15px;

@@ -99,10 +99,8 @@
             <p>On this website you can see my blog, check on what I'm doing, find my socials, and find info about me and
                 this website. Have a look around!
             </p>
-            <p>Remember! If you have a tip, suggestion, fix, etc, please let me know by submitting an issue on the
-                Github code, found <a href="https://github.com/spidergamin/spidergamin.github.io/"
-                    target="_blank">here</a>.
-            </p>
+            <p>Remember! If you have a tip, suggestion, fix, etc, please let me know by sending it <a
+                    href="#site-suggest">here</a>.</p>
         </div>
         <!-- ====== Tasks Tab ====== -->
         <div id="tasks" class="tab">
@@ -137,7 +135,7 @@
             <h4>Rules and Info</h4>
             <p>Welcome to my official Blog. Comments are now enabled! Please don't
                 spam, say bad things, or do anything hacky in the comments. If you find an issue with the comments, need
-                on deleted, or have a suggestion, let me know <a href="">here</a>. Have fun!</p>
+                one deleted, or have a suggestion, let me know <a href="#site-suggest">here</a>. Have fun!</p>
             <div id="gottenPost" v-show="p">
                 <div class="getpostfade" style="background-color: hsl(0, 100%, 63%);">
                     <div>Post {{ post.id }}</div>
@@ -173,15 +171,21 @@
                                         <div class="post-body" v-html="comment.body"></div>
                                         <div class="post-info">
                                             <span>{{ comment.username }} | {{ comment.date }}</span>
+                                            <span><i v-on:click="share(post.id + '-' + comment.id)"
+                                                    class="material-icons">&#xe80d;</i></span>
+                                            <span>{{ post.username }} <span
+                                                    style="display: inline-block;">{{ post.date }}</span></span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="com-frame" v-if="comment.postId !== post.id">No comments to display here
                                 </div>
                             </div>
-                            <h4>Post a comment, {{ username }}<span v-show="username === 'Anonymous'">(You can change
-                                    your username here)</span></h4>
+                            <h4>Post a comment, {{ username }}</h4>
+                            <a href="#settings" v-show="username === 'Anonymous'">(You can change
+                                your username by clicking here)</a>
                             <p v-show="error" style="color: red; font-weight: bold;">{{ error }}</p>
+                            <br>
                             <div class="com-post">
                                 <textarea v-model="commentTitle" placeholder="Title" rows="2"></textarea>
                                 <textarea v-model="commentBody" placeholder="Post a comment" rows="5"></textarea>
@@ -308,9 +312,9 @@
             <hr id="-suggest" class="hr2">
             <h3>Suggest a feature</h3>
             <div id="suggestions">
-                <p>Have a suggestion for my website? Type it here and send it (not added)</p>
-                <br><textarea v-model="suggestion" placeholder="Type your suggestion here"></textarea>
-                <br><button class="b" v-on:click="send()">Send</button>
+                <div>Have a suggestion for my website? Maybe a bug to report? Type it here and send it</div>
+                <br><textarea v-model="suggestion" placeholder="Type your suggestion here" cols="30" rows="5"></textarea>
+                <br><br><button class="b" v-on:click="send()">Send</button>
             </div>
             <hr id="-up" class="hr2">
             <div id="updates">
@@ -331,6 +335,8 @@
         </div>
         <i class="tab- site info-btn material-icons" onclick="navBar(event, 'site')">&#xe88e;</i>
         <i class="tab- settings info-btn material-icons" onclick="navBar(event, 'settings')">&#xe8b8;</i>
+        <div class="tab- secret hide" onclick="navBar(event, 'secret')">Secret</div>
+        <div class="tab- secret hide" onclick="navBar(event, 'secret')">Secret</div>
     </div>
     <!-- The JavaScript -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
