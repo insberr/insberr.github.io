@@ -70,9 +70,10 @@ var characterMap = {
     "-": "x",
     "%": "z",
     " ": " ",
+    "\n": "<br>",
 };
 
 function secretCode(input, callback) {
-    var output = input.split('').map(character => characterMap[character]).join('\n');
+    var output = input.toLowerCase().split('').map(character => characterMap[character]).join('');
     callback(output);
 }
