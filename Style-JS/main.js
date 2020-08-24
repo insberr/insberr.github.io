@@ -655,7 +655,7 @@ $(document).mouseup(function (e) {
 });
 
 function copy(f, text, i) {
-    navigator.clipboard.writeText(text);
+    navigator.clipboard.writeText(text.replace('<br>', '\n'));
     notify('info', `${f} copied`, i);
 };
 
