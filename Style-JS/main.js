@@ -1,5 +1,7 @@
 /* ----- Page on Load ----- */
 
+const { open } = require("inspector");
+
 var webPosts = 'https://website-posts--spidergamin.repl.co';
 var local = {}, cookies = false, wait = false;
 
@@ -441,19 +443,18 @@ var posts = new Vue({
     methods: {
         commentShow: async function (postId) {
             this.comments = [];
+            var openHeight = '500px';
             var c = document.getElementsByClassName(`-${postId}`)[0].getElementsByClassName('post-coms')[0];
-            /*
             let comel = document.querySelectorAll('.post-coms');
             comel.forEach(el => {
-                if (c.style.height = '300px') return;
+                if (c.style.height === openHeight) continue;
                 el.style.height = '0';
             });
-            */
             if (c) {
-                if (c.style.height === '300px') {
+                if (c.style.height === openHeight) {
                     c.style.height = '0';
                 } else {
-                    c.style.height = '300px';
+                    c.style.height = openHeight;
                     await pushP('/comments', 'post', { postId: postId }).then(async (res) => {
                         if (res.error) { console.log(res.error); return this.comments = []; };
                         // console.log(res);
