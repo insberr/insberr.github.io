@@ -214,7 +214,7 @@ a:active {
 }
 
 .post-coms {
-    height: auto;
+    height: 0;
 }
 
 /* ====== NavBar & SideBar ====== */
