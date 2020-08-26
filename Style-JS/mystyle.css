@@ -215,6 +215,9 @@ a:active {
 
 .post-coms {
     height: 0;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    transition: .3s;
 }
 
 /* ====== NavBar & SideBar ====== */
