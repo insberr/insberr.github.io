@@ -444,14 +444,14 @@ var posts = new Vue({
             var c = document.getElementsByClassName(`-${postId}`)[0].getElementsByClassName('post-coms')[0];
             let comel = document.querySelectorAll('.post-coms');
             comel.forEach(el => {
-                if (c.className === 'post-coms') return;
-                el.className = 'post-coms com-hide';
+                if (c.style.height = 'fit-content') return;
+                el.style.height = 0
             });
             if (c) {
-                if (c.className === 'post-coms') {
-                    c.className = 'post-coms com-hide';
+                if (c.style.height === 'fit-content') {
+                    c.style.height = 0;
                 } else {
-                    c.className = 'post-coms';
+                    c.style.height = 'fit-content';
                     await pushP('/comments', 'post', { postId: postId }).then(async (res) => {
                         if (res.error) { console.log(res.error); return this.comments = []; };
                         // console.log(res);

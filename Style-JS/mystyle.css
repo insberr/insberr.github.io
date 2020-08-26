@@ -213,8 +213,8 @@ a:active {
     width: -webkit-fill-available;
 }
 
-.com-hide {
-    display: none;
+.post-coms {
+    height: auto;
 }
 
 /* ====== NavBar & SideBar ====== */

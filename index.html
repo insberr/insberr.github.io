@@ -136,9 +136,9 @@
             <p>Welcome to my official Blog. Comments are now enabled! Please don't
                 spam, say bad things, or do anything hacky in the comments. If you find an issue with the comments, need
                 one deleted, or have a suggestion, let me know <a href="#site-suggest">here</a>. Have fun!</p>
-            <div id="gottenPost" v-show="p">
+            <div id="gottenPost" v-show="p" style="background-color: cornflowerblue;">
                 <div class="getpostfade" style="background-color: hsl(0, 100%, 63%);">
-                    <div>Post {{ post.id }}</div>
+                    <div>Gotten Post | Post ID {{ post.id }}</div>
                     <div class="post-frame">
                         <div class="post-title" v-html="post.title"></div>
                         <div class="post-body" v-html="post.body"></div>
@@ -163,7 +163,7 @@
                             <span><i v-on:click="share(post.id)" class="material-icons">&#xe80d;</i></span>
                             <span>{{ post.username }} <span style="display: inline-block;">{{ post.date }}</span></span>
                         </div>
-                        <div class="post-coms com-hide">
+                        <div class="post-coms">
                             <div v-for="comment in comments">
                                 <div v-if="comment.postId === post.id">
                                     <div v-bind:id="'-' + post.id + '-' + comment.id" class="com-frame">
