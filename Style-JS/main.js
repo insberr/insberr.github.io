@@ -444,7 +444,7 @@ var posts = new Vue({
             var c = document.getElementsByClassName(`-${postId}`)[0].getElementsByClassName('post-coms')[0];
             let comel = document.querySelectorAll('.post-coms');
             comel.forEach(el => {
-                if (el.style.height = '0') return;
+                if (c.style.height = 'auto') return;
                 el.style.height = '0'
             });
             if (c) {
