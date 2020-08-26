@@ -435,9 +435,9 @@ var posts = new Vue({
                             this.comments.push(com);
                         });
                         if (res.commants.length <= 3) {
-                            return c.style.height = openHeight;
+                            return c.style.height = '300px';
                         } else {
-                            return c.style.height = (res.comments.length * 100) + 'px' || openHeight;
+                            return c.style.height = (res.comments.length * 100) + 'px';
                         }
                         // this.comments = await res.comments;
                         // theme.toggle('refresh');
