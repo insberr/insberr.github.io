@@ -435,7 +435,7 @@ var posts = new Vue({
                         res.comments.forEach(com => {
                             this.comments.push(com);
                         });
-                        if (res.commants.length <= 3) {
+                        if (res.comments.length <= 3) {
                             return c.style.height = '300px';
                         } else {
                             return c.style.height = (res.comments.length * 100) + 'px';

@@ -216,7 +216,6 @@ a:active {
 }
 
 .post-coms {
-    height: 0;
     overflow-y: scroll;
     transition: .3s;
 }
