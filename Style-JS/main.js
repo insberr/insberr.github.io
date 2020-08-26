@@ -422,11 +422,11 @@ var posts = new Vue({
             var c = document.getElementsByClassName(`-${postId}`)[0].getElementsByClassName('post-coms')[0];
             let comel = document.querySelectorAll('.post-coms');
             comel.forEach(el => {
-                if (c.style.height === openHeight) return;
+                if (c.style.height !== 0) return;
                 el.style.height = '0';
             });
             if (c) {
-                if (c.style.height === openHeight) {
+                if (c.style.height !== 0) {
                     c.style.height = '0';
                 } else {
                     await pushP('/comments', 'post', { postId: postId }).then(async (res) => {
@@ -435,7 +435,11 @@ var posts = new Vue({
                         res.comments.forEach(com => {
                             this.comments.push(com);
                         });
-                        c.style.height = ((res.comments.length + 1) * 100) + 'px' || openHeight;
+                        if (res.commants.length <= 3) {
+                            return c.style.height = openHeight;
+                        } else {
+                            return c.style.height = (res.comments.length * 100) + 'px' || openHeight;
+                        }
                         // this.comments = await res.comments;
                         // theme.toggle('refresh');
                     });

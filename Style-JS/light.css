@@ -1,13 +1,13 @@
 body {
-    background-color: white;
-    color: black;
+    background-color: white!important;
+    color: black!important;
 }
 
 textarea, input {
-    color: black;
+    color: black!important;
 }
 .com-frame {
-    background-color: beige;
+    background-color: beige!important;
 }
 /*
 .post-body {
