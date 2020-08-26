@@ -165,7 +165,7 @@
                             <span><i v-on:click="share(post.id)" class="material-icons">&#xe80d;</i></span>
                             <span>{{ post.username }} <span style="display: inline-block;">{{ post.date }}</span></span>
                         </div>
-                        <div class="post-coms">
+                        <div class="post-coms" style="height: 0px">
                             <div v-for="comment in comments">
                                 <div v-if="comment.postId === post.id">
                                     <div v-bind:id="'-' + post.id + '-' + comment.id" class="com-frame">
