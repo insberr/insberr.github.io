@@ -422,11 +422,11 @@ var posts = new Vue({
             var c = document.getElementsByClassName(`-${postId}`)[0].getElementsByClassName('post-coms')[0];
             let comel = document.querySelectorAll('.post-coms');
             comel.forEach(el => {
-                if (c.style.height !== 0) return;
+                if (el.style.height !== '0') return;
                 el.style.height = '0';
             });
             if (c) {
-                if (c.style.height !== 0) {
+                if (c.style.height !== '0') {
                     c.style.height = '0';
                 } else {
                     await pushP('/comments', 'post', { postId: postId }).then(async (res) => {
