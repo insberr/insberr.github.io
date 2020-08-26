@@ -1,7 +1,5 @@
 /* ----- Page on Load ----- */
 
-const { open } = require("inspector");
-
 var webPosts = 'https://website-posts--spidergamin.repl.co';
 var local = {}, cookies = false, wait = false;
 
