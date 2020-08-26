@@ -442,11 +442,13 @@ var posts = new Vue({
         commentShow: async function (postId) {
             this.comments = [];
             var c = document.getElementsByClassName(`-${postId}`)[0].getElementsByClassName('post-coms')[0];
+            /*
             let comel = document.querySelectorAll('.post-coms');
             comel.forEach(el => {
                 if (c.style.height = '300px') return;
                 el.style.height = '0';
             });
+            */
             if (c) {
                 if (c.style.height === '300px') {
                     c.style.height = '0';
