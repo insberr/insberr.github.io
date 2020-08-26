@@ -243,6 +243,7 @@ var userName = new Vue({
     }
 });
 
+const qs = (q) => document.querySelector(q);
 var theme = new Vue({
     el: '#theme',
     data: {
@@ -289,20 +290,7 @@ var theme = new Vue({
             };
             local.theme = this.picked;
             save();
-
-            var body = document.querySelector('body');
-            body.style.backgroundColor = 'black';
-            body.style.color = 'white';
-
-            var textarea = document.querySelectorAll('textarea');
-            var input = document.querySelectorAll('input');
-            textarea.forEach(item => { item.style.color = 'white'; });
-            input.forEach(item => { item.style.color = 'white'; });
-
-            // document.querySelectorAll('.post-frame').forEach(i => { i.style.backgroundColor = 'transparent' });
-            document.querySelectorAll('.com-frame').forEach(i => { i.style.backgroundColor = '#505050' });
-            document.querySelectorAll('.post-title').forEach(i => { i.style.color = '#ff7247' });
-            document.querySelectorAll('.post-body').forEach(i => { i.style.color = 'white' });
+            qs('#light-theme').href = '';
         },
         lightMode: function (a) {
             this.themeDiv = '<i class="material-icons">&#xe1ad;<i>';
@@ -313,18 +301,7 @@ var theme = new Vue({
             };
             local.theme = this.picked;
             save();
-
-            var body = document.querySelector('body');
-            body.style.backgroundColor = 'white';
-            body.style.color = 'black';
-
-            document.querySelectorAll('textarea').forEach(item => { item.style.color = 'black'; });
-            document.querySelectorAll('input').forEach(item => { item.style.color = 'black'; });
-
-            // document.querySelectorAll('.post-frame').forEach(i => { i.style.backgroundColor = 'transparent' });
-            document.querySelectorAll('.com-frame').forEach(i => { i.style.backgroundColor = '#cccccc' });
-            document.querySelectorAll('.post-title').forEach(i => { i.style.color = '#ff7247' });
-            document.querySelectorAll('.post-body').forEach(i => { i.style.color = 'black' });
+            qs('#light-theme').href = 'Style-JS/light.css';
         }
     }
 });
@@ -435,7 +412,7 @@ var posts = new Vue({
             this.posts = [];
             this.posts = await res;
             clearTimeout(lo);
-            theme.toggle('refresh');
+            // theme.toggle('refresh');
         }).catch((error) => { console.error(error); this.error = `Error getting posts` });
     },
     methods: {
@@ -458,9 +435,9 @@ var posts = new Vue({
                         res.comments.forEach(com => {
                             this.comments.push(com);
                         });
-                        c.style.height = (res.comments.length * 100) + 'px' || openHeight;
+                        c.style.height = ((res.comments.length + 1) * 100) + 'px' || openHeight;
                         // this.comments = await res.comments;
-                        theme.toggle('refresh');
+                        // theme.toggle('refresh');
                     });
                 };
             };
@@ -496,7 +473,7 @@ var posts = new Vue({
                 await res.forEach(post => {
                     this.posts.push(post);
                 });
-                theme.toggle('refresh');
+                // theme.toggle('refresh');
             })?.catch((err) => console.error(err));
         },
         share: function (id) {
@@ -616,7 +593,7 @@ async function getPost(id) {
         if (res.error) return console.error(res.error);
         gottenpost.post = res[0];
         gottenpost.p = true;
-        theme.toggle('refresh');
+        // theme.toggle('refresh');
     }).catch((error) => {
         console.error(error);
     });
@@ -669,3 +646,5 @@ document.addEventListener('keyup', function (event) {
         //
     };
 });
+
+

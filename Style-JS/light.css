@@ -1,0 +1,16 @@
+body {
+    background-color: white;
+    color: black;
+}
+
+textarea, input {
+    color: black;
+}
+.com-frame {
+    background-color: beige;
+}
+/*
+.post-body {
+    color: black;
+}
+*/

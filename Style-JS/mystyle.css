@@ -179,11 +179,13 @@ a:active {
 .com-frame {
     padding: 20px;
     margin-top: 20px;
+    background-color: #505050;
 }
 
 .post-title {
     font-weight: bold;
     margin-bottom: 15px;
+    color: #ff7247;
 }
 
 .post-body {
