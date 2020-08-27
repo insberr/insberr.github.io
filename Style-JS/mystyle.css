@@ -179,8 +179,8 @@ a:active {
 .com-frame {
     padding: 20px;
     margin-top: 20px;
-    background-color: #1f1f1f;
-    box-shadow: 8px 8px 0 0 #1f1f1f inset;
+    /* background-color: #1f1f1f; */
+    box-shadow: 0px 30px 40px rgba(0,0,0,.1);
 }
 
 .post-title {
