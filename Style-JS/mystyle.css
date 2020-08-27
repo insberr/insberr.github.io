@@ -188,12 +188,14 @@ a:active {
 }
 
 .post-title {
+    word-wrap: break-word;
     font-weight: bold;
     margin-bottom: 15px;
     color: #ff7247;
 }
 
 .post-body {
+    word-wrap: break-word;
     margin-bottom: 10px;
 }
 
