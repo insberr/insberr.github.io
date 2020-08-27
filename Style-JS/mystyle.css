@@ -171,7 +171,7 @@ a:active {
 }
 
 .post-frame {
-    background-color: #161616;
+    background-color: #202020;
     border-radius: 10px;
     border-left: 2px solid red;
     padding-top: 5px;
@@ -183,7 +183,7 @@ a:active {
 .com-frame {
     padding: 20px;
     margin-top: 20px;
-    background-color: #1f1f1f;
+    background-color: #252525;
     border-radius: 10px;
 }
 
