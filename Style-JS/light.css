@@ -6,8 +6,11 @@ body {
 textarea, input {
     color: black!important;
 }
+.post-frame {
+    background-color: rgb(206, 206, 206)!important;
+}
 .com-frame {
-    background-color: rgb(209, 209, 209)!important;
+    background-color: rgb(197, 196, 196)!important;
 }
 /*
 .post-body {
