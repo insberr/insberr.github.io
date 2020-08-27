@@ -155,7 +155,7 @@
             <div id="postsdisplay">
                 <p v-show="error" style="color: red; font-weight: bold;">{{ error }}</p>
                 <div v-for="post in posts">
-                    <div :class="'-' + post.id + ' post-frame'">
+                    <div :class="'-' + post.id + ' post-frame'" style="border-left-color: skyblue">
                         <div class="post-title" v-html="post.title"> | {{ post.id }}</div>
                         <div class="post-body" v-html="post.body"></div>
                         <div class="post-info">
