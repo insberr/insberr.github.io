@@ -180,6 +180,7 @@ a:active {
     padding: 20px;
     margin-top: 20px;
     background-color: #1f1f1f;
+    border-radius: 10px;
 }
 
 .post-title {
