@@ -171,6 +171,7 @@ a:active {
 }
 
 .post-frame {
+    margin-top: 20px;
     background-color: #202020;
     border-radius: 10px;
     border-left: 4px solid red;
