@@ -173,7 +173,8 @@ a:active {
 .post-frame {
     background-color: #202020;
     border-radius: 10px;
-    border-left: 2px solid red;
+    border: 1px solid red;
+    border-left-width: 2px;
     padding-top: 5px;
     padding-left: 5px;
     margin-left: 20px;
