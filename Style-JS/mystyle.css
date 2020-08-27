@@ -129,6 +129,7 @@ button.b:hover {
 }
 
 textarea, input {
+    color: white;
     background-color: transparent;
     border-radius: 10px;
     border-color: red;
