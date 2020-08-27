@@ -138,7 +138,7 @@
             <p>Welcome to my official Blog. Comments are now enabled! Please don't
                 spam, say bad things, or do anything hacky in the comments. If you find an issue with the comments, need
                 one deleted, or have a suggestion, let me know <a href="#site-suggest">here</a>. Have fun!</p>
-            <div id="gottenPost" v-show="p" style="background-color: cornflowerblue;">
+            <div id="gottenPost" v-show="p"  style="border-left-color: skyblue">
                 <div class="getpostfade" style="background-color: hsl(0, 100%, 63%);">
                     <div>Gotten Post | Post ID {{ post.id }}</div>
                     <div class="post-frame">
@@ -155,7 +155,7 @@
             <div id="postsdisplay">
                 <p v-show="error" style="color: red; font-weight: bold;">{{ error }}</p>
                 <div v-for="post in posts">
-                    <div :class="'-' + post.id + ' post-frame'" style="border-left-color: skyblue">
+                    <div :class="'-' + post.id + ' post-frame'">
                         <div class="post-title" v-html="post.title"> | {{ post.id }}</div>
                         <div class="post-body" v-html="post.body"></div>
                         <div class="post-info">
