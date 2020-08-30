@@ -66,26 +66,26 @@
     </noscript>
     <!-- NavBar -->
     <div class="bar">
-        <button class="tab- home" onclick="navBar(event, 'home')" title="Home Tab">Home</button>
-        <button class="tab- tasks" onclick="navBar(event, 'tasks')" title="To do/ finished">Tasks</button>
-        <button class="tab- posts" onclick="navBar(event, 'posts')" title="Posts">Posts</button>
-        <button class="tab- code" onclick="navBar(event, 'code')" title="Code stuffs">Code</button>
-        <button class="tab- about" onclick="navBar(event, 'about')" title="About Me And Links">About</button>
-        <button class="tab- other" onclick="navBar(event, 'other')" title="Idk yet">Other</button>
+        <button class="tab- home" onclick="navBar('home')" title="Home Tab">Home</button>
+        <button class="tab- tasks" onclick="navBar('tasks')" title="To do/ finished">Tasks</button>
+        <button class="tab- posts" onclick="navBar('posts')" title="Posts">Posts</button>
+        <button class="tab- code" onclick="navBar('code')" title="Code stuffs">Code</button>
+        <button class="tab- about" onclick="navBar('about')" title="About Me And Links">About</button>
+        <button class="tab- other" onclick="navBar('other')" title="Idk yet">Other</button>
     </div>
     <!-- SideBar for smaller screens -->
     <div id="sidebar" class="sidenav">
         <img class="logo" src="SpiderGaminIcon.png">
         <span class="logo-name">SpiderGaming</span>
         <button class="closebtn" onclick="closeNav()">&times;</button>
-        <button class="tab- home" onclick="navBar(event, 'home', 1)">Home</button>
-        <button class="tab- tasks" onclick="navBar(event, 'tasks', 1)">Tasks</button>
-        <button class="tab- posts" onclick="navBar(event, 'posts', 1)">Posts</button>
-        <button class="tab- code" onclick="navBar(event, 'code', 1)">Code</button>
-        <button class="tab- about" onclick="navBar(event, 'about', 1)">About</button>
-        <button class="tab- other" onclick="navBar(event, 'other', 1)">Other</button>
-        <i class="tab- site info-btn- material-icons" onclick="navBar(event, 'site', 1)">&#xe88e;</i>
-        <i class="tab- settings info-btn- material-icons" onclick="navBar(event, 'settings', 1)">&#xe8b8;</i>
+        <button class="tab- home" onclick="navBar('home', 1)">Home</button>
+        <button class="tab- tasks" onclick="navBar('tasks', 1)">Tasks</button>
+        <button class="tab- posts" onclick="navBar('posts', 1)">Posts</button>
+        <button class="tab- code" onclick="navBar('code', 1)">Code</button>
+        <button class="tab- about" onclick="navBar('about', 1)">About</button>
+        <button class="tab- other" onclick="navBar('other', 1)">Other</button>
+        <i class="tab- site info-btn- material-icons" onclick="navBar('site', 1)">&#xe88e;</i>
+        <i class="tab- settings info-btn- material-icons" onclick="navBar('settings', 1)">&#xe8b8;</i>
     </div>
     <!-- Use any element to open the sidenav -->
     <span id="menu" class="menu" onclick="openNav()">&#9776;</span>
@@ -132,8 +132,6 @@
         <!-- ====== Posts Tab ====== -->
         <div id="posts" class="tab">
             <h2 class="top">Posts</h2>
-            <p style="color: red; font-weight: bold;">Please read the rules and info listed at the top of the page
-                before posting. I do not expect much from you.</p>
             <h4>Rules and Info</h4>
             <p>Welcome to my official Blog. Comments are now enabled! Please don't
                 spam, say bad things, or do anything hacky in the comments. If you find an issue with the comments, need
@@ -156,32 +154,29 @@
                 <p v-show="error" style="color: red; font-weight: bold;">{{ error }}</p>
                 <div v-for="post in posts">
                     <div :class="'-' + post.id + ' post-frame'">
-                        <div class="post-title" v-html="post.title"> | {{ post.id }}</div>
+                        <div class="post-title" v-html="post.title"></div>
                         <div class="post-body" v-html="post.body"></div>
                         <div class="post-info">
                             <span><i v-on:click="commentShow(post.id)"
                                     class="material-icons">&#xe0b9;</i>{{ post.commentCount || 0 }}</span>
                             <span><i v-on:click="share(post.id)" class="material-icons">&#xe80d;</i></span>
-                            <span>{{ post.username }} <span style="display: inline-block;">{{ post.date }}</span></span>
+                            <span style="display: inline-block;">{{ post.date }}</span>
                         </div>
                         <div class="post-coms" style="height: 0px">
                             <div v-for="comment in comments">
-                                <div v-if="comment.postId === post.id">
-                                    <div v-bind:id="'-' + post.id + '-' + comment.id" class="com-frame">
-                                        <div class="post-title" v-html="comment.title"></div>
-                                        <div class="post-body" v-html="comment.body"></div>
-                                        <div class="post-info">
-                                            <span>{{ comment.username }} | {{ comment.date }}</span>
-                                            <span><i v-on:click="share(post.id + '-' + comment.id)"
-                                                    class="material-icons">&#xe80d;</i></span>
-                                        </div>
+                                <!--<div v-if="comment.postId === post.id">-->
+                                <div v-bind:id="'-' + post.id + '-' + comment.id" class="com-frame">
+                                    <div class="post-title" v-if="comment.title" v-html="comment.title"></div>
+                                    <div class="post-body" v-if="comment.body" v-html="comment.body"></div>
+                                    <div class="post-info" v-if="comment.body">
+                                        <span>{{ comment.username }} <span style="display: inline-block;">{{ comment.date }}</span></span>
+                                        <!--<span><i v-on:click="share(post.id + '-' + comment.id)" class="material-icons">&#xe80d;</i></span>-->
                                     </div>
                                 </div>
-                                <div class="com-frame" v-if="comment.postId !== post.id">No comments to display here
-                                </div>
+                                <!--</div>-->
                             </div>
                             <h4>Post a comment, {{ username }}</h4>
-                            <a href="#settings" v-show="username === 'Anonymous'">(You can change
+                            <a href="#settings" v-if="username === 'Anonymous'">(You can change
                                 your username by clicking here)</a>
                             <p v-show="error" style="color: red; font-weight: bold;">{{ error }}</p>
                             <br>
@@ -193,9 +188,10 @@
                         </div>
                     </div>
                 </div>
-                <hr class="hr1">
-                <button class="b" v-on:click="loadMorePosts">Load more posts</button><span v-if="noMore">There are no
-                    more posts to load</span>
+                <div style="margin-top: 50px;">
+                    <div class="com-frame" v-if="noMore">There are no more posts to load</div>
+                    <br><button class="b" v-on:click="loadMorePosts">Load more posts</button>
+                </div>
             </div>
         </div>
         <!-- ====== Code tab Tab ====== -->
@@ -312,7 +308,8 @@
             <hr id="-suggest" class="hr2">
             <h3>Suggest a feature</h3>
             <div id="suggestions">
-                <div>Have a suggestion for my website? Maybe a bug to report? Type it here and send it</div>
+                <div>Have a suggestion for my website? Maybe a bug to report? Type it here and send it. These are sent over to <a href="https://trello.com/b/BKwdwxpC/website" target="_blank">this Trello board</a></div>
+                <div>{{ sent }}</div>
                 <br><textarea v-model="suggestion" placeholder="Type your suggestion here" cols="30" rows="5"></textarea>
                 <br><br><button class="b" v-on:click="send()">Send</button>
             </div>
@@ -333,10 +330,9 @@
                     alt="Language grade: JavaScript"
                     src="https://img.shields.io/lgtm/grade/javascript/g/SpiderGamin/SpiderGamin.github.io.svg?logo=lgtm&logoWidth=18" /></a>
         </div>
-        <i class="tab- site info-btn material-icons" onclick="navBar(event, 'site')">&#xe88e;</i>
-        <i class="tab- settings info-btn material-icons" onclick="navBar(event, 'settings')">&#xe8b8;</i>
-        <div class="tab- secret hide" onclick="navBar(event, 'secret')"></div>
-        <div class="tab- secret hide" onclick="navBar(event, 'secret')"></div>
+        <i class="tab- site info-btn material-icons" onclick="navBar('site')">&#xe88e;</i>
+        <i class="tab- settings info-btn material-icons" onclick="navBar('settings')">&#xe8b8;</i>
+        <div class="tab- secret hide" onclick="navBar('secret')"></div>
     </div>
     <!-- The JavaScript -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>

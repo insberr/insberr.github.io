@@ -1,6 +1,6 @@
 /* ----- Page on Load ----- */
 
-var webPosts = 'https://website-posts--spidergamin.repl.co';
+var webPosts = 'https://website-backend--spidergamin.repl.co';
 var local = {}, cookies = false, wait = false;
 
 if (localStorage.getItem('siteData')) {
@@ -68,7 +68,7 @@ function pageQuery() {
             let l = loc.get('l');
             if (l.includes('-')) {
                 var tab = l.split('-')[0];
-                navBar(event, tab);
+                navBar(tab);
                 var anchor = l.replace(tab, '');
                 console.log(anchor)
                 if (tab === 'posts') {
@@ -80,17 +80,17 @@ function pageQuery() {
                 };
             } else {
                 var tab = l;
-                navBar(event, tab);
+                navBar(tab);
             };
         } else {
-            navBar(event, local.tab);
+            navBar(local.tab);
         };
         rmQuery();
     } catch (error) {
         console.error(`An error occurred with the query: ${error}`);
         notify('error', 'Tab error', 'There was an error selecting that tab or anchor');
         rmQuery();
-        navBar(event, 'home');
+        navBar('home');
     };
 };
 
@@ -117,14 +117,14 @@ function pageAnchor() {
                 document.getElementsByClassName(location.hash.toLowerCase().replace('#', ''))[0].click();
             };
         } else {
-            navBar(event, local.tab);
+            navBar(local.tab);
         };
         rmHash();
     } catch (error) {
         console.error(`An error occurred with the query: ${error}`);
         notify('error', 'Tab error', 'There was an error selecting that tab or anchor');
         rmHash();
-        navBar(event, 'home');
+        navBar('home');
     };
 };
 
@@ -185,7 +185,7 @@ function resetSiteData() {
 };
 
 /* ----- Nav Bar ----- */
-function navBar(evt, tab, mobile) {
+function navBar(tab, mobile) {
     if (mobile) { closeNav(); };
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tab");
@@ -200,7 +200,7 @@ function navBar(evt, tab, mobile) {
     // evt.currentTarget.className += " active";
     var elmt = document.getElementsByClassName(tab);
     elmt[0].className += ' active';
-    elmt[1].className += ' active';
+    if (elmt[1]) elmt[1].className += ' active';
     document.title = ('SpiderGaming | ' + tab);
     local.tab = tab;
     save();
@@ -406,11 +406,11 @@ var posts = new Vue({
                 console.error(`[ERROR] ${res.error}`);
                 return this.error = `[ERROR] ${res.error}`;
             }
+            console.log(res)
             if (res.posts === undefined) return this.noMore = true;
             this.posts = [];
             this.posts = await res.posts;
             clearTimeout(lo);
-            // theme.toggle('refresh');
         }).catch((error) => { console.error(error); this.error = `Error getting posts` });
     },
     methods: {
@@ -435,15 +435,12 @@ var posts = new Vue({
                             return c.style.height = '300px';
                         } else {
                             return c.style.height = (res.comments.length * 150) + 300 + 'px';
-                        }
-                        // this.comments = await res.comments;
-                        // theme.toggle('refresh');
+                        };
                     });
                 };
             };
         },
         postComment: function (postId) {
-            // return this.error = 'Comments are disabled. Also don`t send web requests for comments as it will return a status 404';
             if (this.commentBody === '') return this.error = 'You must provide text';
             var co = {
                 postId: postId,
@@ -453,18 +450,21 @@ var posts = new Vue({
             };
             this.commentBody = '', this.commentTitle = '', this.error = '';
             setTimeout(() => {
-                // { postId, username, title, body, ?password } }
                 pushP('/comment', 'post', co).then(async (res) => {
                     if (res.error) return console.error(res.error);
-                    this.comments.push(res.comments);
+                    this.comments = res.comments;
+                    this.posts.forEach((post, index) => {
+                        if (post.id !== postId) return;
+                        this.posts[index] = res.posts[0];
+                    })
                 }).catch((error) => console.error(error));
             }, 100);
         },
         loadMorePosts: async function () {
             pushP('/posts', 'post', { have: this.amount, amount: 5 }).then(async (res) => {
                 if (res.error) { console.log(res.error); return; };
-                if (res.posts.length === 0) return this.noMore = true;
-                this.amount = this.amount + 5;
+                if (res.posts.length === 1 && res.posts[0].body === undefined) return this.noMore = true;
+                this.amount = this.amount + res.posts.length;
                 await res.posts.forEach(post => {
                     this.posts.push(post);
                 });
@@ -546,12 +546,14 @@ var updates = new Vue({
 var suggest = new Vue({
     el: '#suggestions',
     data: {
-        suggestion: ''
+        suggestion: '',
+        sent: null
     },
     methods: {
         send: async function () {
             pushP('/suggest', 'post', { s: this.suggestion, username: local.username }).then(async (res) => {
                 if (res.error) console.error(res.error);
+                this.sent = res.info;
                 this.suggestion = '';
             }).catch((error) => console.error(error));
         }
@@ -587,7 +589,6 @@ async function getPost(id) {
         if (res.error) return console.error(res.error);
         gottenpost.post = res.posts[0];
         gottenpost.p = true;
-        // theme.toggle('refresh');
     }).catch((error) => {
         console.error(error);
     });
@@ -636,9 +637,5 @@ document.addEventListener('keyup', function (event) {
     // CTR + D > change the theme
     if (event.ctrlKey && event.key === 'q') {
         theme.toggle('toggle');
-    } else if (event.ctrlKey && event.key === ' ') {
-        //
-    };
+    }
 });
-
-
