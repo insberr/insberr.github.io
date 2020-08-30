@@ -388,9 +388,7 @@ var posts = new Vue({
         posts: [
             { title: 'Loading Posts' }
         ],
-        comments: [
-            { postId: 1, title: 'Loading Comments' }
-        ],
+        comments: [],
         commentTitle: '',
         commentBody: '',
         error: null,
@@ -408,9 +406,9 @@ var posts = new Vue({
                 console.error(`[ERROR] ${res.error}`);
                 return this.error = `[ERROR] ${res.error}`;
             }
-            if (res[0] === undefined) return this.noMore = true;
+            if (res.posts === undefined) return this.noMore = true;
             this.posts = [];
-            this.posts = await res;
+            this.posts = await res.posts;
             clearTimeout(lo);
             // theme.toggle('refresh');
         }).catch((error) => { console.error(error); this.error = `Error getting posts` });
@@ -430,14 +428,13 @@ var posts = new Vue({
                     });
                     await pushP('/comments', 'post', { postId: postId }).then(async (res) => {
                         if (res.error) { console.log(res.error); return this.comments = []; };
-                        // console.log(res);
-                        res.comments.forEach(com => {
+                        await res.comments.forEach(com => {
                             this.comments.push(com);
                         });
-                        if (res.comments.length <= 3) {
+                        if (res.comments.length === 0) {
                             return c.style.height = '300px';
                         } else {
-                            return c.style.height = (res.comments.length * 100) + 'px';
+                            return c.style.height = (res.comments.length * 150) + 300 + 'px';
                         }
                         // this.comments = await res.comments;
                         // theme.toggle('refresh');
@@ -447,7 +444,7 @@ var posts = new Vue({
         },
         postComment: function (postId) {
             // return this.error = 'Comments are disabled. Also don`t send web requests for comments as it will return a status 404';
-            if (this.commentTitle === '' || this.commentBody === '') return this.error = 'You must provide a Title and a Body';
+            if (this.commentBody === '') return this.error = 'You must provide text';
             var co = {
                 postId: postId,
                 username: local.username,
@@ -458,25 +455,19 @@ var posts = new Vue({
             setTimeout(() => {
                 // { postId, username, title, body, ?password } }
                 pushP('/comment', 'post', co).then(async (res) => {
-
                     if (res.error) return console.error(res.error);
-                    // console.log(res)
-                    this.comments.push(res.comment);
-                    this.posts.reverse();
-                    this.posts[postId - 1].commentCount = await res.post[0].commentCount;
-                    this.posts.reverse()
+                    this.comments.push(res.comments);
                 }).catch((error) => console.error(error));
             }, 100);
         },
         loadMorePosts: async function () {
             pushP('/posts', 'post', { have: this.amount, amount: 5 }).then(async (res) => {
                 if (res.error) { console.log(res.error); return; };
-                if (res[0] === undefined) return this.noMore = true;
+                if (res.posts.length === 0) return this.noMore = true;
                 this.amount = this.amount + 5;
-                await res.forEach(post => {
+                await res.posts.forEach(post => {
                     this.posts.push(post);
                 });
-                // theme.toggle('refresh');
             })?.catch((err) => console.error(err));
         },
         share: function (id) {
@@ -594,7 +585,7 @@ async function pushP(url, type, data) {
 async function getPost(id) {
     await pushP('/posts', 'post', { get: id }).then(async (res) => {
         if (res.error) return console.error(res.error);
-        gottenpost.post = res[0];
+        gottenpost.post = res.posts[0];
         gottenpost.p = true;
         // theme.toggle('refresh');
     }).catch((error) => {
