@@ -157,7 +157,7 @@
 						<div class="post-body" v-html="post.body"></div>
 						<div class="post-info">
 							<span><i v-on:click="commentShow(post.id)"
-									class="material-icons">&#xe0b9;</i>{{ post.commentC || 0 }}</span>
+									class="material-icons">&#xe0b9;</i>{{ post.comment || 0 }}</span>
 							<span><i v-on:click="share(post.id)" class="material-icons">&#xe80d;</i></span>
 							<span style="display: inline-block;">{{ post.create }}</span>
 						</div>
