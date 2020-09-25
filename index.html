@@ -165,7 +165,7 @@
 							<div v-for="comment in comments">
 								<!--<div v-if="comment.postId === post.id">-->
 								<div v-bind:id="'-' + post.id + '-' + comment.id" class="com-frame">
-									<div class="post-title" v-if="comment.title" v-html="comment.title"></div>
+									<div class="post-title" v-if="comment.title !== ''" v-html="comment.title"></div>
 									<div class="post-body" v-if="comment.body" v-html="comment.body"></div>
 									<div class="post-info" v-if="comment.body">
 										<span>{{ comment.username }} <span
