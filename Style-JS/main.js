@@ -5,10 +5,6 @@ var local = {}, cookies = false, wait = false;
 
 if (localStorage.getItem('siteData')) {
 	local = JSON.parse(localStorage.getItem('siteData'));
-	// Ask a user to
-	if (local.new === undefined || local.new === true) {
-		notify('info', 'Welcome Back', 'Welcome back! It is recommended that you <a href="#settings-reset">reset the site settings</a>')
-	}
 } else {
 	localStorage.clear();
 	local = { tab: 'home', size: '20', theme: 'default', username: 'Anonymous', new: true };
@@ -65,8 +61,9 @@ var tagOrComment = new RegExp(
 	+ tagBody
 	+ ')>',
 	'gi');
+
 function sanitize(html) {
-	var oldHtml;
+	let oldHtml;
 	do {
 		oldHtml = html;
 		html = html.replace(tagOrComment, '');
@@ -93,10 +90,9 @@ function pageQuery() {
 			let loc = new URLSearchParams(window.location.search);
 			let l = loc.get('l');
 			if (l.includes('-')) {
-				var tab = l.split('-')[0];
+				let tab = l.split('-')[0];
 				navBar(tab);
-				var anchor = l.replace(tab, '');
-				console.log(anchor)
+				let anchor = l.replace(tab, '');
 				if (tab === 'posts') {
 					getPost(anchor.replace('-', ''));
 				} else {
@@ -105,8 +101,7 @@ function pageQuery() {
 					}, 500);
 				}
 			} else {
-				var tab = l;
-				navBar(tab);
+				navBar(l);
 			}
 		} else {
 			navBar(local.tab);
@@ -125,15 +120,15 @@ function pageAnchor() {
 		if (location.hash) {
 			if (location.hash.includes('-')) {
 				if (location.hash.includes('posts')) {
-					var hash = location.hash;
-					var tab = hash.split('-')[0].replace('#', '');
+					let hash = location.hash;
+					let tab = hash.split('-')[0].replace('#', '');
 					document.getElementsByClassName(tab)[0].click();
-					var postId = hash.replace(tab, '');
+					let postId = hash.replace(tab, '');
 					getPost(postId.replace('-', '').replace('#', ''))
 				} else {
-					var hash = location.hash;
-					var tab = hash.split('-')[0].replace('#', '');
-					var anchor = hash.replace(tab, '');
+					let hash = location.hash;
+					let tab = hash.split('-')[0].replace('#', '');
+					let anchor = hash.replace(tab, '');
 					document.getElementsByClassName(tab)[0].click();
 					setTimeout(() => {
 						scrollToAnchor(anchor);
@@ -157,7 +152,6 @@ function pageAnchor() {
 function scrollToAnchor(anchor) {
 	anchor = sanitize(anchor);
 	try {
-		console.log(anchor)
 		$([document.documentElement, document.body]).animate({
 			scrollTop: $(anchor).offset().top
 		});
@@ -195,10 +189,9 @@ function reset(i) {
 }
 
 function resetSiteData() {
-	var reset = false;
 	let notifier = new AWN();
-	let onOk = () => { notify('success', 'Site data reset', 'Refreshing in 1 second'); reset = true; cookies = false; localStorage.clear(); setTimeout(() => { location.reload() }, 1000) };
-	let onCancel = () => { notifier.info('Site data was not reset'); reset = false; };
+	let onOk = () => { notify('success', 'Site data reset', 'Refreshing in 1 second'); cookies = false; localStorage.clear(); setTimeout(() => { location.reload() }, 1000) };
+	let onCancel = () => { notifier.info('Site data was not reset'); };
 	notifier.confirm(
 		'Are you sure you want to reset the site data?',
 		onOk,
@@ -214,28 +207,28 @@ function resetSiteData() {
 /* ----- Nav Bar ----- */
 function navBar(tab, mobile) {
 	if (mobile) { closeNav(); }
-	var i, tabcontent, tablinks;
-	tabcontent = document.getElementsByClassName("tab");
+	let i, tabcontent, tablinks;
+	tabcontent = document.getElementsByClassName('tab');
 	for (i = 0; i < tabcontent.length; i++) {
-		tabcontent[i].style.display = "none";
+		tabcontent[i].style.display = 'none';
 	}
-	tablinks = document.getElementsByClassName("tab-");
+	tablinks = document.getElementsByClassName('tab-');
 	for (i = 0; i < tablinks.length; i++) {
-		tablinks[i].className = tablinks[i].className.replace(" active", "");
+		tablinks[i].className = tablinks[i].className.replace(' active', '');
 	}
-	document.getElementById(tab).style.display = "block";
+	document.getElementById(tab).style.display = 'block';
 	// evt.currentTarget.className += " active";
-	var elmt = document.getElementsByClassName(tab);
+	let elmt = document.getElementsByClassName(tab);
 	elmt[0].className += ' active';
 	if (elmt[1]) elmt[1].className += ' active';
-	document.title = ('SpiderGaming | ' + tab);
+	// document.title = ('SpiderGaming | ' + tab);
 	local.tab = tab;
 	save();
 	window.dataLayer = window.dataLayer || [];
 	window.dataLayer.push({
 		'event': 'Pageview',
 		'pagePath': tab,
-		'pageTitle': 'SpiderGaming | ' + tab
+		'pageTitle': 'SpiderGaming'
 	});
 }
 
@@ -250,14 +243,14 @@ function notify(type, info, text) {
 var bio = new Vue({
 	el: '#bio',
 	data: {
-		bio: `Hello, I'm SpiderGaming. I am A YouTuber, gamer, web dev, and JS programmer. I spend most of my free time programming, mainly working on this website. Recently I've been working on this websites JavaScript.`
+		bio: `Hello, I'm SpiderGaming. I am A YouTuber, gamer, web dev, and JS programmer. I spend most of my free time programming.`
 	}
 });
 
 var userName = new Vue({
 	el: '#username',
 	data: {
-		username: 'Loading'
+		username: 'Anonymous'
 	},
 	created() {
 		this.username = ((local?.username) || 'Anonymous');
@@ -304,7 +297,7 @@ var theme = new Vue({
 				if (this.picked.includes('dark')) {
 					this.darkMode(this.picked);
 				} else if (this.picked.includes('light')) {
-					this.darkMode(this.picked);
+					this.lightMode(this.picked);
 				}
 			}
 		},
@@ -396,13 +389,14 @@ function tConvert(time) {
 
 // Get the time elapsed/left
 function formatTime(t, ti) {
-	var now = date(new Date());
-	if (t === 'up') var distance = now - ti;
-	if (t === 'down') var distance = ti - now;
-	var d = Math.floor(distance / (1000 * 60 * 60 * 24));
-	var h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-	var m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-	var s = Math.floor((distance % (1000 * 60)) / 1000);
+	let distance = 0;
+	let now = date(new Date());
+	if (t === 'up') distance = now - ti;
+	if (t === 'down') distance = ti - now;
+	let d = Math.floor(distance / (1000 * 60 * 60 * 24));
+	let h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+	let m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+	let s = Math.floor((distance % (1000 * 60)) / 1000);
 	h = ('0' + h).slice(-2);
 	m = ('0' + m).slice(-2);
 	s = ('0' + s).slice(-2);
@@ -410,6 +404,37 @@ function formatTime(t, ti) {
 	return { d: d, h: h, m: m, s: s, f: f };
 }
 
+var counters = new Vue({
+	el: '#counters',
+	data: {
+		time: '00:00:00 AM',
+		cc: { day: 0 },
+		c: { day: 0 },
+		s: { day: 0, days: 291, }
+	},
+	created() {
+		let ccDate = new Date("Mar 17, 2020 00:00:00").getTime();
+		let cDate = new Date('Dec 30, 2019 00:00:00').getTime();
+		let sDateUp = new Date("Sep 3, 2020 00:00:00").getTime();
+		let sDateDown = new Date("Jun 22, 2021 00:00:00").getTime();
+		setInterval(() => {
+			let cc = formatTime('up', ccDate);
+			let c = formatTime('up', cDate);
+			let su = formatTime('up', sDateUp);
+			let sd = formatTime('down', sDateDown);
+			// var up = formatTime('up', countUpDate);
+			this.time = cc.f;
+			this.cc.day = cc.d;
+			this.c.day = c.d;
+			this.s.day = su.d;
+			this.s.days = sd.d;
+			// this.day = up.d;
+			// this.time = up.f;
+		}, 1000);
+	}
+})
+
+/*
 var coronacation = new Vue({
 	el: '#corona-counter',
 	data: {
@@ -443,7 +468,7 @@ var school = new Vue({
 		}, 1000);
 	}
 })
-
+*/
 
 var posts = new Vue({
 	el: '#postsdisplay',
@@ -461,8 +486,8 @@ var posts = new Vue({
 	},
 	async created() {
 		this.username = await local.username;
-		var lo = setTimeout(() => {
-			this.error = `Still waiting for posts? Try reloading the page (Probably server side issues Im still trying to fix)`;
+		let lo = setTimeout(() => {
+			this.error = `Still waiting for posts? Try reloading the page.`;
 		}, 20000);
 		await pushP('/posts', 'post', { amount: this.amount }).then(async (res) => {
 			if (res.error) {
@@ -470,7 +495,7 @@ var posts = new Vue({
 				console.error(`[ERROR] ${res.error}`);
 				return this.error = `[ERROR] ${res.error}`;
 			}
-			console.log(res)
+			// console.log(res)
 			if (res.posts === undefined) return this.noMore = true;
 			this.posts = [];
 			this.posts = await res.posts;
@@ -505,13 +530,13 @@ var posts = new Vue({
 		},
 		postComment: function (postId) {
 			if (this.commentBody === '') return this.error = 'You must provide text';
-			var co = {
+			let co = {
 				postId: postId,
 				username: local.username,
 				title: this.commentTitle,
 				body: this.commentBody
 			};
-			this.commentBody = '', this.commentTitle = '', this.error = '';
+			this.commentBody = ''; this.commentTitle = ''; this.error = '';
 			setTimeout(() => {
 				pushP('/comment', 'post', co).then(async (res) => {
 					if (res.error) return console.error(res.error);
@@ -524,7 +549,7 @@ var posts = new Vue({
 			}, 100);
 		},
 		loadMorePosts: async function () {
-			pushP('/posts', 'post', { have: this.amount, amount: 5 }).then(async (res) => {
+			await pushP('/posts', 'post', { have: this.amount, amount: 5 }).then(async (res) => {
 				if (res.error) { console.log(res.error); return; }
 				if (res.posts.length === 1 && res.posts[0].body === undefined) return this.noMore = true;
 				this.amount = this.amount + res.posts.length;
@@ -626,7 +651,7 @@ var suggest = new Vue({
 async function pushP(url, type, data) {
 	return new Promise(async function (resolve, reject) {
 		if (type === 'post') {
-			axios.post(webPosts + url, data)
+			await axios.post(webPosts + url, data)
 				.then(function (res) {
 					resolve(res.data);
 				})
@@ -635,7 +660,7 @@ async function pushP(url, type, data) {
 					reject(error);
 				});
 		} else if (type === 'get') {
-			axios.get(webPosts + url, data)
+			await axios.get(webPosts + url, data)
 				.then(function (res) {
 					resolve(res.data);
 				})
@@ -667,7 +692,7 @@ function openNav() {
 }
 
 function closeNav(t) {
-	if (t === undefined) var t = 300;
+	if (t === undefined) t = 300;
 	setTimeout(() => {
 		document.getElementsByClassName('sidenav')[0].style.width = '0';
 	}, t);

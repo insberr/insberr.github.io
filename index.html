@@ -144,7 +144,8 @@
 						<div class="post-info">
 							<span><i class="material-icons">&#xe0b9;</i>{{ post.comment || 0 }}</span>
 							<span><i v-on:click="share(post.id)" class="material-icons">&#xe80d;</i></span>
-							<span>{{ post.username }} <span style="display: inline-block;">{{ post.create }}</span></span>
+							<span>{{ post.username }} <span
+									style="display: inline-block;">{{ post.create }}</span></span>
 						</div>
 					</div>
 				</div>
@@ -232,17 +233,21 @@
 		<div id="other" class="tab">
 			<h2 class="top">Other Things</h2>
 			<p>Other random things are here. All times are (hopefully) in my timezone.</p>
-			<div id="corona-counter">
+			<div id="counters">
 				<div>Time: <b>{{ time }}</b></div>
 				<br>
 				<div>
-					Today is day <b>{{ day }}</b> of coronacation
+					Today is day <b>{{ cc.day }}</b> of coronacation
 				</div>
-			</div>
-			<br>
-			<div id="school-countdown">
-				Today is day <b>{{ day }}</b> of school.
-				<br>There are <b>{{ days }}</b> left of school.
+				<br>
+				<div>
+					Today is day <b>{{ c.day }}</b> since the first known corona case
+				</div>
+				<br>
+				<div>
+					Today is day <b>{{ s.day }}</b> of school.
+					<br>There are <b>{{ s.days }}</b> left of school.
+				</div>
 			</div>
 		</div>
 		<!-- == Secret Tab == -->
