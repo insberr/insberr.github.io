@@ -89,6 +89,29 @@ function pageQuery() {
 		if (window.location.search) {
 			let loc = new URLSearchParams(window.location.search);
 			let l = loc.get('l');
+			let qScroll = loc.get('scroll');
+			let qTab = loc.get('tab');
+			let qPost = loc.get('post');
+			let qComment = loc.get('comment');
+			
+			// if (l !== undefined) notify('info', 'New') // notify of new type
+			if (qTab !== undefined) {
+				navBar(sanitize(qTab));
+				if (qScroll !== undefined) {
+					setTimeout(() => {
+						scrollToAnchor('#' + qScroll);
+					}, 500);
+				}
+			}
+			if (qPost !== undefined) {
+				navBar('posts'):
+				getPost(sanitize(qPost));
+			}
+			if (qComment !== undefined) {
+				navBar('posts');
+				// getComment(sanitize(qComment));
+			}
+
 			if (l.includes('-')) {
 				let tab = l.split('-')[0];
 				navBar(tab);
@@ -106,7 +129,7 @@ function pageQuery() {
 		} else {
 			navBar(local.tab);
 		}
-		rmQuery();
+		return rmQuery();
 	} catch (error) {
 		console.error(`An error occurred with the query: ${error}`);
 		notify('error', 'Tab error', 'There was an error selecting that tab or anchor');
