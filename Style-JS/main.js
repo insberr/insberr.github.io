@@ -113,7 +113,7 @@ function pageQuery() {
 				// getComment(sanitize(qComment));
 			}
 			
-			if (l.includes('-')) {
+			if (l && l.includes('-')) {
 				let tab = l.split('-')[0];
 				navBar(tab);
 				let anchor = l.replace(tab, '');
@@ -124,8 +124,10 @@ function pageQuery() {
 						scrollToAnchor('#' + anchor);
 					}, 500);
 				}
-			} else {
+			} else if (l) {
 				navBar(l);
+			} else {
+				navBar(local.tab);
 			}
 		} else {
 			navBar(local.tab);
