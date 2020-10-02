@@ -93,41 +93,24 @@ function pageQuery() {
 			let qTab = loc.get('tab');
 			let qPost = loc.get('post');
 			let qComment = loc.get('comment');
-			notify('info', 'things', qTab);
-			// if (l !== undefined) notify('info', 'New') // notify of new type
+			// notify('info', 'things', qTab);
+			// if (l) notify('info', 'New') // notify of new type
 			
-			if (qTab) {
-				navBar(sanitize(qTab));
-				if (qScroll) {
+			if (qTab !== null) {
+				navBar(qTab);
+				if (qScroll !== null) {
 					setTimeout(() => {
 						scrollToAnchor('#' + qScroll);
 					}, 500);
 				}
 			}
-			if (qPost) {
+			if (qPost !== null) {
 				navBar('posts'):
-				getPost(sanitize(qPost));
+				getPost(qPost);
 			}
-			if (qComment) {
+			if (qComment !== null) {
 				navBar('posts');
 				// getComment(sanitize(qComment));
-			}
-			
-			if (l && l.includes('-')) {
-				let tab = l.split('-')[0];
-				navBar(tab);
-				let anchor = l.replace(tab, '');
-				if (tab === 'posts') {
-					getPost(anchor.replace('-', ''));
-				} else {
-					setTimeout(() => {
-						scrollToAnchor('#' + anchor);
-					}, 500);
-				}
-			} else if (l) {
-				navBar(l);
-			} else {
-				navBar(local.tab);
 			}
 		} else {
 			navBar(local.tab);
