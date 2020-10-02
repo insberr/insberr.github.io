@@ -130,7 +130,7 @@ function pageQuery() {
 		} else {
 			navBar(local.tab);
 		}
-		return rmQuery();
+		rmQuery();
 	} catch (error) {
 		console.error(`An error occurred with the query: ${error}`);
 		notify('error', 'Tab error', 'There was an error selecting that tab or anchor');
