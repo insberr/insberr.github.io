@@ -96,19 +96,19 @@ function pageQuery() {
 			// notify('info', 'things', qTab);
 			// if (l) notify('info', 'New') // notify of new type
 			
-			if (qTab !== null) {
+			if (qTab) {
 				navBar(qTab);
-				if (qScroll !== null) {
+				if (qScroll) {
 					setTimeout(() => {
 						scrollToAnchor('#' + qScroll);
 					}, 500);
 				}
 			}
-			if (qPost !== null) {
-				navBar('posts'):
+			if (qPost) {
+				navBar('posts');
 				getPost(qPost);
 			}
-			if (qComment !== null) {
+			if (qComment) {
 				navBar('posts');
 				// getComment(sanitize(qComment));
 			}
