@@ -112,6 +112,23 @@ function pageQuery() {
 				navBar('posts');
 				// getComment(sanitize(qComment));
 			}
+			
+			if (l && l.includes('-')) {
+ 				let tab = l.split('-')[0];
+ 				navBar(tab);
+ 				let anchor = l.replace(tab, '');
+ 				if (tab === 'posts') {
+ 					getPost(anchor.replace('-', ''));
+ 				} else {
+ 					setTimeout(() => {
+ 						scrollToAnchor('#' + anchor);
+ 					}, 500);
+ 				}
+ 			} else if (l) {
+ 				navBar(l);
+ 			} else {
+ 				navBar(local.tab || 'home');
+ 			}
 		} else {
 			navBar(local.tab || 'home');
 		}
