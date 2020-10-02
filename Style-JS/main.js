@@ -96,19 +96,19 @@ function pageQuery() {
 			notify('info', 'things', qTab);
 			// if (l !== undefined) notify('info', 'New') // notify of new type
 			
-			if (qTab !== undefined) {
+			if (qTab) {
 				navBar(sanitize(qTab));
-				if (qScroll !== undefined) {
+				if (qScroll) {
 					setTimeout(() => {
 						scrollToAnchor('#' + qScroll);
 					}, 500);
 				}
 			}
-			if (qPost !== undefined) {
+			if (qPost) {
 				navBar('posts'):
 				getPost(sanitize(qPost));
 			}
-			if (qComment !== undefined) {
+			if (qComment) {
 				navBar('posts');
 				// getComment(sanitize(qComment));
 			}
