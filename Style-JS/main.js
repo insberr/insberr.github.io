@@ -113,7 +113,7 @@ function pageQuery() {
 				// getComment(sanitize(qComment));
 			}
 		} else {
-			navBar(local.tab);
+			navBar(local.tab || 'home');
 		}
 		rmQuery();
 	} catch (error) {
