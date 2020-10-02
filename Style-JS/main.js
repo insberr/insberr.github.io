@@ -95,7 +95,7 @@ function pageQuery() {
 			let qComment = loc.get('comment');
 			notify('info', 'things', qTab);
 			// if (l !== undefined) notify('info', 'New') // notify of new type
-			/*
+			
 			if (qTab !== undefined) {
 				navBar(sanitize(qTab));
 				if (qScroll !== undefined) {
@@ -112,7 +112,7 @@ function pageQuery() {
 				navBar('posts');
 				// getComment(sanitize(qComment));
 			}
-			*/
+			
 			if (l.includes('-')) {
 				let tab = l.split('-')[0];
 				navBar(tab);
