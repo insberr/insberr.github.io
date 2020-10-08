@@ -3,29 +3,7 @@
 
 <head>
 	<title>SpiderGaming</title>
-	<!-- ===== Google Analytics ===== -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-172907257-1"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
-		gtag('js', new Date());
-
-		gtag('config', 'UA-172907257-1');
-	</script>
-	<!-- Google Tag Manager -->
-	<script>(function (w, d, s, l, i) {
-			w[l] = w[l] || []; w[l].push({
-				'gtm.start':
-					new Date().getTime(), event: 'gtm.js'
-			}); var f = d.getElementsByTagName(s)[0],
-				j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-					'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-		})(window, document, 'script', 'dataLayer', 'GTM-N7G5V8T');
-	</script>
-	<!-- == Allow this site to go in fullscreen when made as a homescreen bookmark on an IOS device == -->
 	<meta name="apple-mobile-web-app-capable" content="yes">
-	<!-- ===== Import styles and important js scripts ===== -->
-	<!-- vue.js, jquery, notification style and js, and my styles -->
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 	<link rel="stylesheet" href="Style-JS/style.css" />
@@ -35,7 +13,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="Style-JS/mystyle.css">
 	<link rel="shortcut icon" href="https://spidergamin.github.io/SpiderGaminIcon.png" type="image/x-icon" />
-
 	<!-- ===== Embed Stuffs ===== -->
 	<link type="application/json+oembed" href="https://spidergamin.github.io/Style-JS/oembed.json" />
 	<meta name="author" content="SpiderGaming">
@@ -57,12 +34,6 @@
 </head>
 
 <body>
-	<!-- Google Tag Manager (noscript) -->
-	<noscript>
-		<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N7G5V8T" height="0" width="0"
-			style="display:none;visibility:hidden" title="GTM NOSCRIPT">
-		</iframe>
-	</noscript>
 	<!-- NavBar -->
 	<div class="bar">
 		<button class="tab- home" onclick="navBar('home')" title="Home">Home</button>
@@ -164,17 +135,14 @@
 						</div>
 						<div class="post-coms" style="height: 0px">
 							<div v-for="comment in comments">
-								<!--<div v-if="comment.postId === post.id">-->
 								<div v-bind:id="'-' + post.id + '-' + comment.id" class="com-frame">
 									<div class="post-title" v-if="comment.title !== ''" v-html="comment.title"></div>
 									<div class="post-body" v-if="comment.body" v-html="comment.body"></div>
 									<div class="post-info" v-if="comment.body">
 										<span>{{ comment.username }} <span
 												style="display: inline-block;">{{ comment.create }}</span></span>
-										<!--<span><i v-on:click="share(post.id + '-' + comment.id)" class="material-icons">&#xe80d;</i></span>-->
 									</div>
 								</div>
-								<!--</div>-->
 							</div>
 							<h4>Post a comment, {{ username }}</h4>
 							<a href="#settings" v-if="username === 'Anonymous'">(You can change
@@ -261,11 +229,12 @@
 			<div id="username">
 				<span>Chose the username you would like to use. The username is only used when you create a post.</span>
 				<br><input v-model="username" type="text">
+				<br><button>Save</button>
 				<br><br><button class="b" onclick="reset('username')">Reset</button>
 			</div>
 			<hr class="hr1" id="-theme">
 			<div id="theme">
-				<span>Chose the color theme you want (works now)</span>
+				<span>Chose from dark and light mode</span>
 				<br><span>Click the icon to change the theme</span>
 				<br><span v-on:click="toggle('toggle')" id="theme-toggle" v-html="themeDiv"></span>
 				<br><br>
@@ -279,14 +248,6 @@
 				<br><input v-model="size" type="range" min="12" max="40" id="slider" />
 				<br><span :style="{ fontSize: size + 'px' }">{{ size }}px</span>
 				<br><br><button class="b" onclick="reset('text')">Reset</button>
-			</div>
-			<hr class="hr1" id="-device">
-			<div id="device">
-				<span>Want to use the mobile version of this site on desktop? Or maybe the other way around? You can do
-					that here. (Not added)</span>
-				<br>
-				<div>TOGGLE MOBILE/DESKTOP</div>
-				<br><button class="b" onclick="reset('device')">Reset</button>
 			</div>
 			<hr class="hr1" id="-reset">
 			<div id="reset-settings">
@@ -312,16 +273,12 @@
 				website, feel free to send me a DM on Twitter or Discord (links to those can be found <a
 					href="#about-link-twitter">here</a>)
 			</p>
-			<p>Did you know if you install <a
-					href="https://chrome.google.com/webstore/detail/relay-chat-on-every-websi/niifmlaakldeiifddnihjkgahaipjdmh">this
-					chrome extension</a> you can chat on this website?</p>
 			<hr id="-st-an" class="hr2">
 			<h3>localStorage and Analytics</h3>
 			<p>My site uses the localStorage feature to save the settings and the tab you left off on (so when you
 				reload the page you'll
-				be on the same tab). This site also uses Google Analytics which tracks things such as site views, what
-				tabs people looked at, and more. I plan to create my own Analytics system since people don't trust
-				google and they block it.
+				be on the same tab). This site also NO LONGER uses Google Analytics. I plan to create my own Analytics
+				system since people don't trust google and they block it.
 			</p>
 			<hr id="-suggest" class="hr2">
 			<h3>Suggest a feature</h3>

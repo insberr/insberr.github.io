@@ -1,7 +1,7 @@
 /* ----- Page on Load ----- */
 
 var webPosts = 'https://website-backend--spidergamin.repl.co';
-var local = {}, cookies = false, wait = false;
+var local = {}, cookies = true, wait = false;
 
 if (localStorage.getItem('siteData')) {
 	local = JSON.parse(localStorage.getItem('siteData'));
@@ -20,50 +20,24 @@ async function save() {
 }
 
 $(document).ready(function () {
-	if (local.new) {
-		local.new = false;
-		let notifier = new AWN();
-		let onOk = () => { notifier.info('You allowed the use of localStorage, more info <a href="#site">here</a>'); cookies = true; localStorage.setItem('siteData', JSON.stringify(local)) };
-		let onCancel = () => { notifier.info('You denied the use of the localStorage. For more info click <a href="#site">here</a>'); cookies = false };
-		notifier.confirm(
-			'My website uses the local storage feature. Click "ok" to allow this site to store data or click "cancel" to deny. This is used to save the sites settings.',
-			onOk,
-			onCancel,
-			{
-				labels: {
-					confirm: 'LocalStorage'
-				}
-			}
-		);
-	} else { cookies = true; }
 	pageAnchor();
 	pageQuery();
-	/* 
-	// Test if device is one of these
-	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-		//
-	}
-	*/
 });
 
-
-var tagBody = '(?:[^"\'>]|"[^"]*"|\'[^\']*\')*';
-
-var tagOrComment = new RegExp(
-	'<(?:'
-	// Comment body.
-	+ '!--(?:(?:-*[^->])*--+|-?)'
-	// Special "raw text" elements whose content should be elided.
-	+ '|script\\b' + tagBody + '>[\\s\\S]*?</script\\s*'
-	+ '|style\\b' + tagBody + '>[\\s\\S]*?</style\\s*'
-	// Regular name
-	+ '|/?[a-z]'
-	+ tagBody
-	+ ')>',
-	'gi');
-
 function sanitize(html) {
-	let oldHtml;
+	let tagBody = '(?:[^"\'>]|"[^"]*"|\'[^\']*\')*';
+	let tagOrComment = new RegExp(
+		'<(?:'
+		+ '!--(?:(?:-*[^->])*--+|-?)'
+		+ '|script\\b' + tagBody + '>[\\s\\S]*?</script\\s*'
+		+ '|style\\b' + tagBody + '>[\\s\\S]*?</style\\s*'
+		+ '|/?[a-z]'
+		+ tagBody
+		+ ')>',
+		'gi');
+
+
+	var oldHtml;
 	do {
 		oldHtml = html;
 		html = html.replace(tagOrComment, '');
@@ -71,15 +45,10 @@ function sanitize(html) {
 	return html.replace(/</g, '&lt;');
 }
 
-
-
-/* ----- Url queries for tab and anchor linking ----- */
-// Remove # from url
 function rmHash() {
 	history.pushState("", document.title, window.location.pathname + window.location.search);
 }
 
-// Remove queries from url
 function rmQuery() {
 	window.history.replaceState({}, document.title, "/" + " ");
 }
@@ -93,9 +62,7 @@ function pageQuery() {
 			let qTab = loc.get('tab');
 			let qPost = loc.get('post');
 			let qComment = loc.get('comment');
-			// notify('info', 'things', qTab);
-			// if (l) notify('info', 'New') // notify of new type
-			
+
 			if (qTab) {
 				navBar(qTab);
 				if (qScroll) {
@@ -112,23 +79,23 @@ function pageQuery() {
 				navBar('posts');
 				// getComment(sanitize(qComment));
 			}
-			
+
 			if (l && l.includes('-')) {
- 				let tab = l.split('-')[0];
- 				navBar(tab);
- 				let anchor = l.replace(tab, '');
- 				if (tab === 'posts') {
- 					getPost(anchor.replace('-', ''));
- 				} else {
- 					setTimeout(() => {
- 						scrollToAnchor('#' + anchor);
- 					}, 500);
- 				}
- 			} else if (l) {
- 				navBar(l);
- 			} else {
- 				navBar(local.tab || 'home');
- 			}
+				let tab = l.split('-')[0];
+				navBar(tab);
+				let anchor = l.replace(tab, '');
+				if (tab === 'posts') {
+					getPost(anchor.replace('-', ''));
+				} else {
+					setTimeout(() => {
+						scrollToAnchor('#' + anchor);
+					}, 500);
+				}
+			} else if (l) {
+				navBar(l);
+			} else {
+				navBar(local.tab || 'home');
+			}
 		} else {
 			navBar(local.tab || 'home');
 		}
@@ -191,7 +158,6 @@ $(window).bind('hashchange', function () {
 	pageAnchor();
 });
 
-/* ----- Settings ----- */
 function reset(i) {
 	switch (i) {
 		case 'username':
@@ -230,7 +196,6 @@ function resetSiteData() {
 	);
 }
 
-/* ----- Nav Bar ----- */
 function navBar(tab, mobile) {
 	if (mobile) { closeNav(); }
 	let i, tabcontent, tablinks;
@@ -250,12 +215,6 @@ function navBar(tab, mobile) {
 	// document.title = ('SpiderGaming | ' + tab);
 	local.tab = tab;
 	save();
-	window.dataLayer = window.dataLayer || [];
-	window.dataLayer.push({
-		'event': 'Pageview',
-		'pagePath': tab,
-		'pageTitle': 'SpiderGaming'
-	});
 }
 
 /* Notification thingy */
@@ -394,7 +353,6 @@ var fontSize = new Vue({
 	}
 });
 
-// Gets the date and time formated in my timezone
 function date(dateTime) {
 	let d = new Date(dateTime);
 	let utc = d.getTime() + (d.getTimezoneOffset() * 60000);
@@ -402,7 +360,6 @@ function date(dateTime) {
 	return nd;
 }
 
-// Convert the time from 24 hour to 12 hour
 function tConvert(time) {
 	time = time.toString().match(/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [time];
 	if (time.length > 1) {
@@ -413,7 +370,6 @@ function tConvert(time) {
 	return time.join('');
 }
 
-// Get the time elapsed/left
 function formatTime(t, ti) {
 	let distance = 0;
 	let now = date(new Date());
@@ -459,42 +415,6 @@ var counters = new Vue({
 		}, 1000);
 	}
 })
-
-/*
-var coronacation = new Vue({
-	el: '#corona-counter',
-	data: {
-		day: '0',
-		time: '00:00:00 AM'
-	},
-	created() {
-		var countUpDate = new Date("Mar 17, 2020 00:00:00").getTime();
-		setInterval(() => {
-			var up = formatTime('up', countUpDate);
-			this.day = up.d;
-			this.time = up.f;
-		}, 1000);
-	}
-});
-
-var school = new Vue({
-	el: '#school-countdown',
-	data: {
-		day: '0',
-		days: 291
-	},
-	created() {
-		var countUpDate = new Date("Sep 3, 2020 00:00:00").getTime();
-		var countDownDate = new Date("Jun 22, 2021 00:00:00").getTime();
-		setInterval(() => {
-			var up = formatTime('up', countUpDate);
-			var down = formatTime('down', countDownDate);
-			this.day = up.d;
-			this.days = down.d;
-		}, 1000);
-	}
-})
-*/
 
 var posts = new Vue({
 	el: '#postsdisplay',
@@ -724,13 +644,11 @@ function closeNav(t) {
 	}, t);
 }
 
-// If the screen size changes, close the SideBar
 function resize() {
 	closeNav(10);
 }
 window.onresize = resize;
 
-// When you click outside of the SideBar, close it
 $(document).mouseup(function (e) {
 	var bar = $('#sidebar');
 	var menu = $('#menu');
@@ -746,9 +664,7 @@ function copy(f, text, i) {
 	notify('info', `${f} copied`, i);
 }
 
-/* === Keyboard Shortcuts === */
 document.addEventListener('keyup', function (event) {
-	// CTR + D > change the theme
 	if (event.ctrlKey && event.key === 'q') {
 		theme.toggle('toggle');
 	}

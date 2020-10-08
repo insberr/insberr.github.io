@@ -1,15 +1,3 @@
-// Return Key Enters
-/*
-secretCodeInput.addEventListener("keyup", function(event) {
-    if (event.keyCode === 13) {
-        event.preventDefault();
-        document.getElementById("codeButton").click();
-    }
-});
-
-document.getElementById("outputSecretCode").innerHTML = "Your translated text will go here";
-*/
-
 var characterMap = {
     a: "@",
     b: "/",
@@ -74,6 +62,6 @@ var characterMap = {
 };
 
 function secretCode(input, callback) {
-    var output = input.toLowerCase().split('').map(character => characterMap[character]).join('');
+    let output = input.toLowerCase().split('').map(character => characterMap[character]).join('');
     callback(output);
 }
