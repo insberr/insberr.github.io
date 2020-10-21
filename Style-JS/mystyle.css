@@ -4,8 +4,6 @@
 
 html {
 	scroll-behavior: smooth;
-	user-select: none;
-	-webkit-user-select: none;
 }
 
 #awn-popup-wrapper .awn-popup-body {
@@ -50,8 +48,6 @@ body {
 	background-color: black;
 	color: white;
 	font-family: Arial, sans-serif;
-	user-select: none;
-	-webkit-user-select: none;
 }
 
 #theme #theme-toggle .material-icons {
