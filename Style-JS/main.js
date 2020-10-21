@@ -143,14 +143,14 @@ function pageAnchor() {
 }
 
 function scrollToAnchor(anchor) {
+	console.log(anchor);
 	anchor = sanitize(anchor);
 	try {
 		$([document.documentElement, document.body]).animate({
 			scrollTop: $(anchor).offset().top
 		});
 	} catch (error) {
-		console.error(error)
-		notify('alert', 'Scroll Error', 'The scroll part failed, so you have to scroll there yourself');
+		console.error(error);
 	}
 }
 

@@ -7,3 +7,4 @@ https://spidergamin.github.io?tab=about
 https://spidergamin.github.io?tab=other
 https://spidergamin.github.io?tab=settings
 https://spidergamin.github.io?tab=site
+https://spidergamin.github.io/profile.html
