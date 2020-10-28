@@ -212,7 +212,7 @@ function navBar(tab, mobile) {
 	let elmt = document.getElementsByClassName(tab);
 	elmt[0].className += ' active';
 	if (elmt[1]) elmt[1].className += ' active';
-	// document.title = ('SpiderGaming | ' + tab);
+
 	local.tab = tab;
 	save();
 }
@@ -225,12 +225,6 @@ function notify(type, info, text) {
 
 
 /* ----- vue js ----- */
-var bio = new Vue({
-	el: '#bio',
-	data: {
-		bio: `Hello, I'm SpiderGaming. I am A YouTuber, gamer, web dev, and JS programmer. I spend most of my free time programming.`
-	}
-});
 
 var userName = new Vue({
 	el: '#username',
@@ -505,7 +499,7 @@ var posts = new Vue({
 			})?.catch((err) => console.error(err));
 		},
 		share: function (id) {
-			navigator.clipboard.writeText(`https://spidergamin.github.io?l=posts-${id}`);
+			navigator.clipboard.writeText(`https://insberr.github.io?l=posts-${id}`);
 			notify('info', 'Link copied', 'A link to that post was copied to your clipboard');
 		}
 	}
@@ -520,7 +514,7 @@ var gottenpost = new Vue({
 	},
 	methods: {
 		share: function (id) {
-			navigator.clipboard.writeText(`https://spidergamin.github.io?l=posts-${id}`);
+			navigator.clipboard.writeText(`https://insberr.github.io?l=posts-${id}`);
 			notify('info', 'Link copied', 'A link to that post was copied to your clipboard');
 		}
 	}

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>SpiderGaming</title>
+	<title>Insberr</title>
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -12,25 +12,25 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="Style-JS/mystyle.css">
-	<link rel="shortcut icon" href="https://spidergaming0.github.io/SpiderGaminIcon.png" type="image/x-icon" />
+	<link rel="shortcut icon" href="https://insberr.github.io/InsberrIcon.png" type="image/x-icon" />
 	<!-- ===== Embed Stuffs ===== -->
-	<link type="application/json+oembed" href="https://spidergaming0.github.io/Style-JS/oembed.json" />
-	<meta name="author" content="SpiderGaming">
-	<meta name="title" content="SpiderGaming">
-	<meta name="keywords" content="SpiderGamin, SpiderGaming, SpidderGaming0">
+	<link type="application/json+oembed" href="https://insberr.github.io/Style-JS/oembed.json" />
+	<meta name="author" content="Insberr (AKA SpiderGaming)">
+	<meta name="title" content="Insberr">
+	<meta name="keywords" content="insberr, insberrdev, spidergamin, spidergaming, spiddergaming0">
 	<meta name="description"
-		content="I'm SpiderGaming, a YouTuber, web designer, and programmer. Here is my website. Info about me, links, and more!">
-	<meta content="SpiderGaming" property="og:title">
+		content="I'm Insberr (Formally known as SpidderGaming0) Programmer, gamer, YouTuber, and sort of a game dev. I know JavaScript (nodejs), Web (HTML, CSS, JS), a bit of Python and C#">
+	<meta content="Insberr" property="og:title">
 	<meta property="og:description"
-		content="I'm SpiderGaming, a YouTuber, web designer, and programmer. Here is my website. Info about me, links, and more!">
-	<meta content="SpiderGaming" property="og:site_name">
-	<meta property="og:image" content="https://spidergaming0.github.io/SpiderGaminIcon.png">
+		content="I'm Insberr (Formally known as SpidderGaming0) Programmer, gamer, YouTuber, and sort of a game dev. I know JavaScript (nodejs), Web (HTML, CSS, JS), a bit of Python and C#">
+	<meta content="Insberr" property="og:site_name">
+	<meta property="og:image" content="https://insberr.github.io/InsberrIcon.png">
 	<meta name="twitter:card" value="summary">
-	<meta property="twitter:url" content="https://spidergaming0.github.io/">
-	<meta property="twitter:title" content="SpiderGaming">
+	<meta property="twitter:url" content="https://insberr.github.io/">
+	<meta property="twitter:title" content="Insberr (AKA SpiderGaming)">
 	<meta property="twitter:description"
-		content="I'm SpiderGaming, a YouTuber, web designer, and programmer. Here is my website. Info about me, links, and more!">
-	<meta property="twitter:image" content="https://spidergaming0.github.io/SpiderGaminIcon.png">
+		content="I'm Insberr (Formally known as SpidderGaming0) Programmer, gamer, YouTuber, and sort of a game dev. I know JavaScript (nodejs), Web (HTML, CSS, JS), a bit of Python and C#">
+	<meta property="twitter:image" content="https://insberr.github.io/InsberrIcon.png">
 	<meta name="theme-color" content="#fd3f2e">
 </head>
 
@@ -46,8 +46,8 @@
 	</div>
 	<!-- SideBar for smaller screens -->
 	<div id="sidebar" class="sidenav">
-		<img class="logo" src="SpiderGaminIcon.png" alt="SpiderGaming Logo">
-		<span class="logo-name">SpiderGaming</span>
+		<img class="logo" src="InsberrIcon.png" alt="Insberr Logo">
+		<span class="logo-name">Insberr</span>
 		<button class="closebtn" onclick="closeNav()">&times;</button>
 		<button class="tab- home" onclick="navBar('home', 1)">Home</button>
 		<button class="tab- tasks" onclick="navBar('tasks', 1)">Tasks</button>
@@ -65,11 +65,11 @@
 		<!-- ====== Home Tab ====== -->
 		<div id="home" class="tab">
 			<h2 class="top">Welcome</h2>
-			<p>Hello there, I'm SpiderGaming. Welcome to my website! This site started as
+			<p>Hello there, I'm Insberr (AKA SpiderGaming). Welcome to my website! This site started as
 				a simple project for me to play around with HTML, CSS, and JavaScript, later deciding to use it as my
 				personal website. More info about me and this website can be found <a href="#site-site">here</a>.
 			</p>
-			<p>On this website you can see my blog, check on what I'm doing, find my socials, and find info about me and
+			<p>On this website you can check on what I'm doing, find my socials, and find info about me and
 				this website. Have a look around!
 			</p>
 			<p>Remember! If you have a tip, suggestion, fix, etc, please let me know by sending it <a
@@ -168,7 +168,7 @@
 		<div id="code" class="tab">
 			<h2 class="top h">Code</h2>
 			<h3 id="-sec-code">Secret Code</h3>
-			<p>Secret code? Maybe give it a try. It Should actually work now.</p>
+			<p>Secret code? Maybe give it a try.</p>
 			<div id="secretcode">
 				<textarea v-model="input" placeholder="Decode/Encode my Secret Code" rows="4" cols="30"></textarea>
 				<p v-html="output" class="s-output"></p>
@@ -183,8 +183,6 @@
 		<!-- ====== About Tab ====== -->
 		<div id="about" class="tab">
 			<h2 class="top h">About</h2>
-			<h3 id="-me">About Me</h3>
-			<div id="bio" v-html="bio"></div>
 			<hr id="-links" class="hr2">
 			<h3 id="about-links">Links</h3>
 			<div id="links">
@@ -279,7 +277,7 @@
 			<p>My site uses the localStorage feature to save the settings and the tab you left off on (so when you
 				reload the page you'll
 				be on the same tab). This site also NO LONGER uses Google Analytics. I plan to create my own Analytics
-				system since people don't trust google and they block it.
+				system since people don't trust google, and they block it making it useless anyway.
 			</p>
 			<hr id="-suggest" class="hr2">
 			<h3>Suggest a feature</h3>
@@ -302,11 +300,11 @@
 				</ul>
 			</div>
 			<hr class="hr1">
-			<a href="https://lgtm.com/projects/g/SpiderGaming0/spidergaming0.github.io/alerts/"><img alt="Total alerts"
-					src="https://img.shields.io/lgtm/alerts/g/SpiderGaming0/spidergaming0.github.io.svg?logo=lgtm&logoWidth=18" /></a>
-			<a href="https://lgtm.com/projects/g/SpiderGaming0/spidergaming0.github.io/context:javascript"><img
+			<a href="https://lgtm.com/projects/g/Insberr/insberr.github.io/alerts/"><img alt="Total alerts"
+					src="https://img.shields.io/lgtm/alerts/g/Insberr/insberr.github.io.svg?logo=lgtm&logoWidth=18" /></a>
+			<a href="https://lgtm.com/projects/g/Insberr/insberr.github.io/context:javascript"><img
 					alt="Language grade: JavaScript"
-					src="https://img.shields.io/lgtm/grade/javascript/g/SpiderGaming0/spidergaming0.github.io.svg?logo=lgtm&logoWidth=18" /></a>
+					src="https://img.shields.io/lgtm/grade/javascript/g/Insberr/insberr.github.io.svg?logo=lgtm&logoWidth=18" /></a>
 		</div>
 		<i class="tab- site info-btn material-icons" onclick="navBar('site')">&#xe88e;</i>
 		<i class="tab- settings info-btn material-icons" onclick="navBar('settings')">&#xe8b8;</i>
