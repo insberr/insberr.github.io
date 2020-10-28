@@ -117,7 +117,7 @@ function pageAnchor() {
 					let tab = hash.split('-')[0].replace('#', '');
 					document.getElementsByClassName(tab)[0].click();
 					let postId = hash.replace(tab, '');
-					getPost(postId.replace('-', '').replace('#', ''))
+					getPost(postId.replace('-', '').replace('#', ''));
 				} else {
 					let hash = location.hash;
 					let tab = hash.split('-')[0].replace('#', '');
@@ -414,7 +414,7 @@ var counters = new Vue({
 			// this.time = up.f;
 		}, 1000);
 	}
-})
+});
 
 var posts = new Vue({
 	el: '#postsdisplay',
