@@ -228,7 +228,7 @@
 			<div id="username">
 				<span>Chose the username you would like to use. The username is only used when you create a post.</span>
 				<br><input v-model="username" type="text">
-				<br><button>Save</button>
+				<br><button class="b">Save</button>
 				<br><br><button class="b" onclick="reset('username')">Reset</button>
 			</div>
 			<hr class="hr1" id="-theme">
@@ -309,6 +309,10 @@
 		<i class="tab- site info-btn material-icons" onclick="navBar('site')">&#xe88e;</i>
 		<i class="tab- settings info-btn material-icons" onclick="navBar('settings')">&#xe8b8;</i>
 		<div class="tab- secret hide" onclick="navBar('secret')"></div>
+		<div id="notification" class="hide" v-on:click="hideElm()">
+			<div :class="'title ' + type">{{ title }}</div>
+			<div>{{ notification }}</div>
+		</div>
 	</div>
 	<!-- The JavaScript -->
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>

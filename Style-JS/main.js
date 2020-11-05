@@ -1,5 +1,3 @@
-/* ----- Page on Load ----- */
-
 var webPosts = 'https://website-backend--spidergamin.repl.co';
 var local = {}, cookies = true, wait = false;
 
@@ -54,6 +52,7 @@ function rmQuery() {
 }
 
 function pageQuery() {
+	navBar(local.tab || 'home');
 	try {
 		if (window.location.search) {
 			let loc = new URLSearchParams(window.location.search);
@@ -91,18 +90,12 @@ function pageQuery() {
 						scrollToAnchor('#' + anchor);
 					}, 500);
 				}
-			} else if (l) {
-				navBar(l);
-			} else {
-				navBar(local.tab || 'home');
-			}
-		} else {
-			navBar(local.tab || 'home');
+			} else if (l) { navBar(l); } else { return; }
 		}
 		rmQuery();
 	} catch (error) {
 		console.error(`An error occurred with the query: ${error}`);
-		notify('error', 'Tab error', 'There was an error selecting that tab or anchor');
+		notify('error', 'There was an error selecting that tab or anchor');
 		rmQuery();
 		navBar('home');
 	}
@@ -131,7 +124,7 @@ function pageAnchor() {
 				document.getElementsByClassName(location.hash.toLowerCase().replace('#', ''))[0].click();
 			}
 		} else {
-			navBar(local.tab);
+			navBar(local.tab || 'home');
 		}
 		rmHash();
 	} catch (error) {
@@ -143,7 +136,6 @@ function pageAnchor() {
 }
 
 function scrollToAnchor(anchor) {
-	console.log(anchor);
 	anchor = sanitize(anchor);
 	try {
 		$([document.documentElement, document.body]).animate({
@@ -151,12 +143,11 @@ function scrollToAnchor(anchor) {
 		});
 	} catch (error) {
 		console.error(error);
+		notify('error', 'Scroll error');
 	}
 }
 
-$(window).bind('hashchange', function () {
-	pageAnchor();
-});
+$(window).bind('hashchange', function () { pageAnchor() });
 
 function reset(i) {
 	switch (i) {
@@ -177,23 +168,16 @@ function reset(i) {
 			break;
 	}
 	save();
-	notify('success', 'Reset', `${i.toUpperCase()} was successfully reset`);
+	notify('success', `The setting '${i}' was successfully reset`);
 }
 
 function resetSiteData() {
-	let notifier = new AWN();
-	let onOk = () => { notify('success', 'Site data reset', 'Refreshing in 1 second'); cookies = false; localStorage.clear(); setTimeout(() => { location.reload() }, 1000) };
-	let onCancel = () => { notifier.info('Site data was not reset'); };
-	notifier.confirm(
-		'Are you sure you want to reset the site data?',
-		onOk,
-		onCancel,
-		{
-			labels: {
-				confirm: 'Reset site data'
-			}
-		}
-	);
+	if (confirm('Are you sure?') === true) {
+		notify('success', 'Site data successfully reset', 'The site will refresh in ~5 seconds');
+		cookies = false;
+		localStorage.clear();
+		setTimeout(() => { location.reload() }, 5000);
+	}
 }
 
 function navBar(tab, mobile) {
@@ -217,14 +201,42 @@ function navBar(tab, mobile) {
 	save();
 }
 
-/* Notification thingy */
-function notify(type, info, text) {
-	let notifier = new AWN({ labels: { info: info, alert: info } });
-	notifier[type](`${text}`);
-}
-
-
 /* ----- vue js ----- */
+var notifier = new Vue({
+	el: '#notification',
+	data: {
+		type: '',
+		title: '',
+		notification: '',
+		notif: null,
+		timeOut: null
+	},
+	methods: {
+		notify: function (type, title, info) {
+			console.log(type, title, info);
+			this.notif = document.getElementById('notification');
+			this.notif.className = 'slide-in';
+			this.type = type;
+			this.title = title;
+			this.notification = info;
+			clearTimeout(this.timeOut);
+			this.timeOut = setTimeout(() => {
+				this.notif.className = 'slide-out';
+				setTimeout(() => {
+					this.notif.className = 'hide';
+				}, 1000);
+			}, 5000);
+		},
+		hideElm: function () {
+			clearTimeout(this.timeOut);
+			this.notif.className = 'hide';
+		}
+	}
+});
+/* Notification thingy */
+function notify(type, title, info) {
+	notifier.notify(type, title, info);
+}
 
 var userName = new Vue({
 	el: '#username',
@@ -398,14 +410,12 @@ var counters = new Vue({
 			let c = formatTime('up', cDate);
 			let su = formatTime('up', sDateUp);
 			let sd = formatTime('down', sDateDown);
-			// var up = formatTime('up', countUpDate);
+
 			this.time = cc.f;
 			this.cc.day = cc.d;
 			this.c.day = c.d;
 			this.s.day = su.d;
 			this.s.days = sd.d;
-			// this.day = up.d;
-			// this.time = up.f;
 		}, 1000);
 	}
 });
@@ -428,14 +438,13 @@ var posts = new Vue({
 		this.username = await local.username;
 		let lo = setTimeout(() => {
 			this.error = `Still waiting for posts? Try reloading the page.`;
-		}, 20000);
+		}, 30000);
 		await pushP('/posts', 'post', { amount: this.amount }).then(async (res) => {
 			if (res.error) {
 				clearTimeout(lo);
 				console.error(`[ERROR] ${res.error}`);
 				return this.error = `[ERROR] ${res.error}`;
 			}
-			// console.log(res)
 			if (res.posts === undefined) return this.noMore = true;
 			this.posts = [];
 			this.posts = await res.posts;
@@ -501,6 +510,11 @@ var posts = new Vue({
 		share: function (id) {
 			navigator.clipboard.writeText(`https://insberr.github.io?l=posts-${id}`);
 			notify('info', 'Link copied', 'A link to that post was copied to your clipboard');
+		}
+	},
+	watch: {
+		error: function (error) {
+			notify('error', error)
 		}
 	}
 });
