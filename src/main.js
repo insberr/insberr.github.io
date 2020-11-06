@@ -601,11 +601,10 @@ async function pushP(url, type, data) {
 		if (type === 'get') {
 			await superagent
 				.get(webPosts + url)
-				.send(data)
 				.set('accept', 'json')
 				.end(function (err, res) {
 					if (err) return reject(err);
-					resolve(res.body);
+					resolve(JSON.parse(res.text));
 				});
 		} else {
 			await superagent
