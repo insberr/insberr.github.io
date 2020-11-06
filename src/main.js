@@ -605,7 +605,7 @@ async function pushP(url, type, data) {
 				.set('accept', 'json')
 				.end(function (err, res) {
 					if (err) return reject(err);
-					resolve(res.data);
+					resolve(res.body);
 				});
 		} else {
 			await superagent
@@ -614,7 +614,7 @@ async function pushP(url, type, data) {
 				.set('accept', 'json')
 				.end(function (error, res) {
 					if (error) return reject(error);
-					resolve(res.data);
+					resolve(res.body);
 				});
 		}
 	})
