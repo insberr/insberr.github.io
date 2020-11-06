@@ -6,16 +6,15 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-	<link rel="stylesheet" href="Style-JS/style.css" />
-	<link id="light-theme" rel="stylesheet" href="" />
-	<script src="Style-JS/index.var.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/superagent"></script>
+	<link rel="stylesheet" href="" id="light-theme"  />
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="Style-JS/mystyle.css">
+	<link rel="stylesheet" href="src/minified/mystyle.min.css">
 	<link rel="shortcut icon" href="https://insberr.github.io/InsberrIcon.png" type="image/x-icon" />
 	<!-- ===== Embed Stuffs ===== -->
-	<link type="application/json+oembed" href="https://insberr.github.io/Style-JS/oembed.json" />
-	<meta name="author" content="Insberr (AKA SpiderGaming)">
+	<link type="application/json+oembed" href="https://insberr.github.io/src/oembed.json" />
+	<meta name="author" content="Insberr">
 	<meta name="title" content="Insberr">
 	<meta name="keywords" content="insberr, insberrdev, spidergamin, spidergaming, spiddergaming0">
 	<meta name="description"
@@ -27,7 +26,7 @@
 	<meta property="og:image" content="https://insberr.github.io/InsberrIcon.png">
 	<meta name="twitter:card" value="summary">
 	<meta property="twitter:url" content="https://insberr.github.io/">
-	<meta property="twitter:title" content="Insberr (AKA SpiderGaming)">
+	<meta property="twitter:title" content="Insberr">
 	<meta property="twitter:description"
 		content="I'm Insberr (Formally known as SpidderGaming0) Programmer, gamer, YouTuber, and sort of a game dev. I know JavaScript (nodejs), Web (HTML, CSS, JS), a bit of Python and C#">
 	<meta property="twitter:image" content="https://insberr.github.io/InsberrIcon.png">
@@ -38,9 +37,9 @@
 	<!-- NavBar -->
 	<div class="bar">
 		<button class="tab- home" onclick="navBar('home')" title="Home">Home</button>
-		<button class="tab- tasks" onclick="navBar('tasks')" title="To do/ finished">Tasks</button>
+		<button class="tab- tasks" onclick="navBar('tasks')" title="Tasks">Tasks</button>
 		<button class="tab- posts" onclick="navBar('posts')" title="Posts">Posts</button>
-		<button class="tab- code" onclick="navBar('code')" title="Code stuffs">Code</button>
+		<button class="tab- code" onclick="navBar('code')" title="Code">Code</button>
 		<button class="tab- about" onclick="navBar('about')" title="About Me And Links">About</button>
 		<button class="tab- other" onclick="navBar('other')" title="Other">Other</button>
 	</div>
@@ -69,6 +68,7 @@
 				a simple project for me to play around with HTML, CSS, and JavaScript, later deciding to use it as my
 				personal website. More info about me and this website can be found <a href="#site-site">here</a>.
 			</p>
+			<p>My bio is located <a href="/profile">here</a></p>
 			<p>On this website you can check on what I'm doing, find my socials, and find info about me and
 				this website. Have a look around!
 			</p>
@@ -183,6 +183,7 @@
 		<!-- ====== About Tab ====== -->
 		<div id="about" class="tab">
 			<h2 class="top h">About</h2>
+			<p>My bio is located <a href="/profile">here</a></p>
 			<hr id="-links" class="hr2">
 			<h3 id="about-links">Links</h3>
 			<div id="links">
@@ -315,9 +316,8 @@
 		</div>
 	</div>
 	<!-- The JavaScript -->
-	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-	<script src="Style-JS/main.js"></script>
-	<script src="Style-JS/Secretcode.js"></script>
+	<script src="src/minified/main.min.js"></script>
+	<script src="src/minified/secretcode.min.js"></script>
 </body>
 
 </html>

@@ -6,15 +6,6 @@ html {
 	scroll-behavior: smooth;
 }
 
-#awn-popup-wrapper .awn-popup-body {
-	background-color: #5c5c5c;
-	color: white;
-}
-
-.awn-buttons {
-	outline: 0;
-}
-
 /* === Scroll Bar === */
 
 ::-webkit-scrollbar {
@@ -226,10 +217,23 @@ a:active {
 	transition: .3s;
 }
 
-.error, .fail { color: red }
-.info { color: white }
-.warn { color: yellow }
-.success { color: green }
+/* Notifications and Popups */
+
+.error, .fail {
+	color: red
+}
+
+.info {
+	color: white
+}
+
+.warn {
+	color: yellow
+}
+
+.success {
+	color: green
+}
 
 #notification {
 	position: fixed;
@@ -241,40 +245,52 @@ a:active {
 	border-radius: 10px;
 	border: 2px solid #ff6c47;
 	transform: translateX(100%);
-    -webkit-transform: translateX(100%);
+	-webkit-transform: translateX(100%);
 }
+
 #notification div.title {
 	margin-bottom: 10px;
 }
 
 .slide-in {
-    animation: slide-in 0.5s forwards;
-    -webkit-animation: slide-in 0.5s forwards;
+	animation: slide-in 0.5s forwards;
+	-webkit-animation: slide-in 0.5s forwards;
 }
 
 .slide-out {
-    animation: slide-out 0.5s forwards;
-    -webkit-animation: slide-out 0.5s forwards;
+	animation: slide-out 0.5s forwards;
+	-webkit-animation: slide-out 0.5s forwards;
 }
-    
+
 @keyframes slide-in {
-    100% { transform: translateX(0%); }
+	100% {
+		transform: translateX(0%);
+	}
 }
 
 @-webkit-keyframes slide-in {
-    100% { -webkit-transform: translateX(0%); }
+	100% {
+		-webkit-transform: translateX(0%);
+	}
 }
-    
+
 @keyframes slide-out {
-    0% { transform: translateX(0%); }
-    100% { transform: translateX(150%); }
+	0% {
+		transform: translateX(0%);
+	}
+	100% {
+		transform: translateX(150%);
+	}
 }
 
 @-webkit-keyframes slide-out {
-    0% { -webkit-transform: translateX(0%); }
-    100% { -webkit-transform: translateX(150%); }
+	0% {
+		-webkit-transform: translateX(0%);
+	}
+	100% {
+		-webkit-transform: translateX(150%);
+	}
 }
-
 
 /* ====== NavBar & SideBar ====== */
 

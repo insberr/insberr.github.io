@@ -268,27 +268,20 @@ var theme = new Vue({
 		toggle: function (p) {
 			if (p.includes('default')) {
 				this.picked = 'default';
-				if (window.matchMedia('(prefers-color-scheme: dark)').matches) { this.darkMode('default dark') }
-				if (window.matchMedia('(prefers-color-scheme: light)').matches) { this.lightMode('default light') }
+				if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+					this.darkMode('default dark');
+				} else {
+					this.lightMode('default light');
+				}
 			} else if (p === 'dark') {
-				this.picked = 'dark';
-				this.darkMode();
+				this.darkMode(p);
 			} else if (p === 'light') {
-				this.picked = 'light';
-				this.lightMode();
+				this.lightMode(p);
 			} else if (p === 'toggle') {
 				if (this.picked.includes('dark')) {
-					this.picked = 'light';
-					this.lightMode();
+					this.lightMode('light');
 				} else {
-					this.picked = 'dark';
-					this.darkMode();
-				}
-			} else if (p === 'refresh') {
-				if (this.picked.includes('dark')) {
-					this.darkMode(this.picked);
-				} else if (this.picked.includes('light')) {
-					this.lightMode(this.picked);
+					this.darkMode('dark');
 				}
 			}
 		},
@@ -312,17 +305,18 @@ var theme = new Vue({
 			}
 			local.theme = this.picked;
 			save();
-			qs('#light-theme').href = 'Style-JS/light.css';
+			qs('#light-theme').href = 'src/minified/light.min.css';
 		}
 	}
 });
 
-window.matchMedia("(prefers-color-scheme: dark)").addListener(
-	e => e.matches && theme.darkMode(local.theme)
-);
-window.matchMedia("(prefers-color-scheme: light)").addListener(
-	e => e.matches && theme.lightMode(local.theme)
-);
+
+window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', (e) => {
+	e.matches && theme.darkMode(local.theme);
+});
+window.matchMedia("(prefers-color-scheme: light)").addEventListener('change', (e) => {
+	e.matches && theme.lightMode(local.theme);
+});
 
 var secretcode = new Vue({
 	el: '#secretcode',
@@ -603,6 +597,15 @@ var suggest = new Vue({
 });
 
 async function pushP(url, type, data) {
+	return superagent
+		[type](webPosts + url)
+		.send(data)
+		.set('accept', 'json')
+		.end(function (err, res) {
+			if (err) console.error(error);
+			return res;
+		});
+	/*
 	return new Promise(async function (resolve, reject) {
 		if (type === 'post') {
 			await axios.post(webPosts + url, data)
@@ -624,6 +627,7 @@ async function pushP(url, type, data) {
 				});
 		}
 	});
+	*/
 }
 
 async function getPost(id) {
@@ -645,21 +649,18 @@ function openNav() {
 	document.getElementsByClassName('sidenav')[0].style.width = '250px';
 }
 
-function closeNav(t) {
-	if (t === undefined) t = 300;
+function closeNav(delay) {
+	if (delay === undefined) delay = 300;
 	setTimeout(() => {
 		document.getElementsByClassName('sidenav')[0].style.width = '0';
-	}, t);
+	}, delay);
 }
 
-function resize() {
-	closeNav(10);
-}
-window.onresize = resize;
+window.onresize = () => closeNav(10);
 
 $(document).mouseup(function (e) {
-	var bar = $('#sidebar');
-	var menu = $('#menu');
+	let bar = $('#sidebar');
+	let menu = $('#menu');
 	if (!bar.is(e.target) && bar.has(e.target).length === 0) {
 		if (!menu.is(e.target) && menu.has(e.target).length === 0) {
 			closeNav(0);
