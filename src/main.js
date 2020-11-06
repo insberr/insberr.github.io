@@ -597,25 +597,28 @@ var suggest = new Vue({
 });
 
 async function pushP(url, type, data) {
-	if (type === 'get') {
-		return superagent
-			.get(webPosts + url)
-			.send(data)
-			.set('accept', 'json')
-			.end(function (err, res) {
-				if (err) return console.error(err);
-				return res;
-			});
-	} else {
-		return superagent
-			.post(webPosts + url)
-			.send(data)
-			.set('accept', 'json')
-			.end(function (err, res) {
-				if (err) return console.error(err);
-				return res;
-			});
-	}
+	return new Promise(async function (resolve, reject) {
+		if (type === 'get') {
+			await superagent
+				.get(webPosts + url)
+				.send(data)
+				.set('accept', 'json')
+				.end(function (err, res) {
+					if (err) reject(err);
+					resolve(res.data);
+				});
+		} else {
+			await superagent
+				.post(webPosts + url)
+				.send(data)
+				.set('accept', 'json')
+				.end(function (err, res) {
+					if (err) reject(err);
+					resolve(res.data);
+				});
+		}
+	})
+
 	/*
 	return new Promise(async function (resolve, reject) {
 		if (type === 'post') {
