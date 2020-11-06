@@ -604,7 +604,7 @@ async function pushP(url, type, data) {
 				.send(data)
 				.set('accept', 'json')
 				.end(function (err, res) {
-					if (err) reject(err);
+					if (err) return reject(err);
 					resolve(res.data);
 				});
 		} else {
@@ -612,8 +612,8 @@ async function pushP(url, type, data) {
 				.post(webPosts + url)
 				.send(data)
 				.set('accept', 'json')
-				.end(function (err, res) {
-					if (err) reject(err);
+				.end(function (error, res) {
+					if (error) return reject(error);
 					resolve(res.data);
 				});
 		}
