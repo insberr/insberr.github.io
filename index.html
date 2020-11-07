@@ -7,7 +7,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/superagent"></script>
-	<link rel="stylesheet" href="" id="light-theme"  />
+	<link rel="stylesheet" href="" id="light-theme" />
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="src/minified/mystyle.min.css">
@@ -68,12 +68,16 @@
 				a simple project for me to play around with HTML, CSS, and JavaScript, later deciding to use it as my
 				personal website. More info about me and this website can be found <a href="#site-site">here</a>.
 			</p>
-			<p>My bio is located <a href="/profile">here</a></p>
-			<p>On this website you can check on what I'm doing, find my socials, and find info about me and
-				this website. Have a look around!
+			<p>My bio is located <a href="/profile">here</a>. I will be mainly working on that, as it may be replace
+				this site.
 			</p>
-			<p>Remember! If you have a tip, suggestion, fix, etc, please let me know by sending it <a
-					href="#site-suggest">here</a>.</p>
+			<p>On this website you can check on what I'm doing, find my socials, and find info about me and
+				this website. Have a look around! I do not have any plans for this website going forth. I will
+				be mainly working on <a href="/profile">my profile</a>.
+			</p>
+			<p>Remember! If you have a tip, suggestion, fix, etc, please let me know by sending it
+				<a href="#site-suggest">here</a>.
+			</p>
 		</div>
 		<!-- ====== Tasks Tab ====== -->
 		<div id="tasks" class="tab">
@@ -82,21 +86,31 @@
 				<h3>To Do/Am Doing</h3>
 				<ul>
 					<li v-for="task in tasks" v-if="task.type === 'task' && task.done === false">
-						<span v-html="task.task"></span><br><span class="date">{{ task.date }} - {{ task.type }}</span>
+						<span v-html="task.task"></span>
+						<br><span class="date">
+							{{ task.date }} - {{ task.type }}
+						</span>
 					</li>
 				</ul>
 				<br>
 				<h3>Website Plans</h3>
 				<ul>
 					<li v-for="task in tasks" v-if="task.type === 'site' && task.done === false">
-						<span v-html="task.task"></span><br><span class="date">{{ task.date }} - {{ task.type }}</span>
+						<span v-html="task.task"></span>
+						<br><span class="date">
+							{{ task.date }} - {{ task.type }}
+						</span>
 					</li>
 				</ul>
 				<br>
 				<h3>Completed / Discarded Tasks</h3>
 				<ul>
-					<li v-for="task in tasks" v-if="task.done === true"><span v-html="task.task"></span><br><span
-							class="date">{{ task.date }} - {{ task.type }}</span></li>
+					<li v-for="task in tasks" v-if="task.done === true">
+						<span v-html="task.task"></span>
+						<br><span class="date">
+							{{ task.date }} - {{ task.type }}
+						</span>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -104,9 +118,7 @@
 		<div id="posts" class="tab">
 			<h2 class="top">Posts</h2>
 			<h4>Info</h4>
-			<p>Welcome to the posts tab. Please don't
-				spam, say bad things, or try to hack in the comments. If you find an issue please let me know <a
-					href="#site-suggest">here</a></p>
+			<p>Welcome to the posts tab. If you find an issue please let me know <a href="#site-suggest">here</a></p>
 			<div id="gottenPost" v-show="p" style="margin-bottom: 100px;">
 				<div class="getpostfade" style="background-color: hsla(0, 100%, 63%, 0.171);">
 					<div>Gotten Post | Post ID {{ post.id }}</div>
@@ -160,7 +172,7 @@
 				</div>
 				<div style="margin-top: 50px;">
 					<div class="com-frame" v-if="noMore">There are no more posts to load</div>
-					<br><button class="b" v-on:click="loadMorePosts">Load more posts</button>
+					<br><button class="b" v-on:click="loadMorePosts" v-if="!noMore">Load more posts</button>
 				</div>
 			</div>
 		</div>
@@ -176,9 +188,6 @@
 					onclick="copy('Code', secretcode.output, 'The secret code was copied to your clipboard')">Copy to
 					clipboard</button>
 			</div>
-			<hr id="-site-code" class="hr2">
-			<h3>Sites Code</h3>
-			<p>View the code (On site) (Not added yet)</p>
 		</div>
 		<!-- ====== About Tab ====== -->
 		<div id="about" class="tab">
@@ -284,28 +293,13 @@
 			<h3>Suggest a feature</h3>
 			<div id="suggestions">
 				<div>Have a suggestion for my website? Maybe a bug to report? Type it here and send it. These are sent
-					over to <a rel="noopener noreferrer" href="https://trello.com/b/BKwdwxpC/website" target="_blank">this Trello board</a></div>
+					over to <a rel="noopener noreferrer" href="https://trello.com/b/BKwdwxpC/website"
+						target="_blank">this Trello board</a></div>
 				<div>{{ sent }}</div>
 				<br><textarea v-model="suggestion" placeholder="Type your suggestion here" cols="30"
 					rows="5"></textarea>
 				<br><br><button class="b" v-on:click="send()">Send</button>
 			</div>
-			<hr id="-up" class="hr2">
-			<div id="updates">
-				<h3>Site Updates</h3>
-				<ul v-for="update in updates">
-					<li :id="'-' + update.date">{{ update.date }}<ul v-for="up in update.update">
-							<li v-html="up"></li>
-						</ul>
-					</li>
-				</ul>
-			</div>
-			<hr class="hr1">
-			<a href="https://lgtm.com/projects/g/Insberr/insberr.github.io/alerts/"><img alt="Total alerts"
-					src="https://img.shields.io/lgtm/alerts/g/Insberr/insberr.github.io.svg?logo=lgtm&logoWidth=18" /></a>
-			<a href="https://lgtm.com/projects/g/Insberr/insberr.github.io/context:javascript"><img
-					alt="Language grade: JavaScript"
-					src="https://img.shields.io/lgtm/grade/javascript/g/Insberr/insberr.github.io.svg?logo=lgtm&logoWidth=18" /></a>
 		</div>
 		<i class="tab- site info-btn material-icons" onclick="navBar('site')">&#xe88e;</i>
 		<i class="tab- settings info-btn material-icons" onclick="navBar('settings')">&#xe8b8;</i>

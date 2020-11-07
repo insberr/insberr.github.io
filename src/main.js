@@ -23,24 +23,12 @@ $(document).ready(function () {
 });
 
 function sanitize(html) {
-	let tagBody = '(?:[^"\'>]|"[^"]*"|\'[^\']*\')*';
-	let tagOrComment = new RegExp(
-		'<(?:'
-		+ '!--(?:(?:-*[^->])*--+|-?)'
-		+ '|script\\b' + tagBody + '>[\\s\\S]*?</script\\s*'
-		+ '|style\\b' + tagBody + '>[\\s\\S]*?</style\\s*'
-		+ '|/?[a-z]'
-		+ tagBody
-		+ ')>',
-		'gi');
+	html.replace(/<script>/g, '&lt;hacker&gt;');
+	html.replace(/<\/script>/g, '&lt;/hacker&gt;')
+	html.replace(/</g, '&lt;');
+	html.replace(/>/g, '&gt;');
+	return html;
 
-
-	var oldHtml;
-	do {
-		oldHtml = html;
-		html = html.replace(tagOrComment, '');
-	} while (html !== oldHtml);
-	return html.replace(/</g, '&lt;');
 }
 
 function rmHash() {
@@ -432,23 +420,21 @@ var posts = new Vue({
 		this.username = await local.username;
 		let lo = setTimeout(() => {
 			this.error = `Still waiting for posts? Try reloading the page.`;
-		}, 30000);
+		}, 20000);
 		await pushP('/posts', 'post', { amount: this.amount }).then(async (res) => {
-			if (res.error) {
-				clearTimeout(lo);
-				console.error(`[ERROR] ${res.error}`);
-				return this.error = `[ERROR] ${res.error}`;
-			}
 			if (res.posts === undefined) return this.noMore = true;
-			this.posts = [];
 			this.posts = await res.posts;
 			clearTimeout(lo);
-		}).catch((error) => { console.error(error); this.error = `Error getting posts` });
+		}).catch((err) => {
+			clearTimeout(lo);
+			console.error(`Posts Error: ${err}`);
+			return this.error = `${err}`;
+		});
 	},
 	methods: {
 		commentShow: async function (postId) {
 			this.comments = [];
-			var c = document.getElementsByClassName(`-${postId}`)[0].getElementsByClassName('post-coms')[0];
+			let c = document.getElementsByClassName(`-${postId}`)[0].getElementsByClassName('post-coms')[0];
 			let comel = document.querySelectorAll('.post-coms');
 			if (c) {
 				if (c.style.height !== '0px') {
@@ -458,7 +444,6 @@ var posts = new Vue({
 						el.style.height = '0px';
 					});
 					await pushP('/comments', 'post', { postId: postId }).then(async (res) => {
-						if (res.error) { console.log(res.error); return this.comments = []; }
 						await res.comments.forEach(com => {
 							this.comments.push(com);
 						});
@@ -467,6 +452,9 @@ var posts = new Vue({
 						} else {
 							return c.style.height = (res.comments.length * 150) + 300 + 'px';
 						}
+					}).catch((err) => {
+						console.log(res.error);
+						this.comments = [];
 					});
 				}
 			}
@@ -475,35 +463,41 @@ var posts = new Vue({
 			if (this.commentBody === '') return this.error = 'You must provide text';
 			let co = {
 				postId: postId,
-				username: local.username,
-				title: this.commentTitle,
-				body: this.commentBody
+				username: sanitize(local.username),
+				title: sanitize(this.commentTitle),
+				body: sanitize(this.commentBody)
 			};
 			this.commentBody = ''; this.commentTitle = ''; this.error = '';
 			setTimeout(() => {
-				pushP('/comment', 'post', co).then(async (res) => {
-					if (res.error) return console.error(res.error);
-					this.comments = res.comments;
-					this.posts.forEach((post, index) => {
-						if (post.id !== postId) return;
-						this.posts[index] = res.posts[0];
+				pushP('/comment', 'post', co)
+					.then(async (res) => {
+						this.comments = res.comments;
+						this.posts.forEach((post, index) => {
+							if (post.id !== postId) return;
+							this.posts[index] = res.posts[0];
+						})
 					})
-				}).catch((error) => console.error(error));
+					.catch((err) => {
+						console.error(`Posts Error: ${err}`);
+					});
 			}, 100);
 		},
 		loadMorePosts: async function () {
-			await pushP('/posts', 'post', { have: this.amount, amount: 5 }).then(async (res) => {
-				if (res.error) { console.log(res.error); return; }
-				if (res.posts.length === 1 && res.posts[0].body === undefined) return this.noMore = true;
-				this.amount = this.amount + res.posts.length;
-				await res.posts.forEach(post => {
-					this.posts.push(post);
+			await pushP('/posts', 'post', { have: this.amount, amount: 5 })
+				.then(async (res) => {
+					if (res.posts.length === 1 && res.posts[0].body === undefined) return this.noMore = true;
+					this.amount = this.amount + res.posts.length;
+					await res.posts.forEach(post => {
+						this.posts.push(post);
+					});
+				})
+				.catch((err) => {
+					console.error(`Posts Error: ${err}`);
 				});
-			})?.catch((err) => console.error(err));
 		},
 		share: function (id) {
-			navigator.clipboard.writeText(`https://insberr.github.io?l=posts-${id}`);
-			notify('info', 'Link copied', 'A link to that post was copied to your clipboard');
+			navigator.clipboard.writeText(`https://insberr.github.io?post=${id}`);
+			notify('info', 'A link to that post was copied to your clipboard');
 		}
 	},
 	watch: {
@@ -522,8 +516,8 @@ var gottenpost = new Vue({
 	},
 	methods: {
 		share: function (id) {
-			navigator.clipboard.writeText(`https://insberr.github.io?l=posts-${id}`);
-			notify('info', 'Link copied', 'A link to that post was copied to your clipboard');
+			navigator.clipboard.writeText(`https://insberr.github.io?post=${id}`);
+			notify('info', 'A link to that post was copied to your clipboard');
 		}
 	}
 });
@@ -555,27 +549,11 @@ var tasks = new Vue({
 		]
 	},
 	async created() {
-		await pushP('/lists.json', 'get').then(async (res) => {
-			if (res.error) return console.log(res.error);
-			this.tasks = await res.lists.tasks;
-		}).catch((error) => console.error(error));
-	}
-});
-
-var updates = new Vue({
-	el: '#updates',
-	data: {
-		updates: [
-			{
-				"date": "Loading Updates"
-			}
-		]
-	},
-	async created() {
-		await pushP('/lists.json', 'get').then(async (res) => {
-			if (res.error) return console.log(res.error);
-			this.updates = await res.lists.updates;
-		}).catch((error) => console.error(error));
+		await pushP('/lists.json', 'get')
+			.then(async (res) => {
+				this.tasks = await res.lists.tasks;
+			})
+			.catch((err) => console.error(err));
 	}
 });
 
@@ -604,6 +582,7 @@ async function pushP(url, type, data) {
 				.set('accept', 'json')
 				.end(function (err, res) {
 					if (err) return reject(err);
+					if (!res) return reject('Server responded with nothing');
 					resolve(JSON.parse(res.text));
 				});
 		} else {
@@ -611,36 +590,14 @@ async function pushP(url, type, data) {
 				.post(webPosts + url)
 				.send(data)
 				.set('accept', 'json')
-				.end(function (error, res) {
-					if (error) return reject(error);
+				.end(function (err, res) {
+					if (err) return reject(err);
+					if (!res) return reject('Server responded with nothing');
+					if (res.body.error) return reject(res.body.error);
 					resolve(res.body);
 				});
 		}
 	})
-
-	/*
-	return new Promise(async function (resolve, reject) {
-		if (type === 'post') {
-			await axios.post(webPosts + url, data)
-				.then(function (res) {
-					resolve(res.data);
-				})
-				.catch(function (error) {
-					console.log(error);
-					reject(error);
-				});
-		} else if (type === 'get') {
-			await axios.get(webPosts + url, data)
-				.then(function (res) {
-					resolve(res.data);
-				})
-				.catch(function (error) {
-					console.log(error);
-					reject(error);
-				});
-		}
-	});
-	*/
 }
 
 async function getPost(id) {
