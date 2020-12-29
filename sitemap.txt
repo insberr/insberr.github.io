@@ -1,10 +1,2 @@
 https://insberr.github.io/
-https://insberr.github.io?tab=home
-https://insberr.github.io?tab=tasks
-https://insberr.github.io?tab=posts
-https://insberr.github.io?tab=code
-https://insberr.github.io?tab=about
-https://insberr.github.io?tab=other
-https://insberr.github.io?tab=settings
-https://insberr.github.io?tab=site
 https://insberr.github.io/profile
