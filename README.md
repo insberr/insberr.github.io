@@ -4,5 +4,15 @@
 # Insberr's Website
 Welcome to the code for my website!
 
-https://insberr.github.io/  
-https://insberr.github.io/profile
+[Main Page](https://insberr.github.io/)  
+[Bio Page](https://insberr.github.io/profile/)
+
+## To Do
+- [ ] Restyle everything using tailwindcss
+- [ ] Build my bio page
+- [ ] Remove posts thing, it never worked anyway
+- [ ] Redesign everything
+
+
+### Frameworks Used
+- [Tailwindcss](https://tailwindcss.com/) For the css

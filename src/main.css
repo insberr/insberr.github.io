@@ -1,5 +1,19 @@
 @tailwind base;
-
 @tailwind components;
-
 @tailwind utilities;
+
+.text-16px {
+  font-size: 16px;
+}
+
+.section-header {
+  @apply text-center;
+  @apply text-red-500;
+  @apply font-bold;
+  font-size: 20px;
+}
+
+.section {
+  @apply mt-10;
+  @apply text-red-500;
+}
