@@ -691,6 +691,13 @@ video {
 }
 
 @media (min-width: 640px) {
+  .sm\:justify-center {
+    justify-content: center;
+  }
+
+  .sm\:w-auto {
+    width: auto;
+  }
 }
 
 @media (min-width: 768px) {
