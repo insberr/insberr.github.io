@@ -525,14 +525,6 @@ video {
   }
 }
 
-.bg-center {
-  background-position: center;
-}
-
-.bg-no-repeat {
-  background-repeat: no-repeat;
-}
-
 .border-black {
   --tw-border-opacity: 1;
   border-color: rgba(0, 0, 0, var(--tw-border-opacity));
@@ -594,10 +586,6 @@ video {
 
 .font-semibold {
   font-weight: 600;
-}
-
-.h-12 {
-  height: 3rem;
 }
 
 .h-40 {
@@ -663,10 +651,6 @@ video {
   --tw-ring-shadow: 0 0 #0000;
 }
 
-.fill-current {
-  fill: currentColor;
-}
-
 .text-center {
   text-align: center;
 }
@@ -689,10 +673,6 @@ video {
 
 .w-auto {
   width: auto;
-}
-
-.w-full {
-  width: 100%;
 }
 
 .grid-cols-1 {
