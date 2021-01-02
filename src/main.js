@@ -28,7 +28,6 @@ function sanitize(html) {
 	html.replace(/</g, '&lt;');
 	html.replace(/>/g, '&gt;');
 	return html;
-
 }
 
 function rmHash() {
@@ -47,7 +46,6 @@ function pageQuery() {
 			let l = loc.get('l');
 			let qScroll = loc.get('scroll');
 			let qTab = loc.get('tab');
-			let qPost = loc.get('post');
 			let qComment = loc.get('comment');
 
 			if (qTab) {
@@ -58,26 +56,14 @@ function pageQuery() {
 					}, 500);
 				}
 			}
-			if (qPost) {
-				navBar('posts');
-				getPost(qPost);
-			}
-			if (qComment) {
-				navBar('posts');
-				// getComment(sanitize(qComment));
-			}
 
 			if (l && l.includes('-')) {
 				let tab = l.split('-')[0];
 				navBar(tab);
 				let anchor = l.replace(tab, '');
-				if (tab === 'posts') {
-					getPost(anchor.replace('-', ''));
-				} else {
-					setTimeout(() => {
-						scrollToAnchor('#' + anchor);
-					}, 500);
-				}
+				setTimeout(() => {
+					scrollToAnchor('#' + anchor);
+				}, 500);
 			} else if (l) { navBar(l); } else { return; }
 		}
 		rmQuery();
@@ -93,21 +79,13 @@ function pageAnchor() {
 	try {
 		if (location.hash) {
 			if (location.hash.includes('-')) {
-				if (location.hash.includes('posts')) {
-					let hash = location.hash;
-					let tab = hash.split('-')[0].replace('#', '');
-					document.getElementsByClassName(tab)[0].click();
-					let postId = hash.replace(tab, '');
-					getPost(postId.replace('-', '').replace('#', ''));
-				} else {
-					let hash = location.hash;
-					let tab = hash.split('-')[0].replace('#', '');
-					let anchor = hash.replace(tab, '');
-					document.getElementsByClassName(tab)[0].click();
-					setTimeout(() => {
-						scrollToAnchor(anchor);
-					}, 200);
-				}
+				let hash = location.hash;
+				let tab = hash.split('-')[0].replace('#', '');
+				let anchor = hash.replace(tab, '');
+				document.getElementsByClassName(tab)[0].click();
+				setTimeout(() => {
+					scrollToAnchor(anchor);
+				}, 200);
 			} else {
 				document.getElementsByClassName(location.hash.toLowerCase().replace('#', ''))[0].click();
 			}
@@ -150,9 +128,6 @@ function reset(i) {
 		case 'theme':
 			local.theme = 'default';
 			theme.toggle(local.theme);
-			break;
-		case 'device':
-			// local.device = 'default';
 			break;
 	}
 	save();
@@ -402,126 +377,6 @@ var counters = new Vue({
 	}
 });
 
-var posts = new Vue({
-	el: '#postsdisplay',
-	data: {
-		username: '',
-		posts: [
-			{ title: 'Loading Posts' }
-		],
-		comments: [],
-		commentTitle: '',
-		commentBody: '',
-		error: null,
-		noMore: false,
-		amount: 10
-	},
-	async created() {
-		this.username = await local.username;
-		let lo = setTimeout(() => {
-			this.error = `Still waiting for posts? Try reloading the page.`;
-		}, 20000);
-		await pushP('/posts', 'post', { amount: this.amount }).then(async (res) => {
-			if (res.posts === undefined) return this.noMore = true;
-			this.posts = await res.posts;
-			clearTimeout(lo);
-		}).catch((err) => {
-			clearTimeout(lo);
-			console.error(`Posts Error: ${err}`);
-			return this.error = `${err}`;
-		});
-	},
-	methods: {
-		commentShow: async function (postId) {
-			this.comments = [];
-			let c = document.getElementsByClassName(`-${postId}`)[0].getElementsByClassName('post-coms')[0];
-			let comel = document.querySelectorAll('.post-coms');
-			if (c) {
-				if (c.style.height !== '0px') {
-					c.style.height = '0px';
-				} else {
-					comel.forEach(el => {
-						el.style.height = '0px';
-					});
-					await pushP('/comments', 'post', { postId: postId }).then(async (res) => {
-						await res.comments.forEach(com => {
-							this.comments.push(com);
-						});
-						if (res.comments.length === 0) {
-							return c.style.height = '300px';
-						} else {
-							return c.style.height = (res.comments.length * 150) + 300 + 'px';
-						}
-					}).catch((err) => {
-						console.log(res.error);
-						this.comments = [];
-					});
-				}
-			}
-		},
-		postComment: function (postId) {
-			if (this.commentBody === '') return this.error = 'You must provide text';
-			let co = {
-				postId: postId,
-				username: sanitize(local.username),
-				title: sanitize(this.commentTitle),
-				body: sanitize(this.commentBody)
-			};
-			this.commentBody = ''; this.commentTitle = ''; this.error = '';
-			setTimeout(() => {
-				pushP('/comment', 'post', co)
-					.then(async (res) => {
-						this.comments = res.comments;
-						this.posts.forEach((post, index) => {
-							if (post.id !== postId) return;
-							this.posts[index] = res.posts[0];
-						})
-					})
-					.catch((err) => {
-						console.error(`Posts Error: ${err}`);
-					});
-			}, 100);
-		},
-		loadMorePosts: async function () {
-			await pushP('/posts', 'post', { have: this.amount, amount: 5 })
-				.then(async (res) => {
-					if (res.posts.length === 1 && res.posts[0].body === undefined) return this.noMore = true;
-					this.amount = this.amount + res.posts.length;
-					await res.posts.forEach(post => {
-						this.posts.push(post);
-					});
-				})
-				.catch((err) => {
-					console.error(`Posts Error: ${err}`);
-				});
-		},
-		share: function (id) {
-			navigator.clipboard.writeText(`https://insberr.github.io?post=${id}`);
-			notify('info', 'A link to that post was copied to your clipboard');
-		}
-	},
-	watch: {
-		error: function (error) {
-			notify('error', error)
-		}
-	}
-});
-
-var gottenpost = new Vue({
-	el: '#gottenPost',
-	data: {
-		p: false,
-		post: [],
-		comments: []
-	},
-	methods: {
-		share: function (id) {
-			navigator.clipboard.writeText(`https://insberr.github.io?post=${id}`);
-			notify('info', 'A link to that post was copied to your clipboard');
-		}
-	}
-});
-
 var links = new Vue({
 	el: '#links',
 	data: {
@@ -599,20 +454,6 @@ async function pushP(url, type, data) {
 		}
 	})
 }
-
-async function getPost(id) {
-	await pushP('/posts', 'post', { get: id }).then(async (res) => {
-		if (res.error) return console.error(res.error);
-		gottenpost.post = res.posts[0];
-		gottenpost.p = true;
-	}).catch((error) => {
-		console.error(error);
-	});
-	setTimeout(() => {
-		document.querySelector('.getpostfade').style.backgroundColor = 'transparent';
-	}, 500);
-}
-
 
 /* === SideBar === */
 function openNav() {

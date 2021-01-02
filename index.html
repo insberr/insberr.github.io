@@ -10,8 +10,8 @@
 	<link rel="stylesheet" href="" id="light-theme" />
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="src/minified/mystyle.min.css">
-	<link rel="shortcut icon" href="https://insberr.github.io/InsberrIcon.png" type="image/x-icon" />
+	<link rel="stylesheet" href="src/mystyle.css">
+	<link rel="shortcut icon" href="https://insberr.github.io/src/images/InsberrIcon.png" type="image/x-icon" />
 	<!-- ===== Embed Stuffs ===== -->
 	<link type="application/json+oembed" href="https://insberr.github.io/src/oembed.json" />
 	<meta name="author" content="insberr">
@@ -23,13 +23,13 @@
 	<meta property="og:description"
 		content="I'm Insberr. A developer who doesn't finish any project I start. I know JavaScript, web development, and a bit of Python3, V, and Java">
 	<meta content="Insberr" property="og:site_name">
-	<meta property="og:image" content="https://insberr.github.io/InsberrIcon.png">
+	<meta property="og:image" content="https://insberr.github.io/src/images/InsberrIcon.png">
 	<meta name="twitter:card" value="summary">
 	<meta property="twitter:url" content="https://insberr.github.io/">
 	<meta property="twitter:title" content="Insberr">
 	<meta property="twitter:description"
 		content="I'm Insberr. A developer who doesn't finish any project I start. I know JavaScript, web development, and a bit of Python3, V, and Java">
-	<meta property="twitter:image" content="https://insberr.github.io/InsberrIcon.png">
+	<meta property="twitter:image" content="https://insberr.github.io/src/images/InsberrIcon.png">
 	<meta name="theme-color" content="#ff2511">
 </head>
 
@@ -38,19 +38,17 @@
 	<div class="bar">
 		<button class="tab- home" onclick="navBar('home')" title="Home">Home</button>
 		<button class="tab- tasks" onclick="navBar('tasks')" title="Tasks">Tasks</button>
-		<button class="tab- posts" onclick="navBar('posts')" title="Posts">Posts</button>
 		<button class="tab- code" onclick="navBar('code')" title="Code">Code</button>
 		<button class="tab- about" onclick="navBar('about')" title="About Me And Links">About</button>
 		<button class="tab- other" onclick="navBar('other')" title="Other">Other</button>
 	</div>
 	<!-- SideBar for smaller screens -->
 	<div id="sidebar" class="sidenav">
-		<img class="logo" src="InsberrIcon.png" alt="Insberr Logo">
+		<img class="logo" src="https://insberr.github.io/src/images/InsberrIcon.png" alt="Insberr Logo">
 		<span class="logo-name">Insberr</span>
 		<button class="closebtn" onclick="closeNav()">&times;</button>
 		<button class="tab- home" onclick="navBar('home', 1)">Home</button>
 		<button class="tab- tasks" onclick="navBar('tasks', 1)">Tasks</button>
-		<button class="tab- posts" onclick="navBar('posts', 1)">Posts</button>
 		<button class="tab- code" onclick="navBar('code', 1)">Code</button>
 		<button class="tab- about" onclick="navBar('about', 1)">About</button>
 		<button class="tab- other" onclick="navBar('other', 1)">Other</button>
@@ -112,68 +110,6 @@
 						</span>
 					</li>
 				</ul>
-			</div>
-		</div>
-		<!-- ====== Posts Tab ====== -->
-		<div id="posts" class="tab">
-			<h2 class="top">Posts</h2>
-			<h4>Info</h4>
-			<p>Welcome to the posts tab. If you find an issue please let me know <a href="#site-suggest">here</a></p>
-			<div id="gottenPost" v-show="p" style="margin-bottom: 100px;">
-				<div class="getpostfade" style="background-color: hsla(0, 100%, 63%, 0.171);">
-					<div>Gotten Post | Post ID {{ post.id }}</div>
-					<div class="post-frame" style="border-left-color: skyblue; ">
-						<div class="post-title" v-html="post.title"></div>
-						<div class="post-body" v-html="post.body"></div>
-						<div class="post-info">
-							<span><i class="material-icons">&#xe0b9;</i>{{ post.comment || 0 }}</span>
-							<span><i v-on:click="share(post.id)" class="material-icons">&#xe80d;</i></span>
-							<span>{{ post.username }} <span
-									style="display: inline-block;">{{ post.create }}</span></span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div id="postsdisplay">
-				<p v-show="error" style="color: red; font-weight: bold;">{{ error }}</p>
-				<div v-for="post in posts">
-					<div :class="'-' + post.id + ' post-frame'">
-						<div class="post-title" v-html="post.title"></div>
-						<div class="post-body" v-html="post.body"></div>
-						<div class="post-info">
-							<span><i v-on:click="commentShow(post.id)"
-									class="material-icons">&#xe0b9;</i>{{ post.comment || 0 }}</span>
-							<span><i v-on:click="share(post.id)" class="material-icons">&#xe80d;</i></span>
-							<span style="display: inline-block;">{{ post.create }}</span>
-						</div>
-						<div class="post-coms" style="height: 0px">
-							<div v-for="comment in comments">
-								<div v-bind:id="'-' + post.id + '-' + comment.id" class="com-frame">
-									<div class="post-title" v-if="comment.title !== ''" v-html="comment.title"></div>
-									<div class="post-body" v-if="comment.body" v-html="comment.body"></div>
-									<div class="post-info" v-if="comment.body">
-										<span>{{ comment.username }} <span
-												style="display: inline-block;">{{ comment.create }}</span></span>
-									</div>
-								</div>
-							</div>
-							<h4>Post a comment, {{ username }}</h4>
-							<a href="#settings" v-if="username === 'Anonymous'">(You can change
-								your username by clicking here)</a>
-							<p v-show="error" style="color: red; font-weight: bold;">{{ error }}</p>
-							<br>
-							<div class="com-post">
-								<textarea v-model="commentTitle" placeholder="Title" rows="2"></textarea>
-								<textarea v-model="commentBody" placeholder="Post a comment" rows="5"></textarea>
-								<br><button class="b" v-on:click="postComment(post.id)">Post</button>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div style="margin-top: 50px;">
-					<div class="com-frame" v-if="noMore">There are no more posts to load</div>
-					<br><button class="b" v-on:click="loadMorePosts" v-if="!noMore">Load more posts</button>
-				</div>
 			</div>
 		</div>
 		<!-- ====== Code tab Tab ====== -->
@@ -310,8 +246,8 @@
 		</div>
 	</div>
 	<!-- The JavaScript -->
-	<script src="src/minified/main.min.js"></script>
-	<script src="src/minified/secretcode.min.js"></script>
+	<script src="src/main.js"></script>
+	<script src="src/secretcode.js"></script>
 </body>
 
 </html>

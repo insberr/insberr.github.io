@@ -10,10 +10,12 @@
   @apply text-center;
   @apply text-red-500;
   @apply font-bold;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .section {
   @apply mt-10;
-  @apply text-red-500;
+  border-top: 2px solid rgb(255, 114, 19);
+  padding-top: 5px;
+  background-image: url("https://insberr.github.io/InsberrIcon.png")
 }
