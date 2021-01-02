@@ -33,15 +33,15 @@ function theme(mode, save, ignore) {
 		}
 	}
 
-	if (ignore) return;
+	if (ignore && ignore !== undefined) return;
 
-	if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-		document.getElementsByTagName('html')[0].className = 'dark';
-	} else {
+	if (localStorage.theme === 'light' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: light)').matches)) {
 		document.getElementsByTagName('html')[0].className = '';
+	} else {
+		document.getElementsByTagName('html')[0].className = 'dark';
 	}
 
-	if (!save) return theme('delete', false, true);
+	if (!save && save !== undefined) return theme('delete', false, true);
 }
 
 document.addEventListener('keyup', function (event) {
