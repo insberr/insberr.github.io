@@ -8,10 +8,10 @@ Welcome to the code for my website!
 [Bio Page](https://insberr.github.io/profile/)
 
 ## To Do
-- [ ] Restyle everything using tailwindcss
+- [ ] Restyle everything and use tailwindcss
 - [ ] Build my bio page
+- [ ] Rewrite JavaScript
 - [x] Remove posts thing, it never worked anyway
-- [ ] Redesign everything
 
 
 ### Frameworks Used

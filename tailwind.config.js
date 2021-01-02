@@ -2,16 +2,16 @@ module.exports = {
 	purge: {
 		enabled: true,
 		content: [
-			'./**/*.html',
-			'./**/*.svg'
+			'./**/*.html'
 		]
 	},
 	darkMode: 'media',
 	theme: {
 		fontFamily: {
-			sans: ['Arial', 'sans-serif'],
-			display: ['Arial', 'sans-serif'],
-			body: ['Arial', 'sans-serif']
+			display: ['Roboto', 'Arial', 'sans-serif'],
+			body: ['Noto Sans JP', 'Arial', 'sans-serif'],
+			noto: ['Noto Sans JP', 'Arial', 'sans-serif'],
+			robo: ['Roboto', 'Arial', 'sans-serif']
 		}
 	},
 	plugins: [
