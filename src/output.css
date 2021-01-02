@@ -525,6 +525,14 @@ video {
   }
 }
 
+.bg-center {
+  background-position: center;
+}
+
+.bg-no-repeat {
+  background-repeat: no-repeat;
+}
+
 .border-black {
   --tw-border-opacity: 1;
   border-color: rgba(0, 0, 0, var(--tw-border-opacity));
@@ -586,6 +594,10 @@ video {
 
 .font-semibold {
   font-weight: 600;
+}
+
+.h-12 {
+  height: 3rem;
 }
 
 .h-40 {
@@ -651,6 +663,10 @@ video {
   --tw-ring-shadow: 0 0 #0000;
 }
 
+.fill-current {
+  fill: currentColor;
+}
+
 .text-center {
   text-align: center;
 }
@@ -673,6 +689,10 @@ video {
 
 .w-auto {
   width: auto;
+}
+
+.w-full {
+  width: 100%;
 }
 
 .grid-cols-1 {
@@ -762,26 +782,28 @@ video {
 }
 
 .section {
-  background-position: center;
-  background-size: contain;
   margin-top: 2.5rem;
+  padding-top: 1.25rem;
+}
+
+.sword {
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 3rem;
   fill: currentColor;
-  background-repeat: no-repeat
+  --tw-text-opacity: 1;
+  color: rgba(0, 0, 0, var(--tw-text-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
-  .section {
+  .sword {
     --tw-text-opacity: 1;
-    color: rgba(251, 191, 36, var(--tw-text-opacity));
+    color: rgba(255, 255, 255, var(--tw-text-opacity));
   }
 }
 
-.section {
-  --tw-text-opacity: 1;
-  color: rgba(248, 113, 113, var(--tw-text-opacity));
-  padding-top: 5rem;
-  height: 3rem;
-  background-image: url("https://insberr.github.io/src/images/sword.svg");
+.sword {
+  width: 100%;
 }
 
 @media (min-width: 640px) {
