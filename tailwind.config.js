@@ -5,7 +5,7 @@ module.exports = {
 			'./**/*.html'
 		]
 	},
-	darkMode: 'class',
+	darkMode: 'media',
 	theme: {
 		fontFamily: {
 			sans: ['Arial', 'sans-serif'],
