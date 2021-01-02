@@ -14,8 +14,14 @@
 }
 
 .section {
+  @apply bg-center;
+  @apply bg-contain;
   @apply mt-10;
-  border-top: 2px solid rgb(255, 114, 19);
-  padding-top: 5px;
-  background-image: url("https://insberr.github.io/InsberrIcon.png")
+  @apply fill-current;
+  @apply bg-no-repeat;
+  @apply dark:text-yellow-400;
+  @apply text-red-400;
+  @apply pt-20;
+  @apply h-12;
+  background-image: url("https://insberr.github.io/src/images/sword.svg")
 }

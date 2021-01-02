@@ -10,9 +10,10 @@ Welcome to the code for my website!
 ## To Do
 - [ ] Restyle everything using tailwindcss
 - [ ] Build my bio page
-- [ ] Remove posts thing, it never worked anyway
+- [x] Remove posts thing, it never worked anyway
 - [ ] Redesign everything
 
 
 ### Frameworks Used
 - [Tailwindcss](https://tailwindcss.com/) For the css
+- Vue.js

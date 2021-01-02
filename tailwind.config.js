@@ -13,9 +13,6 @@ module.exports = {
 			body: ['Arial', 'sans-serif']
 		}
 	},
-	variants: {
-		extend: {},
-	},
 	plugins: [
 		require('tailwindcss'),
 		require('autoprefixer'),
