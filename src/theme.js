@@ -3,7 +3,7 @@ function onload() {
 	theme()
 }
 
-function theme(mode) {
+function theme(mode, save, ignore) {
 	switch (mode) {
 		case 'delete': {
 			localStorage.removeItem('theme');
@@ -18,6 +18,13 @@ function theme(mode) {
 			break;
 		}
 		case 'switch': {
+			if (!localStorage.theme) {
+				let c = document.getElementsByTagName('html')[0].className;
+				if (c === '') {
+					return theme('dark');
+				}
+				return theme('light');
+			}
 			localStorage.theme = localStorage.theme === 'dark' ? 'light' : 'dark';
 			break;
 		}
@@ -26,11 +33,15 @@ function theme(mode) {
 		}
 	}
 
+	if (ignore) return;
+
 	if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
 		document.getElementsByTagName('html')[0].className = 'dark';
 	} else {
 		document.getElementsByTagName('html')[0].className = '';
 	}
+
+	if (!save) return theme('delete', false, true);
 }
 
 document.addEventListener('keyup', function (event) {
