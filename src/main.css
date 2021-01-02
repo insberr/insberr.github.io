@@ -18,7 +18,7 @@
   @apply text-center;
   @apply font-bold;
   @apply text-20;
-  color: rgb(233, 88, 31);
+  color: rgb(255, 103, 97);
 }
 
 .section {
@@ -39,21 +39,29 @@
 ul>li:before {
 	content: "";
 	position: absolute;
-    background-color: #fd6b31;
+    background-color: #ff0800;
     border-radius: 1px;
-    width: .65em;
-    height: .130em;
+    width: .70em;
+    height: .125em;
     top: .8125em;
     left: 0;
 }
 
 ul>li {
     position: relative;
-    padding-left: 1.5em;
+    padding-left: 1.3em;
 }
 
 li {
-    margin-top: .5em;
-    margin-bottom: .5em;
+    margin-top: .3em;
+    margin-bottom: .3em;
 }
 
+.area {
+  @apply mt-10;
+}
+
+.btn {
+	@apply bg-red-600 hover:bg-red-400;
+	@apply focus:ring-4 ring-inset ring-red-100 ring-opacity-10;
+}
