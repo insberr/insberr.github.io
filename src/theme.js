@@ -1,4 +1,8 @@
-document.getElementById('!year').innerText = new Date().getFullYear()
+function onload() {
+	document.getElementById('!year').innerText = new Date().getFullYear()
+	theme()
+}
+
 function theme(mode) {
 	switch (mode) {
 		case 'delete': {
@@ -28,8 +32,6 @@ function theme(mode) {
 		document.querySelector('html').classList.remove('dark')
 	}
 }
-
-theme()
 
 document.addEventListener('keyup', function (event) {
 	if (event.key === 't') {
