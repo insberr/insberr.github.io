@@ -2,7 +2,8 @@ module.exports = {
 	purge: {
 		enabled: true,
 		content: [
-			'./**/*.html'
+			'./**/*.html',
+			'./**/*.svg'
 		]
 	},
 	darkMode: 'media',
