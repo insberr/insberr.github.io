@@ -27,9 +27,9 @@ function theme(mode) {
 	}
 
 	if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-		document.querySelector('html').classList.add('dark')
+		document.getElementsByTagName('html')[0].className = 'dark';
 	} else {
-		document.querySelector('html').classList.remove('dark')
+		document.getElementsByTagName('html')[0].className = '';
 	}
 }
 
