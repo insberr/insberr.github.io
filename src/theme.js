@@ -49,3 +49,11 @@ document.addEventListener('keyup', function (event) {
 		theme('switch');
 	}
 });
+
+window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e) => {
+	if (e.matches) {
+		theme('light', false)
+	} else {
+		theme('dark', false)
+	}
+});
