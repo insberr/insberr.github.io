@@ -1,20 +1,8 @@
 var webPosts = 'https://website-backend--spidergamin.repl.co';
-var local = {}, cookies = true, wait = false;
+var local = JSON.parse(localStorage.getItem('siteData') || '{"tab":"home","size":"20","theme":"default","new":true}');
 
-if (localStorage.getItem('siteData')) {
-	local = JSON.parse(localStorage.getItem('siteData'));
-} else {
-	localStorage.clear();
-	local = { tab: 'home', size: '20', theme: 'default', username: 'Anonymous', new: true };
-}
-
-async function save() {
-	if (posts !== undefined) posts.username = local.username;
-	if (userName !== undefined) userName.username = local.username;
-	if (fontSize !== undefined) fontSize.size = local.size;
-	if (cookies) {
-		localStorage.setItem("siteData", JSON.stringify(local));
-	}
+function save() {
+	localStorage.setItem("siteData", JSON.stringify(local));
 }
 
 $(document).ready(function () {
@@ -46,7 +34,6 @@ function pageQuery() {
 			let l = loc.get('l');
 			let qScroll = loc.get('scroll');
 			let qTab = loc.get('tab');
-			let qComment = loc.get('comment');
 
 			if (qTab) {
 				navBar(qTab);
@@ -117,9 +104,6 @@ $(window).bind('hashchange', function () { pageAnchor() });
 
 function reset(i) {
 	switch (i) {
-		case 'username':
-			local.username = 'Anonymous';
-			break;
 		case 'text':
 			local.size = '20';
 			break;
@@ -130,14 +114,12 @@ function reset(i) {
 			theme.toggle(local.theme);
 			break;
 	}
-	save();
+	localStorage.setItem("siteData", JSON.stringify(local));
 	notify('success', `The setting '${i}' was successfully reset`);
 }
 
 function resetSiteData() {
 	if (confirm('Are you sure?') === true) {
-		notify('success', 'Site data successfully reset', 'The site will refresh in ~5 seconds');
-		cookies = false;
 		localStorage.clear();
 		setTimeout(() => { location.reload() }, 5000);
 	}
@@ -161,7 +143,7 @@ function navBar(tab, mobile) {
 	if (elmt[1]) elmt[1].className += ' active';
 
 	local.tab = tab;
-	save();
+	localStorage.setItem("siteData", JSON.stringify(local));
 }
 
 /* ----- vue js ----- */
@@ -200,22 +182,6 @@ var notifier = new Vue({
 function notify(type, title, info) {
 	notifier.notify(type, title, info);
 }
-
-var userName = new Vue({
-	el: '#username',
-	data: {
-		username: 'Anonymous'
-	},
-	created() {
-		this.username = ((local?.username) || 'Anonymous');
-	},
-	watch: {
-		username: function () {
-			local.username = this.username;
-			save();
-		}
-	}
-});
 
 const qs = (q) => document.querySelector(q);
 var theme = new Vue({
@@ -409,23 +375,6 @@ var tasks = new Vue({
 				this.tasks = await res.lists.tasks;
 			})
 			.catch((err) => console.error(err));
-	}
-});
-
-var suggest = new Vue({
-	el: '#suggestions',
-	data: {
-		suggestion: '',
-		sent: null
-	},
-	methods: {
-		send: async function () {
-			pushP('/suggest', 'post', { s: this.suggestion, username: local.username }).then(async (res) => {
-				if (res.error) console.error(res.error);
-				this.sent = res.info;
-				this.suggestion = '';
-			}).catch((error) => console.error(error));
-		}
 	}
 });
 

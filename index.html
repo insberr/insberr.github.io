@@ -10,7 +10,6 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" />
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Roboto&display=swap" rel="stylesheet" />
 
-	<meta name="apple-mobile-web-app-capable" content="yes">
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/superagent"></script>
@@ -72,15 +71,16 @@
 				a simple project for me to play around with HTML, CSS, and JavaScript, later deciding to use it as my
 				personal website. More info about me and this website can be found <a href="#site-site">here</a>.
 			</p>
-			<p>My bio is located <a href="/profile">here</a>. I will be mainly working on that, as it may be replace
+			<p>My portfolio/about page is located <a href="/about">here</a>. I will be mainly working on that, as it may be replace
 				this site.
 			</p>
 			<p>On this website you can check on what I'm doing, find my socials, and find info about me and
 				this website. Have a look around! I do not have any plans for this website going forth. I will
-				be mainly working on <a href="/profile">my profile</a>.
+				be mainly working on <a href="/about">my portfolio/about page</a>.
 			</p>
-			<p>Remember! If you have a tip, suggestion, fix, etc, please let me know by sending it
-				<a href="#site-suggest">here</a>.
+			<p>
+				Remember! If you have a tip, suggestion, fix, etc, please let me know by creating
+				a github issue or discussion <a href="https://github.com/insberr/insberr.github.io">here</a>.
 			</p>
 		</div>
 		<!-- ====== Tasks Tab ====== -->
@@ -134,7 +134,7 @@
 		<!-- ====== About Tab ====== -->
 		<div id="about" class="tab">
 			<h2 class="top h">About</h2>
-			<p>My bio is located <a href="/profile">here</a></p>
+			<p>My bio is located <a href="/about">here</a></p>
 			<hr id="-links" class="hr2">
 			<h3 id="about-links">Links</h3>
 			<div id="links">
@@ -169,20 +169,9 @@
 				</div>
 			</div>
 		</div>
-		<!-- == Secret Tab == -->
-		<div id="secret" class="tab">
-			<h2 class="top">Secret page</h2>
-			<p>You found the secret page. So I guess, Hello o/</p>
-		</div>
 		<!-- == Settings Tab == -->
 		<div id="settings" style="font-size: 20px;" class="tab">
 			<h2 class="top">Site Settings</h2>
-			<div id="username">
-				<span>Chose the username you would like to use. The username is only used when you create a post.</span>
-				<br><input v-model="username" type="text">
-				<br><button class="b">Save</button>
-				<br><br><button class="b" onclick="reset('username')">Reset</button>
-			</div>
 			<hr class="hr1" id="-theme">
 			<div id="theme">
 				<span>Chose from dark and light mode</span>
@@ -205,16 +194,12 @@
 				<span>Reset all site settings</span>
 				<br><button class="b" onclick="reset('site')">Reset</button>
 			</div>
-			<hr class="hr1" id="-reload">
-			<div id="force-reload">
-				<span>Force reload (gets new data for the site quicker)</span>
-				<button class="b" onclick="location.reload(true)">Force Reload</button>
-			</div>
 		</div>
 		<!-- == Site Info Tab == -->
 		<div id="site" class="tab">
 			<h2 id="-site" class="top">Site Info</h2>
-			<p>This site started as
+			<p>
+				This site started as
 				a simple project for me to play around with HTML, CSS, and JavaScript, and later decided to use it as my
 				personal website.
 				After a while, mainly during these times of Corona, I decided I wanted to use it as my blog site. And
@@ -225,27 +210,17 @@
 					href="#about-link-twitter">here</a>)
 			</p>
 			<hr id="-st-an" class="hr2">
-			<h3>localStorage and Analytics</h3>
-			<p>My site uses the localStorage feature to save the settings and the tab you left off on (so when you
-				reload the page you'll
-				be on the same tab). This site also NO LONGER uses Google Analytics. I plan to create my own Analytics
-				system since people don't trust google, and they block it making it useless anyway.
+			<h3>localStorage</h3>
+			<p>
+				My site uses the localStorage feature to save the settings and the tab you left off on 
+				(so when you reload the page you'll be on the same tab).
 			</p>
 			<hr id="-suggest" class="hr2">
 			<h3>Suggest a feature</h3>
-			<div id="suggestions">
-				<div>Have a suggestion for my website? Maybe a bug to report? Type it here and send it. These are sent
-					over to <a rel="noopener noreferrer" href="https://trello.com/b/BKwdwxpC/website"
-						target="_blank">this Trello board</a></div>
-				<div>{{ sent }}</div>
-				<br><textarea v-model="suggestion" placeholder="Type your suggestion here" cols="30"
-					rows="5"></textarea>
-				<br><br><button class="b" v-on:click="send()">Send</button>
-			</div>
+			<div>Have a suggestion for my website? Maybe a bug to report? Go ahead and open a new issue or discussion on <a href="http://github.com/insberr/insberr.github.io">github</a></div>
 		</div>
 		<i class="tab- site info-btn material-icons" onclick="navBar('site')">&#xe88e;</i>
 		<i class="tab- settings info-btn material-icons" onclick="navBar('settings')">&#xe8b8;</i>
-		<div class="tab- secret hide" onclick="navBar('secret')"></div>
 		<div id="notification" class="hide" v-on:click="hideElm()">
 			<div :class="'title ' + type">{{ title }}</div>
 			<div>{{ notification }}</div>

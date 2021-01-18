@@ -5,7 +5,7 @@
 Welcome to the code for my website!
 
 [Main Page](https://insberr.github.io/)  
-[Bio Page](https://insberr.github.io/profile/)
+[About Me Page](https://insberr.github.io/about)
 
 ## To Do
 - [ ] Restyle everything and use tailwindcss
