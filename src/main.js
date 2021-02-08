@@ -438,3 +438,10 @@ document.addEventListener('keyup', function (event) {
 		theme.toggle('toggle');
 	}
 });
+
+function aa(a, b) {
+	return a + b;
+}
+
+let x = aa(3, 4)
+x

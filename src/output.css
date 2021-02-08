@@ -1,3 +1,5 @@
+/*! tailwindcss v2.0.3 | MIT License | https://tailwindcss.com */
+
 /*! modern-normalize v1.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 
 /*
@@ -408,15 +410,18 @@ textarea {
 }
 
 input::-moz-placeholder, textarea::-moz-placeholder {
+  opacity: 1;
   color: #9ca3af;
 }
 
 input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  opacity: 1;
   color: #9ca3af;
 }
 
 input::placeholder,
 textarea::placeholder {
+  opacity: 1;
   color: #9ca3af;
 }
 
@@ -545,10 +550,6 @@ video {
   border-top-width: 2px;
 }
 
-.block {
-  display: block;
-}
-
 .flex {
   display: flex;
 }
@@ -622,6 +623,10 @@ video {
   padding: 1.25rem;
 }
 
+.pb-2 {
+  padding-bottom: 0.5rem;
+}
+
 .pt-3 {
   padding-top: 0.75rem;
 }
@@ -685,6 +690,10 @@ video {
 
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .col-span-full {
@@ -757,42 +766,57 @@ video {
   }
 }
 
-.text-10 { font-size: 10px;
+.text-10 {
+  font-size: 10px;
 }
 
-.text-15 { font-size: 15px;
+.text-15 {
+  font-size: 15px;
 }
 
-.text-16 { font-size: 16px;
+.text-16 {
+  font-size: 16px;
 }
 
-.text-17 { font-size: 17px;
+.text-17 {
+  font-size: 17px;
 }
 
-.text-18 { font-size: 18px;
+.text-18 {
+  font-size: 18px;
 }
 
-.text-19 { font-size: 19px;
+.text-19 {
+  font-size: 19px;
 }
 
-.text-20 { font-size: 20px;
+.text-20 {
+  font-size: 20px;
 }
 
-.text-25 { font-size: 25px;
+.text-25 {
+  font-size: 25px;
 }
 
-.text-30 { font-size: 30px;
+.text-30 {
+  font-size: 30px;
 }
 
 .section-header {
   text-align: center;
-  font-weight: 700; font-size: 20px;
+  font-weight: 700;
+  font-size: 20px;
   color: rgb(255, 103, 97);
 }
 
 .section {
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
+}
+
+.dark .sword {
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
 }
 
 .sword {
@@ -802,54 +826,58 @@ video {
   fill: currentColor;
   --tw-text-opacity: 1;
   color: rgba(0, 0, 0, var(--tw-text-opacity));
-}
-
-.dark .sword {
-  --tw-text-opacity: 1;
-  color: rgba(255, 255, 255, var(--tw-text-opacity));
-}
-
-.sword {
   background-repeat: no-repeat;
 }
 
-ul>li:before {
+ul > li:before {
   content: "";
   position: absolute;
   background-color: #ff0800;
   border-radius: 1px;
-  width: .70em;
-  height: .125em;
-  top: .8125em;
+  width: 0.7em;
+  height: 0.125em;
+  top: 0.8125em;
   left: 0;
 }
 
-ul>li {
+ul > li {
   position: relative;
   padding-left: 1.3em;
 }
 
 li {
-  margin-top: .3em;
-  margin-bottom: .3em;
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
 }
 
 .area {
   margin-top: 2.5rem;
 }
 
-.btn {
-  --tw-bg-opacity: 1;
-  background-color: rgba(220, 38, 38, var(--tw-bg-opacity));
+.project {
+  padding: 10px;
+  background-color: rgba(124, 124, 124, 0.637);
+  width: 80%;
+  height: 10rem;
+  border-radius: 10px;
+  align-self: center;
+}
+
+.link {
+  color: rgb(255, 101, 40);
+}
+
+.link:hover {
+  color: rgb(255, 51, 0);
+}
+
+.link:visited {
+  color: rgb(255, 101, 40);
 }
 
 .btn:hover {
   --tw-bg-opacity: 1;
   background-color: rgba(248, 113, 113, var(--tw-bg-opacity));
-}
-
-.btn {
-  --tw-ring-inset: inset;
 }
 
 .btn:focus {
@@ -859,9 +887,65 @@ li {
 }
 
 .btn {
+  --tw-bg-opacity: 1;
+  background-color: rgba(220, 38, 38, var(--tw-bg-opacity));
+  --tw-ring-inset: inset;
   --tw-ring-opacity: 1;
   --tw-ring-color: rgba(254, 226, 226, var(--tw-ring-opacity));
   --tw-ring-opacity: 0.1;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 35px;
+  height: 18px;
+}
+
+/* Hide default HTML checkbox */
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(255, 162, 109);
+  transition: 0.2s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 2px;
+  bottom: 2px;
+  background-color: rgb(255, 0, 0);
+  transition: 0.2s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: rgb(255, 101, 40);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px rgb(255, 101, 40);
+}
+
+input:checked + .slider:before {
+  transform: translateX(15px);
 }
 
 @media (min-width: 640px) {

@@ -17,3 +17,10 @@ Welcome to the code for my website!
 ### Frameworks Used
 - [Tailwindcss](https://tailwindcss.com/) For the css
 - Vue.js
+
+
+
+Command I should remember:  
+```
+npx tailwindcss build src/main.css -o src/output.css
+```

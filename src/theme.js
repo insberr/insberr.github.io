@@ -1,59 +1,31 @@
 function onload() {
-	document.getElementById('!year').innerText = new Date().getFullYear()
-	theme()
+	document.getElementById("!year").innerText = new Date().getFullYear();
+	theme();
 }
 
-function theme(mode, save, ignore) {
-	switch (mode) {
-		case 'delete': {
-			localStorage.removeItem('theme');
-			break;
-		}
-		case 'light': {
-			localStorage.theme = 'light';
-			break;
-		}
-		case 'dark': {
-			localStorage.theme = 'dark';
-			break;
-		}
-		case 'switch': {
-			if (!localStorage.theme) {
-				let c = document.getElementsByTagName('html')[0].className;
-				if (c === '') {
-					return theme('dark');
-				}
-				return theme('light');
-			}
-			localStorage.theme = localStorage.theme === 'dark' ? 'light' : 'dark';
-			break;
-		}
-		default: {
-			break;
-		}
-	}
+localStorage.removeItem("theme");
 
-	if (ignore && ignore !== undefined) return;
-
-	if (localStorage.theme === 'light' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: light)').matches)) {
-		document.getElementsByTagName('html')[0].className = '';
+function theme(toggle) {
+	let swit =  document.getElementById('!theme');
+	if (toggle === true) {
+		let current = document.getElementsByTagName("html")[0].className;
+		document.getElementsByTagName("html")[0].className = current === 'dark' ? 'light' : 'dark';
+		swit.checked = current === 'dark' ? true : false;
 	} else {
-		document.getElementsByTagName('html')[0].className = 'dark';
+		let matches = window.matchMedia("(prefers-color-scheme: light)").matches;
+		document.getElementsByTagName("html")[0].className = matches === true ? "light" : "dark";
+		swit.checked = matches
 	}
-
-	if (!save && save !== undefined) return theme('delete', false, true);
 }
 
-document.addEventListener('keyup', function (event) {
-	if (event.key === 't') {
-		theme('switch');
+document.addEventListener("keyup", function (event) {
+	if (event.key === "t") {
+		theme(true);
 	}
 });
 
-window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e) => {
-	if (e.matches) {
-		theme('light', false)
-	} else {
-		theme('dark', false)
-	}
-});
+window
+	.matchMedia("(prefers-color-scheme: light)")
+	.addEventListener("change", (e) => {
+		theme()
+	});

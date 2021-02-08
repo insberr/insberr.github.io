@@ -7,14 +7,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<!-- <link href="src/output.css" rel="stylesheet" /> -->
 	<script src="src/theme.js"></script>
-	<link rel="preconnect" href="https://fonts.gstatic.com" />
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Roboto&display=swap" rel="stylesheet" />
 
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/superagent"></script>
-	<link rel="stylesheet" href="" id="light-theme" />
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="src/mystyle.css">
 	<link rel="shortcut icon" href="https://insberr.github.io/src/images/InsberrIcon.png" type="image/x-icon" />
 	<!-- ===== Embed Stuffs ===== -->
@@ -39,33 +35,9 @@
 </head>
 
 <body>
-	<!-- NavBar -->
-	<div class="bar">
-		<button class="tab- home" onclick="navBar('home')" title="Home">Home</button>
-		<button class="tab- tasks" onclick="navBar('tasks')" title="Tasks">Tasks</button>
-		<button class="tab- code" onclick="navBar('code')" title="Code">Code</button>
-		<button class="tab- about" onclick="navBar('about')" title="About Me And Links">About</button>
-		<button class="tab- other" onclick="navBar('other')" title="Other">Other</button>
-	</div>
-	<!-- SideBar for smaller screens -->
-	<div id="sidebar" class="sidenav">
-		<img class="logo" src="https://insberr.github.io/src/images/InsberrIcon.png" alt="Insberr Logo">
-		<span class="logo-name">Insberr</span>
-		<button class="closebtn" onclick="closeNav()">&times;</button>
-		<button class="tab- home" onclick="navBar('home', 1)">Home</button>
-		<button class="tab- tasks" onclick="navBar('tasks', 1)">Tasks</button>
-		<button class="tab- code" onclick="navBar('code', 1)">Code</button>
-		<button class="tab- about" onclick="navBar('about', 1)">About</button>
-		<button class="tab- other" onclick="navBar('other', 1)">Other</button>
-		<i class="tab- site info-btn- material-icons" onclick="navBar('site', 1)">&#xe88e;</i>
-		<i class="tab- settings info-btn- material-icons" onclick="navBar('settings', 1)">&#xe8b8;</i>
-	</div>
-	<!-- Use any element to open the sidenav -->
-	<span id="menu" class="menu" onclick="openNav()">&#9776;</span>
-	<!-- ====== Nav Bar Tab Content ====== -->
 	<div class="page-content">
-		<!-- ====== Home Tab ====== -->
-		<div id="home" class="tab">
+		<!-- ====== Home ====== -->
+		<div id="home" class="">
 			<h2 class="top">Welcome</h2>
 			<p>Hello there, I'm Insberr (AKA SpiderGaming). Welcome to my website! This site started as
 				a simple project for me to play around with HTML, CSS, and JavaScript, later deciding to use it as my
@@ -83,8 +55,8 @@
 				a github issue or discussion <a href="https://github.com/insberr/insberr.github.io">here</a>.
 			</p>
 		</div>
-		<!-- ====== Tasks Tab ====== -->
-		<div id="tasks" class="tab">
+		<!-- ====== Tasks ====== -->
+		<div id="tasks" class="">
 			<h2 class="top h">Tasks</h2>
 			<div id="tasks-list">
 				<h3>To Do/Am Doing</h3>
@@ -118,8 +90,8 @@
 				</ul>
 			</div>
 		</div>
-		<!-- ====== Code tab Tab ====== -->
-		<div id="code" class="tab">
+		<!-- ====== Code ====== -->
+		<div id="code" class="">
 			<h2 class="top h">Code</h2>
 			<h3 id="-sec-code">Secret Code</h3>
 			<p>Secret code? Maybe give it a try.</p>
@@ -131,8 +103,8 @@
 					clipboard</button>
 			</div>
 		</div>
-		<!-- ====== About Tab ====== -->
-		<div id="about" class="tab">
+		<!-- ====== About ====== -->
+		<div id="about" class="">
 			<h2 class="top h">About</h2>
 			<p>My bio is located <a href="/about">here</a></p>
 			<hr id="-links" class="hr2">
@@ -148,8 +120,8 @@
 				<br>
 			</div>
 		</div>
-		<!-- == Other Tab == -->
-		<div id="other" class="tab">
+		<!-- == Other == -->
+		<div id="other" class="">
 			<h2 class="top">Other Things</h2>
 			<p>Other random things are here. All times are (hopefully) in my timezone.</p>
 			<div id="counters">
@@ -169,34 +141,8 @@
 				</div>
 			</div>
 		</div>
-		<!-- == Settings Tab == -->
-		<div id="settings" style="font-size: 20px;" class="tab">
-			<h2 class="top">Site Settings</h2>
-			<hr class="hr1" id="-theme">
-			<div id="theme">
-				<span>Chose from dark and light mode</span>
-				<br><span>Click the icon to change the theme</span>
-				<br><span v-on:click="toggle('toggle')" id="theme-toggle" v-html="themeDiv"></span>
-				<br><br>
-				<span>You are currently using <span v-if="picked.includes('default')">the </span>{{ picked }}
-					mode.</span>
-				<br><br><button class="b" onclick="reset('theme')">Reset</button>
-			</div>
-			<hr class="hr1" id="-size">
-			<div id="text-size">
-				<span>Change text size (The size does not affect this tab)</span>
-				<br><input v-model="size" type="range" min="12" max="40" id="slider" />
-				<br><span :style="{ fontSize: size + 'px' }">{{ size }}px</span>
-				<br><br><button class="b" onclick="reset('text')">Reset</button>
-			</div>
-			<hr class="hr1" id="-reset">
-			<div id="reset-settings">
-				<span>Reset all site settings</span>
-				<br><button class="b" onclick="reset('site')">Reset</button>
-			</div>
-		</div>
-		<!-- == Site Info Tab == -->
-		<div id="site" class="tab">
+		<!-- == Site Info == -->
+		<div id="site" class="">
 			<h2 id="-site" class="top">Site Info</h2>
 			<p>
 				This site started as
@@ -209,22 +155,6 @@
 				website, feel free to send me a DM on Twitter or Discord (links to those can be found <a
 					href="#about-link-twitter">here</a>)
 			</p>
-			<hr id="-st-an" class="hr2">
-			<h3>localStorage</h3>
-			<p>
-				My site uses the localStorage feature to save the settings and the tab you left off on 
-				(so when you reload the page you'll be on the same tab).
-			</p>
-			<hr id="-suggest" class="hr2">
-			<h3>Suggest a feature</h3>
-			<div>Have a suggestion for my website? Maybe a bug to report? Go ahead and open a new issue or discussion on <a href="http://github.com/insberr/insberr.github.io">github</a></div>
-		</div>
-		<i class="tab- site info-btn material-icons" onclick="navBar('site')">&#xe88e;</i>
-		<i class="tab- settings info-btn material-icons" onclick="navBar('settings')">&#xe8b8;</i>
-		<div id="notification" class="hide" v-on:click="hideElm()">
-			<div :class="'title ' + type">{{ title }}</div>
-			<div>{{ notification }}</div>
-		</div>
 	</div>
 	<!-- The JavaScript -->
 	<script src="src/main.js"></script>
