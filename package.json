@@ -1,4 +1,11 @@
 {
+	"name": "insberr.github.io",
+	"author": "insberr",
+	"license": "MIT",
+	"repository": "https://github.com/insberr/insberr.github.io.git",
+	"scripts": {
+		"build-css": "npx tailwindcss build src/main.css -o src/output.css"
+	},
 	"devDependencies": {
 		"express": "^4.17.1",
 		"tailwindcss": "^2.0.3"

@@ -566,6 +566,10 @@ video {
   flex-direction: column;
 }
 
+.place-items-center {
+  place-items: center;
+}
+
 .justify-items-center {
   justify-items: center;
 }
@@ -864,6 +868,10 @@ li {
 }
 
 .link {
+  color: rgb(226, 65, 1);
+}
+
+.link:dark {
   color: rgb(255, 101, 40);
 }
 

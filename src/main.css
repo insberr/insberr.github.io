@@ -87,6 +87,9 @@ li {
 }
 
 .link {
+	color: rgb(226, 65, 1);
+}
+.link:dark {
 	color: rgb(255, 101, 40);
 }
 .link:hover {
