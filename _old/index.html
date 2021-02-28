@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+	<title>Insberr</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!-- <link href="src/output.css" rel="stylesheet" /> -->
+	<script src="src/theme.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/superagent"></script>
+	<link rel="stylesheet" href="src/mystyle.css">
+	<link rel="shortcut icon" href="https://insberr.github.io/src/images/InsberrIcon.png" type="image/x-icon" />
+	<!-- ===== Embed Stuffs ===== -->
+	<link type="application/json+oembed" href="https://insberr.github.io/src/oembed.json" />
+	<meta name="author" content="insberr">
+	<meta name="title" content="Insberr">
+	<meta name="keywords" content="insberr, insberrdev, spidergamin, spidergaming, spiddergaming0">
+	<meta name="description"
+		content="I'm Insberr. A developer who doesn't finish any project I start. I know JavaScript, web development, and a bit of Python3, V, and Java">
+	<meta content="Insberr" property="og:title">
+	<meta property="og:description"
+		content="I'm Insberr. A developer who doesn't finish any project I start. I know JavaScript, web development, and a bit of Python3, V, and Java">
+	<meta content="Insberr" property="og:site_name">
+	<meta property="og:image" content="https://insberr.github.io/src/images/InsberrIcon.png">
+	<meta name="twitter:card" value="summary">
+	<meta property="twitter:url" content="https://insberr.github.io/">
+	<meta property="twitter:title" content="Insberr">
+	<meta property="twitter:description"
+		content="I'm Insberr. A developer who doesn't finish any project I start. I know JavaScript, web development, and a bit of Python3, V, and Java">
+	<meta property="twitter:image" content="https://insberr.github.io/src/images/InsberrIcon.png">
+	<meta name="theme-color" content="#ff2511">
+</head>
+
+<body>
+	<div class="page-content">
+		<!-- ====== Home ====== -->
+		<div id="home" class="">
+			<h2 class="top">Welcome</h2>
+			<p>Hello there, I'm Insberr (AKA SpiderGaming). Welcome to my website! This site started as
+				a simple project for me to play around with HTML, CSS, and JavaScript, later deciding to use it as my
+				personal website. More info about me and this website can be found <a href="#site-site">here</a>.
+			</p>
+			<p>My portfolio/about page is located <a href="/about">here</a>. I will be mainly working on that, as it may be replace
+				this site.
+			</p>
+			<p>On this website you can check on what I'm doing, find my socials, and find info about me and
+				this website. Have a look around! I do not have any plans for this website going forth. I will
+				be mainly working on <a href="/about">my portfolio/about page</a>.
+			</p>
+			<p>
+				Remember! If you have a tip, suggestion, fix, etc, please let me know by creating
+				a github issue or discussion <a href="https://github.com/insberr/insberr.github.io">here</a>.
+			</p>
+		</div>
+		<!-- ====== Tasks ====== -->
+		<div id="tasks" class="">
+			<h2 class="top h">Tasks</h2>
+			<div id="tasks-list">
+				<h3>To Do/Am Doing</h3>
+				<ul>
+					<li v-for="task in tasks" v-if="task.type === 'task' && task.done === false">
+						<span v-html="task.task"></span>
+						<br><span class="date">
+							{{ task.date }} - {{ task.type }}
+						</span>
+					</li>
+				</ul>
+				<br>
+				<h3>Website Plans</h3>
+				<ul>
+					<li v-for="task in tasks" v-if="task.type === 'site' && task.done === false">
+						<span v-html="task.task"></span>
+						<br><span class="date">
+							{{ task.date }} - {{ task.type }}
+						</span>
+					</li>
+				</ul>
+				<br>
+				<h3>Completed / Discarded Tasks</h3>
+				<ul>
+					<li v-for="task in tasks" v-if="task.done === true">
+						<span v-html="task.task"></span>
+						<br><span class="date">
+							{{ task.date }} - {{ task.type }}
+						</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- ====== Code ====== -->
+		<div id="code" class="">
+			<h2 class="top h">Code</h2>
+			<h3 id="-sec-code">Secret Code</h3>
+			<p>Secret code? Maybe give it a try.</p>
+			<div id="secretcode">
+				<textarea v-model="input" placeholder="Decode/Encode my Secret Code" rows="4" cols="30"></textarea>
+				<p v-html="output" class="s-output"></p>
+				<button class="b"
+					onclick="copy('Code', secretcode.output, 'The secret code was copied to your clipboard')">Copy to
+					clipboard</button>
+			</div>
+		</div>
+		<!-- ====== About ====== -->
+		<div id="about" class="">
+			<h2 class="top h">About</h2>
+			<p>My bio is located <a href="/about">here</a></p>
+			<hr id="-links" class="hr2">
+			<h3 id="about-links">Links</h3>
+			<div id="links">
+				<div v-for="link in links">
+					<img width="20px" :src="link.img" :alt="link.link">
+					<a v-bind:id="'-link-' + link.link.replace(' ', '-').toLowerCase()"
+						v-bind:style="{ color: link.color }" v-bind:href="link.url" target="_blank">{{ link.link }}</a>
+					<br><span>{{ link.info }}</span>
+					<hr class="hr1">
+				</div>
+				<br>
+			</div>
+		</div>
+		<!-- == Other == -->
+		<div id="other" class="">
+			<h2 class="top">Other Things</h2>
+			<p>Other random things are here. All times are (hopefully) in my timezone.</p>
+			<div id="counters">
+				<div>Time: <b>{{ time }}</b></div>
+				<br>
+				<div>
+					Today is day <b>{{ cc.day }}</b> of coronacation
+				</div>
+				<br>
+				<div>
+					Today is day <b>{{ c.day }}</b> since the first known corona case
+				</div>
+				<br>
+				<div>
+					Today is day <b>{{ s.day }}</b> of school.
+					<br>There are <b>{{ s.days }}</b> left of school.
+				</div>
+			</div>
+		</div>
+		<!-- == Site Info == -->
+		<div id="site" class="">
+			<h2 id="-site" class="top">Site Info</h2>
+			<p>
+				This site started as
+				a simple project for me to play around with HTML, CSS, and JavaScript, and later decided to use it as my
+				personal website.
+				After a while, mainly during these times of Corona, I decided I wanted to use it as my blog site. And
+				here I am now, using it as my website for my gaming info, blog, and JavaScript testing!
+				This site is still in the dev state. I think I'm going to start work on the blog part of my website, but
+				im not 100% sure how im going to do that yet. If you have any ideas on how I can add a blog to this
+				website, feel free to send me a DM on Twitter or Discord (links to those can be found <a
+					href="#about-link-twitter">here</a>)
+			</p>
+	</div>
+	<!-- The JavaScript -->
+	<script src="src/main.js"></script>
+	<script src="src/secretcode.js"></script>
+</body>
+
+</html>

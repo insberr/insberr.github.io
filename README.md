@@ -1,11 +1,10 @@
-[![Total alerts](https://img.shields.io/lgtm/alerts/g/Insberr/insberr.github.io.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Insberr/insberr.github.io/alerts/)
-[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/Insberr/insberr.github.io.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Insberr/insberr.github.io/context:javascript)
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/insberr/insberr.github.io.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/insberr/insberr.github.io/alerts/)
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/insberr/insberr.github.io.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/insberr/insberr.github.io/context:javascript)
 
-# Insberr's Website
+# insberr's Website
 Welcome to the code for my website!
 
-[Main Page](https://insberr.github.io/)  
-[About Me Page](https://insberr.github.io/about)
+[Visit](https://insberr.github.io/)
 
 ## To Do
 - [ ] Restyle everything and use tailwindcss
@@ -16,11 +15,4 @@ Welcome to the code for my website!
 
 ### Frameworks Used
 - [Tailwindcss](https://tailwindcss.com/) For the css
-- Vue.js
-
-
-
-Command I should remember:  
-```
-npx tailwindcss build src/main.css -o src/output.css
-```
+- [Vuejs 3](https://v3.vuejs.org/) For some of the stuff..
