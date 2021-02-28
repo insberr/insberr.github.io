@@ -2,12 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-	.g-red-50 {
-		background-color: rgba(255, 41, 20, 0.5);
-		backdrop-filter: blur(2px);
-	}
+.g-red-50 {
+	background-color: rgba(255, 41, 20, 0.5);
+	backdrop-filter: blur(2px);
 }
+
+.dark .dark\:bg-222 {
+    --tw-text-opacity: 1;
+    background-color: rgba(34, 34, 34, var(--tw-text-opacity));
+}
+
+.bg-222 {
+	background-color: rgba(34, 34, 34, 1);
+}
+
 .text-10 {
 	font-size: 10px;
 }
@@ -92,16 +100,16 @@ li {
 }
 
 .link {
-	color: rgb(226, 65, 1);
+	color: rgb(255, 92, 51);
 }
 .link:dark {
-	color: rgb(255, 101, 40);
+	color: rgb(255, 92, 51);
 }
 .link:hover {
-	color: rgb(255, 51, 0);
+	color: rgb(219, 65, 26);
 }
 .link:visited {
-	color: rgb(255, 101, 40);
+	color: rgb(255, 92, 51);
 }
 
 .btn {

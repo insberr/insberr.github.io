@@ -11,6 +11,16 @@ Welcome to the code for my website!
 - [ ] Build my bio page
 - [ ] Rewrite JavaScript
 - [x] Remove posts thing, it never worked anyway
+- [ ] Add more padding to the top
+- [ ] Animations?
+- [ ] Remove all swords except the first one
+- [ ] Color links a good color
+- [ ] Make projects look good (remove the use of the api and just add them myself)
+- [ ] Add contents to the footer
+- [ ] Add more sections
+- [ ] Navigation
+- [ ] Move theme switcher to the top of the page
+- [ ] Style for desktop
 
 
 ### Frameworks Used

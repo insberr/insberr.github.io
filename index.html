@@ -5,7 +5,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		
-		<link rel="stylesheet" href="assets/style_c.min.css" type="text/css" />
+		<link rel="stylesheet" href="assets/out.min.css" type="text/css" />
 		<script src="https://unpkg.com/vue@next"></script>
 
 		<link rel="shortcut icon" href="assets/insberr_avatar.png" type="image/x-icon" />
@@ -16,12 +16,12 @@
 		<meta name="theme-color" content="#000000" />
 	</head>
 
-	<body class="text-black bg-white dark:text-white dark:bg-gray-800 text-18">
+	<body class="text-black bg-white dark:text-white dark:bg-222 text-18">
 		<div class="mt-10 mb-2 ml-3 mr-3">
 			<div id="bio" class="flex flex-col w-auto">
 
 				<div class="flex justify-center">
-					<img class="w-40 h-40 border border-gray-600 rounded-full avatar" src="assets/insberr_avatar.png" alt="Insberr's profile picture" />
+					<img class="w-40 h-40 border-2 border-gray-400 rounded-full avatar" src="assets/insberr_avatar.png" alt="Insberr's profile picture" />
 				</div>
 
 				<div class="grid grid-cols-1 mt-5 text-center justify-items-center">
@@ -108,16 +108,9 @@
 					</svg>
 					<div class="section-header">Projects</div>
 					<div v-for="repo in repos" class="flex flex-col">
-						<div
-							v-if="featured.includes(repo.id)"
-							class="area project g-red-50"
-						>
+						<div v-if="featured.includes(repo.id)" class="bg-gray-300 area project dark:bg-gray-500">
 							<div>
-								<a
-									:href="repo.html_url"
-									target="_blank"
-									class="link"
-								>
+								<a :href="repo.html_url" class="link" target="_blank">
 								{{ repo.full_name }}
 								</a>
 							</div>
@@ -146,6 +139,9 @@
 						</g>
 					</svg>
 					<div class="section-header">Stats</div>
+					<div>
+						<div>Stats? Not sure TBH</div>
+					</div>
 				</div>
 			</div>
 			<footer class="p-5 border-t-2 border-red-600">

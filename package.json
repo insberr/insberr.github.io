@@ -4,7 +4,7 @@
 	"license": "MIT",
 	"repository": "https://github.com/insberr/insberr.github.io.git",
 	"scripts": {
-		"build-css": "npx tailwindcss build assets/style.css -o assets/style_c.css"
+		"build-css": "npx tailwindcss build assets/style.css -o assets/out.css"
 	},
 	"devDependencies": {
 		"express": "^4.17.1",
