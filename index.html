@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		
 		<link rel="stylesheet" href="assets/out.css" type="text/css" />
+		<script src="https://kit.fontawesome.com/431b6a9971.js" crossorigin="anonymous"></script>
 		<script src="https://unpkg.com/vue@next"></script>
 
 		<link rel="shortcut icon" href="assets/insberr_avatar.png" type="image/x-icon" />
@@ -16,31 +17,40 @@
 		<meta name="theme-color" content="#000000" />
 	</head>
 
-	<body class="text-black bg-white dark:text-white dark:bg-222 text-18">
-		<div class="mt-10 mb-2 ml-3 mr-3">
+	<body class="text-black bg-white dark:text-white dark:bg-222 text-20">
+		<div class="mt-8 mb-2 ml-3 mr-3">
+			<div id="themeicon" class="hidden">
+				soon to be the theme toggle
+			</div>
+			
 			<div id="bio" class="flex flex-col w-auto">
-
 				<div class="flex justify-center">
 					<img class="w-40 h-40 border-2 border-gray-400 rounded-full avatar" src="assets/insberr_avatar.png" alt="Insberr's profile picture" />
 				</div>
 
 				<div class="grid grid-cols-1 mt-5 text-center justify-items-center">
-					<span class="font-semibold text-25">Jonah Matteson</span>
-					<span class="font-medium text-16">@insberr</span>
+					<span class="font-semibold text-30">Jonah Matteson</span>
+					<span class="font-medium text-18">@insberr</span>
 				</div>
 
-				<div class="mt-5 text-center">
-					I'll put my socials here sooner or later
-				</div>
-
-				<div class="p-5 mt-5 text-center mb">
-					Hello, I'm Jonah, you probably know me by my username,
-					insberr. I am a 16 year old developer and mainly work 
-					on web based projects involving websites, bots, and API's.
-					I also make Minecraft and blog videos on YouTube.
+				<div class="flex flex-row flex-wrap justify-center mt-2 space-x-4 text-center">
+					<span>
+						<a  href="https://twitter.com/insberr" title="insberr's development Twitter" target="_blank">
+							<i class="fab fa-twitter"></i>
+						</a>
+					</span>
 				</div>
 			</div>
 			<div id="sections" class="sections">
+				<div id="aboutme" class="section">
+					<div class="section-header">About Me</div>
+					<div class="p-5 mt-5 text-center mb">
+						Hello, I'm Jonah, you probably know me by my username,
+						insberr. I am a 16 year old developer and mainly work 
+						on web based projects involving websites, bots, and API's.
+						I also make Minecraft and blog videos on YouTube.
+					</div>
+				</div>
 				<div id="languages" class="section">
 					<svg
 						class="sword"
@@ -118,7 +128,7 @@
 						</div>
 					</div>
 				</div>
-				<div id="stats" class="section">
+				<div id="stats" class="hidden section">
 					<svg
 						class="sword"
 						version="1.1"
@@ -151,17 +161,12 @@
 							Main Page
 						</a>
 					</div>
-					<div class="p-3"></div>
-					<div class="p-3"></div>
 					<div class="p-3">
 						<span class="pb-2">Change Theme</span>
 						<label class="switch" id="theme-toggle">
 							<input @click="toggle()" type="checkbox" v-model="dark" />
 							<span class="slider round"></span>
 						</label>
-					</div>
-					<div class="invisible p-3 sm:visible">
-						Press <code>t</code> to switch the theme
 					</div>
 					<div class="pt-3 text-center font-robo col-span-full text-16">
 						<span>&copy; 2021 &bull; insberr</span>

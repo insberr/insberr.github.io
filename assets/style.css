@@ -47,12 +47,12 @@
 .section-header {
 	@apply text-center;
 	@apply font-bold;
-	@apply text-20;
+	font-size: 30px;
 	color: rgb(255, 103, 97);
 }
 
 .section {
-	@apply pt-10;
+	@apply pt-5;
 	@apply pb-10;
 }
 
