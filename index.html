@@ -5,7 +5,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		
-		<link rel="stylesheet" href="assets/out.min.css" type="text/css" />
+		<link rel="stylesheet" href="assets/out.css" type="text/css" />
 		<script src="https://unpkg.com/vue@next"></script>
 
 		<link rel="shortcut icon" href="assets/insberr_avatar.png" type="image/x-icon" />
@@ -145,44 +145,30 @@
 				</div>
 			</div>
 			<footer class="p-5 border-t-2 border-red-600">
-				<div
-					class="grid grid-cols-1 text-center grid-flow-cols sm:grid-cols-2"
-				>
+				<div class="grid grid-cols-1 text-center grid-flow-cols sm:grid-cols-2">
 					<div class="p-3">
-						<a
-							class="text-red-500 underline hover:text-red-700"
-							href="https://insberr.github.io"
-							>Main Page</a
-						>
+						<a class="text-red-500 underline hover:text-red-700" href="https://insberr.github.io">
+							Main Page
+						</a>
 					</div>
 					<div class="p-3"></div>
 					<div class="p-3"></div>
 					<div class="p-3">
 						<span class="pb-2">Change Theme</span>
 						<label class="switch" id="theme-toggle">
-							<input
-								@click="toggle()"
-								type="checkbox"
-								v-model="dark"
-							/>
+							<input @click="toggle()" type="checkbox" v-model="dark" />
 							<span class="slider round"></span>
 						</label>
 					</div>
 					<div class="invisible p-3 sm:visible">
-						Tip: Press <code>t</code> on the keyboard to switch the
-						theme
+						Press <code>t</code> to switch the theme
 					</div>
-					<div
-						class="pt-3 text-center font-robo col-span-full text-16"
-					>
-						<span
-							>&copy; <span id="year">{{ year }}</span> &bull;
-							insberr</span
-						>
+					<div class="pt-3 text-center font-robo col-span-full text-16">
+						<span>&copy; 2021 &bull; insberr</span>
 					</div>
 				</div>
 			</footer>
 		</div>
 	</body>
-	<script src="assets/index.min.js"></script>
+	<script src="assets/index.js"></script>
 </html>
