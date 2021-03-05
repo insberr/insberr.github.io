@@ -18,9 +18,12 @@
 	</head>
 
 	<body class="text-black bg-white dark:text-white dark:bg-222 text-20">
-		<div class="mt-8 mb-2 ml-3 mr-3">
-			<div id="themeicon" class="hidden">
-				soon to be the theme toggle
+		<div id="page-content" class="mt-8 mb-2 ml-3 mr-3">
+			<div id="theme-toggle" class="themetoggle">
+				<div @click="toggle()">
+					<span :class="{ hidden: !dark }"><i class="fas fa-moon"></i></span>
+					<span :class="{ hidden: dark }"><i class="far fa-moon"></i></span>
+				</div>
 			</div>
 			
 			<div id="bio" class="flex flex-col w-auto">
@@ -33,18 +36,31 @@
 					<span class="font-medium text-18">@insberr</span>
 				</div>
 
-				<div class="flex flex-row flex-wrap justify-center mt-2 space-x-4 text-center">
+				<div class="flex flex-row flex-wrap justify-center mt-3 space-x-4 text-center">
 					<span>
 						<a  href="https://twitter.com/insberr" title="insberr's development Twitter" target="_blank">
-							<i class="fab fa-twitter"></i>
+							<i class="text-blue-500 fab fa-twitter text-30"></i>
+						</a>
+					</span>
+
+					<span>
+						<a  href="https://discord.gg/PSNKV6EB9A" title="insberr's development Discord" target="_blank">
+							<i class="text-purple-400 fab fa-discord text-30"></i>
+						</a>
+					</span>
+
+					<span>
+						<a  href="" title="insberr's development YouTube" target="_blank">
+							<i class="text-red-500 fab fa-youtube text-30"></i>
 						</a>
 					</span>
 				</div>
 			</div>
+			
 			<div id="sections" class="sections">
-				<div id="aboutme" class="section">
+				<div id="about" class="section">
 					<div class="section-header">About Me</div>
-					<div class="p-5 mt-5 text-center mb">
+					<div class="p-5 mt-3 text-center mb">
 						Hello, I'm Jonah, you probably know me by my username,
 						insberr. I am a 16 year old developer and mainly work 
 						on web based projects involving websites, bots, and API's.
@@ -52,25 +68,7 @@
 					</div>
 				</div>
 				<div id="languages" class="section">
-					<svg
-						class="sword"
-						version="1.1"
-						xmlns="http://www.w3.org/2000/svg"
-						xmlns:xlink="http://www.w3.org/1999/xlink"
-						viewBox="0, 0, 400,76.6773162939297"
-					>
-						<g id="svgg">
-							<path
-								id="path0"
-								d="M258.786 16.134 C 244.881 18.996,241.603 19.215,223.642 18.484 C 183.900 16.865,169.061 17.262,155.312 20.310 C 147.114 22.127,140.839 22.841,137.706 22.311 C 133.362 21.577,132.294 21.982,127.758 26.080 C 119.649 33.406,112.335 31.245,107.617 20.128 C 105.546 15.249,104.156 15.691,92.562 24.920 L 87.746 28.754 53.715 29.393 C 15.014 30.120,12.250 30.754,13.024 38.728 C 13.627 44.944,16.545 45.569,52.396 47.167 C 91.615 48.915,94.229 49.359,100.930 55.414 C 108.231 62.009,110.000 61.295,119.229 48.029 C 122.321 43.584,127.008 43.773,132.464 48.562 L 136.830 52.396 162.245 52.396 C 181.727 52.396,191.213 52.992,202.881 54.951 C 216.906 57.305,301.208 56.891,305.227 54.448 C 305.691 54.166,312.971 52.951,321.406 51.747 C 341.166 48.927,368.978 38.692,375.020 32.016 C 376.970 29.861,376.697 29.571,370.334 27.044 C 336.634 13.655,292.031 9.293,258.786 16.134 "
-								stroke="none"
-								fill=""
-								fill-rule="evenodd"
-							></path>
-						</g>
-					</svg>
-					
-					<div class="section-header">Programming Languages</div>
+					<div class="section-header-2">Skills</div>
 					<div class="grid grid-cols-2 place-items-center">
 						<div class="area">
 							<div class="text-lg font-semibold">I Know Well</div>
@@ -156,18 +154,6 @@
 			</div>
 			<footer class="p-5 border-t-2 border-red-600">
 				<div class="grid grid-cols-1 text-center grid-flow-cols sm:grid-cols-2">
-					<div class="p-3">
-						<a class="text-red-500 underline hover:text-red-700" href="https://insberr.github.io">
-							Main Page
-						</a>
-					</div>
-					<div class="p-3">
-						<span class="pb-2">Change Theme</span>
-						<label class="switch" id="theme-toggle">
-							<input @click="toggle()" type="checkbox" v-model="dark" />
-							<span class="slider round"></span>
-						</label>
-					</div>
 					<div class="pt-3 text-center font-robo col-span-full text-16">
 						<span>&copy; 2021 &bull; insberr</span>
 					</div>

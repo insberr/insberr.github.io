@@ -7,15 +7,10 @@ Welcome to the code for my website!
 [Visit](https://insberr.github.io/)
 
 ## To Do
-- [ ] Restyle everything and use tailwindcss
-- [ ] Build my bio page
-- [ ] Rewrite JavaScript
-- [x] Remove posts thing, it never worked anyway
-- [ ] Add more padding to the top
 - [ ] Animations?
-- [ ] Remove all swords except the first one
-- [ ] Color links a good color
-- [ ] Make projects look good (remove the use of the api and just add them myself)
+- [ ] Remove all swords maybe : (
+- [ ] Find a better color for links
+- [ ] Make projects look good
 - [ ] Add contents to the footer
 - [ ] Add more sections
 - [ ] Navigation
@@ -26,3 +21,4 @@ Welcome to the code for my website!
 ### Frameworks Used
 - [Tailwindcss](https://tailwindcss.com/) For the css
 - [Vuejs 3](https://v3.vuejs.org/) For some of the stuff..
+- [FontAwesome](https://fontawesome.com/) For the icons

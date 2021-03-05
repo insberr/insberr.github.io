@@ -1,7 +1,7 @@
 const theme = Vue.createApp({
 	data() {
 		return {
-			dark: false,
+			dark: true,
 		};
 	},
 	methods: {
@@ -9,7 +9,7 @@ const theme = Vue.createApp({
 			let current = document.getElementsByTagName("html")[0].className;
 			document.getElementsByTagName("html")[0].className =
 				current === "light" ? "dark" : "light";
-			this.dark = this.checked === true ? false : true;
+			this.dark = current === "light" ? true : false;
 		},
 		set() {
 			let matches = window.matchMedia("(prefers-color-scheme: light)")
@@ -19,7 +19,7 @@ const theme = Vue.createApp({
 			this.dark = matches === true ? false : true;
 		},
 	},
-}).mount('#theme-toggle');
+}).mount("#theme-toggle");
 
 const _languages = {
 	data() {
@@ -52,7 +52,6 @@ const _projects = {
 
 Vue.createApp(_projects).mount("#projects");
 Vue.createApp(_languages).mount("#languages");
-
 
 localStorage.removeItem("theme");
 function onload() {

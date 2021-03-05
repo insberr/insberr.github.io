@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 .g-red-50 {
 	background-color: rgba(255, 41, 20, 0.5);
 	backdrop-filter: blur(2px);
@@ -47,13 +48,19 @@
 .section-header {
 	@apply text-center;
 	@apply font-bold;
-	font-size: 30px;
+	font-size: 35px;
 	color: rgb(255, 103, 97);
 }
 
+.section-header-2 {
+	@apply text-center;
+	@apply font-bold;
+	font-size: 30px;
+	color: rgb(255, 151, 147);
+}
+
 .section {
-	@apply pt-5;
-	@apply pb-10;
+	@apply mt-12;
 }
 
 .sword {
@@ -171,4 +178,10 @@ input:checked + .slider:before {
 	-webkit-transform: translateX(15px);
 	-ms-transform: translateX(15px);
 	transform: translateX(15px);
+}
+
+.themetoggle {
+	position: absolute;
+	top: 15px;
+	right: 15px;
 }
