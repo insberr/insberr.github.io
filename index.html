@@ -5,9 +5,9 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		
-		<link rel="stylesheet" href="assets/out.css" type="text/css" />
 		<script src="https://kit.fontawesome.com/431b6a9971.js" crossorigin="anonymous"></script>
 		<script src="https://unpkg.com/vue@next"></script>
+		<link rel="stylesheet" href="assets/out.css" type="text/css" />
 
 		<link rel="shortcut icon" href="assets/insberr_avatar.png" type="image/x-icon" />
 		<meta name="author" content="insberr" />
@@ -18,7 +18,7 @@
 	</head>
 
 	<body class="text-black bg-white dark:text-white dark:bg-222 text-20">
-		<div id="page-content" class="mt-8 mb-2 ml-3 mr-3">
+		<div class="mt-8 mb-2 ml-3 mr-3 pagecontent">
 			<div id="theme-toggle" class="themetoggle">
 				<div @click="toggle()">
 					<span :class="{ hidden: !dark }"><i class="fas fa-moon"></i></span>
@@ -59,8 +59,7 @@
 			
 			<div id="sections" class="sections">
 				<div id="about" class="section">
-					<div class="section-header">About Me</div>
-					<div class="p-5 mt-3 text-center mb">
+					<div class="text-center mb">
 						Hello, I'm Jonah, you probably know me by my username,
 						insberr. I am a 16 year old developer and mainly work 
 						on web based projects involving websites, bots, and API's.

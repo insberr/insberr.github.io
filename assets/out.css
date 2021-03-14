@@ -843,49 +843,28 @@ video {
   }
 }
 
-#page-content {
-  -webkit-animation: slidein ease 1s;
-          animation: slidein ease 1s;
+.pagecontent {
+  -webkit-animation: fadein;
+          animation: fadein;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
   -webkit-animation-iteration-count: 1;
           animation-iteration-count: 1;
-  transform-origin: 50% 50%;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
 }
 
-#page-content #about {
-  -webkit-animation-delay: 2s;
-          animation-delay: 2s;
-  -webkit-animation: slidein ease 2s;
-          animation: slidein ease 2s;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  transform-origin: 50% 50%;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-@-webkit-keyframes slidein{
-  0% {
-    opacity:0;
-    transform:  translate(0px,40px)  ;
+@-webkit-keyframes fadein {
+  from { opacity: 15%;
   }
 
-  100% {
-    opacity:1;
-    transform:  translate(0px,0px)  ;
+  to { opacity: 100%;
   }
 }
 
-@keyframes slidein{
-  0% {
-    opacity:0;
-    transform:  translate(0px,40px)  ;
+@keyframes fadein {
+  from { opacity: 15%;
   }
 
-  100% {
-    opacity:1;
-    transform:  translate(0px,0px)  ;
+  to { opacity: 100%;
   }
 }
 
@@ -1042,62 +1021,9 @@ li {
   --tw-ring-opacity: 0.1;
 }
 
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 35px;
-  height: 18px;
-}
-
-/* Hide default HTML checkbox */
-
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* The slider */
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgb(255, 162, 109);
-  transition: 0.2s;
-  border-radius: 30px;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 14px;
-  width: 14px;
-  left: 2px;
-  bottom: 2px;
-  background-color: rgb(255, 0, 0);
-  transition: 0.2s;
-  border-radius: 50%;
-}
-
-input:checked + .slider {
-  background-color: rgb(255, 101, 40);
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px rgb(255, 101, 40);
-}
-
-input:checked + .slider:before {
-  transform: translateX(15px);
-}
-
 .themetoggle {
   position: absolute;
-  top: 15px;
+  top: -15px;
   right: 15px;
 }
 
