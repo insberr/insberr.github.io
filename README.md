@@ -8,14 +8,15 @@ Welcome to the code for my website!
 
 ## To Do
 - [ ] Animations?
-- [ ] Remove all swords maybe : (
 - [ ] Find a better color for links
 - [ ] Make projects look good
-- [ ] Add contents to the footer
 - [ ] Add more sections
 - [ ] Navigation
-- [ ] Move theme switcher to the top of the page
 - [ ] Style for desktop
+- [x] Move theme switcher to the top of the page
+- [x] Remove footer
+- [x] Remove all swords ~~maybe : (~~
+- [ ] ~~Add contents to the footer~~
 
 
 ### Frameworks Used
