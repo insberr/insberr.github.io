@@ -19,6 +19,9 @@ const theme = Vue.createApp({
 			this.dark = matches === true ? false : true;
 		},
 	},
+	mounted() {
+		this.set();
+	},
 }).mount("#theme-toggle");
 
 const _languages = {
@@ -53,15 +56,7 @@ const _projects = {
 Vue.createApp(_projects).mount("#projects");
 Vue.createApp(_languages).mount("#languages");
 
-localStorage.removeItem("theme");
-
-theme.set();
-
-document.addEventListener("keyup", function (event) {
-	if (event.key === "t") {
-		theme.toggle(true);
-	}
-});
+localStorage.clear();
 
 window
 	.matchMedia("(prefers-color-scheme: light)")

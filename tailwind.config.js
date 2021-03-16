@@ -1,11 +1,8 @@
 module.exports = {
 	purge: {
 		enabled: true,
-		content: ['./**/*.html']
+		content: ["./**/*.html"],
 	},
-	darkMode: 'class',
-	plugins: [
-		require('tailwindcss'),
-		require('autoprefixer'),
-	],
-}
+	darkMode: "class",
+	plugins: [require("tailwindcss"), require("autoprefixer")],
+};

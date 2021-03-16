@@ -4,7 +4,7 @@
 		<title>insberr</title>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		
+
 		<script src="https://kit.fontawesome.com/431b6a9971.js" crossorigin="anonymous"></script>
 		<script src="https://unpkg.com/vue@next"></script>
 		<link rel="stylesheet" href="assets/out.css" type="text/css" />
@@ -12,8 +12,8 @@
 		<link rel="shortcut icon" href="assets/insberr_avatar.png" type="image/x-icon" />
 		<meta name="author" content="insberr" />
 		<meta name="title" content="insberr" />
-		<meta name="description" content="I am insberr. Still need to create a description here..." />
-		<meta name="image" content="assets/insberr_avatar.png">
+		<meta name="description" content="My website" />
+		<meta name="image" content="assets/insberr_avatar.png" />
 		<meta name="theme-color" content="#000000" />
 	</head>
 
@@ -21,14 +21,18 @@
 		<div class="mt-8 mb-2 ml-3 mr-3 pagecontent">
 			<div id="theme-toggle" class="themetoggle">
 				<div @click="toggle()">
-					<span :class="{ hidden: !dark }"><i class="fas fa-moon"></i></span>
-					<span :class="{ hidden: dark }"><i class="far fa-moon"></i></span>
+					<span :class="{ hidden: !dark }">
+						<i class="fas fa-moon"></i>
+					</span>
+					<span :class="{ hidden: dark }">
+						<i class="far fa-moon"></i>
+					</span>
 				</div>
 			</div>
-			
+
 			<div id="bio" class="flex flex-col w-auto">
 				<div class="flex justify-center">
-					<img class="w-40 h-40 border-2 border-gray-400 rounded-full avatar" src="assets/insberr_avatar.png" alt="Insberr's profile picture" />
+					<img class="w-40 h-40 border-2 border-gray-400 rounded-full avatar" src="assets/insberr_avatar.png" alt="insberr's profile picture" />
 				</div>
 
 				<div class="grid grid-cols-1 mt-5 text-center justify-items-center">
@@ -56,14 +60,14 @@
 					</span>
 				</div>
 			</div>
-			
+
 			<div id="sections" class="sections">
 				<div id="about" class="section">
 					<div class="pl-5 pr-5 text-center mb">
-						I am a 16 year old developer and youtuber, I mainly program
-						web related things involving websites, bots, and API's. I hope
-						to make code that will make our lives easier and make the world
-						a better place.
+						I am a 16 year old developer and youtuber, I mainly
+						program web related things involving websites, bots, and
+						API's. I hope to make code that will make our lives
+						easier and make the world a better place.
 					</div>
 				</div>
 				<div id="socials" class="section">
@@ -74,21 +78,20 @@
 							<a href="https://youtube.com/channel/UCjxN1dN_F9gr0DmDGy58mgw" title="insberr's development YouTube" target="_blank">
 								<i class="icon-youtube fab fa-youtube"></i>
 							</a>
-							<span>More to be added</span>
 						</div>
 						<div class="mt-4 mb-2 text-25">Gaming</div>
 						<div class="grid items-center grid-flow-col gap-x-4">
 							<a href="https://youtube.com/channel/UCjxN1dN_F9gr0DmDGy58mgw" title="insberr's development YouTube" target="_blank">
 								<i class="icon-youtube fab fa-youtube"></i>
 							</a>
-							<span>More to be added</span>
 						</div>
 					</div>
 				</div>
 				<div id="skills" class="hidden section">
 					<div class="s-head">Skills</div>
 					<div class="s-area">
-						I have experience with web development, both backend and frontend, ...
+						I have experience with web development, both backend and
+						frontend, ...
 					</div>
 				</div>
 				<div id="languages" class="hidden section">
@@ -105,7 +108,9 @@
 								I Am Learning
 							</div>
 							<ul>
-								<li v-for="lang in learn"><span v-html="lang"></span></li>
+								<li v-for="lang in learn">
+									<span v-html="lang"></span>
+								</li>
 							</ul>
 						</div>
 						<div class="area">
@@ -121,10 +126,17 @@
 				<div id="projects" class="section">
 					<div class="section-header">Projects</div>
 					<div v-for="repo in repos" class="flex flex-col">
-						<div v-if="featured.includes(repo.id)" class="bg-gray-300 area project dark:bg-gray-500">
+						<div
+							v-if="featured.includes(repo.id)"
+							class="bg-gray-300 area project dark:bg-gray-500"
+						>
 							<div>
-								<a :href="repo.html_url" class="link" target="_blank">
-								{{ repo.full_name }}
+								<a
+									:href="repo.html_url"
+									class="link"
+									target="_blank"
+								>
+									{{ repo.full_name }}
 								</a>
 							</div>
 							{{ repo.description }}
