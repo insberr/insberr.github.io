@@ -4,7 +4,7 @@
 
 .pagecontent {
 	animation: fadein;
-	animation-duration: 1.5s;
+	animation-duration: 2s;
 	animation-iteration-count: 1;
 	
 }
@@ -54,6 +54,17 @@
 }
 .text-30 {
 	font-size: 30px;
+}
+
+.s-head {
+	@apply text-center;
+	@apply font-bold;
+	font-size: 32px;
+	color: rgb(1, 149, 194);
+}
+
+.s-area {
+	margin-top: 5px;
 }
 
 .section-header {
@@ -110,6 +121,7 @@ li {
 }
 
 .project {
+	@apply bg-gray-300 dark:bg-gray-800;
 	padding: 20px;
 	width: 80%;
 	height: 10rem;
@@ -118,16 +130,19 @@ li {
 }
 
 .link {
-	color: rgb(255, 92, 51);
+	color: rgb(95, 83, 83);
 }
 .link:dark {
-	color: rgb(255, 92, 51);
+	color: rgb(223, 181, 181);
 }
 .link:hover {
-	color: rgb(219, 65, 26);
+	color: rgb(65, 140, 175);
 }
 .link:visited {
-	color: rgb(255, 92, 51);
+	color: rgb(95, 83, 83);
+}
+.link:dark:visited {
+	color: rgb(223, 181, 181);
 }
 
 .btn {
@@ -140,4 +155,21 @@ li {
 	position: absolute;
 	top: 15px;
 	right: 15px;
+}
+
+
+/* === Icons === */
+.icon-youtube {
+	color: #ee0010;
+	@apply text-25;
+}
+
+.icon-twitter {
+	color: #499df4;
+	@apply text-25;
+}
+
+.icon-discord {
+	color: #7785dc;
+	@apply text-25;
 }

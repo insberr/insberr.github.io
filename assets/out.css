@@ -612,6 +612,10 @@ video {
   place-items: center;
 }
 
+.items-center {
+  align-items: center;
+}
+
 .justify-items-center {
   justify-items: center;
 }
@@ -630,6 +634,10 @@ video {
 
 .font-bold {
   font-weight: 700;
+}
+
+.h-8 {
+  height: 2rem;
 }
 
 .h-40 {
@@ -655,6 +663,10 @@ video {
 
 .ml-3 {
   margin-left: 0.75rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
 }
 
 .mt-5 {
@@ -683,6 +695,14 @@ video {
 
 .pt-3 {
   padding-top: 0.75rem;
+}
+
+.pr-5 {
+  padding-right: 1.25rem;
+}
+
+.pl-5 {
+  padding-left: 1.25rem;
 }
 
 .pr-10 {
@@ -729,16 +749,6 @@ video {
   color: rgba(239, 68, 68, var(--tw-text-opacity));
 }
 
-.text-blue-500 {
-  --tw-text-opacity: 1;
-  color: rgba(59, 130, 246, var(--tw-text-opacity));
-}
-
-.text-purple-400 {
-  --tw-text-opacity: 1;
-  color: rgba(167, 139, 250, var(--tw-text-opacity));
-}
-
 .hover\:text-red-700:hover {
   --tw-text-opacity: 1;
   color: rgba(185, 28, 28, var(--tw-text-opacity));
@@ -763,6 +773,15 @@ video {
 
 .w-auto {
   width: auto;
+}
+
+.gap-x-4 {
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+}
+
+.grid-flow-col {
+  grid-auto-flow: column;
 }
 
 .grid-cols-1 {
@@ -846,8 +865,8 @@ video {
 .pagecontent {
   -webkit-animation: fadein;
           animation: fadein;
-  -webkit-animation-duration: 1.5s;
-          animation-duration: 1.5s;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
   -webkit-animation-iteration-count: 1;
           animation-iteration-count: 1;
 }
@@ -919,6 +938,17 @@ video {
   font-size: 30px;
 }
 
+.s-head {
+  text-align: center;
+  font-weight: 700;
+  font-size: 32px;
+  color: rgb(1, 149, 194);
+}
+
+.s-area {
+  margin-top: 5px;
+}
+
 .section-header {
   text-align: center;
   font-weight: 700;
@@ -978,6 +1008,16 @@ li {
 }
 
 .project {
+  --tw-bg-opacity: 1;
+  background-color: rgba(209, 213, 219, var(--tw-bg-opacity));
+}
+
+.dark .project {
+  --tw-bg-opacity: 1;
+  background-color: rgba(31, 41, 55, var(--tw-bg-opacity));
+}
+
+.project {
   padding: 20px;
   width: 80%;
   height: 10rem;
@@ -986,19 +1026,23 @@ li {
 }
 
 .link {
-  color: rgb(255, 92, 51);
+  color: rgb(95, 83, 83);
 }
 
 .link:dark {
-  color: rgb(255, 92, 51);
+  color: rgb(223, 181, 181);
 }
 
 .link:hover {
-  color: rgb(219, 65, 26);
+  color: rgb(65, 140, 175);
 }
 
 .link:visited {
-  color: rgb(255, 92, 51);
+  color: rgb(95, 83, 83);
+}
+
+.link:dark:visited {
+  color: rgb(223, 181, 181);
 }
 
 .btn:hover {
@@ -1023,8 +1067,25 @@ li {
 
 .themetoggle {
   position: absolute;
-  top: -15px;
+  top: 15px;
   right: 15px;
+}
+
+/* === Icons === */
+
+.icon-youtube {
+  color: #ee0010;
+  font-size: 25px;
+}
+
+.icon-twitter {
+  color: #499df4;
+  font-size: 25px;
+}
+
+.icon-discord {
+  color: #7785dc;
+  font-size: 25px;
 }
 
 @media (min-width: 640px) {

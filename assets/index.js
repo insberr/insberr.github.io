@@ -54,9 +54,8 @@ Vue.createApp(_projects).mount("#projects");
 Vue.createApp(_languages).mount("#languages");
 
 localStorage.removeItem("theme");
-function onload() {
-	theme.set();
-}
+
+theme.set();
 
 document.addEventListener("keyup", function (event) {
 	if (event.key === "t") {
