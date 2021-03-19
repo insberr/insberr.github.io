@@ -56,8 +56,6 @@ const _projects = {
 Vue.createApp(_projects).mount("#projects");
 Vue.createApp(_languages).mount("#languages");
 
-localStorage.clear();
-
 window
 	.matchMedia("(prefers-color-scheme: light)")
 	.addEventListener("change", (e) => {
