@@ -612,6 +612,10 @@ video {
   place-items: center;
 }
 
+.place-content-center {
+  place-content: center;
+}
+
 .items-center {
   align-items: center;
 }

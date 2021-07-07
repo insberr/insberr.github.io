@@ -7,15 +7,12 @@ const theme = Vue.createApp({
 	methods: {
 		toggle() {
 			let current = document.getElementsByTagName("html")[0].className;
-			document.getElementsByTagName("html")[0].className =
-				current === "light" ? "dark" : "light";
+			document.getElementsByTagName("html")[0].className = current === "light" ? "dark" : "light";
 			this.dark = current === "light" ? true : false;
 		},
 		set() {
-			let matches = window.matchMedia("(prefers-color-scheme: light)")
-				.matches;
-			document.getElementsByTagName("html")[0].className =
-				matches === true ? "light" : "dark";
+			let matches = window.matchMedia("(prefers-color-scheme: light)").matches;
+			document.getElementsByTagName("html")[0].className = matches === true ? "light" : "dark";
 			this.dark = matches === true ? false : true;
 		},
 	},
@@ -27,12 +24,8 @@ const theme = Vue.createApp({
 const _languages = {
 	data() {
 		return {
-			know: ["HTML & CSS", "JavaScript"],
-			learn: [
-				'<a href="https://vlang.io/" target="_blank" class="link">V</a>',
-				"Python",
-			],
-			later: ["Java", "C, C++, C#", "Kotlin", "Rust", "Go", "Elixir"],
+			langs: ["HTML, CSS", "JavaScript", "V", "Python"],
+			frameworks: ["discord.js", "VueJS"],
 		};
 	},
 };
@@ -40,24 +33,21 @@ const _languages = {
 const _projects = {
 	data() {
 		return {
-			featured: [250335962, 225704071, 268001003, 318579438, 312055785],
-			repos: [],
+			repos: [
+				{
+					image: '',
+					url: "insberr/vhiven",
+					name: "vhiven",
+					desc: "Hiven bot module written in V",
+				},
+			],
 		};
-	},
-	async mounted() {
-		this.repos = await (
-			await fetch("https://api.github.com/users/insberr/repos").then(
-				(res) => res
-			)
-		).json();
 	},
 };
 
 Vue.createApp(_projects).mount("#projects");
-Vue.createApp(_languages).mount("#languages");
+// Vue.createApp(_languages).mount("#languages");
 
-window
-	.matchMedia("(prefers-color-scheme: light)")
-	.addEventListener("change", (e) => {
-		theme.set();
-	});
+window.matchMedia("(prefers-color-scheme: light)").addEventListener("change", (e) => {
+	theme.set();
+});

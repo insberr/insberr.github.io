@@ -48,7 +48,7 @@
 					</span>
 
 					<span>
-						<a href="https://discord.gg/PSNKV6EB9A" title="insberr's development Discord" target="_blank">
+						<a href="https://discord.gg/gRMbZyU" title="insberr's Discord server" target="_blank">
 							<i class="icon-discord fab fa-discord"></i>
 						</a>
 					</span>
@@ -63,22 +63,11 @@
 
 			<div id="sections" class="sections">
 				<div id="about" class="section">
-					<div class="pl-5 pr-5 text-center mb">
-						I am a 16 year old developer and youtuber, I mainly
-						program web related things involving websites, bots, and
-						API's. I hope to make code that will make our lives
-						easier and make the world a better place.
-					</div>
+					<div class="pl-5 pr-5 text-center mb"> I am a 16 year old developer and youtuber, I mainly program web related things involving websites, bots, and API's. I hope to make code that will make life easier. </div>
 				</div>
 				<div id="socials" class="section">
 					<div class="s-head">Socials</div>
 					<div class="flex flex-col items-center pl-5 pr-5 s-area">
-						<div class="mt-4 mb-2 text-25">Development</div>
-						<div class="grid items-center grid-flow-col gap-x-4">
-							<a href="https://youtube.com/channel/UCjxN1dN_F9gr0DmDGy58mgw" title="insberr's development YouTube" target="_blank">
-								<i class="icon-youtube fab fa-youtube"></i>
-							</a>
-						</div>
 						<div class="mt-4 mb-2 text-25">Gaming</div>
 						<div class="grid items-center grid-flow-col gap-x-4">
 							<a href="https://youtube.com/channel/UCjxN1dN_F9gr0DmDGy58mgw" title="insberr's development YouTube" target="_blank">
@@ -89,70 +78,21 @@
 				</div>
 				<div id="skills" class="hidden section">
 					<div class="s-head">Skills</div>
-					<div class="s-area">
-						I have experience with web development, both backend and
-						frontend, ...
-					</div>
-				</div>
-				<div id="languages" class="hidden section">
-					<div class="section-header-2">Skills</div>
-					<div class="grid grid-cols-2 place-items-center">
-						<div class="area">
-							<div class="text-lg font-semibold">I Know Well</div>
-							<ul>
-								<li v-for="lang in know">{{ lang }}</li>
-							</ul>
-						</div>
-						<div class="area">
-							<div class="text-lg font-semibold">
-								I Am Learning
-							</div>
-							<ul>
-								<li v-for="lang in learn">
-									<span v-html="lang"></span>
-								</li>
-							</ul>
-						</div>
-						<div class="area">
-							<div class="font-semibold text lg">
-								I Want To Learn
-							</div>
-							<ul>
-								<li v-for="lang in later">{{ lang }}</li>
-							</ul>
-						</div>
-					</div>
+					<div class="s-area"> I have experience with web development, both backend and frontend, ... </div>
 				</div>
 				<div id="projects" class="section">
-					<div class="section-header">Projects</div>
+					<div class="s-head">Projects</div>
 					<div v-for="repo in repos" class="flex flex-col">
-						<div
-							v-if="featured.includes(repo.id)"
-							class="bg-gray-300 area project dark:bg-gray-500"
-						>
+						<div class="bg-gray-300 area project dark:bg-gray-500">
 							<div>
-								<a
-									:href="repo.html_url"
-									class="link"
-									target="_blank"
-								>
-									{{ repo.full_name }}
-								</a>
+								<a :href="'https://github.com/' + repo.url" class="link" target="_blank">{{ repo.name }}</a>
 							</div>
-							{{ repo.description }}
+							{{ repo.desc }}
 						</div>
 					</div>
 				</div>
 				<div id="stats" class="hidden section">
-					<svg
-						class="sword"
-						version="1.1"
-						xmlns="http://www.w3.org/2000/svg"
-						xmlns:xlink="http://www.w3.org/1999/xlink"
-						width="400"
-						height="76.6773162939297"
-						viewBox="0, 0, 400,76.6773162939297"
-					>
+					<svg class="sword" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="400" height="76.6773162939297" viewBox="0, 0, 400,76.6773162939297">
 						<g id="svgg">
 							<path
 								id="path0"
