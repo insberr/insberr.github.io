@@ -21,33 +21,6 @@ const theme = Vue.createApp({
 	},
 }).mount("#theme-toggle");
 
-const _languages = {
-	data() {
-		return {
-			langs: ["HTML, CSS", "JavaScript", "V", "Python"],
-			frameworks: ["discord.js", "VueJS"],
-		};
-	},
-};
-
-const _projects = {
-	data() {
-		return {
-			repos: [
-				{
-					image: '',
-					url: "insberr/vhiven",
-					name: "vhiven",
-					desc: "Hiven bot module written in V",
-				},
-			],
-		};
-	},
-};
-
-Vue.createApp(_projects).mount("#projects");
-// Vue.createApp(_languages).mount("#languages");
-
 window.matchMedia("(prefers-color-scheme: light)").addEventListener("change", (e) => {
 	theme.set();
 });
