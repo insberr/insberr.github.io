@@ -4,10 +4,10 @@
 	"license": "MIT",
 	"repository": "https://github.com/insberr/insberr.github.io.git",
 	"scripts": {
-		"build-css": "npx tailwindcss build assets/style.css -o assets/out.css"
+		"buildcss": "npx tailwindcss build -i assets/style.css -m -o assets/out.css"
 	},
 	"devDependencies": {
 		"express": "^4.17.1",
-		"tailwindcss": "^2.0.3"
+		"tailwindcss": "^2.2.4"
 	}
 }

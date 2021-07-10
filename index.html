@@ -30,7 +30,7 @@
 				</div>
 			</div>
 
-			<div id="bio" class="flex flex-col w-auto">
+			<div id="bio" class="flex flex-col justify-center w-auto">
 				<div class="flex justify-center">
 					<img class="w-40 h-40 border-2 border-gray-400 rounded-full avatar" src="assets/insberr_avatar.png" alt="insberr's profile picture" />
 				</div>
@@ -40,72 +40,34 @@
 					<span class="font-medium text-18">@insberr</span>
 				</div>
 
-				<div class="flex flex-row flex-wrap justify-center h-8 mt-3 space-x-4 text-center">
+				<div class="flex flex-row flex-wrap justify-center h-8 mt-3 space-x-5 text-center">
 					<span>
-						<a href="https://twitter.com/insberr" title="insberr's development Twitter" target="_blank">
-							<i class="icon-twitter fab fa-twitter"></i>
+						<a href="https://github.com/insberr" title="My GitHub profile" target="_blank">
+							<i class="icon fab fa-github"></i>
 						</a>
 					</span>
 
 					<span>
-						<a href="https://discord.gg/gRMbZyU" title="insberr's Discord server" target="_blank">
-							<i class="icon-discord fab fa-discord"></i>
+						<a href="https://discord.gg/gRMbZyU" title="My Discord server" target="_blank">
+							<i class="icon fab fa-discord"></i>
 						</a>
 					</span>
 
 					<span>
-						<a href="https://youtube.com/channel/UCjxN1dN_F9gr0DmDGy58mgw" title="insberr's development YouTube" target="_blank">
-							<i class="icon-youtube fab fa-youtube"></i>
+						<a href="https://youtube.com/channel/UCjxN1dN_F9gr0DmDGy58mgw" title="My dev YouTube" target="_blank">
+							<i class="icon fab fa-youtube"></i>
+						</a>
+					</span>
+
+					<span>
+						<a href="https://twitter.com/insberr" title="My dev Twitter" target="_blank">
+							<i class="icon fab fa-twitter"></i>
 						</a>
 					</span>
 				</div>
-			</div>
-
-			<div id="sections" class="sections">
-				<div id="about" class="section">
-					<div class="pl-5 pr-5 text-center mb"> I am a 16 year old developer and youtuber, I mainly program web related things involving websites, bots, and API's. I hope to make code that will make life easier. </div>
-				</div>
-				<div id="socials" class="section">
-					<div class="s-head">Socials</div>
-					<div class="flex flex-col items-center pl-5 pr-5 s-area">
-						<div class="mt-4 mb-2 text-25">Gaming</div>
-						<div class="grid items-center grid-flow-col gap-x-4">
-							<a href="https://youtube.com/channel/UCjxN1dN_F9gr0DmDGy58mgw" title="insberr's development YouTube" target="_blank">
-								<i class="icon-youtube fab fa-youtube"></i>
-							</a>
-						</div>
-					</div>
-				</div>
-				<div id="skills" class="hidden section">
-					<div class="s-head">Skills</div>
-					<div class="s-area"> I have experience with web development, both backend and frontend, ... </div>
-				</div>
-				<div id="projects" class="section">
-					<div class="s-head">Projects</div>
-					<div v-for="repo in repos" class="flex flex-col">
-						<div class="bg-gray-300 area project dark:bg-gray-500">
-							<div>
-								<a :href="'https://github.com/' + repo.url" class="link" target="_blank">{{ repo.name }}</a>
-							</div>
-							{{ repo.desc }}
-						</div>
-					</div>
-				</div>
-				<div id="stats" class="hidden section">
-					<svg class="sword" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="400" height="76.6773162939297" viewBox="0, 0, 400,76.6773162939297">
-						<g id="svgg">
-							<path
-								id="path0"
-								d="M258.786 16.134 C 244.881 18.996,241.603 19.215,223.642 18.484 C 183.900 16.865,169.061 17.262,155.312 20.310 C 147.114 22.127,140.839 22.841,137.706 22.311 C 133.362 21.577,132.294 21.982,127.758 26.080 C 119.649 33.406,112.335 31.245,107.617 20.128 C 105.546 15.249,104.156 15.691,92.562 24.920 L 87.746 28.754 53.715 29.393 C 15.014 30.120,12.250 30.754,13.024 38.728 C 13.627 44.944,16.545 45.569,52.396 47.167 C 91.615 48.915,94.229 49.359,100.930 55.414 C 108.231 62.009,110.000 61.295,119.229 48.029 C 122.321 43.584,127.008 43.773,132.464 48.562 L 136.830 52.396 162.245 52.396 C 181.727 52.396,191.213 52.992,202.881 54.951 C 216.906 57.305,301.208 56.891,305.227 54.448 C 305.691 54.166,312.971 52.951,321.406 51.747 C 341.166 48.927,368.978 38.692,375.020 32.016 C 376.970 29.861,376.697 29.571,370.334 27.044 C 336.634 13.655,292.031 9.293,258.786 16.134 "
-								stroke="none"
-								fill=""
-								fill-rule="evenodd"
-							></path>
-						</g>
-					</svg>
-					<div class="section-header">Stats</div>
-					<div>
-						<div>Stats? Not sure TBH</div>
+				<div class="flex flex-row justify-center mt-5 text-center">
+					<div class="text-center w-30">
+						I am a 16 year old developer and youtuber, I mainly program web related things involving websites, bots, and API's. I hope to make code that will make life easier.
 					</div>
 				</div>
 			</div>

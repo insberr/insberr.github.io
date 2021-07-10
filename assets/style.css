@@ -120,15 +120,6 @@ li {
 	@apply mt-10;
 }
 
-.project {
-	@apply bg-gray-300 dark:bg-gray-800;
-	padding: 20px;
-	width: 80%;
-	height: 10rem;
-	border-radius: 10px;
-	align-self: center;
-}
-
 .link {
 	color: rgb(95, 83, 83);
 }
@@ -159,17 +150,10 @@ li {
 
 
 /* === Icons === */
-.icon-youtube {
-	color: #ee0010;
+.icon {
 	@apply text-25;
 }
 
-.icon-twitter {
-	color: #499df4;
-	@apply text-25;
-}
-
-.icon-discord {
-	color: #7785dc;
-	@apply text-25;
+.icon:hover {
+	color: #ff0800;
 }
