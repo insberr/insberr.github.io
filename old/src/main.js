@@ -89,10 +89,9 @@ function pageAnchor() {
 }
 
 function scrollToAnchor(anchor) {
-	anchor = sanitize(anchor);
 	try {
 		$([document.documentElement, document.body]).animate({
-			scrollTop: $(anchor).offset().top
+			scrollTop: $(sanitize(anchor)).offset().top
 		});
 	} catch (error) {
 		console.error(error);
