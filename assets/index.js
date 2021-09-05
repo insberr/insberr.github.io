@@ -24,3 +24,10 @@ const theme = Vue.createApp({
 window.matchMedia("(prefers-color-scheme: light)").addEventListener("change", (e) => {
 	theme.set();
 });
+
+
+const params = new URLSearchParams(window.location.search);
+const redirect = params.get("r");
+if (redirect === "sp") {
+	window.location.replace("https://insberr.github.io/schedule-personalizer/");
+}
