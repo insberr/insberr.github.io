@@ -31,7 +31,7 @@ const Profile: React.FC = () => {
                 <IconButton aria-label="dev youtube" href="https://youtube.com/@insberr">
                     <FontAwesomeIcon icon={faYoutube} />
                 </IconButton>
-                <IconButton component={RouterLink} to={'links'}>
+                <IconButton aria-label="more links" component={RouterLink} to={'links'}>
                     <MoreHorizIcon />
                 </IconButton>
             </Box>
