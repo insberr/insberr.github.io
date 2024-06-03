@@ -1,0 +1,22 @@
+{
+  "name": "Jonah Matteson",
+  "short_name": "@insberr",
+  "description": "My personal website with social media links and a list of projects I have worked on.",
+  "start_url": "",
+  "scope": "",
+  "display": "standalone",
+  "background_color": "#222222",
+  "theme_color": "#222222",
+  "icons": [
+    {
+      "src": "/assets/insberr_avatar.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/assets/insberr_avatar.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

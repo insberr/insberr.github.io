@@ -34,14 +34,14 @@ function theme(toggle) {
 		let current = document.getElementsByTagName("html")[0].className;
 		document.getElementsByTagName("html")[0].className =
 			current === "dark" ? "light" : "dark";
-		// _theme.data().checked = current === 'dark' ? true : false;
+		// _theme.projects().checked = current === 'dark' ? true : false;
 		// swit.checked = current === "dark" ? true : false;
 	} else {
 		let matches = window.matchMedia("(prefers-color-scheme: light)")
 			.matches;
 		document.getElementsByTagName("html")[0].className =
 			matches === true ? "light" : "dark";
-		// _theme.data().checked = matches;
+		// _theme.projects().checked = matches;
 		// swit.checked = matches;
 	}
 }
