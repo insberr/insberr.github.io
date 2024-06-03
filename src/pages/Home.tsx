@@ -18,7 +18,7 @@ const Home: React.FC = () => {
     return (
         <Container>
             <Profile />
-            <Grid container direction="column" spacing={4} mt={2}>
+            <Grid container direction="column" spacing={4} mt={2} mb={10}>
                 {projects.map((project: Project, index: number) => (
                     <Grid item key={index}>
                         <ProjectSelection project={project} />
