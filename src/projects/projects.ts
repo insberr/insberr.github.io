@@ -12,7 +12,7 @@ export const projects = [
     "image": schedule_image,
     "description": "Schedule website I made for high school",
     "details_md": schedule_personalizer_md,
-    "codeLink": "https://github.com/yourprofile/project1"
+    "codeLink": "https://github.com/insberr/schedule-personalizer"
   },
   {
     "id": "archea",
@@ -20,6 +20,6 @@ export const projects = [
     "image": archea_image,
     "description": "3D Falling Sand Simulation",
     details_md: archea_md,
-    "codeLink": "https://github.com/yourprofile/project1"
+    "codeLink": "https://github.com/insberr/archea"
   }
 ]
