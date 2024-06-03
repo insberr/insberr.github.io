@@ -3,8 +3,10 @@ import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faDiscord, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import {Link as RouterLink} from "react-router-dom";
 
 const Profile: React.FC = () => {
     return (
@@ -12,10 +14,10 @@ const Profile: React.FC = () => {
             <Avatar
                 src="/assets/insberr_avatar.png"
                 alt="Profile Icon"
-                sx={{width: 100, height: 100, margin: '0 auto'}}
+                sx={{width: 200, height: 200, margin: '0 auto'}}
             />
-            <Typography variant="h4" mt={2}>Jonah Matteson</Typography>
-            <Typography variant="subtitle1">@insberr</Typography>
+            <Typography variant="h3" mt={2}>Jonah Matteson</Typography>
+            <Typography variant="h5">@insberr</Typography>
             <Box>
                 <IconButton aria-label="github" href="https://github.com/insberr">
                     <FontAwesomeIcon icon={faGithub} />
@@ -23,14 +25,17 @@ const Profile: React.FC = () => {
                 <IconButton aria-label="linkedin" href="https://linkedin.com/in/jonahmatteson">
                     <FontAwesomeIcon icon={faLinkedin} />
                 </IconButton>
-                <IconButton aria-label="discord server" href="https://github.com/insberr">
+                <IconButton aria-label="discord server" href="https://discord.gg/gRMbZyU">
                     <FontAwesomeIcon icon={faDiscord} />
                 </IconButton>
                 <IconButton aria-label="dev youtube" href="https://youtube.com/@insberr">
                     <FontAwesomeIcon icon={faYoutube} />
                 </IconButton>
+                <IconButton component={RouterLink} to={'links'}>
+                    <MoreHorizIcon />
+                </IconButton>
             </Box>
-            <Typography variant="body1" mt={2}>
+            <Typography variant="h6" mt={2}>
                 I am a developer and YouTuber. I have experience in developing websites, games, and other random little things.
                 I hope to make code that will make life easier.
             </Typography>
