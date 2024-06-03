@@ -10,6 +10,7 @@ interface Project {
     title: string;
     image: string;
     description: string;
+    details_md: string;
     codeLink: string;
 }
 
