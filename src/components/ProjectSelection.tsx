@@ -36,7 +36,7 @@ const BackgroundImage = styled(Box)({
 
 const ProjectSection: React.FC<ProjectSectionProps> = ({ project }) => {
     return (
-        <BackgroundImage style={{ backgroundImage: `url(/src/projects/${project.image})`, borderRadius: '15px', }}>
+        <BackgroundImage style={{ backgroundImage: `url(${project.image})`, borderRadius: '15px', }}>
             <Box position="absolute" bottom={0} p={2} color="white" width="100%">
                 <Typography variant="h5" color="primary">{project.title}</Typography>
                 <Typography variant="body1">{project.description}</Typography>
