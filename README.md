@@ -9,16 +9,8 @@ Welcome to the code for my website!
 
 ## To Do
 
--   [ ] Animations?
--   [ ] Find a better color for links
--   [ ] Make projects look good
--   [ ] Add more sections
--   [ ] Navigation
+-   [ ] Add Projects section
 -   [ ] Style for desktop
--   [x] Move theme switcher to the top of the page
--   [x] Remove footer
--   [x] Remove all swords ~~maybe : (~~
--   [ ] ~~Add contents to the footer~~
 
 ### Frameworks Used
 

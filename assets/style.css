@@ -154,6 +154,14 @@ li {
 	@apply text-25;
 }
 
+.icon-stack {
+	@apply text-15
+}
+
+.icon-stack-top {
+	color: #d14747;
+}
+
 .icon:hover {
 	color: #ff0800;
 }
