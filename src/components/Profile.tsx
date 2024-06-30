@@ -7,7 +7,7 @@ import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faDiscord, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import {Link as RouterLink} from "react-router-dom";
-import profile_image from '../../assets/insberr_avatar.png';
+import profile_image from '../../public/profile/insberr_avatar.png';
 
 const Profile: React.FC = () => {
     return (

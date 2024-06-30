@@ -9,12 +9,12 @@
   "theme_color": "#222222",
   "icons": [
     {
-      "src": "/assets/insberr_avatar.png",
+      "src": "/profile/irl_avatar.jpeg",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/assets/insberr_avatar.png",
+      "src": "/profile/irl_avatar.jpeg",
       "type": "image/png",
       "sizes": "512x512"
     }
