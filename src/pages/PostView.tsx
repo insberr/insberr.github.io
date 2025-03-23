@@ -2,7 +2,7 @@
 import {useParams} from "react-router";
 import Box from "@mui/material/Box";
 import {useEffect, useState} from "react";
-import {Post} from "./Posts.tsx";
+import {Post, PostsAPIURL} from "./Posts.tsx";
 import MarkdownRenderer from "../components/MarkdownRenderer.tsx";
 
 
@@ -12,7 +12,7 @@ const PostView = () => {
     const [post, setPost] = useState<Post | null>(null);
 
     const onChange = async () => {
-        const res = await fetch('http://127.0.0.1:8788/posts/get', {
+        const res = await fetch(PostsAPIURL + '/posts/get', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

@@ -11,6 +11,7 @@ import Grid from "@mui/material/Grid2";
 import Button from "@mui/material/Button";
 import MarkdownRenderer from "../components/MarkdownRenderer.tsx";
 import Box from "@mui/material/Box";
+import {PostsAPIURL} from "./Posts.tsx";
 
 
 async function createPost(title: string,  contents: string, summary: string, relatedProject: string) {
@@ -21,7 +22,7 @@ async function createPost(title: string,  contents: string, summary: string, rel
         relatedProject: relatedProject
     }
     
-    const response = await fetch("http://127.0.0.1:8788/posts/manage", {
+    const response = await fetch(PostsAPIURL + "/posts/manage", {
         method: "POST",
         headers: {
             'Authorization': localStorage.getItem("personal-website-pose-credentials") || "user@password",

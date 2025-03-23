@@ -1,6 +1,6 @@
 ﻿import React, {useEffect, useState} from "react";
 import Box from "@mui/material/Box";
-import {Card, CardActions, CardContent, CardHeader} from "@mui/material";
+import {Card, CardActions, CardContent} from "@mui/material";
 import {Link as RouterLink} from "react-router";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
@@ -17,6 +17,9 @@ export type Post = {
     summary: string;
     relatedProject: string;
 }
+
+// export const PostsAPIURL = "http://127.0.0.1:8788";
+export const PostsAPIURL = "https://insberr.com";
 
 const PostSummary = ({ node, inline, className, children, ...props }: any) => {
     const post: Post = props.post;
@@ -47,7 +50,8 @@ const Posts: React.FC = () => {
     const [posts, setPosts] = useState<Post[] | null>(null);
     
     const onChange = async () => {
-        const response = await fetch('http://127.0.0.1:8788/posts/list');
+        // http://127.0.0.1:8788
+        const response = await fetch(PostsAPIURL + '/posts/list');
         const posts: Post[] = await response.json();
         setPosts(posts);
     };
