@@ -1,4 +1,4 @@
-﻿// @ts-ignore
+// @ts-ignore
 import crypto from 'node:crypto';
 
 type Post_From_Client = {

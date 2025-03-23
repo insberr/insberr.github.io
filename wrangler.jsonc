@@ -10,8 +10,5 @@
       "binding": "KV",
       "id": "website_posts"
     }
-  ],
-  "vars": {
-    "API_KEY": "1234567asdf"
-  }
+  ]
 }

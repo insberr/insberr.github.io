@@ -1,4 +1,4 @@
-﻿
+
 export const onRequest: PagesFunction<Env> = async (context) => {
     const url = new URL(context.request.url);
     const paramValue = url.searchParams.get('url'); // Get the value of 'myParameter'

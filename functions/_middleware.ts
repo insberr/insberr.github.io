@@ -1,4 +1,4 @@
-﻿// Respond to OPTIONS method
+// Respond to OPTIONS method
 export const onRequestOptions: PagesFunction = async () => {
     return new Response(null, {
         status: 204,

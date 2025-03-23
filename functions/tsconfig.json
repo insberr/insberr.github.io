@@ -1,8 +1,8 @@
-﻿{
+{
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
     "lib": ["esnext"],
-    "types": ["./types.d.ts"]
+    "types": ["./types.d.ts", "node"]
   }
 }
