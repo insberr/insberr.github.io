@@ -1,10 +1,14 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router';
 import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
 import Home from './pages/Home';
 import ProjectDetail from './pages/ProjectDetail';
 import Links from './pages/Links';
 import Page_404 from "./pages/404.tsx";
+import NavBar from './components/NavBar';
+import Posts from "./pages/Posts.tsx";
+import PostView from "./pages/PostView.tsx";
+import MakePost from "./pages/MakePost.tsx";
 
 const theme = createTheme({
     palette: {
@@ -25,11 +29,17 @@ const App: React.FC = () => {
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline />
+            <NavBar />
             <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/project/:id" element={<ProjectDetail />} />
+                <Route index element={<Home />} />
                 <Route path="/links" element={<Links/>} />
-                <Route path=":nopath" element={<Page_404 />} />
+                <Route path="/project/:id" element={<ProjectDetail />} />
+                
+                <Route path="/posts" element={<Posts />} />
+                <Route path="/post/:postId" element={<PostView />} />
+                <Route path="/makepost" element={<MakePost />} />
+                
+                <Route path="*" element={<Page_404 />} />
             </Routes>
         </ThemeProvider>
     );

@@ -1,7 +1,7 @@
 import schedule_personalizer_md from './schedule-personalizer.md?raw';
-import schedule_image from '../../public/projects/schedule-personalizer.png';
+import schedule_image from '../../assets/projects/schedule-personalizer.png';
 import archea_md from './archea.md?raw';
-import archea_image from '../../public/projects/archea.png';
+import archea_image from '../../assets/projects/archea.png';
 
 import.meta.env.BASE_URL;
 

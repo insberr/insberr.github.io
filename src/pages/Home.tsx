@@ -3,7 +3,7 @@ import Profile from '../components/Profile';
 import ProjectSelection from '../components/ProjectSelection.tsx';
 import { projects } from '../projects/projects.ts';
 import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/Grid2';
 
 interface Project {
     id: string;
@@ -20,7 +20,7 @@ const Home: React.FC = () => {
             <Profile />
             <Grid container direction="column" spacing={4} mt={2} mb={10}>
                 {projects.map((project: Project, index: number) => (
-                    <Grid item key={index}>
+                    <Grid key={index}>
                         <ProjectSelection project={project} />
                     </Grid>
                 ))}

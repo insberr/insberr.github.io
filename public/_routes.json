@@ -1,0 +1,10 @@
+﻿{
+  "version": 1,
+  "include": [
+    "/posts/get",
+    "/posts/list",
+    "/posts/manage",
+    "/oembed"
+  ],
+  "exclude": ["/*"]
+}

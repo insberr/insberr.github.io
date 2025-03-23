@@ -1,0 +1,17 @@
+{
+  "name": "personal-website",
+  "compatibility_date": "2025-03-22",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "pages_build_output_dir": "./dist",
+  "kv_namespaces": [
+    {
+      "binding": "KV",
+      "id": "website_posts"
+    }
+  ],
+  "vars": {
+    "API_KEY": "1234567asdf"
+  }
+}

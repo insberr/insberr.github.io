@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router';
 import ReactMarkdown from 'react-markdown';
 import gfm from 'remark-gfm';
 import { projects } from '../projects/projects.ts';

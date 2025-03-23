@@ -6,8 +6,8 @@ import IconButton from '@mui/material/IconButton';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faDiscord, faYoutube } from '@fortawesome/free-brands-svg-icons';
-import {Link as RouterLink} from "react-router-dom";
-import profile_image from '../../public/profile/irl_avatar.jpeg';
+import {Link as RouterLink} from "react-router";
+import profile_image from '../../assets/profile/irl_avatar.jpeg';
 
 const Profile: React.FC = () => {
     return (
