@@ -6,5 +6,5 @@
     "/posts/manage",
     "/oembed"
   ],
-  "exclude": ["/*"]
+  "exclude": []
 }
