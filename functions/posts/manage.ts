@@ -1,28 +1,35 @@
-// @ts-ignore
-import crypto from 'node:crypto';
+﻿import { randomUUID } from 'node:crypto';
 
-type Post_From_Client = {
+type PostFromClient = {
     title: string;
     contents: string;
     summary: string;
     relatedProject: string;
 }
 
-type Post = Post_From_Client & {
+type Post = PostFromClient & {
     postId: string;
-    postDate: Date;
-    postEditDate: Date | null;
+    postDate: Date | string;
+    postEditDate: Date | string | null;
 }
 
-interface POP_Request {
+interface POP_POST_Request {
     action: string;
-    post?: Post_From_Client;
-    postId?: string;
+    post?: PostFromClient;
+    postId: string;
 }
 
-interface Env extends Cloudflare.Env {
+interface Env {
+    KV: KVNamespace;
     POSTS_MANAGE_USERNAME: string;
     POSTS_MANAGE_PASSWORD: string;
+}
+
+function generateErrorResponse(error: string, status: number) {
+    return new Response(
+        JSON.stringify({ error: error }),
+        { status: status }
+    );
 }
 
 export const onRequestPost: PagesFunction<Env> = async (context) => {
@@ -35,83 +42,55 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
         );
     }
     
-    const requestJSON: POP_Request = await context.request.json()
+    const requestJSON: POP_POST_Request = await context.request.json();
     
     switch (requestJSON.action) {
         case "create": {
             if (!requestJSON.post) {
-                return new Response(
-                    JSON.stringify({ error: "No post details provided..."}),
-                    { status: 400 }
-                )
+                return generateErrorResponse("Unable to create post.", 400);
             }
             
-            const uuid = crypto.randomUUID();
+            const newUUID = randomUUID();
             
             const post: Post = {
-                postId: uuid,
+                ...requestJSON.post,
+                postId: newUUID,
                 postDate: new Date(),
                 postEditDate: null,
-                ...requestJSON.post
-            }
+            };
             
-            await context.env.KV.put(uuid, JSON.stringify(post));
+            await context.env.KV.put(newUUID, JSON.stringify(post));
             
             return new Response(JSON.stringify({ newPost: post }));
         }
         case "modify": {
-            if (!requestJSON.postId) {
-                return new Response(
-                    JSON.stringify({ error: "No postId provided..."}),
-                    { status: 400 }
-                )
+            if (!requestJSON.postId || !requestJSON.post) {
+                return generateErrorResponse("Unable to modify post.", 400);
             }
             
-            if (!requestJSON.post) {
-                return new Response(
-                    JSON.stringify({ error: "No post details provided..."}),
-                    { status: 400 }
-                )
-            }
-
             const originalPost: Post = JSON.parse(await context.env.KV.get(requestJSON.postId));
             
-            const newPost = {
+            const newPost: Post = {
                 ...originalPost,
+                ...requestJSON.post,
                 postEditDate: new Date(),
-                ...requestJSON.post
-            }
-            
+            };
+
             await context.env.KV.put(requestJSON.postId, JSON.stringify(newPost));
             
             return new Response(JSON.stringify({ newPost: newPost }));
         }
         case "delete": {
             if (!requestJSON.postId) {
-                return new Response(
-                    JSON.stringify({ error: "No postId provided..."}),
-                    { status: 400 }
-                )
+                return generateErrorResponse("Unable to delete post.", 400);
             }
             
             await context.env.KV.delete(requestJSON.postId);
             
-            return new Response(JSON.stringify({ message: "Successfully deleted post" }));
-        }
-        case "none": {
-            // This is purely to make TS not complain about unreachable code
-            break;
+            return new Response(JSON.stringify({ message: 'Post deleted successfully.' }));
         }
         default: {
-            return new Response(
-                JSON.stringify({ error: `No action ${requestJSON.action} can be done on posts...` }),
-                { status: 400 }
-            )
+            return generateErrorResponse("Unable to perform action.", 400);
         }
-    }
-
-    return new Response(
-        JSON.stringify({ error: "How did we get here?" }),
-        { status: 500 }
-    );
-};
+    } 
+}

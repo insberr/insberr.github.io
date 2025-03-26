@@ -58,7 +58,8 @@ const MakePost: React.FC = () => {
             await createPost(
                 "TODO Title",
                 markdown,
-                "TODO Shortened Markdown: " + markdown,
+                // TODO: Find a better way to do the summary
+                markdown.slice(0, 100),
                 "TODO Related Project"
             );
         }}>Post</Button>

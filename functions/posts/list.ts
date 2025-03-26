@@ -1,5 +1,4 @@
-
-export const onRequest: PagesFunction<Env> = async (context) => {
+﻿export const onRequest: PagesFunction<Env> = async (context) => {
     const listedPosts = await context.env.KV.list({ limit: 10 });
     
     const posts = []

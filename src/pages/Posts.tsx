@@ -19,7 +19,8 @@ export type Post = {
 }
 
 // export const PostsAPIURL = "http://127.0.0.1:8788";
-export const PostsAPIURL = "https://insberr.com";
+// export const PostsAPIURL = "https://insberr.com";
+export const PostsAPIURL = window.location.origin;
 
 const PostSummary = ({ node, inline, className, children, ...props }: any) => {
     const post: Post = props.post;
