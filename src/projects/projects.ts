@@ -1,7 +1,6 @@
 import schedule_personalizer_md from './schedule-personalizer.md?raw';
-import schedule_image from '../../assets/projects/schedule-personalizer.png';
 import archea_md from './archea.md?raw';
-import archea_image from '../../assets/projects/archea.png';
+import {PostsAssetsURL} from "../pages/Posts.tsx";
 
 import.meta.env.BASE_URL;
 
@@ -9,7 +8,7 @@ export const projects = [
   {
     "id": "schedule-personalizer",
     "title": "Schedule Personalizer",
-    "image": schedule_image,
+    "image": `${PostsAssetsURL}/projects/schedule-personalizer.png`,
     "description": "Schedule website I made for high school",
     "details_md": schedule_personalizer_md,
     "codeLink": "https://github.com/insberr/schedule-personalizer"
@@ -17,7 +16,7 @@ export const projects = [
   {
     "id": "archea",
     "title": "Archea",
-    "image": archea_image,
+    "image": `${PostsAssetsURL}/projects/archea.png`,
     "description": "3D Falling Sand Simulation",
     details_md: archea_md,
     "codeLink": "https://github.com/insberr/archea"

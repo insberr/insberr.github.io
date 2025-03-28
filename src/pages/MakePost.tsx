@@ -1,17 +1,13 @@
 ﻿import React from "react";
-import {useCreateBlockNote} from "@blocknote/react";
-import {BlockNoteView} from "@blocknote/mantine";
-import { useEffect, useState } from "react";
-import {BlockNoteEditor} from "@blocknote/core";
-
-import "@blocknote/core/fonts/inter.css";
-import "@blocknote/mantine/style.css";
+import { useState } from "react";
 
 import Grid from "@mui/material/Grid2";
 import Button from "@mui/material/Button";
 import MarkdownRenderer from "../components/MarkdownRenderer.tsx";
 import Box from "@mui/material/Box";
 import {PostsAPIURL} from "./Posts.tsx";
+import MarkdownEditor from "../components/MarkdownEditor.tsx";
+import {TextField} from "@mui/material";
 
 
 async function createPost(title: string,  contents: string, summary: string, relatedProject: string) {
@@ -39,24 +35,13 @@ async function createPost(title: string,  contents: string, summary: string, rel
 }
 
 const MakePost: React.FC = () => {
+    const [title, setTitle] = useState<string>("");
     const [markdown, setMarkdown] = useState<string>("");
     
-    const editor: BlockNoteEditor = useCreateBlockNote();
-
-    const onChange = async () => {
-        const markdown = await editor.blocksToMarkdownLossy(editor.document);
-        setMarkdown(markdown);
-    };
-
-    useEffect(() => {
-        onChange().then(_ => {});
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
-    
-    return <Box>
+    return <Box sx={{ marginTop: "2rem", padding: "1rem" }}>
         <Button onClick={async () => {
             await createPost(
-                "TODO Title",
+                title,
                 markdown,
                 // TODO: Find a better way to do the summary
                 markdown.slice(0, 100),
@@ -71,7 +56,15 @@ const MakePost: React.FC = () => {
             }}
         >
             <Grid size="grow">
-                <BlockNoteView editor={editor} onChange={onChange}/>
+                <TextField
+                    id="post-title"
+                    label="Post Title"
+                    variant="standard"
+                    onChange={(event) => {
+                        setTitle(event.target.value);
+                    }}
+                />
+                <MarkdownEditor onUpdate={setMarkdown} />
             </Grid>
             <Grid size="grow">
                 <MarkdownRenderer markdown={markdown} />

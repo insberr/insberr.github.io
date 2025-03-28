@@ -2,21 +2,24 @@
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
-import { Link as RouterLink } from "react-router";
+import {Link as RouterLink} from "react-router";
+import Typography from "@mui/material/Typography";
 
 export default function ButtonAppBar() {
+    
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static">
                 <Toolbar>
-                    <Button
-                        variant="contained"
-                        color="primary"
+                    <Typography
+                        variant="h6"
                         component={RouterLink}
+                        color="textPrimary"
+                        sx={{ flexGrow: 1, textDecoration: 'none' }}
                         to={`/`}
                     >
                         Insberr
-                    </Button>
+                    </Typography>
                     <Button
                         variant="contained"
                         color="primary"

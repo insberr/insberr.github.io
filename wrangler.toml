@@ -8,6 +8,10 @@ compatibility_flags = [ "nodejs_compat" ]
 id = "90ab5bed0e704227aa5b79cdc90d1fa9"
 binding = "KV"
 
+[[r2_buckets]]
+bucket_name = "posts-assets"
+binding = "POSTS_ASSETS"
+
 [[env.production.kv_namespaces]]
 id = "90ab5bed0e704227aa5b79cdc90d1fa9"
 binding = "KV"

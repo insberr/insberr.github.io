@@ -13,6 +13,6 @@
         title: "PostView Title",
         author_name: "Insberr", 
         author_url: "https://insberr.com/",
-        HTMLRewriter: "<object width=\"425\" height=\"344\"></object>"
+        html: "<object width=\"425\" height=\"344\"></object>"
     }));
 }

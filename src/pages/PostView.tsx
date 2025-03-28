@@ -36,18 +36,26 @@ const PostView = () => {
         return <div>Loading...</div>;
     }
     
-    return <Box sx={{ padding: '2rem' }}>
-        <Typography variant="h4">{post.title}</Typography>
-        <Typography variant="subtitle2" color="textSecondary">
-            Posted {new Date(post.postDate).toDateString()}
-        </Typography>
-        {
-            post.postEditDate !== null &&
-                <Typography variant="subtitle2" color="textSecondary">
-                    Edited {new Date(post.postEditDate).toDateString()}
-                </Typography>
-        }
-        <MarkdownRenderer markdown={post.contents} />
+    return <Box sx={{
+        marginTop: "2rem",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center"
+    }}>
+        <Box>
+            <Typography variant="h4">{post.title}</Typography>
+            <Typography variant="subtitle2" color="textSecondary">
+                Posted {new Date(post.postDate).toDateString()}
+                {
+                    post.postEditDate !== null &&
+                    " | Edited " + new Date(post.postEditDate).toDateString()
+                }
+            </Typography>
+            
+        </Box>
+        <Box sx={{ marginTop: "1rem", width: { xs: "95vw", sm: "90vw", md: "70vw", lg: "60vw" } }}>
+            <MarkdownRenderer markdown={post.contents} />
+        </Box>
     </Box>
 }
 

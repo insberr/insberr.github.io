@@ -1,8 +1,7 @@
 ﻿import React, {useEffect, useState} from "react";
 import Box from "@mui/material/Box";
-import {Card, CardActions, CardContent} from "@mui/material";
-import {Link as RouterLink} from "react-router";
-import Button from "@mui/material/Button";
+import {Card, CardActionArea, CardContent, CardMedia, Chip} from "@mui/material";
+import {useNavigate} from "react-router";
 import Typography from "@mui/material/Typography";
 import MarkdownRenderer from "../components/MarkdownRenderer.tsx";
 
@@ -18,33 +17,47 @@ export type Post = {
     relatedProject: string;
 }
 
+export const PostsAssetsURL = "https://assets.insberr.com";
+
 // export const PostsAPIURL = "http://127.0.0.1:8788";
-// export const PostsAPIURL = "https://insberr.com";
 export const PostsAPIURL = window.location.origin;
 
-const PostSummary = ({ node, inline, className, children, ...props }: any) => {
-    const post: Post = props.post;
+const PostSummaryCard = ({ post }: { post: Post }) => {
+    const routerNavigate = useNavigate();
     
-    return <Card variant="outlined">
-        <CardContent>
-            <Typography variant="h5">{post.title}</Typography>
-            <Typography variant="body2">
-                <MarkdownRenderer markdown={post.contents.slice(0, 100) + "..."} />
-                
-            </Typography>
-            
-        </CardContent>
-        <CardActions>
-            <Button
-                variant="contained"
-                color="primary"
-                component={RouterLink}
-                to={`/post/${post.postId}`}
-            >
-                View Post
-            </Button>
-        </CardActions>
-    </Card>
+    return <Card sx={{ marginBottom: "3rem", width: 900, borderRadius: 3 }} raised>
+        <CardActionArea onClick={() => {
+            routerNavigate(`/post/${post.postId}`)
+        }}>
+            <Box sx={{ display: 'flex' }}>
+                <CardMedia
+                    component="img"
+                    sx={{ width: 350, height: "auto", alignSelf: "center", margin: "1rem" }}
+                    image="/assets/projects/archea.png"
+                    alt="Live from space album cover"
+                />
+                <CardContent>
+                    <Typography component="div" variant="h5">
+                        {post.title}
+                    </Typography>
+                    <Typography
+                        variant="subtitle1"
+                        component="div"
+                        sx={{ color: 'text.secondary' }}
+                    >
+                        {new Date(post.postDate).toDateString()}
+                    </Typography>
+                    <Chip label={post.relatedProject} color="primary" size="small" />
+                    <Typography
+                        variant="body1"
+                        component="div"
+                    >
+                        <MarkdownRenderer markdown={post.summary} />
+                    </Typography>
+                </CardContent>
+            </Box>
+        </CardActionArea>
+    </Card>;
 }
 
 const Posts: React.FC = () => {
@@ -66,13 +79,18 @@ const Posts: React.FC = () => {
         return <div>Loading...</div>;
     }
     
-    return <Box>
-        <Typography variant="h4">Last 10 most recent posts</Typography>
-        {
-            posts.map((post, index) => {
-                return <PostSummary key={index} post={post} />;
-            })
-        }
+    return <Box sx={{
+        marginTop: '1rem',
+        padding: '1rem',
+    }}>
+        <Typography variant="h4" sx={{ textAlign: "center" }}>Recent Posts</Typography>
+        <Box sx={{ display: "flex", alignItems: "center", flexDirection: "column", marginTop: "4rem", padding: '0 1rem' }}>
+            {
+                posts.map((post, index) => {
+                    return <PostSummaryCard key={index} post={post} />;
+                })
+            }
+        </Box>
     </Box>
 }
 

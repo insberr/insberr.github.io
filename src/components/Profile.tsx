@@ -7,13 +7,13 @@ import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faDiscord, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import {Link as RouterLink} from "react-router";
-import profile_image from '../../assets/profile/irl_avatar.jpeg';
+import {PostsAssetsURL} from "../pages/Posts.tsx";
 
 const Profile: React.FC = () => {
     return (
         <Box textAlign="center" my={4}>
             <Avatar
-                src={profile_image}
+                src={`${PostsAssetsURL}/profile/irl_avatar.jpeg`}
                 alt="Profile Icon"
                 sx={{width: 200, height: 200, margin: '0 auto'}}
             />
