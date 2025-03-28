@@ -16,40 +16,38 @@ class PasteHandler {
         if (!items) return;
 
         for (const item of items) {
-            if (item.type.startsWith("image/") || item.type.startsWith("video/")) {
-                const itemType = item.type;
-                const file = item.getAsFile();
-                if (file) {
-                    const reader = new FileReader();
-                    reader.onload = async () => {
-                        console.log(reader);
-                        console.log(itemType);
-                        
-                        const uuid = crypto.randomUUID();
-                        const fileName = `${uuid}.${itemType.split("/")[1]}`;
-                        
-                        await fetch(
-                            PostsAPIURL + `/posts/upload?name=${fileName}`,
-                            {
-                                method: "PUT",
-                                headers: {
-                                    "Authorization": "insberr@test"
-                                },
-                                body: reader.result
-                            }
-                        );
-
-                        event.preventDefault();
-
-                        this.view.dispatch({
-                            changes: {
-                                from: this.view.state.selection.main.head,
-                                insert: `![Pasted Image](${PostsAssetsURL}/${fileName})`
+            const itemType = item.type;
+            const file = item.getAsFile();
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = async () => {
+                    console.log(reader);
+                    console.log(itemType);
+                    
+                    const uuid = crypto.randomUUID();
+                    const fileName = `${uuid}.${itemType.split("/")[1]}`;
+                    
+                    await fetch(
+                        PostsAPIURL + `/posts/upload?name=${fileName}`,
+                        {
+                            method: "PUT",
+                            headers: {
+                                "Authorization": localStorage.getItem("personal-website-pose-credentials") || "user@password",
                             },
-                        });
-                    };
-                    reader.readAsArrayBuffer(file);
-                }
+                            body: reader.result
+                        }
+                    );
+
+                    event.preventDefault();
+
+                    this.view.dispatch({
+                        changes: {
+                            from: this.view.state.selection.main.head,
+                            insert: `![Pasted Image](${PostsAssetsURL}/${fileName})`
+                        },
+                    });
+                };
+                reader.readAsArrayBuffer(file);
             }
         }
     }
