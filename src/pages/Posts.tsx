@@ -34,7 +34,7 @@ const PostSummaryCard = ({ post }: { post: Post }) => {
                     component="img"
                     sx={{ width: 350, height: "auto", alignSelf: "center", margin: "1rem" }}
                     image="/assets/projects/archea.png"
-                    alt="Live from space album cover"
+                    alt="Blog post summary image"
                 />
                 <CardContent>
                     <Typography component="div" variant="h5">
