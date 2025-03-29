@@ -12,8 +12,12 @@ export type Post = {
     postEditDate: Date | null;
 
     title: string;
+    coverImage: string;
     contents: string;
+    
     summary: string;
+    summaryImage: string;
+    
     relatedProject: string;
 }
 
@@ -33,7 +37,7 @@ const PostSummaryCard = ({ post }: { post: Post }) => {
                 <CardMedia
                     component="img"
                     sx={{ width: 350, height: "auto", alignSelf: "center", margin: "1rem" }}
-                    image="/assets/projects/archea.png"
+                    image={post.summaryImage}
                     alt="Blog post summary image"
                 />
                 <CardContent>

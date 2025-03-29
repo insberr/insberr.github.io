@@ -2,8 +2,12 @@
 
 type PostFromClient = {
     title: string;
+    coverImage: string;
     contents: string;
+
     summary: string;
+    summaryImage: string;
+
     relatedProject: string;
 }
 

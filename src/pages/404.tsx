@@ -1,14 +1,13 @@
 import React from "react";
-import Container from "@mui/material/Container";
-import Typography from "@mui/material/Typography";
+import { Container, Typography } from "@mui/material";
 
 const Page_404: React.FC = () => {
     return (
         <Container>
             <Typography variant="h1">
-                404 Thats an error, In case that wasn't obvious...
+                404 That's an error, In case that wasn't obvious...
             </Typography>
-            <Typography varient="body2" color="textSecondary">
+            <Typography variant="body2" color="textSecondary">
                 Aw Snap! The spiders found a new room. I guess I need to pull out my sword again.
             </Typography>
             <Typography>
