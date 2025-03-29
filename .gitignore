@@ -29,3 +29,5 @@ handwriting.ttf
 local_testing.js
 dist/
 .yarn/
+.wrangler
+.dev.vars

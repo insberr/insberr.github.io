@@ -1,19 +1,10 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
-import ReactMarkdown from 'react-markdown';
+import { useParams } from 'react-router';
 import gfm from 'remark-gfm';
-import { projects } from '../projects/projects.ts';
+import {Project, projects} from '../projects/projects.ts';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
-
-interface Project {
-    id: string;
-    title: string;
-    image: string;
-    description: string;
-    details_md: string;
-    codeLink: string;
-}
+import MarkdownRenderer from "../components/MarkdownRenderer.tsx";
 
 const ProjectDetail: React.FC = () => {
     const { id } = useParams<{ id: string }>();
@@ -32,9 +23,9 @@ const ProjectDetail: React.FC = () => {
     // });
 
     return (
-        <Container>
-            <Typography variant="h3" color="primary">{project.title}</Typography>
-            <ReactMarkdown remarkPlugins={[gfm]}>{project.details_md}</ReactMarkdown>
+        <Container sx={{ marginTop: "2rem" }}>
+            <Typography variant="h3" color="primary">{project.name}</Typography>
+            <MarkdownRenderer remarkPlugins={[gfm]} markdown={project.details_md} />
         </Container>
     );
 };
