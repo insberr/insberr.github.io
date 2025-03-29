@@ -23,8 +23,8 @@ export type Post = {
 
 export const PostsAssetsURL = "https://assets.insberr.com";
 
-export const PostsAPIURL = "http://127.0.0.1:8788";
-// export const PostsAPIURL = window.location.origin;
+// export const PostsAPIURL = "http://127.0.0.1:8788";
+export const PostsAPIURL = window.location.origin;
 
 const PostSummaryCard = ({ post }: { post: Post }) => {
     const routerNavigate = useNavigate();
