@@ -18,10 +18,10 @@ const theme = createTheme({
             default: '#222222'
         },
         primary: {
-            main: '#ff1744', // Red accent color
+            main: '#ff445d', // Red accent color
         },
         secondary: {
-            main: '#f50057', // Another red shade for secondary actions
+            main: '#ffffff', // Another red shade for secondary actions
         },
     },
 });

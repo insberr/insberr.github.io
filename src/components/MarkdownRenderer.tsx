@@ -4,6 +4,7 @@ import rehypeRaw from "rehype-raw";
 
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { materialDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import {Link} from "@mui/material";
 
 // Obtained from https://hannadrehman.com/blog/enhancing-your-react-markdown-experience-with-syntax-highlighting
 const CodeBlock = ({ node, inline, className, children, ...props }: any) => {
@@ -24,7 +25,7 @@ const MarkdownRenderer = ({ node, inline, className, children, ...props }: any) 
     return <ReactMarkdown
         rehypePlugins={[rehypeRaw]}
         remarkPlugins={[gfm]}
-        components={{code: CodeBlock}}
+        components={{ code: CodeBlock, a: Link }}
     >
         {props.markdown}
     </ReactMarkdown>
